@@ -185,7 +185,7 @@
         <pose>0 0 0 -3.14159 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky/meshes/wheel.stl</uri>
+            <uri>model://podcar/meshes/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -286,7 +286,7 @@
         <pose>0 0 0 -3.14159 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky/meshes/wheel.stl</uri>
+            <uri>model://podcar/meshes/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -387,7 +387,7 @@
         <pose>0 0 0 -3.14159 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://husky/meshes/wheel.stl</uri>
+            <uri>model://podcar/meshes/wheel.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -485,7 +485,7 @@
 
 
     <!--  This plugin outputs ground truth pose, for pure ROS nodes to convert to GPS and RTK simulations.  It also receives wheel commands for gazebo physics.  -->
-       <plugin name="libpodcarGazeboROSPlugin.so" filename="/home/charles/Dropbox/podcar/gazebo/plugins/libpodcarGazeboROSPlugin.so">
+       <plugin name="libpodcarGazeboROSPlugin.so" filename="~/podcar/gazebo/plugins/libpodcarGazeboROSPlugin.so">
           <updateRate>10.0</updateRate>
        </plugin>
 
