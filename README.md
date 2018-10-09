@@ -1,20 +1,15 @@
 # podcar
 
-Simulation of Shoprider Traveso mobility scooter used as automated podcar.
+(Work in progress not ready for public use)
 
+Open source hardware design and software for Lincoln Podcar.
 
-softlinked the model as
-ln -s path/to/here/models/podcar to ~/.gazebo/models/podcar
-(or can add extra model path in gazebo itself from the models gui)
-                                                                     
+Including:
 
-In gazebo, need to manual set PID params to 1,0,.5 for front wheels.
+- hardware design and instruction to build and wire the physical car
+- Arduino software for speed control
+- Pololu software for steering control
+- ROS drivers for whole vehicle steering and speed
+- Gazebo simulation
 
-Troubleshooting:
-AF_NET error:
-If this is coming from a gazebo plugin -- it may be because gazebo is being run standalone rather than launched from ros as required.
-
-
-TODO: implement a standard twist interface to accept messages such as,
-rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
