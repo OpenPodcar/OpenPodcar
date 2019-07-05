@@ -19,38 +19,6 @@ alpha is different for diffent LAPTOPs because their USBs send different voltage
 For toughbook, V_max is about 4.97V.  For Chris laptop is is closer to 5V.
 The reqwuired control voltages do not change between laptops, but the speedbytes do.
 
-for toughbook, with vehicle on jacks:
-speedbyte	control voltage		ok_to_start_ignition?	wheel_moves?
-
-?		0V			no			stupid fast reverse, dangerous
-80		?			no			yes v fast reverse (ros limit)
-100		1.38			no			our ros limit max reverse
-132		1.82V			no			slowest reverse motion
-137		1.90V			no			no
-138		1.92V			yes, dead zone		no
-164		2.26V			yes, dead zone center	no
-195		2.71V			yes, dead zone		no
-200		2.71V			no			no
-201		2.76V			no			slowest fwd motion possible
-240		2.78			no			fast fwd motion (ros limit)
-?		5V			no			stupid fast, dangerous
-
-To start the ignition, car safety system required the control vltage to be in the dead range.
-Problem is this doesnt correposnd to fixed speedbytes due to the USB power issues.
-But if we pick a number solidly in the center of the deadzone, such as 164, then it will be OK for most USB supplies.
-
-when battery is flat, the voltages are lower? eg send 164 and get 1.9V instead of 2.26V ?
-this may result in vehicle not starting - maybe by design or accident. get beep as is outside start zone.
-thoery: the ardunio is getting lower power eg max 4.9V instead of 5V, which gets divided by the DAC value.
-
-
-STEERING SYSTEM
-
-Polulo commands:
-2500 = full right 
-1900 = center
-1000 = full left
-  **DO NOT SEND COMMANDS OUT OF THS RANGE AS THEY HAVE MECHANCIALLY DESTROYED THE SYSTEM**
 
 
 LOG FILES
