@@ -1,0 +1,12 @@
+*.dll
+*.mdb
+*.resources
+Jrk/JrkCmd/JrkCmd
+Jrk/JrkExample/JrkExample
+Maestro/MaestroAdvancedExample/MaestroAdvancedExample
+Maestro/MaestroEasyExample/MaestroEasyExample
+Maestro/UscCmd/UscCmd
+SimpleMotorController/SmcCmd/SmcCmd
+SimpleMotorController/SmcExample1/SmcExample1
+SimpleMotorController/SmcExample2/SmcExample2
+UsbAvrProgrammer/PgmCmd/PgmCmd

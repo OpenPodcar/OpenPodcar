@@ -1,0 +1,1707 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Smc</name>
+    </assembly>
+    <members>
+        <member name="T:Pololu.SimpleMotorController.SmcChannel">
+            <summary>
+            Specifies an input channel (e.g. Analog Channel 2).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannel.None">
+            <summary>
+            No channel specified.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannel.Analog1">
+            <summary>
+            Analog Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannel.Analog2">
+            <summary>
+            Analog Channel 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannel.Rc1">
+            <summary>
+            RC Channel 1
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannel.Rc2">
+            <summary>
+            RC Channel 2
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelType">
+            <summary>
+            Specifies a channel type: RC or Analog.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelType.RC">
+            <summary>
+            RC: this channel measures the width of pulses received.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelType.Analog">
+            <summary>
+            Analog: this channel measures voltage.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelUse">
+            <summary>
+            Specifies a channel use, including all Alternate uses (limit switches)
+            and primary uses (controlling the motor speed).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.None">
+            <summary>
+            None: This channel is not used for anything special but its value
+            can be read using Serial or USB commands.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.LimitForward">
+            <summary>
+            Forward Limit Switch: if this channel is active (Scaled Value >= 1600),
+            then the motor is not allowed to move forward.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.LimitReverse">
+            <summary>
+            Reverse Limit Switch: if this channel is active (Scaled Value >= 1600),
+            then the motor is not allowed to move in reverse.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.KillSwitch">
+            <summary>
+            Kill Switch: if this channel is active (Scale Value >= 1600), then the
+            motor is not allowed to move.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.Throttle">
+            <summary>
+            Throttle: this channel is the motor throttle (reverse/forward) channel.
+            Its Scaled Value is used to determine the motor's Target Speed.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelUse.Steering">
+            <summary>
+            Throttle: this channel is the motor steering (left/right) channel.
+            Its Scaled Value is used to determine the motor's Target Speed.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelUtil">
+            <summary>
+            This static class contains extension methods that deal with identifying
+            channels and figuring out what they are used for in the current settings.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.name(Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Returns a user friendly name for the channel (e.g. "Analog Channel 1").
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.shortName(Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Returns a short user friendly name for the channel (e.g. "Analog 1").
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.type(Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Returns the type of the channel: RC or Analog.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.rawValueToStandardUnitsString(Pololu.SimpleMotorController.SmcChannel,System.UInt16)">
+            <summary>
+            Converts the Raw Value (or Unlimited Raw Value) of a channel in to a user
+            friendly string that expresses the value in standard units.
+            For example: "1501 us" or "1452 mV".  It uses a non-ascii character to
+            encode the Greek letter mu in microseconds.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.getChannel(Pololu.SimpleMotorController.SmcVariables,Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Gets the state of the specified channel.
+            </summary>
+            <param name="vars">The state of the device.</param>
+            <param name="channel">Specifies what channel to fetch.</param>
+            <returns>The state of the specified channel.</returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.getChannelSettings(Pololu.SimpleMotorController.SmcSettings,Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Gets the settings for the specified channel.
+            </summary>
+            <param name="settings">The settings of the device.</param>
+            <param name="channel">Specifies what channel to fetch.</param>
+            <returns>The settings of the specified channel.</returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.setChannelSettings(Pololu.SimpleMotorController.SmcSettings,Pololu.SimpleMotorController.SmcChannel,Pololu.SimpleMotorController.SmcChannelSettings)">
+            <summary>
+            Changes the settings for a specified channel.
+            </summary>
+            <param name="settings">The settings of the device. This object will be modified.</param>
+            <param name="channel">Specifies the channel to change.</param>
+            <param name="channelSettings">The new settings for the channel.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.controlsMotorSpeed(Pololu.SimpleMotorController.SmcChannel,Pololu.SimpleMotorController.SmcInputMode,Pololu.SimpleMotorController.SmcMixingMode)">
+            <summary>
+            Determines whether the specified channel is directly used to control the
+            motor speed (i.e. it is a Throttle or Steering input).
+            </summary>
+            <param name="channel">Specifies the channel.</param>
+            <param name="inputMode">The input mode of the device (Serial/USB, Analog, RC).</param>
+            <param name="mixingMode">The mixing mode of the device (None, Left, Right).</param>
+            <returns>True if and only if the channel controls the motor speed.</returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.use(Pololu.SimpleMotorController.SmcChannel,Pololu.SimpleMotorController.SmcInputMode,Pololu.SimpleMotorController.SmcMixingMode,Pololu.SimpleMotorController.SmcChannelAlternateUse)">
+            <summary>
+            Determines what the specified channel is used for (e.g. limit switch or
+            controlling the motor speed).
+            </summary>
+            <param name="channel">Specifies the channel.</param>
+            <param name="inputMode">The input mode of the device (Serial/USB, Analog, RC).</param>
+            <param name="mixingMode">The mixing mode of the device (None, Left, Right).</param>
+            <param name="alternateUse">The alternate use setting for the channel.</param>
+            <returns>What the channel is used for.</returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelUtil.switchActive(Pololu.SimpleMotorController.SmcVariables,Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Returns true if the specified channel is a limit or kill switch and
+            it is currently active.  This information comes from the limitStatus
+            register.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcRequest">
+            <summary>
+             These are the values to put in to bRequest when making a setup packet
+             for a control transfer to the Smc.  See the comments and code in Smc.cs
+             for more information about what these requests do and the format of the
+             setup packet.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcMotorLimitsStruct">
+            <summary>Represents limits on the motor's behavior.</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimitsStruct.maxSpeed">
+            <summary>
+            Max Speed is a number between 0 and 3200 that specifies the maximum speed at
+            which the motor controller will ever drive the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimitsStruct.maxAcceleration">
+            <summary>
+            Max Acceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to increase every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimitsStruct.maxDeceleration">
+            <summary>
+            Max Deceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to decrease every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimitsStruct.brakeDuration">
+            <summary>
+            Brake duration is the time, in milliseconds, that the motor controller will
+            spend braking the motor (Current Speed = 0) before allowing the Current Speed
+            to change signs.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimitsStruct.startingSpeed">
+            <summary>
+            Minimum non-zero speed (1-3200).  In RC or Analog mode, a scaled value of 1 maps to this speed.
+            0 means no effect.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.invert">
+            <summary>
+            Used to invert the direction of scaling.
+            If true, then a higher rawValue corresponds to lower scaledValue.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.scalingDegree">
+            <summary>
+            0 = Linear, 1 = Quadratic, 2 = Cubic, etc.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.alternateUse">
+            <summary>
+            This is used to allow a channel be a limit switch if it is not controlling the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.pinMode">
+            <summary>
+            Determines if the analog input is floating, pulled up, or pulled down.
+            Does not apply to RC channels.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.errorMin">
+            <summary>
+            rawValues greater than this generate an error.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.errorMax">
+            <summary>
+            rawValues less than this generate an error.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.inputMin">
+            <summary>
+            rawValues greater than or equal to this get mapped to a
+            speed of -reverseLimits.maxSpeed (or forwardLimits.maxSpeed
+            if invert==true).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.inputMax">
+            <summary>
+            rawValues less than or equal to this get mapped to a
+            speed of forwardLimits.maxSpeed (or -reverseLimits.maxSpeed
+            if invert==true).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.inputNeutralMin">
+            <summary>
+            rawValues between inputNeutralMin and inputNeutralMax get mapped
+            to a speed of zero.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettingsStruct.inputNeutralMax">
+            <summary>
+            rawValues between inputNeutralMin and inputNeutralMax get mapped
+            to a speed of zero.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.neverSuspend">
+            <summary>If true, then never enter USB suspend mode.</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.uartResponseDelay">
+            <summary>
+            If true, then insert a one-byte delay before sending serial responses.
+            This allows slower processors time to get ready to receive the response.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.useFixedBaudRate">
+            <summary>
+            If true, then don't auto-detect the baud rate and instead use a fixed baud rate,
+            specified by fixedBaudRateRegister.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.disableSafeStart">
+            <summary>
+            When false, puts strct requirements on what is necessary to start the motor.
+            See the user's guide for for more information.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.fixedBaudRateRegister">
+            <summary>
+            The value to put in to the device's baud rate register to generate the fixed
+            baud rate.  Only relevant if useFixedBaudRate is true.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.speedUpdatePeriod">
+            <summary>
+            Time between accel/decel updates to the speed. Units of 1 ms.  Should never be 0!
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.commandTimeout">
+            <summary>
+            The time before a command timeout error occurs, in units of 10 ms.
+            A value of 0 disables the command timeout feature.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.serialDeviceNumber">
+            <summary>
+            The serial device number used to address this device in the Pololu
+            protocol.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.crcMode">
+            <summary>
+            Whether CRC is disabled, required for reception, or required for
+            reception and sent during transmission.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.overTempMin">
+            <summary>
+            See tempLimitGradual.
+            Units: tenths of a degree Celsius.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.overTempMax">
+            <summary>
+            The temperature where speed is limited to 0.
+            Units: tenths of a degree Celsius.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.pwmPeriodFactor">
+            <summary>Determines the PWM frequency (0-19, 0=highest freq).</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.minPulsePeriod">
+            <summary>
+            Minimum allowed time between consecutive RC pulse rising edges.
+            Units: 1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.maxPulsePeriod">
+            <summary>
+            Maximum allowed time between consecutive RC pulse rising edges.
+            If this amount of time elapses and no pulses at all have been received,
+            then the motor is shut down and an error is generated.
+            Units: 1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.rcTimeout">
+            <summary>
+            Generates error and shuts down the motor if we go this long without
+            heeding a pulse (units of 1 ms).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.ignorePotDisconnect">
+            <summary>
+            If false, check for pot disconnect by toggling the pot power pins.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.tempLimitGradual">
+            <summary>
+            False: abrupt limit past overTempMax asserted until temp falls below overTempMin.
+            True: gradual speed limit starting at overTempMin.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.consecGoodPulses">
+            <summary>
+            Number of previously received consecutive good pulses needed
+            to heed the latest pulse received and update the channel's rawValue.
+            0 means no previous good pulses are required, so we update the channel's
+            value on every good pulse.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.motorInvert">
+            <summary>
+            Invert Motor Direction.  Boolean that specifies the correspondence between
+            speed (-3200 to 3200) and voltages on OUTA/OUTB.
+            Normally, a speed of 3200 means OUTA~VIN, OUTB=0.
+            If motorInvert is true, then a speed of 3200 means OUTA=0, OUTB~VIN.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.speedZeroBrakeAmount">
+            <summary>
+            Brake amount while input is in deadband (0-32), or there is an error,
+            or motor is driving at speed zero.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.ignoreErrLineHigh">
+            <summary>
+            If false, stop the motor if the ERR line is high (allows you to connect the
+            error lines of two devices and have them both stop when one has an error).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.lowVinShutoffTimeout">
+            <summary>
+            VIN must stay below lowVinShutoffMv for this duration before a low-VIN error
+            occurs (units of 1 ms).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.lowVinShutoffMv">
+            <summary>
+            Dropping below this voltage threshold for a duration of lowVinShutoffTimeout
+            triggers a low-voltage error (units of mV).
+            Dropping below this voltage threshold triggers a low-voltage error (units of mV).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.lowVinStartupMv">
+            <summary>
+            Once asserting a low-voltage error, the voltage required to stop asserting this error (units of mV).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.highVinShutoffMv">
+            <summary>
+            Rising above this voltage threshold triggers a high-voltage error and
+            causes the motor to immediately brake at 100% (units of mV).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettingsStruct.serialMode">
+            <summary>
+            Determines what types of commands are accepted and whether to echo incoming bytes.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelVariables">
+            <summary>
+            Represents the current state of an input channel.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelVariables.unlimitedRawValue">
+            <summary>
+            The raw value of the channel as read from the pin.
+            This is mainly useful for the control input setup wizard.
+            0xFFFF if disconnected but not affected by absolute max/min limits.
+            Units of quarter-microseconds if an RC channel.
+            12-bit ADC reading (0-4095) if analog.
+            0xFFFF if input is disconnected.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelVariables.rawValue">
+            <summary>
+            This is just like unlimitedRawValue except that it will be 0xFFFF
+            if the absolute max/min limits are violated.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelVariables.scaledValue">
+            <summary>
+            The result of scaling the rawValue.  This value
+            depends on all the scaling settings in the channel's
+            SmcChannelSettings struct.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcVariables">
+            <summary>
+            Represents the current state of the device, including all input channels
+            and motor limits.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.errorStatus">
+            <summary>
+            The errors that are currently happening.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.errorOccurred">
+            <summary>
+            The errors that occurred since the last time this register was cleared.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.serialErrorOccurred">
+            <summary>
+            The serial errors that occurred since the last time this register was
+            cleared.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.limitStatus">
+            <summary>
+            Status bits for anything that is limiting the motor speed that isn't
+            an error (but it could be caused by an error, such as StartedState).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.rc1">
+            <summary>
+            The current state of RC Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.rc2">
+            <summary>
+            The current state of RC Channel 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.analog1">
+            <summary>
+            The current state of Analog Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.analog2">
+            <summary>
+            The current state of Analog Channel 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.targetSpeed">
+            <summary>
+            Target speed of motor from -3200 to 3200.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.speed">
+            <summary>
+            Current speed of motor from -3200 to 3200.
+            Can be non-zero even if power is off.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.brakeAmount">
+            <summary>
+            Current braking amount, from 0 to 32.
+            This value is only relevant when speed==0,
+            otherwise it will be 0xFF.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.vinMv">
+            <summary>
+            The voltage on the VIN line in units of millivolts.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.temperature">
+            <summary>
+            The reading from the temperature sensor, in units of one
+            tenth of a degree Celsius.
+            Temperatures below 0 degrees are reported as 0.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.rcPeriod">
+            <summary>
+            The measured period of the RC pulses, in units of 0.1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.baudRateRegister">
+            <summary>
+            Value from the device's baud-rate register.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.timeMs">
+            <summary>
+            The time that the device has been running.  Units: 1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.forwardLimits">
+            <summary>
+            The currently-used motor limits for the forward direction.
+            By default, these are equal to the hard limits in SmcSettingsStruct,
+            but they can be temporarily changed by USB or Serial commands.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcVariables.reverseLimits">
+            <summary>
+            The currently-used motor limits for the reverse direction.
+            By default, these are equal to the hard limits in SmcSettingsStruct,
+            but they can be temporarily changed by USB or Serial commands.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcInputMode">
+            <summary>
+            The Input Mode setting for the device.  This specifies how the motor speed is determined.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcInputMode.SerialUsb">
+            <summary>
+            Motor speed is set via serial and USB commands.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcInputMode.Analog">
+            <summary>
+            The voltage on A1/A2 determines the motor speed.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcInputMode.RC">
+            <summary>
+            The width of pulses received on RC1 and RC2 determines the motor speed.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcMixingMode">
+            <summary>
+            The Mixing Mode setting for the device.  This specifies which channels
+            are used in calculating the motor speed and how the calculation is to
+            be done.  The Mixing Mode only applies if the Input Mode is Analog or RC.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMixingMode.None">
+            <summary>
+            The motor speed is determined entirely by RC/Analog Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMixingMode.Left">
+            <summary>
+            The motor speed is determined by adding RC/Analog Channels 1 and 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMixingMode.Right">
+            <summary>
+            The motor speed is determined by subtracting RC/Analog Channel 2 from Channel 1.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcSerialMode">
+            <summary>
+            Specifies what kinds of serial commands will be accepted.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialMode.Binary">
+            <summary>
+            Commands and responses support the Pololu, Compact, or Mini SSC binary protocols,
+            specified in the user's guide.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialMode.Ascii">
+            <summary>
+            Commands and responses obey the ASCII command protocol,
+            specified in the user's guide.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcCrcMode">
+            <summary>
+            Specifies how Cyclic Redundancy Checks (CRC) will be used in serial communication.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcCrcMode.Disabled">
+            <summary>
+            In this mode, CRC will not be used.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcCrcMode.Commands">
+            <summary>
+            In this mode, you must append a CRC byte to all commands sent to the device.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcCrcMode.CommandsAndResponses">
+            <summary>
+            In this mode, you must append a CRC byte to all commands sent to the device, and
+            responses from the device will contain a CRC byte.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcDirection">
+            <summary>
+            Specifies a motor direction: Forward, Reverse or Brake (for variable braking).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcDirection.Forward">
+            <summary>
+            Forward.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcDirection.Reverse">
+            <summary>
+            Reverse (opposite of Forward).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcDirection.Brake">
+            <summary>
+            Brake.  Used for variable braking commands.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelAlternateUse">
+            <summary>
+            Specifies the alternate use setting for a channel. This setting is
+            only relevant if the channel is not configured to control the motor
+            speed (see SmcInputMode and SmcMixingMode).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelAlternateUse.None">
+            <summary>
+            None: This channel is not used for anything special but its value
+            can be read using Serial or USB commands.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelAlternateUse.LimitForward">
+            <summary>
+            Forward Limit Switch: if this channel is active (Scaled Value >= 1600),
+            then the motor is not allowed to move forward.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelAlternateUse.LimitReverse">
+            <summary>
+            Reverse Limit Switch: if this channel is active (Scaled Value >= 1600),
+            then the motor is not allowed to move in reverse.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelAlternateUse.KillSwitch">
+            <summary>
+            Kill Switch: if this channel is active (Scale Value >= 1600), then the
+            motor is not allowed to move.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcPinMode">
+            <summary>
+            Specifies the pin mode for an Analog input channel.
+            This setting is not relevant for RC input cahnnels.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcPinMode.Floating">
+            <summary>
+            Floating: no pull-up or pull-down resistors enabled.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcPinMode.PullUp">
+            <summary>
+            Weak pull-up resistor (to 3.3 V) enabled.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcPinMode.PullDown">
+            <summary>
+            Weak pull-down resistor (to 0 V) enabled.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcLimitStatus">
+            <summary>
+            Defines the bits in the LimitStatus register, which tells us
+            what things are currently limiting the motor speed.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.StartedState">
+            <summary>
+            Motor is not allowed to run due to an error or safe-start violation.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Temperature">
+            <summary>
+            Temperature is actively reducing Target Speed.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.MaxSpeed">
+            <summary>
+            Max speed limit is actively reducing Target Speed.
+            Only happens when Input Mode is Serial/USB.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.StartingSpeed">
+            <summary>
+            Starting speed limit is actively reducing Target Speed to 0.
+            Only happens when Input Mode is Serial/USB.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Acceleration">
+            <summary>
+            Motor speed is not equal to target speed because of acceleration,
+            deceleration, or brake duration limits.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Rc1">
+            <summary>
+            RC Channel 1 is configured as a limit/kill switch and it is active (Scaled Value >= 1600).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Rc2">
+            <summary>
+            RC Channel 2 is configured as a limit/kill switch and it is active (Scaled Value >= 1600).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Analog1">
+            <summary>
+            Analog Channel 1 is configured as a limit/kill switch and it is active (Scaled Value >= 1600).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.Analog2">
+            <summary>
+            Analog Channel 2 is configured as a limit/kill switch and it is active (Scaled Value >= 1600).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcLimitStatus.UsbKill">
+            <summary>
+            USB kill switch is active.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcPwmMode">
+            <summary>
+            The PWM mode to use.  This feature is not exposed to users because
+            we found the DriveBrake mode to be much better than DriveCode mode.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcPwmMode.DriveBrake">
+            <summary>
+            PWM between driving and braking (both low-side MOSFETs on).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcPwmMode.DriveCoast">
+            <summary>
+            PWM between driving and coasting.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcError">
+            <summary>
+            Defines the different errors that the device has.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.SafeStart">
+            <summary>
+            See http://www.pololu.com/docs/0J44
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.ChannelInvalid">
+            <summary>
+            This error occurs whenever any required RC or Analog channel is invalid. 
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.Serial">
+            <summary>
+            This error occurs whenever the Input Mode is Serial/USB and something goes
+            wrong with the serial communication, either on the RX/TX lines or on the
+            USB virtual COM port.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.CommandTimeout">
+            <summary>
+            This error occurs if Input Mode is Serial/USB and the (configurable) time
+            period has elapsed with no valid serial or USB commands being received by
+            the controller.  See commandTimeout in SmcSettings.
+            </summary>
+            <see cref="F:Pololu.SimpleMotorController.SmcSettings.commandTimeout"/>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.LimitSwitch">
+            <summary>
+            This error occurs when a limit or kill switch channel stops the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.VinLow">
+            <summary>
+            This error occurs whenever your power supply's voltage is too low or it is disconnected.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.VinHigh">
+            <summary>
+            This error occurs whenever your power supply's voltage is too high.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.TemperatureHigh">
+            <summary>
+            This error occurs whenever the reading from the temperature sensor is too high.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.MotorDriverError">
+            <summary>
+            This error occurs whenever the motor driver chip reports an under-voltage or
+            over-temperature error (by driving its fault line low).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcError.ErrLineHigh">
+            <summary>
+            This error occurs whenever there are no other errors but the voltage on the
+            ERR line is high (2.3-5 V).
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcSerialError">
+            <summary>
+            Defines the different serial errors that are recorded.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.None">
+            <summary>
+            None.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.Parity">
+            <summary>
+            This is not used.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.Frame">
+            <summary>
+            This is error occurs when a de-synchronization or excessive
+            noise on the RX line is detected.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.Noise">
+            <summary>
+            This error occurs when noise is detected on the RX line.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.RxOverrun">
+            <summary>
+            This error occurs when the buffer for storing bytes received
+            on the RX line is full and data was lost as a result.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.Format">
+            <summary>
+            This error occurs if the serial bytes received on RX or the
+            virtual COM port do not obey the protocol specified in this guide.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSerialError.Crc">
+            <summary>
+            This error occurs if you have enabled cyclic redundancy check (CRC)
+            for serial commands, but the CRC byte received was invalid.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcMotorLimit">
+            <summary>
+            Specifies what motor limits to set.
+            You can use the OR (|) operator to apply the ForwardOnly or ReverseOnly
+            modifiers to MaxSpeed, MaxAcceleration, MaxDeceleration, or BrakeDuration.
+            Without any modifies, this value specifies woth the forward and reverse limits.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.MaxSpeed">
+            <summary>
+            Max Speed is a number between 0 and 3200 that specifies the maximum speed at
+            which the motor controller will ever drive the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.MaxAcceleration">
+            <summary>
+            Max Acceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to increase every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.MaxDeceleration">
+            <summary>
+            Max Deceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to decrease every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.BrakeDuration">
+            <summary>
+            Brake duration is the time, in milliseconds, that the motor controller will
+            spend braking the motor (Current Speed = 0) before allowing the Current Speed
+            to change signs.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.ForwardOnly">
+            <summary>
+            A modifier that specifies that only the forward limit should be set.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimit.ReverseOnly">
+            <summary>
+            A modified that specifies that only the reverse limit should be set.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcSetMotorLimitProblem">
+            <summary>
+            Specifies the return code from a Set Motor Limit command.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSetMotorLimitProblem.None">
+            <summary>
+            There were no problems with the set motor limit command.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSetMotorLimitProblem.ForwardConflict">
+            <summary>
+            The value you were trying to set was more dangerous than the hard limit for the Forward
+            direction, so the hard limit was used instead.  This may be the desired behavior.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSetMotorLimitProblem.ReverseConflict">
+            <summary>
+            The value you were trying to set was more dangerous than the hard limit for the Reverse
+            direction, so the hard limit was used instead.  This may be the desired behavior.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcResetFlags">
+            <summary>
+            Specifies the causes of the device's last reset.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcResetFlags.ResetPin">
+            <summary>
+            The device was reset because the voltage on the Reset pin went low.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcResetFlags.Power">
+            <summary>
+            The device was reset because power was turned off/on.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcResetFlags.Software">
+            <summary>
+            The device was reset by software running on the device.
+            This happens at the end of a firmware upgrade when the bootloader
+            starts the new firmware.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcResetFlags.Watchdog">
+            <summary>
+            The device was reset by the watchdog timer.  This indicates a
+            problem with the firmware which should be reported to Pololu.com.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcChannelSettings">
+            <summary>
+            Specifies the settings to use for a particular Input Channel.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.alternateUse">
+            <summary>
+            This is used to allow a channel be a limit switch if it is not controlling the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.invert">
+            <summary>
+            Used to invert the direction of scaling.
+            If true, then a higher rawValue corresponds to lower scaledValue.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.scalingDegree">
+            <summary>
+            0 = Linear, 1 = Quadratic, 2 = Cubic, etc.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.pinMode">
+            <summary>
+            Determines if the analog input is floating, pulled up, or pulled down.
+            Does not apply to RC channels.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.errorMin">
+            <summary>
+            rawValues greater than this generate an error.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.errorMax">
+            <summary>
+            rawValues less than this generate an error.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.inputMin">
+            <summary>
+            rawValues greater than or equal to this get mapped to a
+            speed of -reverseLimits.maxSpeed (or forwardLimits.maxSpeed
+            if invert==true).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.inputMax">
+            <summary>
+            rawValues less than or equal to this get mapped to a
+            speed of forwardLimits.maxSpeed (or -reverseLimits.maxSpeed
+            if invert==true).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.inputNeutralMin">
+            <summary>
+            rawValues between inputNeutralMin and inputNeutralMax get mapped
+            to a speed of zero.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcChannelSettings.inputNeutralMax">
+            <summary>
+            rawValues between inputNeutralMin and inputNeutralMax get mapped
+            to a speed of zero.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.defaultRCSettings">
+            <summary>
+            Returns the default settings for RC channels.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.defaultAnalogSettings">
+            <summary>
+            Returns the default settings for Analog channels.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.defaults(Pololu.SimpleMotorController.SmcChannel)">
+            <summary>
+            Returns the default settings for the given channel.
+            </summary>
+            <param name="channel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.Clone">
+            <summary>
+            Creates an independent copy of this object.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.Equals(System.Object)">
+            <summary>
+            Compares this object to another and sees if they have the same values.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcChannelSettings.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcMotorLimits">
+            <summary>
+            Specifies motor limits for a particular direction.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimits.maxSpeed">
+            <summary>
+            Max Speed is a number between 0 and 3200 that specifies the maximum speed at
+            which the motor controller will ever drive the motor.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimits.maxAcceleration">
+            <summary>
+            Max Acceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to increase every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimits.maxDeceleration">
+            <summary>
+            Max Deceleration is a number between 0 and 3200 that specifies how much the
+            magnitude (absolute value) of the motor speed is allowed to decrease every
+            speed update period.  0 means no limit.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimits.brakeDuration">
+            <summary>
+            Brake duration is the time, in milliseconds, that the motor controller will
+            spend braking the motor (Current Speed = 0) before allowing the Current Speed
+            to change signs.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcMotorLimits.startingSpeed">
+            <summary>
+            Minimum non-zero speed (1-3200).  In RC or Analog mode, a scaled value of 1 maps to this speed.
+            0 means no effect.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcMotorLimits.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcMotorLimits.Clone">
+            <summary>
+            Creates an independent copy of this object.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcMotorLimits.Equals(System.Object)">
+            <summary>
+            Compares this object to another to see if they have the same values.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcMotorLimits.GetHashCode">
+            <summary>
+            Returns the hash code of this instance.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SmcSettings">
+            <summary>
+            This class represents all the settings for a Simple Motor Controller,
+            including the channel settings and hard motor limits.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.neverSuspend">
+            <summary>If true, then never enter USB suspend mode.</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.uartResponseDelay">
+            <summary>
+            If true, then insert a one-byte delay before sending serial responses.
+            This allows slower processors time to get ready to receive the response.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.useFixedBaudRate">
+            <summary>
+            If true, then don't auto-detect the baud rate and instead use a fixed baud rate,
+            specified by fixedBaudRateBps.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.disableSafeStart">
+            <summary>
+            When false, puts strct requirements on what is necessary to start the motor.
+            See the user's guide for for more information.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.fixedBaudRateBps">
+            <summary>
+            The value to put in to the device's baud rate register to generate the fixed
+            baud rate.  Only relevant if useFixedBaudRate is true.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.speedUpdatePeriod">
+            <summary>
+            Time between accel/decel updates to the speed. Units of 1 ms.  Should never be 0!
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.commandTimeout">
+            <summary>
+            The time before a command timeout error occurs, in units of 10 ms.
+            A value of 0 disables the command timeout feature.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.serialDeviceNumber">
+            <summary>
+            The serial device number used to address this device in the Pololu
+            protocol.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.crcMode">
+            <summary>
+            Whether CRC is disabled, required for reception, or required for
+            reception and sent during transmission.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.overTempMin">
+            <summary>
+            See tempLimitGradual.
+            Units: tenths of a degree Celsius.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.overTempMax">
+            <summary>
+            The temperature where speed is limited to 0.
+            Units: tenths of a degree Celsius.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.inputMode">
+            <summary>
+            Input mode: Serial, RC, or Analog.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.pwmMode">
+            <summary>
+            PWM Mode: Drive/Brake or Drive/Coast.
+            The drive/coast mode is a lot worse than drive/brake mode so we don't actually
+            let the user use this setting.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.pwmPeriodFactor">
+            <summary>Determines the PWM frequency (0-19, 0=highest freq).</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.mixingMode">
+            <summary>
+            Mixing Mode: None, Left, or Right
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.minPulsePeriod">
+            <summary>
+            Minimum allowed time between consecutive RC pulse rising edges.
+            Units: 1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.maxPulsePeriod">
+            <summary>
+            Maximum allowed time between consecutive RC pulse rising edges.
+            If this amount of time elapses and no pulses at all have been received,
+            then the motor is shut down and an error is generated.
+            Units: 1 ms.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.rcTimeout">
+            <summary>
+            Generates error and shuts down motor if we go this long without
+            heeding a pulse (units of 1 ms).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.ignorePotDisconnect">
+            <summary>
+            If false, check for pot disconnects by toggling the pot power pins.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.tempLimitGradual">
+            <summary>
+            False: abrupt limit past overTempMax asserted until temp falls below overTempMin.
+            True: gradual speed limit starting at overTempMin.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.consecGoodPulses">
+            <summary>
+            Number of previously received consecutive good pulses needed
+            to heed the latest pulse received and update the channel's raw value.
+            0 means no previous good pulses are required, so we update the channel's
+            value on every good pulse.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.motorInvert">
+            <summary>
+            Invert Motor Direction.  Boolean that specifies the correspondence between
+            speed (-3200 to 3200) and voltages on OUTA/OUTB.
+            Normally, a speed of 3200 means OUTA~VIN, OUTB=0.
+            If motorInvert is true, then a speed of 3200 means OUTA=0, OUTB~VIN.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.speedZeroBrakeAmount">
+            <summary>
+            Brake amount while input is in deadband (0-32), or there is an error,
+            or motor is driving at speed zero.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.ignoreErrLineHigh">
+            <summary>
+            Stop the motor if the ERR line is high (allows you to connect the
+            error lines of two devices and have them both stop when one has an error).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.vinMultiplierOffset">
+            <summary>
+            The VIN multiplier offset is a calibration factor used in computing VIN.
+            The default value of 0 should work fine for most purposes.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.lowVinShutoffTimeout">
+            <summary>
+            VIN must stay below lowVinShutoffMv for this duration before a low-VIN error
+            occurs (units of 1 ms).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.lowVinShutoffMv">
+            <summary>Dropping below this voltage threshold triggers a low-voltage error (units of mV).</summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.lowVinStartupMv">
+            <summary>
+            Once asserting a low-voltage error, the voltage required to stop asserting this error (units of mV).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.highVinShutoffMv">
+            <summary>
+            Rising above this voltage threshold triggers a high-voltage error and
+            causes the motor to immediately brake at 100% (units of mV).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.serialMode">
+            <summary>
+            Determines what types of commands are accepted and whether to echo incoming bytes.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.rc1">
+            <summary>
+            Settings for RC Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.rc2">
+            <summary>
+            Settings for RC Channel 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.analog1">
+            <summary>
+            Settings for Analog Channel 1.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.analog2">
+            <summary>
+            Settings for Analog Channel 2.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.forwardLimits">
+            <summary>
+            Hard motor limits in the forward direction.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SmcSettings.reverseLimits">
+            <summary>
+            Hard motor limits in the reverse direction.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcSettings.#ctor(System.UInt16)">
+            <summary>
+            Constructs a new SmcSettings object that has the default settings for a particular product.
+            </summary>
+            <param name="productId">The product ID of the device.  This determines the initial value of
+            some product-dependent parameters like highVinShutoffMv.  Pass this argument as 0 if the
+            product ID is unknown at this time.
+            </param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcSettings.Clone">
+            <summary>
+            Creates an independent copy of this object.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcSettings.Equals(System.Object)">
+            <summary>
+            Compares this object to another to see if they have the same values.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SmcSettings.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.SettingsFile">
+            <summary>
+            A static class with methods for reading and writing configuration files.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.SettingsFile.complexTags">
+            <summary>
+            XML tags that are expected to have children.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.load(System.String,System.Collections.Generic.List{System.String},System.UInt16)">
+            <summary>
+            Parses a saved configuration file and returns a SmcSettings object.
+            </summary>
+            <param name="warnings">A list of warnings.  Whenever something goes
+            wrong with the file loading, a warning will be added to this list.
+            The warnings are not fatal; if the function returns it will return
+            a valid SmcSettings object.
+            </param>
+            <param name="filename">The file to read from.</param>
+            <param name="productId">The product id of the device we are loading these
+            settings for.  Pass 0 if it is unknown at this time.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.load(System.IO.StreamReader,System.Collections.Generic.List{System.String},System.UInt16)">
+            <summary>
+            Parses a saved configuration file and returns a SmcSettings object.
+            </summary>
+            <param name="warnings">A list of warnings.  Whenever something goes
+            wrong with the file loading, a warning will be added to this list.
+            The warnings are not fatal; if the function returns it will return
+            a valid SmcSettings object.
+            </param>
+            <param name="sr">The file to read from.</param>
+            <param name="productId">The product id of the device we are loading these
+            settings for.  Pass 0 if it is unknown at this time.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.WriteElementBool(System.Xml.XmlWriter,System.String,System.Boolean)">
+            <summary>
+            Adds an element that holds a boolean value.
+            For example: "<foo>true</foo>".
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.WriteElementRange(System.Xml.XmlWriter,System.String,System.UInt32,System.UInt32)">
+            <summary>
+            Adds an element that represents a range.
+            For example: '<foo min="234" max="5435"/>'
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.save(Pololu.SimpleMotorController.SmcSettings,System.String,Pololu.SimpleMotorController.Smc)">
+            <summary>
+            Writes a SmcSettings object as text to the specified streamwriter.
+            </summary>
+            <param name="settings">The settings to read from.</param>
+            <param name="filename">The file to write to.</param>
+            <param name="device">The device that these settings came from (optional!).  Adds extra comments to the file.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.SettingsFile.save(Pololu.SimpleMotorController.SmcSettings,System.IO.StreamWriter,Pololu.SimpleMotorController.Smc)">
+            <summary>
+            Writes a SmcSettings object as text to the specified streamwriter.
+            </summary>
+            <param name="settings">The settings to read from.</param>
+            <param name="sw">The file to write to.</param>
+            <param name="device">The device that these settings came from (optional!).  Adds extra comments to the file.</param>
+        </member>
+        <member name="T:Pololu.SimpleMotorController.Smc">
+            <summary>
+            This variable represents a native USB connection to a Simple Motor Controller.
+            It contains functions taht allow you to easily send any of the native USB commands
+            that the device supports.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.deviceInterfaceGuid">
+            <summary>
+            This is the GUID used in Windows to identify the native USB interfaces of all
+            of the Simple Motor Controllers.  It comes from smc.inf.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.vendorID">
+            <summary>
+            This is the USB Vendor ID (Pololu Corporation).
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.productIDs">
+            <summary>
+            These are the USB product IDs of the Simple Motor Controllers.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.bootloaderProductIDs">
+            <summary>
+            These are the USB product IDs for the bootloaders of the Simple Motor Controllers.
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.channels">
+            <summary>
+            The channels that are available on this device.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setDeviceListItemText(Pololu.UsbWrapper.DeviceListItem)">
+            <summary>
+            This function defines how we will display lists of these devices/bootloaders, both
+            in SmcCmd and in the Simple Motor Control Center and in the Firmware Upgrade form.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.productIdToShortModelString(System.UInt16)">
+            <summary>
+            Coverts a USB product ID to a short string describing the device,
+            e.g. "18v15" or "18v15 bootloader".
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.productIdToLongModelString(System.UInt16)">
+            <summary>
+            Converts a USB product ID to the official, long string describing the device,
+            e.g. "Pololu Simple High-Power Motor Controller 18v15".
+            </summary>
+        </member>
+        <member name="F:Pololu.SimpleMotorController.Smc.productId">
+            <summary>
+            The USB product ID of the particul device that we are connected to.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.#ctor(Pololu.UsbWrapper.DeviceListItem)">
+            <summary>
+            Opens (connects to) the selected device, constructing an object that
+            we can use to communicate with the device over its native USB interface.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getConnectedDevices">
+            <summary>
+            Gets a list of devices that are currently connected to USB.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getConnectedBootloaders">
+            <summary>
+            Gets a list of bootloaders that are currently connected to USB.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getFirmwareVersionMinor">
+            <summary>
+            Gets the minor version number of the firmware (the number after the decimal point).
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getFirmwareVersionMajor">
+            <summary>
+            Gets the major version number of the firmware (the number before the decimal point).
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getFirmwareVersionString">
+            <summary>
+            Returns a string representing the firmware version, like "1.00".
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.startBootloader">
+            <summary>
+            Causes the device to disconnect and enter bootloader mode so you can
+            upgrade its firmware.  After calling this, you should call Dispose()
+            and delete any references you have to this object because it will not
+            be usable anymore.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.resetSettings">
+            <summary>
+            Resets the device to its default, factory settings.
+            This takes about 26 ms.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.fixSettings(Pololu.SimpleMotorController.SmcSettings,System.Collections.Generic.List{System.String},System.UInt16)">
+            <summary>
+            Fixes certain thigns about a setttings object so that it doesn't make the device
+            do something invalid.
+            For each thing that gets fixed, a warning is added to the warnings list that is passed in.
+            </summary>
+            <param name="newSettings">The settings to fix.</param>
+            <param name="warnings">A list of warnings.  This function will add items to the list.</param>
+            <param name="productId">The product ID of the device these settings will be used for.
+            If unknown, this argument should be 0.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getSmcSettings">
+            <summary>
+            Reads the current settings from the device.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setMotorLimit(Pololu.SimpleMotorController.SmcMotorLimit,System.UInt16)">
+            <summary>
+            Temporarily sets a motor limit.  This change will last until the
+            next time the device resets, or until another setMotorLimit command
+            is issued which changes the limit.  This function will not violate
+            the hard motor limits that are stored in flash (with setSmcSettings).
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.exitSafeStart">
+            <summary>
+            Clears the Safe Start Violation bit in the SmcVariables.errorStatus.
+            This function has no effect unless the input mode of the device is SerialUsb.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setSmcSettings(Pololu.SimpleMotorController.SmcSettings)">
+            <summary>
+            Sends a new set of settings to the device, to be written to flash.
+            This takes about 26 ms.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getSmcVariables">
+            <summary>
+            Gets the current state of the device.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getResetFlags">
+            <summary>
+            Returns the cause of the device's last reset.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.getResetCause">
+            <summary>
+            Returns the cause of the device's last reset.
+            Provides the same information as getResetFlags, but in a human-friendly
+            string instead of an enum.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.temperatureToString(System.UInt16)">
+            <summary>
+            Creates a string for representing a temperature reading to the user.
+            Warning: this string will contain non-ascii characters.
+            </summary>
+            <param name="temperature">A temperature in units of tenths of a degree Celsius.</param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setUsbKill(System.Boolean)">
+            <summary>
+            Sets the state of the USB kill switch.
+            True means activate the switch (stop the motor).
+            False means deactive the switch (allow the motor to start).
+            The state of the USB kill switch is available in the UsbKill bit of SmcVariables.limitStatus.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setSpeed(System.UInt16,Pololu.SimpleMotorController.SmcDirection)">
+            <summary>
+            Sets the state of the motor.  This only works if you are in Serial/USB input mode.
+            </summary>
+            <param name="speed">
+              If direction is Forward or Reverse, speed is a number from 0 to 3200.
+              If direction is Brake, speed is a number from 0 to 32.
+            </param>
+            <param name="direction">
+              The direction to drive the motor in: Forward, Reverse, or Brake.
+            </param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setSpeed(System.Int16)">
+            <summary>
+              Sets the state of the motor.  This overload only lets you drive the motor
+              in forward or reverse.  For variable braking, use the other overload.
+              This function only works if you are in Serial/USB input mode.
+            </summary>
+            <param name="speed">
+              A number between -3200 and 3200, where -3200 to -1 is
+              in reverse direction and 0 to 3200 is forward direction.
+            </param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.stop">
+            <summary>
+            Stops the motor.  Has the same effect as the "Stop Motor" button in the control center.
+            Equivalent to setUsbKill(true).
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.resume">
+            <summary>
+            Allows the motor start.  Has the same effect as the "Resume" button in the control center.
+            Equivalent to setUsbKill(false) followed by exitSafeStart().
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.setBrake(System.Byte)">
+            <summary>
+            Causes the motor to brake.
+            </summary>
+            <param name="brakeAmount">
+              A number from 0 to 32 specifying the amount of braking.
+              0 is nearly-full coasting.
+              32 is full braking.
+            </param>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.convertBaudRegisterToBps(System.UInt16)">
+            <summary>
+            Converts a baud rate from the value used in the baud rate
+            register to bps.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.convertBpsToBaudRegister(System.UInt32)">
+            <summary>
+            Converts a baud rate from bps to a value suitable to be used
+            in the baud rate register.
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.speedToPercentString(System.Int16)">
+            <summary>
+            Converts a signed speed in to a percentage string (with a minus sign if needed).
+            </summary>
+            <param name="speed">A speed value from -3200 to 3200.</param>
+            <returns>A string like "34.00 %".</returns>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.accelDecelToString(System.UInt16)">
+            <summary>
+            Converts an acceleration or deceleration limit to a user-friendly string.
+            0 is shown as "N/A".
+            </summary>
+        </member>
+        <member name="M:Pololu.SimpleMotorController.Smc.rcPeriodToString(System.UInt16)">
+            <summary>
+            Converts an RC period from SmcVariables to a user-friendly string.
+            </summary>
+        </member>
+        <member name="P:Pololu.SimpleMotorController.Smc.name">
+            <summary>
+            The generic name of this type of device.
+            </summary>
+        </member>
+        <member name="P:Pololu.SimpleMotorController.Smc.namePlural">
+            <summary>
+            The plural generic name of this type of device.
+            </summary>
+        </member>
+    </members>
+</doc>

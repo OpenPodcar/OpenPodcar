@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+import sys
+import rospy
+import pdb
+from podcar.msg  import Joystick
+import subprocess, time
+import serial
+
+
+port = '/dev/ttyArduino'
+#port = '/dev/ttyACM2'
+print("only works with dead mans handle\n")
+print("Starting the program\n")
+ser = serial.Serial(port, 115200)
+print("Opened the communication with a port\n")
+#protocol should return two lines of hello
+line = ser.readline()   #we actually want a blocking read here to check the arduino is saying hello
+print(line)
+
+
+
+class Node:
+	def __init__(self):
+		now = rospy.get_rostime()
+		self.sub = rospy.Subscriber("joystick",Joystick,self.callback_joystick, queue_size=1)
+	def callback_joystick(self,data): 
+		print(data.x, data.y)
+		
+		#x,y are -1:+1.  used to have to run as sudo but not given access.
+		speed = 0.5*(1.-data.throttle)  #0-1 range
+		if speed<0.001:
+			speed = 0.
+		if data.button1 == 1:
+			velocity=-1*speed   #button 1 trigger to reverse
+		else:
+			velocity =speed
+		print(velocity)
+		velocity_plusminusone_range = velocity
+		self.sendSerialCommandToSpeed(velocity_plusminusone_range)
+
+
+	def sendSerialCommandToSpeed(self, velocity_plusminusone_range):
+		velocity=velocity_plusminusone_range
+		if velocity>=0:
+			speed_byte = int(180+velocity*(240.-180))
+		else:
+			speed_byte = int(140+velocity*(140.-80))
+
+		lineout = "FA:%i\r\n"%speed_byte   #140 is stop.  240 is fast fwd.  80 for fast reverse.
+		cmd = list(lineout)
+		print(cmd)
+		for char in cmd:
+			ser.write(char.encode())
+#		linein = ser.readline()
+#		print(linein)
+
+
+
+if __name__ == '__main__':
+	rospy.init_node('joystick2speed',anonymous=True)
+	ic = Node()
+	try:
+		rospy.spin()
+	except KeyboardInterrupt:
+		print("Shutting down")
+
