@@ -1,0 +1,33 @@
+<launch>
+  <!-- Velodyne VLP-16 Driver -->
+  <node pkg="nodelet" type="nodelet" name="velodyne_nodelet_manager" args="manager" output="screen"/>
+  
+  <node pkg="nodelet" type="nodelet" name="driver_nodelet" args="load velodyne_driver/DriverNodelet velodyne_nodelet_manager" output="screen">
+    <param name="model" value="VLP16"/>
+    <param name="pcap" value=""/>
+    <param name="frame_id" value="velodyne"/>
+  </node>
+  
+  <node pkg="nodelet" type="nodelet" name="cloud_nodelet" args="load velodyne_pointcloud/CloudNodelet velodyne_nodelet_manager" output="screen">
+    <param name="calibration" value="$(find flobot_tracker)/config/vlp16.yaml"/>
+    <param name="min_range" value="0.4"/>
+    <param name="max_range" value="130.0"/>
+  </node>
+
+  <!-- FLOBOT 3D Object Detector -->
+  <!--CF maybe here, https://github.com/LCAS/online_learning/tree/master/object3d_detector -->
+  <! or whole stack here, https://github.com/LCAS/online_learning -->
+
+  <node pkg="object3d_detector" type="object3d_detector" name="object3d_detector" output="screen" respawn="false">
+    <param name="show_fps" value="false"/>
+    <param name="model_file_name" type="string" value="$(find object3d_detector)/libsvm/pedestrian.model"/>
+    <param name="range_file_name" type="string" value="$(find object3d_detector)/libsvm/pedestrian.range"/>
+  </node>
+    
+  <!-- NBellotto's Bayes People Tracker -->
+  <rosparam command="load" file="$(find bayes_people_tracker)/config/detectors.yaml"/>
+  <node pkg="bayes_people_tracker" type="bayes_people_tracker" name="bayes_people_tracker" output="screen" respawn="true">
+      <param name="target_frame" type="string" value="velodyne"/>
+  </node>
+  
+</launch>
