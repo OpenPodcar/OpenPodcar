@@ -1,8 +1,3 @@
-BACK OF CAR		FRONT OF CAR
-Speed			Steering
-Arduino			Polulu
-
-
 SPEED SYSTEM
 
 The vechiicles own controller takes a voltage input between 0 ans 5V.
@@ -48,11 +43,6 @@ when battery is flat, the voltages are lower? eg send 164 and get 1.9V instead o
 this may result in vehicle not starting - maybe by design or accident. get beep as is outside start zone.
 thoery: the ardunio is getting lower power eg max 4.9V instead of 5V, which gets divided by the DAC value.
 
-TROUBLESHOOTING
-Problem: vehicle beeps continuous when press DMH.
-Solutions:  this is due to a safety mode preventing ignition.
-	check:   is the4 voltage is the dead zone, it should be
-		 is the manual-auto switch under the rear motor on auto? 
 
 STEERING SYSTEM
 
