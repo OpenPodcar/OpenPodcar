@@ -56,7 +56,11 @@ Solutions:  this is due to a safety mode preventing ignition.
 
 STEERING SYSTEM
 
-
+Polulo commands:
+2500 = full right 
+1900 = center
+1000 = full left
+  **DO NOT SEND COMMANDS OUT OF THS RANGE AS THEY HAVE MECHANCIALLY DESTROYED THE SYSTEM**
 
 
 LOG FILES
