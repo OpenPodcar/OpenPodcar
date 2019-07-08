@@ -18,9 +18,6 @@ Click Podcar. Click on a ground location to instantiate.
 
 In gazebo, need to manual set PID params to 1,0,.5 for front wheels.
 
-Troubleshooting:
-AF_NET error:
-If this is coming from a gazebo plugin -- it may be because gazebo is being run standalone rather than launched from ros as required.
 
 
 TODO: implement a standard twist interface to accept messages such as,
