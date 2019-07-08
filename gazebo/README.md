@@ -3,9 +3,18 @@
 Simulation of Shoprider Traveso mobility scooter used as automated podcar.
 
 
-softlinked the model as
-ln -s path/to/here/models/podcar to ~/.gazebo/models/podcar
-(or can add extra model path in gazebo itself from the models gui)
+To use in gazebo:
+
+Start Gazebo
+Open "Insert" tab
+Click "Add path"
+Add directory /path/to/podcar/gazebo/models
+(Podcar should appear in model list.)
+Click Podcar. Click on a ground location to instantiate.
+
+(do not softlinks to ~/.models , the above way is neater)
+
+
                                                                      
 
 In gazebo, need to manual set PID params to 1,0,.5 for front wheels.

@@ -1,5 +1,0 @@
-this is softlinked as
-
-ln -s path/to/gazebo/models/podcar to ~/.gazebo/models/podcar
-
-(or can add extra model path in gazebo itself from the models gui)
