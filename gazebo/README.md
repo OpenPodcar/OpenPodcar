@@ -1,7 +1,6 @@
-# podcar
+# OpenPodCar
 
-Simulation of Shoprider Traveso mobility scooter used as automated podcar.
-
+Simulation of OpenPodCar open hardware vehicle.
 
 To use in gazebo:
 
