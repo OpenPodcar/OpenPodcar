@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UsbWrapper</name>
+    </assembly>
+    <members>
+        
+        
+        
+        
+        
+        <member name="T:Pololu.UsbWrapper.TransferStatus">
+            <summary>
+            Represents the current status of the request.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Pending">
+            <summary>
+            The request has not been processed yet.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Completed">
+            <summary>
+            The request was successfully completed.
+            This does NOT mean that the host received all the data. 
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Error">
+            <summary>
+            There was an error completing this request.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.TimedOut">
+            <summary>
+            The device took too long to send data, so the request timed out.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Cancelled">
+            <summary>
+            The request was cancelled by the application.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Stall">
+            <summary>
+            The device responded to the request with a STALL packet
+            (halt condition).
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.NoDevice">
+            <summary>
+            The device was disconnected.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.TransferStatus.Overflow">
+            <summary>
+            The device sent more data than was requested.
+            </summary>
+        </member>
+        <member name="T:Pololu.UsbWrapper.DeviceListItem">
+            <summary>
+            A class that represents a device connected to the computer.  This
+            class can be used as an item in the device list dropdown box.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.DeviceListItem.deviceInstance">
+            <summary>
+            Gets the device instance (DEVINST) for this device.  This can be
+            passed in WinusbHelper.connect() to connect the device.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.DeviceListItem.guid">
+            <summary>
+            The guid of the Windows device interface class of this device.
+            </summary>
+        </member>
+        <member name="F:Pololu.UsbWrapper.DeviceListItem.serialNumber">
+            <summary>
+            The USB serial number string of the device.
+            </summary>
+            <remarks>
+            Since the serial number is needed by most applications, and used to
+            generate deviceListItem.text, it is not a big waste to always fetch
+            it when creating the device list.
+            </remarks>
+        </member>
+        <member name="F:Pololu.UsbWrapper.DeviceListItem.productId">
+            <summary>
+            The USB product ID of the device.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.DeviceListItem.#ctor(System.Int32,System.Guid,System.String,System.String,System.UInt16)">
+            <summary>
+            Constructs a new device list item to represent a device connected to
+            this computer.
+            </summary>
+            <param name="deviceInstance">
+            The device instance (DEVINST) of the device, typically returned
+            from Winusb.listGetDeviceInstance.
+            </param>
+            <param name="text">Text that identifies the device to the user.</param>
+            <param name="guid">The device instance GUID (from the INF file).</param>
+            <param name="serialNumber">The serial number of the device (from the string descriptor).</param>
+        </member>
+        <member name="M:Pololu.UsbWrapper.DeviceListItem.CreateDummyItem(System.String)">
+            <summary>
+            Creates an item that doesn't actually refer to a device; just for populating the list with things like "Disconnected"
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.DeviceListItem.isSameDeviceAs(Pololu.UsbWrapper.DeviceListItem)">
+            <summary>
+            Return true if the two devices are the same.
+            </summary>
+        </member>
+        <member name="P:Pololu.UsbWrapper.DeviceListItem.text">
+            <summary>
+            The text to display to the user in the list to represent this
+            device.  By default, this text is "#" + serialNumberString,
+            but it can be changed to suit the application's needs
+            (for example, adding model information to it).
+            </summary>
+        </member>
+        
+        
+        
+        
+        
+        <member name="T:Pololu.UsbWrapper.Usb">
+            <summary>
+            A static class that has some methods for interacting with the operating
+            system's USB support.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.Usb.getPortNames(System.String)">
+            <summary>
+            Returns a list of port names (e.g. "COM2", "COM3") for all
+            currently-connected devices in the Ports list in the Device Manager
+            whose device instance ID begins with the given prefix string.
+            
+            For example, to get the port names of the umc01a bootloader,
+            give a prefix of = USB\PID_1FFB&amp;PID_0082.
+            </summary>
+            <param name="deviceInstanceIdPrefix">
+            The string that we match against the device instance ID.  The device
+            instance ID of the device you want must begin with this string.
+            </param>
+            <returns/>
+        </member>
+        <member name="F:Pololu.UsbWrapper.Usb.WM_DEVICECHANGE">
+             <summary>
+             A constant needed for processing device change messages in Windows.
+             See notificationRegister for details.
+             </summary>
+             <value>0x219</value>
+             <example>
+             protected override void WndProc(ref Message m)
+             {
+                if (m.Msg == Usb.WM_DEVICECHANGE)
+                {
+                    // ... insert your own code here to deal with device changes ...
+                }
+            
+                base.WndProc(ref m);
+             }
+             </example>
+        </member>
+        <member name="M:Pololu.UsbWrapper.Usb.notificationRegister(System.Guid,System.IntPtr)">
+            <summary>
+            Registers your form to receive notifications from the OS when one
+            of a particular class of devices is removed or attached.  See
+            Usb.WM_DEVICECHANGE for example code for receiving notifications.
+            You should only call this if supportsNotify returns true or your
+            application will only be run on Windows.
+            </summary>
+            <param name="guid">The device interface GUID of the
+            device you are interested in (from the INF file).</param>
+            <param name="handle">The handle of the form that will receive
+            notifications (form.Handle).</param>
+            <returns>A handle representing this notification request.</returns>
+        </member>
+        <member name="P:Pololu.UsbWrapper.Usb.supportsNotify">
+            <summary>
+            Return true if the operating system supports notifying forms
+            when a device is connected or disconnect from the system.
+            Currently returns true for Windows, false for Linux.
+            See notificationRegister for details.
+            </summary>
+        </member>
+        <member name="T:Pololu.UsbWrapper.UsbDevice">
+            <summary>
+            An abstract class whose instances represent a connection to
+            a USB device.  When the connection is broken, the instance
+            will stop functioning.  This class currently has mechanism to
+            automatically re-connect, but you can implement it in your
+            application.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.getSerialNumber">
+            <summary>
+            Returns the serial number of device.  It's a string because that is how they
+            are transmitted over USB.
+            For PIC18-based Pololu devices, this will be an 8-digit decimal number.
+            For STM32-based Pololu devices, this will be a 24-digit hex number.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.getProductID">
+            <summary>
+            Returns the product ID of the device.  Every Pololu USB product that
+            has a different product ID (except those that have identical firmware).
+            Each product's bootloader has its own product ID as well.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.controlTransfer(System.Byte,System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Performs a control transfer that has no data stage.
+            Returns when the control transfer is complete.
+            There is a 50 ms timeout so that a malfunctioning device
+            will not cause your program to hang.
+            </summary>
+            <remarks>For more info, see section 9.3 of the USB Specification.</remarks>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.controlTransfer(System.Byte,System.Byte,System.UInt16,System.UInt16,System.Byte[])">
+            <summary>
+            Performs a control transfer that has a data stage.
+            The data either flows from the device to the host or the
+            host to the device.  The direction is determined by RequestType.
+            Returns when the control transfer is complete.
+            There is a 50 ms timeout so that a malfunctioning device
+            will not cause your program to hang.
+            </summary>
+            <remarks>For more info, see section 9.3 of the USB Specification.</remarks>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.controlTransfer(System.Byte,System.Byte,System.UInt16,System.UInt16,System.Void*,System.UInt16)">
+            <summary>
+            Performs a control transfer that has a data stage.
+            The data either flows from the device to the host or the
+            host to the device.  The direction is determined by RequestType.
+            Returns when the control transfer is complete.
+            There is a 50 ms timeout so that a malfunctioning device
+            will not cause your program to hang.
+            </summary>
+            <remarks>For more info, see section 9.3 of the USB Specification.</remarks>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.#ctor(Pololu.UsbWrapper.DeviceListItem)">
+            <summary>
+            Connect to the USB device specified by the DeviceListItem.
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.disconnect">
+            <summary>
+            Disconnects from the USB device, freeing all resources
+            that were allocated when the connection was made.
+            This is the same as Dispose().
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.Dispose">
+            <summary>
+            Disconnects from the USB device, freeing all resources
+            that were allocated when the connection was made.  This is the
+            same as disconnect().
+            </summary>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.getDeviceList(System.Guid)">
+            <summary>
+            gets a list of devices
+            </summary>
+            <returns/>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.getDeviceList(System.UInt32,System.UInt16[])">
+            <summary>
+            This is used in the linux version to search by vendor and product ID
+            </summary>
+            <param name="vendorId"/>
+            <param name="productIds"/>
+            <returns/>
+        </member>
+        <member name="M:Pololu.UsbWrapper.UsbDevice.isSameDeviceAs(Pololu.UsbWrapper.DeviceListItem)">
+            <summary>
+            true if the devices are the same
+            </summary>
+            <param name="item"/>
+            <returns/>
+        </member>
+        <member name="P:Pololu.UsbWrapper.UsbDevice.deviceInstance">
+            <summary>
+            Returns an integer uniquely identifying the device among devices currently available.
+            </summary>
+        </member>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </members>
+</doc>

@@ -1,0 +1,4 @@
+/home/podcar/catkin_ws/src/podcar/tools/JrkCmd/JrkCmd --target 2500 
+/home/podcar/catkin_ws/src/podcar/tools/JrkCmd/JrkCmd --target 2000 
+
+nb we can read cur position from this too

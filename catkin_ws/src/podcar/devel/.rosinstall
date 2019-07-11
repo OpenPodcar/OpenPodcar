@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/podcar/catkin_ws/src/podcar/devel/setup.sh

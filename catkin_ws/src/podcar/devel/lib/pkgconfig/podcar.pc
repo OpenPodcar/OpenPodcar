@@ -1,0 +1,8 @@
+prefix=/home/podcar/catkin_ws/src/podcar/devel
+
+Name: podcar
+Description: Description of podcar
+Version: 0.0.0
+Cflags: -I/home/podcar/catkin_ws/src/podcar/devel/include -I/home/podcar/catkin_ws/src/podcar/include
+Libs: -L/home/podcar/catkin_ws/src/podcar/devel/lib -lpodcar
+Requires: roscpp rospy std_msgs message_runtime

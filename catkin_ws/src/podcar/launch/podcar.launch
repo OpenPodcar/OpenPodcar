@@ -1,6 +1,6 @@
 <launch>
 
- <include file="/home/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>
+ <!--<include file="/home/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/> -->
 
  <node pkg="podcar" type="joystick.py" name="joystick" />
  
@@ -10,9 +10,9 @@
  <node pkg="podcar" type="joystick2wheelAngle.py" name="joystick2wheelAngle" />
  <node pkg="podcar" type="wheelAngle2pololu.py" name="wheelAngle2pololu" />
 
-<!--
  <node pkg="podcar" type="pololuController" name="pololuController" />
--->
+
+ <!--<node pkg="podcar" type="openPololuPort.py" name="openPololuPort"/> -->
 
 
 </launch>

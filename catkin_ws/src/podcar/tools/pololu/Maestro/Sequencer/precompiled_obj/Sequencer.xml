@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sequencer</name>
+    </assembly>
+    <members>
+        <member name="M:Pololu.Usc.Sequencer.Frame.getTargetsString">
+            <summary>
+            Returns a string with all the servo positions, separated by spaces,
+            e.g. "0 0 4000 0 1000 0 0".
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Frame.getTabSeparatedString">
+            <summary>
+            Returns a string the name, duration, and all servo positions, separated by tabs.
+            e.g. "Frame 1   500 0   0   0   4000    8000"
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Frame.setTargetsFromString(System.String,System.Byte)">
+            <summary>
+            Take a (potentially malformed) string with target numbers separated by spaces
+            and use it to set the targets.
+            </summary>
+            <param name="targetsString"></param>
+            <param name="servoCount"></param>
+        </member>
+        <member name="P:Pololu.Usc.Sequencer.Frame.target(System.Int32)">
+            <summary>
+            Gets the target of the given channel.
+            </summary>
+            <remarks>
+            By retreiving targets this way, we protect the application against
+            any kind of case where the Frame object might have fewer targets
+            than expected.
+            </remarks>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Sequence.saveSequencesInRegistry(System.Collections.Generic.IList{Pololu.Usc.Sequencer.Sequence},Microsoft.Win32.RegistryKey)">
+            <summary>
+            Saves sequences in the registry in the "sequences" subkey of the given key.
+            </summary>
+            <param name="list">A list of sequences to save in key/sequences in the registry.</param>
+            <param name="parentKey">A key that has been opened so as to allow editing.</param>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Sequence.readSequencesFromRegistry(Microsoft.Win32.RegistryKey,System.Byte)">
+            <summary>
+            Reads sequences from the registry in the "sequences" subkey of the given key.
+            </summary>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Sequence.generateScript(System.Collections.Generic.List{System.Byte},System.Collections.Generic.List{System.Collections.Generic.List{System.Byte}})">
+            <summary>
+            Generates the script for this sequence - just the code for calling the frame functions.
+            Adds any channel lists for required frame commands to the needed_channel_lists array.
+            </summary>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Sequence.getFrameSubroutineName(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            Generates the name of the frame subroutine that sets all of the specified channels.
+            It will be of the form frame_1_3_4_6..8.
+            </summary>
+            <param name="channels">A non-empty list of channels, in ascending numeric order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Pololu.Usc.Sequencer.Sequence.generateFrameSubroutine(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            Generates the subroutine that sets the specified channels, then
+            delays.  The channels are expected to be on the stack in the same
+            order as the channels list - e.g. the command will be something like
+            500 1 2 3 frame_1..3.
+            </summary>
+        </member>
+        <member name="T:Pololu.Usc.Sequencer.Sequence.FrameKeyNameComparer">
+            <summary>
+            We want the frame names to be sorted correctly when retrieved from the registry.
+            This means converting the names (e.g. "0013") to integers.
+            </summary>
+            <remarks>http://msdn.microsoft.com/en-us/library/system.collections.icomparer.compare.aspx</remarks>
+        </member>
+    </members>
+</doc>
