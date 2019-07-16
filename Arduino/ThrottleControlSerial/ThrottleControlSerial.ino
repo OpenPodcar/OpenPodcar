@@ -10,18 +10,26 @@
     
 */
 /**************************************************************************/
-
+#include <math.h>
 #include <Wire.h>                     // include the Wire Library - needed to communicate with the DAC
 #include <Adafruit_MCP4725.h>         // inlcude the DAC library - contains the comms protocol needed to communicate with the DAC
 
 Adafruit_MCP4725 Throttle;            // instantiate a DAC instance called Throttle.
 
 const String FA = "FA";               // ForwardAft Command, format FA:128, colon then byte value for axis 0 to 255, must be terminated with \r\n (carriage return, newline)
-const String ST = "ST";               // STOP       Command, format ST, no parameter,  must be terminated with \r\n (carriage return, newline)
+const String ST = "ST";               // STOP       Command, format ST, no parameter,  must be terminated with \r\n (carriage return,newline)
+const String BV = "BV";               // Battery Voltage       Command, format BV, no parameter,  must be terminated with \r\n (carriage return,newline)
+
+const float RATIO = 0.0537;  // 0.052;              // potential divider ratio found as ratio 0.052 = 55/1023 - 0.0015 
+
+const int analogPin = A0;
+int sensorValue = 0;
+float batteryVoltage = 0.0;
  
 float DACSupplyVoltage        = 5.00; //Included for information only. Could be used to calculate the desired DAC voltage for any DAC Value.
 
-word DACCentre                = 1887; // The DAC value which allows the Scooter to switxh on without error or complaint.
+word DACCentre                = 1679;  // new DAC value found in July 2019 -- Charles & Fanta
+//word DACCentre                = 1887; // The DAC value which allows the Scooter to switxh on without error or complaint.  
 word DAC_Upper_LIMIT          = 2519; // DO NOT CHANGE - COULD DAMAGE SCOOTER CIRCUIT
 word DAC_Lower_LIMIT          = 1000; // DO NOT CHANGE - COULD DAMAGE SCOOTER CIRCUIT 
 word DACFullScale             = 4095; // 12bit DAC
@@ -41,18 +49,18 @@ void setup(){
   Throttle.begin(0x60);                           // Initialise I2C communications to the DAC board address HEX 60
   delay(100);                                     // Wait 100ms    
   Throttle.setVoltage(ThrottleDACValue, false);   // Set Initial voltage of DAC to the Centre Value.
-  Serial.begin(115200);                           // Start the serial port connection to the PC 115200 baud (toggle DTR for remote reset)
+  Serial.begin(9600);                           // Start the serial port connection to the PC 115200 baud (toggle DTR for remote reset)
   delay(100);                                     // Wait 100ms
-  Serial.println("Car Throttle");                 // Announce the controller to the PC
+  Serial.println("Car Throttle");                 // Announce the controller to the PC  
 }
 
 void loop()
 {
- if(commandReceived == true)                      // This code is executed in non interupt time only when a new command has been recieved
- {                                                // A new command has been recieved when a \n or \r character is recieved.
+  
+ if(commandReceived == true)                      // This code is executed in non interupt time only when a new command has been recieved                                               // A new command has been recieved when a \n or \r character is recieved.
    processSerialCommand(fromPC);                  // Process the command
-   commandReceived = false;                       // Clear the command pending flag.
- }
+   
+ 
 }
  
 void UpdateDACs(void)
@@ -69,7 +77,8 @@ void serialEvent()                                   // As new characters are re
      if ((c == '\n' || c == '\r') && fromPC.length() > 0) // check for a line terminator
      {
         fromPC.toUpperCase();                             // converto the command string to upper case
-        commandReceived = true;                           // set the command pending flag. This tells non interupt time code to execute the command proccesor code. (see: loop() above)
+        commandReceived = true;         // set the command pending flag. This tells non interupt time code to execute the command proccesor code. (see: loop() above)
+    
      }
      else if (c != ' ' && c != '\n' && c !='\r')          // Ignore spaces.
      {
@@ -80,8 +89,8 @@ void serialEvent()                                   // As new characters are re
 
 void processSerialCommand(String command)                 // Simple command processing from the PC to the Scooter Controller - Each command is echoed back to PC along with calucated percentage and DAC value on one lime.
 {
-   fromPC = "";                                           // Clear the incoming buffer - current command is passed in 'command' command variable which free's the fromPC variable, so clear it in case more characters are placed in it during interupt time.
-                                                          // This may happen now becuase Process Serial Command is now executed in non interupt time.
+                                              // Clear the incoming buffer - current command is passed in 'command' command variable which free's the fromPC variable, so clear it in case more characters are placed in it during interupt time.
+                                                     // This may happen now becuase Process Serial Command is now executed in non interupt time.
      
    if (command.startsWith(FA))                            // Is this a FA command? (abbreviation for ForeAft)
    {
@@ -110,7 +119,22 @@ void processSerialCommand(String command)                 // Simple command proc
        ThrottleDACValue = DACCentre;                                                  // STOP means set the DAC to the centre position so set the DAC Value to Centre
        UpdateDACs();                                                                  // Call update DAC with the new centre (STOP) value.
    }
+   else if (command.startsWith(BV))
+   {
+      sensorValue = analogRead(analogPin);
+      batteryVoltage = sensorValue*RATIO;
+      
+      Serial.print(command);
+      Serial.print(" BV:");
+      Serial.println(batteryVoltage);
+  
+   }
+   
+  fromPC = "";
+  commandReceived = false;                       // Clear the command pending flag.
+   
 }
+
 
 
 
