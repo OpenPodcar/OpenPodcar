@@ -1,0 +1,508 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+
+
+<!-- zero y inside the model is the wheel axle height -->
+
+  <model name="podcar">
+    <pose>0 0 0.3 0 0 0</pose>
+
+
+    <!-- Main Chassis -->
+    <link name="base_link">
+
+      <!-- Physics -->
+      <collision name="collision">
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 .73 .1</size>
+          </box>
+        </geometry>
+      </collision>      
+	  <inertial>
+        <mass>33.855</mass>
+        <pose>-0.0856132 -0.000839955 0.238145 0 0 0</pose>
+        <inertia>
+          <ixx>2.2343</ixx>
+          <ixy>-0.023642</ixy>
+          <ixz>0.275174</ixz>
+          <iyy>3.42518</iyy>
+          <iyz>0.00239624</iyz>
+          <izz>2.1241</izz>
+        </inertia>
+      </inertial>
+
+		<!-- only thae flat chassis above the wheels matches the physics -->
+      <visual name='chassis_visual'>
+        <pose>0 0 0.25 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.6 .73 .1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient> 0 0 0.8 0
+          </ambient>
+          <emissive> 0.0 0 0 0
+          </emissive>
+        </material>
+      </visual>
+
+
+	<!-- just to look pretty -->
+	 <visual name='front_canopy_visual'>
+        <pose>0.25 0 0.8 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.7 .7  1.0 </size>
+          </box>
+        </geometry>
+        <material>
+          <ambient> 0 0 0.8 0
+          </ambient>
+          <emissive> 0.0 0 0 0
+          </emissive>
+        </material>
+      </visual>
+      <visual name='rear_canopy_visual'>
+        <pose>-0.2 0 1.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>.7 .7  1.5 </size>
+          </box>
+        </geometry>
+        <material>
+          <ambient> 0 0 0.8 0
+          </ambient>
+          <emissive> 0.0 0 0 0
+          </emissive>
+        </material>
+      </visual>
+	</link>
+
+
+    <link name="back_left_wheel">
+      <pose>-0.6  0.285475 0.0    0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+      <collision name="back_left_wheel_collision">
+        <pose>0 0 0 -1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.17775</radius>
+            <length>0.1143</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="back_left_wheel">
+        <pose>0 0 0 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://podcar/meshes/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="back_left_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>back_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+    <link name="back_right_wheel">
+      <pose>-0.6 -0.285475 0.0  0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+      <collision name="back_right_wheel_collision">
+        <pose>0 0 0 -1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.17775</radius>
+            <length>0.1143</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="back_right_wheel">
+        <pose>0 0 0 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://podcar/meshes/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="back_right_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>back_right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+
+
+  <!--testing-->
+    <link name="front_left_pivot">
+      <pose>0.6 0.285475 0.0 0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="front_left_pivot_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_left_pivot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name="front_left_wheel">
+      <pose>0.6 0.285475 0.0 0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_left_wheel_collision">
+        <pose>0 0 0 -1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.17775</radius>
+            <length>0.1143</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="front_left_wheel">
+        <pose>0 0 0 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://podcar/meshes/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="front_left_joint" type="revolute">
+      <parent>front_left_pivot</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>false</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+  <!--testing-->
+    <link name="front_right_pivot">
+      <pose>0.6 -0.285475 0.0 0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name="front_right_pivot_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_right_pivot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+    <link name="front_right_wheel">
+      <pose>0.6 -0.285475 0.0 0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+      <collision name="front_right_wheel_collision">
+        <pose>0 0 0 -1.5707 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.17775</radius>
+            <length>0.1143</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="front_right_wheel">
+        <pose>0 0 0 -3.14159 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://podcar/meshes/wheel.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name="front_right_joint" type="revolute">
+      <parent>front_right_pivot</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>false</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+  <!--testing-->
+    <link name="trackingrod">
+      <pose>0.5 0 0.0 0 0 0</pose>
+      <inertial>
+        <mass>2.6357</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.0246688</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0246688</iyy>
+          <iyz>0</iyz>
+          <izz>0.0441058</izz>
+        </inertia>
+      </inertial>
+      <visual name='trackingrod_visual'>
+        <pose>0.0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 .7 .1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient> 1.0 0 0.0 0
+          </ambient>
+          <emissive> 0.0 0 0 0
+          </emissive>
+        </material>
+      </visual>
+    </link>
+	<!-- is joined at center of wheel basis origin, not at edge of wheel -->
+    <joint name="tracking_right_pivot_joint" type="revolute">
+      <parent>trackingrod</parent>
+      <child>front_right_pivot</child>
+	  <pose>-.1 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>false</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <joint name="tracking_left_pivot_joint" type="revolute">
+      <parent>trackingrod</parent>
+      <child>front_left_pivot</child>
+	  <pose>-.1 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>false</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0.000000</cfm>
+            <erp>0.900000</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+
+
+
+    <!--  This plugin outputs ground truth pose, for pure ROS nodes to convert to GPS and RTK simulations.  It also receives wheel commands for gazebo physics.  -->
+    <plugin name="libpodcarGazeboROSPlugin.so" filename="libpodcarGazeboROSPlugin.so">
+      <updateRate>10.0</updateRate>
+    </plugin>
+    
+<!--
+    <plugin name="husky_diff_controller" filename="libhusky_gazebo_plugins.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <backLeftJoint>back_left_joint</backLeftJoint>
+      <backRightJoint>back_right_joint</backRightJoint>
+      <frontLeftJoint>front_left_joint</frontLeftJoint>
+      <frontRightJoint>front_right_joint</frontRightJoint>
+      <wheelSeparation>0.5709</wheelSeparation>
+      <wheelDiameter>0.3555</wheelDiameter>
+      <torque>35</torque>
+    </plugin>
+-->
+
+
+  </model>
+</sdf>

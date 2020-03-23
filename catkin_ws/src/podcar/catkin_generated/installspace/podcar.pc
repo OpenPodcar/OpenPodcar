@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: podcar
-Description: Description of podcar
-Version: 0.0.0
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -lpodcar
-Requires: roscpp rospy std_msgs message_runtime
