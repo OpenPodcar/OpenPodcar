@@ -1,0 +1,9 @@
+catkin_ws/.cproject
+catkin_ws/.project
+catkin_ws/.pydevproject
+cmake_install.cmake
+catkin_ws/build/
+catkin_ws/bin/
+catkin_ws/lib/
+catkin_ws/msg_gen/
+catkin_ws/srv_gen/
