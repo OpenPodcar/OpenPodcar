@@ -18,6 +18,7 @@ To install the ros package and gazebo sim locally, clone/fork the repository and
 
 (assumes ros kinetic already installed and gazebo 7)
 
+```bash
 cd <install location>/catkin_ws
 catkin_make
 source devel/setup.bash
@@ -27,3 +28,4 @@ export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`
 cd ..
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`
 source /usr/share/gazebo/setup.sh
+```
