@@ -107,8 +107,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -173,8 +173,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -274,8 +274,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -300,6 +300,10 @@
       <parent>front_left_pivot</parent>
       <child>front_left_wheel</child>
       <axis>
+        <limit>
+          <effort>1e+16</effort>
+          <velocity>-1</velocity>
+        </limit>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
@@ -375,8 +379,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
+              <mu>1</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -401,6 +405,10 @@
       <parent>front_right_pivot</parent>
       <child>front_right_wheel</child>
       <axis>
+        <limit>
+          <effort>1e+16</effort>
+          <velocity>-1</velocity>
+        </limit>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
@@ -450,7 +458,7 @@
     <joint name="tracking_right_pivot_joint" type="revolute">
       <parent>trackingrod</parent>
       <child>front_right_pivot</child>
-	  <pose>-.1 0 0 0 0 0 </pose>
+	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
@@ -467,7 +475,7 @@
     <joint name="tracking_left_pivot_joint" type="revolute">
       <parent>trackingrod</parent>
       <child>front_left_pivot</child>
-	  <pose>-.1 0 0 0 0 0 </pose>
+	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
