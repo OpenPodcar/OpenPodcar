@@ -55,15 +55,15 @@ namespace gazebo
 			// this->model->GetJointController()->SetVelocityPID(jointBL->GetScopedName(), this->speedController);
 			// this->model->GetJointController()->SetVelocityPID(jointBR->GetScopedName(), this->speedController);
 
-			this->angleController = common::PID(10, 0, 0, 10, -10);
+			this->angleController = common::PID(1, 0, 1);
 
 			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
 
-			// physics::JointPtr trackingFrontRight = this->model->GetJoint("front_right_joint");
-			// physics::JointPtr trackingFrontLeft = this->model->GetJoint("front_left_joint");
+			physics::JointPtr trackingFrontRight = this->model->GetJoint("tracking_right_pivot_joint");
+			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_right_pivot_joint");
 
-			// this->model->GetJointController()->SetPositionPID(trackingFrontLeft->GetScopedName(), this->angleController);
-			// this->model->GetJointController()->SetPositionPID(trackingFrontRight->GetScopedName(), this->angleController);
+			this->model->GetJointController()->SetPositionPID(trackingFrontLeft->GetScopedName(), this->angleController);
+			this->model->GetJointController()->SetPositionPID(trackingFrontRight->GetScopedName(), this->angleController);
 		}
 
 		public: void wheelSpeedCallback(const std_msgs::Float64& msg){
@@ -84,24 +84,30 @@ namespace gazebo
 			this-> timedOut = false;
 			this->lastAngleCmdTime = time(NULL);
 
-			this->desiredEndAngle = msg.data;
+			// this->desiredEndAngle = msg.data;
 			
 			// this->angleController.SetCmd(msg.data);
 
 			// this->model->GetJointController()->SetPositionTarget(trackingRod->GetScopedName(), msg.data);
 			//SetPosition(1, msg.data);
 
-			// physics::JointPtr jointFL = this->model->GetJoint("tracking_left_pivot_joint");
-			// physics::JointPtr jointFR = this->model->GetJoint("tracking_right_pivot_joint");
+			physics::JointPtr jointFL = this->model->GetJoint("tracking_left_pivot_joint");
+			physics::JointPtr jointFR = this->model->GetJoint("tracking_right_pivot_joint");
 
-			// jointFL->SetPosition(5, msg.data/3.141);
-			// jointFR->SetPosition(5, msg.data/3.141);
+			// if(jointFL==nullptr){
+			// 	std::cout << "no joints found!" << std::endl;
+			// }
+			// else{
+			// 	std::cout << "joints found!" << std::endl;
+			// 	jointFL->SetPosition(0, msg.data);
+			// 	jointFR->SetPosition(0, msg.data);
+			// }
 
 			// physics::JointPtr jointFL = this->model->GetJoint("front_left_joint");
 			// physics::JointPtr jointFR = this->model->GetJoint("front_right_joint");
 
-			// this->model->GetJointController()->SetJointPosition(jointFL, msg.data, 1);
-			// this->model->GetJointController()->SetJointPosition(jointFR, msg.data, 1);
+			this->model->GetJointController()->SetPositionTarget(jointFL->GetScopedName(), msg.data);
+			this->model->GetJointController()->SetPositionTarget(jointFR->GetScopedName(), msg.data);
 			
 			// if(msg.data >)
 
@@ -141,19 +147,19 @@ namespace gazebo
 				brake();
 			}
 
-			common::Time currentTime = this->model->GetWorld()->GetSimTime();
-			common::Time stepTime = currentTime - this->prevUpdateTime;
-			this->prevUpdateTime = currentTime;
+			// common::Time currentTime = this->model->GetWorld()->GetSimTime();
+			// common::Time stepTime = currentTime - this->prevUpdateTime;
+			// this->prevUpdateTime = currentTime;
 
-			double pos_target = this->desiredEndAngle;
-			double pos_curr = this->fR->GetAngle(0).Radian();
-			double max_cmd = 1000;
+			// double pos_target = this->desiredEndAngle;
+			// double pos_curr = this->fR->GetAngle(0).Radian();
+			// double max_cmd = 1000;
 
-			double pos_err = pos_curr - pos_target;
-			double effort_cmd = effort_cmd > max_cmd ? max_cmd : (effort_cmd < -max_cmd ? -max_cmd : effort_cmd);
+			// double pos_err = pos_curr - pos_target;
+			// double effort_cmd = effort_cmd > max_cmd ? max_cmd : (effort_cmd < -max_cmd ? -max_cmd : effort_cmd);
 
-			this->fR->SetForce(0, effort_cmd);
-			this->fL->SetForce(0, effort_cmd);
+			// this->fR->SetForce(0, effort_cmd);
+			// this->fL->SetForce(0, effort_cmd);
 
 			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
 
