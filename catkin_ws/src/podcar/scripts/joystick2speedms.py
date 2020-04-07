@@ -18,7 +18,7 @@ class Node:
 		now = rospy.get_rostime()
 		self.received_reponse_to_last_command = True
 
-		self.pub = rospy.Publisher('speedcmd_meterssec', Float64, queue_size=10)
+		self.pub = rospy.Publisher('speedcmd_metersec', Float64, queue_size=1)
 		self.sub = rospy.Subscriber("joystick",Joystick,self.callback_joystick, queue_size=1)
 		self.buffer = []
 		for i in range(0,100):
@@ -38,10 +38,11 @@ class Node:
 			velocity = rescale( joysticky, rosdeadzonemax, 1.,   0., maxspeed_meter_per_second_fwd)
 		elif joysticky < 0: 	
 			velocity = rescale( joysticky, -1., rosdeadzonemin,  -maxspeed_meter_per_second_bkwd, 0.)	
-#		print((data.y, velocity))
-                msg_out = Float64()
-                msg_out.data = velocity
-                self.pub.publish(msg_out)
+			# print((data.y, velocity))
+		msg_out = Float64(velocity)
+		print (velocity)
+		# msg_out.data = velocity
+		self.pub.publish(msg_out)
 
 if __name__ == '__main__':
 	rospy.init_node('joystick2speedms',anonymous=True)

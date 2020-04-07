@@ -47,20 +47,20 @@ namespace gazebo
 
 			this->desiredEndAngle = 0;
 
-			// this->speedController = common::PID(1, 0, 0, 0, 0, 5, -5);
+			// this->speedController = common::PID(1, 0, 1);
 
-			// physics::JointPtr jointBL = this->model->GetJoint("back_left_wheel");
-			// physics::JointPtr jointBR = this->model->GetJoint("back_right_wheel");
+			// physics::JointPtr jointBL = this->model->GetJoint("back_left_joint");
+			// physics::JointPtr jointBR = this->model->GetJoint("back_right_joint");
 
 			// this->model->GetJointController()->SetVelocityPID(jointBL->GetScopedName(), this->speedController);
 			// this->model->GetJointController()->SetVelocityPID(jointBR->GetScopedName(), this->speedController);
 
-			this->angleController = common::PID(1, 0, 1);
+			this->angleController = common::PID(2, 1, 1);
 
 			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
 
 			physics::JointPtr trackingFrontRight = this->model->GetJoint("tracking_right_pivot_joint");
-			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_right_pivot_joint");
+			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_left_pivot_joint");
 
 			this->model->GetJointController()->SetPositionPID(trackingFrontLeft->GetScopedName(), this->angleController);
 			this->model->GetJointController()->SetPositionPID(trackingFrontRight->GetScopedName(), this->angleController);
@@ -138,14 +138,14 @@ namespace gazebo
 			//cout << "update " << endl;
 
 			std::time_t timeNow = time(NULL);
-			if(timeNow >= this->lastSpeedCmdTime+this->timeOut && !this->timedOut){
-				this-> timedOut = true;
-				brake();
-			}
-			else if(timeNow >= this->lastAngleCmdTime+this->timeOut && !this->timedOut){
-				this-> timedOut = true;
-				brake();
-			}
+			// if(timeNow >= this->lastSpeedCmdTime+this->timeOut && !this->timedOut){
+			// 	this-> timedOut = true;
+			// 	brake();
+			// }
+			// else if(timeNow >= this->lastAngleCmdTime+this->timeOut && !this->timedOut){
+			// 	this-> timedOut = true;
+			// 	brake();
+			// }
 
 			// common::Time currentTime = this->model->GetWorld()->GetSimTime();
 			// common::Time stepTime = currentTime - this->prevUpdateTime;

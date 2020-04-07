@@ -20,7 +20,7 @@
           </box>
         </geometry>
       </collision>      
-	  <inertial>
+	    <inertial>
         <mass>33.855</mass>
         <pose>-0.0856132 -0.000839955 0.238145 0 0 0</pose>
         <inertia>
@@ -33,8 +33,8 @@
         </inertia>
       </inertial>
 
-		<!-- only thae flat chassis above the wheels matches the physics -->
-      <visual name='chassis_visual'>
+		  <!-- only thae flat chassis above the wheels matches the physics -->
+      <!-- <visual name='chassis_visual'>
         <pose>0 0 0.25 0 0 0</pose>
         <geometry>
           <box>
@@ -47,11 +47,11 @@
           <emissive> 0.0 0 0 0
           </emissive>
         </material>
-      </visual>
+      </visual> -->
 
 
-	<!-- just to look pretty -->
-	 <visual name='front_canopy_visual'>
+      <!-- just to look pretty -->
+      <!-- <visual name='front_canopy_visual'>
         <pose>0.25 0 0.8 0 0 0</pose>
         <geometry>
           <box>
@@ -78,9 +78,23 @@
           <emissive> 0.0 0 0 0
           </emissive>
         </material>
+      </visual> -->
+      <visual name="prettyMesh">
+        <pose>-2.255 3.265 -0.4 1.57079 0 1.57079</pose>
+        <geometry>
+          <mesh>
+            <uri>model://podcar/meshes/podcarv3.dae</uri>
+            <scale>65 69 69</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient> 0 0 0.8 0
+          </ambient>
+          <emissive> 0.0 0 0 0
+          </emissive>
+        </material>
       </visual>
-	</link>
-
+    </link>
 
     <link name="back_left_wheel">
       <pose>-0.6  0.285475 0.0    0 0 0</pose>
@@ -107,7 +121,7 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
+              <mu>0.7</mu>
               <mu2>0.8</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -173,7 +187,7 @@
         <surface>
           <friction>
             <ode>
-              <mu>1</mu>
+              <mu>0.7</mu>
               <mu2>0.8</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
@@ -201,6 +215,9 @@
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
+        <dynamics>
+          <friction>0.5</friction>
+        </dynamics>
       </axis>
       <physics>
         <ode>
@@ -274,7 +291,7 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.7</mu>
+              <mu>0.5</mu>
               <mu2>0.8</mu2>
               <slip1>0.1</slip1>
               <slip2>0</slip2>
@@ -302,6 +319,9 @@
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
+        <dynamics>
+          <friction>0.5</friction>
+        </dynamics>
       </axis>
       <physics>
         <ode>
@@ -375,7 +395,7 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.7</mu>
+              <mu>0.5</mu>
               <mu2>0.8</mu2>
               <slip1>0.01</slip1>
               <slip2>0</slip2>
@@ -454,9 +474,9 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
-        <limit>
-          <effort>50</effort>
-        </limit>
+        <!-- <limit>
+          <effort>50000</effort>
+        </limit> -->
       </axis>
       <physics>
         <ode>
@@ -472,9 +492,9 @@
       <child>front_left_pivot</child>
 	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
-        <limit>
-          <effort>50</effort>
-        </limit>
+        <!-- <limit>
+          <effort>50000</effort>
+        </limit> -->
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
