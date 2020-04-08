@@ -470,12 +470,15 @@
       <child>front_right_pivot</child>
 	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>false</use_parent_model_frame>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
         <limit>
           <lower>-0.82393858467</lower>
           <upper>0.82393858467</upper>
         </limit>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
       <physics>
         <ode>
@@ -491,6 +494,9 @@
       <child>front_left_pivot</child>
 	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
+        <dynamics>
+          <friction>1</friction>
+        </dynamics>
         <limit>
           <lower>-0.82393858467</lower>
           <upper>0.82393858467</upper>

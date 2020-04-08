@@ -47,7 +47,7 @@ namespace gazebo
 
 			this->desiredEndAngle = 0;
 
-			this->angleController = common::PID(2, 1, 1, 0.5, -0.5, 0.3, -0.3);
+			this->angleController = common::PID(1, 0, 1);
 
 			physics::JointPtr trackingFrontRight = this->model->GetJoint("tracking_right_pivot_joint");
 			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_left_pivot_joint");
@@ -84,6 +84,12 @@ namespace gazebo
 
 			jointBL->SetVelocity(0, 0);   
 			jointBR->SetVelocity(0, 0);  
+
+			physics::JointPtr jointFL = this->model->GetJoint("front_left_joint");
+			physics::JointPtr jointFR = this->model->GetJoint("front_right_joint");
+
+			jointFL->SetVelocity(0, 0);   
+			jointFR->SetVelocity(0, 0);  
 		}
 
 		public: void OnUpdate(const common::UpdateInfo & /*_info*/){
