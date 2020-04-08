@@ -47,7 +47,7 @@ namespace gazebo
 
 			this->desiredEndAngle = 0;
 
-			this->angleController = common::PID(2, 1, 1);
+			this->angleController = common::PID(2, 1, 1, 0.5, -0.5, 0.3, -0.3);
 
 			physics::JointPtr trackingFrontRight = this->model->GetJoint("tracking_right_pivot_joint");
 			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_left_pivot_joint");

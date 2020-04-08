@@ -122,8 +122,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.8</mu2>
+              <mu>10</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -188,8 +188,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0.7</mu>
-              <mu2>0.8</mu2>
+              <mu>10</mu>
+              <mu2>1</mu2>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -293,9 +293,9 @@
           <friction>
             <ode>
               <mu>0.5</mu>
-              <mu2>0.8</mu2>
-              <slip1>0.1</slip1>
-              <slip2>0</slip2>
+              <mu2>10</mu2>
+              <slip1>0.01</slip1>
+              <slip2>0.001</slip2>
             </ode>
           </friction>
         </surface>
@@ -320,9 +320,6 @@
       <axis>
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
-        <dynamics>
-          <friction>0.5</friction>
-        </dynamics>
       </axis>
       <physics>
         <ode>
@@ -397,9 +394,9 @@
           <friction>
             <ode>
               <mu>0.5</mu>
-              <mu2>0.8</mu2>
+              <mu2>10</mu2>
               <slip1>0.01</slip1>
-              <slip2>0</slip2>
+              <slip2>0.001</slip2>
             </ode>
           </friction>
         </surface>
@@ -475,9 +472,10 @@
       <axis>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
-        <!-- <limit>
-          <effort>50000</effort>
-        </limit> -->
+        <limit>
+          <lower>-0.82393858467</lower>
+          <upper>0.82393858467</upper>
+        </limit>
       </axis>
       <physics>
         <ode>
@@ -493,9 +491,10 @@
       <child>front_left_pivot</child>
 	    <pose>-.1 0 0 0 0 0 </pose>
       <axis>
-        <!-- <limit>
-          <effort>50000</effort>
-        </limit> -->
+        <limit>
+          <lower>-0.82393858467</lower>
+          <upper>0.82393858467</upper>
+        </limit>
         <xyz>0 0 1</xyz>
         <use_parent_model_frame>false</use_parent_model_frame>
       </axis>
