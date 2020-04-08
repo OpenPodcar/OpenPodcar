@@ -4,5 +4,7 @@
 	<arg name="world_name" value="$(find podcar)/launch/podcarsim.world"/>
   </include>
 
+  <node pkg="podcar" type="cmd_velHandler.py" name="cmd_velHandler" />
+
 </launch>
 
