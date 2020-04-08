@@ -80,11 +80,12 @@
         </material>
       </visual> -->
       <visual name="prettyMesh">
-        <pose>-2.255 3.265 -0.4 1.57079 0 1.57079</pose>
+        <!-- <pose>-2.255 3.265 -0.4 1.57079 0 1.57079</pose> -->
+        <pose>0 0 0  0 0 1.57079</pose>
         <geometry>
           <mesh>
             <uri>model://podcar/meshes/podcarv3.dae</uri>
-            <scale>65 69 69</scale>
+            <!-- <scale>65 69 69</scale> -->
           </mesh>
         </geometry>
         <material>
