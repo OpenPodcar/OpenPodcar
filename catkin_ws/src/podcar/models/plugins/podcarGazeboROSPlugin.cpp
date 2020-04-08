@@ -47,17 +47,7 @@ namespace gazebo
 
 			this->desiredEndAngle = 0;
 
-			// this->speedController = common::PID(1, 0, 1);
-
-			// physics::JointPtr jointBL = this->model->GetJoint("back_left_joint");
-			// physics::JointPtr jointBR = this->model->GetJoint("back_right_joint");
-
-			// this->model->GetJointController()->SetVelocityPID(jointBL->GetScopedName(), this->speedController);
-			// this->model->GetJointController()->SetVelocityPID(jointBR->GetScopedName(), this->speedController);
-
 			this->angleController = common::PID(2, 1, 1);
-
-			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
 
 			physics::JointPtr trackingFrontRight = this->model->GetJoint("tracking_right_pivot_joint");
 			physics::JointPtr trackingFrontLeft = this->model->GetJoint("tracking_left_pivot_joint");
@@ -73,54 +63,19 @@ namespace gazebo
 			physics::JointPtr jointBL = this->model->GetJoint("back_left_joint");
 			physics::JointPtr jointBR = this->model->GetJoint("back_right_joint");
 			
-			jointBL->SetVelocity(0, 5*msg.data);
-			jointBR->SetVelocity(0, 5*msg.data);
-
-			// this->model->GetJointController()->SetVelocityTarget(jointBL->GetScopedName(), msg.data);
-			// this->model->GetJointController()->SetVelocityTarget(jointBR->GetScopedName(), msg.data);
+			jointBL->SetVelocity(0, msg.data/0.17775); //divide by wheel radius
+			jointBR->SetVelocity(0, msg.data/0.17775);
 		}
 
 		public: void wheelAngleCallback(const std_msgs::Float64& msg) {
 			this-> timedOut = false;
 			this->lastAngleCmdTime = time(NULL);
 
-			// this->desiredEndAngle = msg.data;
-			
-			// this->angleController.SetCmd(msg.data);
-
-			// this->model->GetJointController()->SetPositionTarget(trackingRod->GetScopedName(), msg.data);
-			//SetPosition(1, msg.data);
-
 			physics::JointPtr jointFL = this->model->GetJoint("tracking_left_pivot_joint");
 			physics::JointPtr jointFR = this->model->GetJoint("tracking_right_pivot_joint");
 
-			// if(jointFL==nullptr){
-			// 	std::cout << "no joints found!" << std::endl;
-			// }
-			// else{
-			// 	std::cout << "joints found!" << std::endl;
-			// 	jointFL->SetPosition(0, msg.data);
-			// 	jointFR->SetPosition(0, msg.data);
-			// }
-
-			// physics::JointPtr jointFL = this->model->GetJoint("front_left_joint");
-			// physics::JointPtr jointFR = this->model->GetJoint("front_right_joint");
-
 			this->model->GetJointController()->SetPositionTarget(jointFL->GetScopedName(), msg.data);
 			this->model->GetJointController()->SetPositionTarget(jointFR->GetScopedName(), msg.data);
-			
-			// if(msg.data >)
-
-			// jointFL->SetVelocity(4, msg.data);
-			// jointFR->SetVelocity(5, msg.data);
-
-			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
-
-			// gazebo::math::Pose currentPose = trackingRod->GetRelativePose();
-			// gazebo::math::Pose desiredPose = gazebo::math::Pose(gazebo::math::Vector3(currentPose.pos[0], msg.data, currentPose.pos[2]), currentPose.rot);
-			// trackingRod->SetForce((currentPose.pos-desiredPose.pos)*100);
-			// trackingRod->SetRelativePose(desiredPose);
-
 		}
 
 		public: void brake(){
@@ -129,48 +84,20 @@ namespace gazebo
 
 			jointBL->SetVelocity(0, 0);   
 			jointBR->SetVelocity(0, 0);  
-			
-			// this->speedController.SetCmd(0);
-			// this->angleController.SetCmd(0);
 		}
 
 		public: void OnUpdate(const common::UpdateInfo & /*_info*/){
 			//cout << "update " << endl;
 
 			std::time_t timeNow = time(NULL);
-			// if(timeNow >= this->lastSpeedCmdTime+this->timeOut && !this->timedOut){
-			// 	this-> timedOut = true;
-			// 	brake();
-			// }
-			// else if(timeNow >= this->lastAngleCmdTime+this->timeOut && !this->timedOut){
-			// 	this-> timedOut = true;
-			// 	brake();
-			// }
-
-			// common::Time currentTime = this->model->GetWorld()->GetSimTime();
-			// common::Time stepTime = currentTime - this->prevUpdateTime;
-			// this->prevUpdateTime = currentTime;
-
-			// double pos_target = this->desiredEndAngle;
-			// double pos_curr = this->fR->GetAngle(0).Radian();
-			// double max_cmd = 1000;
-
-			// double pos_err = pos_curr - pos_target;
-			// double effort_cmd = effort_cmd > max_cmd ? max_cmd : (effort_cmd < -max_cmd ? -max_cmd : effort_cmd);
-
-			// this->fR->SetForce(0, effort_cmd);
-			// this->fL->SetForce(0, effort_cmd);
-
-			// physics::LinkPtr trackingRod = this->model->GetLink("trackingrod");
-
-			// gazebo::math::Pose desiredPose = gazebo::math::Pose(0, this->desiredEndAngle, 0, 0, 0, 0);
-  	  // gazebo::math::Pose currentPose = trackingRod->GetRelativePose();
-			// gazebo::math::Vector3 error = currentPose.CoordPositionSub(desiredPose);
-
-			// gazebo::math::Vector3 distanceToMove = error;
-
-			// gazebo::math::Pose newPose = gazebo::math::Pose(currentPose.CoordPositionAdd(distanceToMove), gazebo::math::Quaternion(0, 0, 0, 0));
-			// trackingRod->SetRelativePose(newPose);
+			if(timeNow >= this->lastSpeedCmdTime+this->timeOut && !this->timedOut){
+				this-> timedOut = true;
+				brake();
+			}
+			else if(timeNow >= this->lastAngleCmdTime+this->timeOut && !this->timedOut){
+				this-> timedOut = true;
+				brake();
+			}
 
 			//plugin is called a LOT -- reduce number of msgs out to stop ROS getting clogged
 			this->ticker++;
