@@ -32,7 +32,7 @@ namespace gazebo
 
 			this->model = _parent;   //*er to my physical model, that I'm controlling
 			this->updateConnection = event::Events::ConnectWorldUpdateBegin(boost::bind(&MyPlugin::OnUpdate, this, _1));      //GAZEBO (not ROS) callback
-			this->speedSub  = _n.subscribe("speedcmd_metersec",  1, &MyPlugin::wheelSpeedCallback,  (MyPlugin*)this);        
+			this->speedSub  = _n.subscribe("speedcmd_meterssec",  1, &MyPlugin::wheelSpeedCallback,  (MyPlugin*)this);        
 			this->wheelAngleSub  = _n.subscribe("wheelAngleCmd",  1, &MyPlugin::wheelAngleCallback,  (MyPlugin*)this);
 			this->_pub_gnd  = _n.advertise<nav_msgs::Odometry>("odometry/groundTruth", 1000);   //TODO more acurate to sim the IMU and GPS ten fuse in EKF later on
 			this->ticker = 0;
