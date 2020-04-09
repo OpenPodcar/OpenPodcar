@@ -80,7 +80,6 @@
         </material>
       </visual> -->
       <visual name="prettyMesh">
-        <!-- <pose>-2.255 3.265 -0.4 1.57079 0 1.57079</pose> -->
         <pose>0 0 0  0 0 1.57079</pose>
         <geometry>
           <mesh>
@@ -96,6 +95,73 @@
         </material>
       </visual>
     </link>
+
+    <link name="kinectLink">
+      <pose>0.66 0 0.74  0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.073000 0.276000 0.072000</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://kinect/meshes/kinect.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="camera" type="depth">
+        <update_rate>20</update_rate>
+        <camera>
+          <horizontal_fov>1</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
+          <baseline>0.2</baseline>
+          <alwaysOn>true</alwaysOn>
+          <!-- Keep this zero, update_rate in the parent <sensor> tag
+            will control the frame rate. -->
+          <updateRate>0.0</updateRate>
+          <cameraName>camera</cameraName>
+          <imageTopicName>/camera/rgb/image_raw</imageTopicName>
+          <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
+          <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+          <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+          <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+          <frameName>kinectLink</frameName>
+          <pointCloudCutoff>0.05</pointCloudCutoff>
+          <pointCloudCutoffMax>10</pointCloudCutoffMax>
+          <distortionK1>0</distortionK1>
+          <distortionK2>0</distortionK2>
+          <distortionK3>0</distortionK3>
+          <distortionT1>0</distortionT1>
+          <distortionT2>0</distortionT2>
+          <CxPrime>0</CxPrime>
+          <Cx>0</Cx>
+          <Cy>0</Cy>
+          <focalLength>0</focalLength>
+          <hackBaseline>0</hackBaseline>
+        </plugin>
+      </sensor>
+    </link>
+
+    <joint name="kinectJoint" type="fixed">
+      <parent>base_link</parent>
+      <child>kinectLink</child>
+    </joint>
 
     <link name="back_left_wheel">
       <pose>-0.6  0.285475 0.0    0 0 0</pose>
@@ -160,8 +226,6 @@
         </ode>
       </physics>
     </joint>
-
-
 
     <link name="back_right_wheel">
       <pose>-0.6 -0.285475 0.0  0 0 0</pose>
@@ -230,11 +294,7 @@
       </physics>
     </joint>
 
-
-
-
-
-  <!--testing-->
+    <!--testing-->
     <link name="front_left_pivot">
       <pose>0.6 0.285475 0.0 0 0 0</pose>
       <inertial>
@@ -333,7 +393,7 @@
 
 
 
-  <!--testing-->
+    <!--testing-->
     <link name="front_right_pivot">
       <pose>0.6 -0.285475 0.0 0 0 0</pose>
       <inertial>
@@ -434,7 +494,7 @@
 
 
 
-  <!--testing-->
+    <!--testing-->
     <link name="trackingrod">
       <pose>0.5 0 0.0 0 0 0</pose>
       <inertial>
@@ -464,7 +524,7 @@
         </material>
       </visual>
     </link>
-	<!-- is joined at center of wheel basis origin, not at edge of wheel -->
+	  <!-- is joined at center of wheel basis origin, not at edge of wheel -->
     <joint name="tracking_right_pivot_joint" type="revolute">
       <parent>trackingrod</parent>
       <child>front_right_pivot</child>
@@ -534,7 +594,6 @@
       <torque>35</torque>
     </plugin>
 -->
-
 
   </model>
 </sdf>

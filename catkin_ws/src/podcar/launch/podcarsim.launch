@@ -5,6 +5,7 @@
   </include>
 
   <node pkg="podcar" type="cmd_velHandler.py" name="cmd_velHandler" />
+  <node pkg="podcar" type="podcar_tf_broadcaster.py" name="podcar_tf_broadcaster" />
 
 </launch>
 
