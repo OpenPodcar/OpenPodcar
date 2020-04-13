@@ -1,7 +1,7 @@
 <launch>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-	  <arg name="world_name" value="$(find podcar)/launch/podcarsim.world"/>
+	  <arg name="world_name" value="$(find podcar)/launch/clearpath_playpen.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -14,14 +14,19 @@
   <node pkg="podcar" type="odometry_Handler.py" name="odometry_Handler" />
   <node pkg="podcar" type="podcar_tf_broadcaster.py" name="podcar_tf_broadcaster" />
   
+  <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node> -->
+  
+  <node pkg="nodelet" type="nodelet" name="laserscan_nodelet_manager" args="manager"/>
   <node pkg="nodelet" type="nodelet" name="depthimage_to_laserscan"
-      args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet laserscan_nodelet_manager">
+        args="load depthimage_to_laserscan/DepthImageToLaserScanNodelet laserscan_nodelet_manager">
     <param name="scan_height" value="10"/>
     <param name="output_frame_id" value="/camera_depth_frame"/>
     <param name="range_min" value="0.001"/>
     <param name="range_max" value="100"/>
     <remap from="image" to="/camera/depth/image_raw"/>
-    <remap from="scan" to="/sensor_msgs/LaserScan"/>
+    <remap from="scan" to="/sensor_msgs/LaserScan" />
   </node>
 
 </launch>
