@@ -30,8 +30,8 @@ class Node:
 		joysticky = -data.y
 		rosdeadzonemin = -.2   #deadzone joystick positions - to allow turnign of front wheels while stationary without small back motions
 		rosdeadzonemax =  .2
-		maxspeed_meter_per_second_fwd = 10.0
-		maxspeed_meter_per_second_bkwd = 5.0
+		maxspeed_meter_per_second_fwd = 2
+		maxspeed_meter_per_second_bkwd = 2
 		if joysticky>rosdeadzonemin and joysticky<rosdeadzonemax:
 			velocity = 0.
 		elif joysticky > 0 :

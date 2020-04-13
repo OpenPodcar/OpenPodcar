@@ -1,0 +1,11 @@
+obstacle_range: 2.5
+raytrace_range: 3.0
+footprint: [[-0.6, 0.285475], [-0.6, -0.285475], [0.6, 0.285475], [0.6, -0.285475]]
+#robot_radius: ir_of_robot
+inflation_radius: 1.0
+
+observation_sources: laser_scan_sensor point_cloud_sensor
+
+laser_scan_sensor: {sensor_frame: kinectLink, data_type: LaserScan, topic: sensor_msgs/LaserScan, marking: true, clearing: true}
+
+point_cloud_sensor: {sensor_frame: kinectLink, data_type: PointCloud, topic: sensor_msgs/PointCloud, marking: true, clearing: true}
