@@ -13,8 +13,10 @@ def callback(msg):
                         rospy.Time.now(),
                         "base_link",
                         "odom")
+
     br.sendTransform((0.66, 0, 0.74),
-                        tf.transformations.quaternion_from_euler(math.pi/2, 0, -math.pi/2, 'ryxz'),
+                        #tf.transformations.quaternion_from_euler(math.pi/2, 0, -math.pi/2, 'ryxz'),
+                        [0, 0, 0, 1],
                         rospy.Time.now(),
                         "kinectLink",
                         "base_link")

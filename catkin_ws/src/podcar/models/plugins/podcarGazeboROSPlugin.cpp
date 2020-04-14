@@ -106,10 +106,10 @@ namespace gazebo
 			}
 
 			//plugin is called a LOT -- reduce number of msgs out to stop ROS getting clogged
-			this->ticker++;
-			if (this->ticker>100)
-			{
-				this->ticker=0;
+			// this->ticker++;
+			// if (this->ticker>100)
+			// {
+				// this->ticker=0;
 				//broadcast Odom mesg and tf containing robots ground truth pose (position and quaternion)
 				//read pose of robot in 3D world
 				math::Pose pose = this->model->GetWorldPose();
@@ -133,7 +133,7 @@ namespace gazebo
 				odomOut.pose.pose.orientation.z = qz;
 				odomOut.pose.pose.orientation.w = qw;
 				this->_pub_gnd.publish(odomOut);
-			}
+			// }
 		}
 
 		public: int ticker;
