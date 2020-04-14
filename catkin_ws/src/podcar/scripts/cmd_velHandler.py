@@ -7,7 +7,7 @@ def callback(msg):
     forwardSpeed, wheelAngle = Float64(), Float64()
     forwardSpeed.data = msg.linear.x
     wheelAngle.data = msg.angular.z
-
+    
     forwardPub.publish(forwardSpeed)
     anglePub.publish(wheelAngle)
 
