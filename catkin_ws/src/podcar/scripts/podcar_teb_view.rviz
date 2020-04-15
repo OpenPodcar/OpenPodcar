@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Sensing1
+        - /Sensing1/LaserScan1
         - /Navigation1
       Splitter Ratio: 0.494924009
     Tree Height: 621
@@ -28,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -100,12 +100,12 @@ Visualization Manager:
           Min Intensity: -1.83101002e-36
           Name: LaserScan
           Position Transformer: XYZ
-          Queue Size: 10
+          Queue Size: 1
           Selectable: true
           Size (Pixels): 3
           Size (m): 0.0299999993
           Style: Flat Squares
-          Topic: /scan
+          Topic: /sensor_msgs/LaserScan
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -127,7 +127,7 @@ Visualization Manager:
         - Alpha: 0.699999988
           Class: rviz/Map
           Color Scheme: costmap
-          Draw Behind: true
+          Draw Behind: false
           Enabled: true
           Name: Global Costmap
           Topic: /move_base/global_costmap/costmap
@@ -230,7 +230,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.919800043
+      Pitch: 0.914800048
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
       Yaw: 6.2404213
