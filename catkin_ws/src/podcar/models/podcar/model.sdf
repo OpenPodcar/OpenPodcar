@@ -97,7 +97,7 @@
     </link>
 
     <link name="kinectLink">
-      <pose>0.66 0 0.74  0 0 0</pose>
+      <pose>0.66 0 0  0 0 0</pose>
       <inertial>
         <mass>0.1</mass>
       </inertial>
@@ -143,7 +143,7 @@
           <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
           <frameName>kinectLink</frameName>
           <pointCloudCutoff>0.05</pointCloudCutoff>
-          <pointCloudCutoffMax>10</pointCloudCutoffMax>
+          <pointCloudCutoffMax>100</pointCloudCutoffMax>
           <distortionK1>0</distortionK1>
           <distortionK2>0</distortionK2>
           <distortionK3>0</distortionK3>
