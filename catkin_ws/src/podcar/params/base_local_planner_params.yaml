@@ -33,7 +33,7 @@ TebLocalPlannerROS:
  acc_lim_theta: 0.25
  min_turning_radius: 1.8
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
-   type: "circular"
+   type: "point"
    radius: 0.7
    vertices: [ [-0.7, 0.4], [-0.7, -0.4], [0.7, 0.4], [0.7, -0.4] ] # for type "polygon"
  cmd_angle_instead_rotvel: True
@@ -46,7 +46,7 @@ TebLocalPlannerROS:
     
  # Obstacles
     
- min_obstacle_dist: 0.3
+ min_obstacle_dist: 0.7
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
