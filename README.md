@@ -16,7 +16,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 To install the ros package and gazebo sim locally, clone/fork the repository and run the follow commands:
 
-(assumes ros kinetic already installed and gazebo 7)
+(assumes ros kinetic and gazebo 7 already installed, directories indicated by <> need to be replaced by their actual locations)
 
 ```bash
 cd <install location>/catkin_ws
@@ -27,5 +27,26 @@ cmake . ; make
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`:
 cd ..
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:
-source /usr/share/gazebo/setup.sh
 ```
+
+You'll need to run the following command in every new terminal (alternatively, you can source this file in ~/.bashrc, but be sure to use the absolute path):
+```bash
+source <install location>/catkin_ws/devel/setup.bash
+```
+
+To run the simulation, use:
+```bash
+roslaunch podcar podcarsim.launch
+```
+The first run of this may take a while to load; this is because models used need to be downloaded from the gazebo (this is being done automatically).
+
+To control the robot through a joystick, first connect a joystick and run:
+``` bash
+roslaunch podcar joystick.launch
+```
+
+To control the robot using move_base:
+```bash
+roslaunch podcar podcarsim_movebase.launch
+```
+
