@@ -59,6 +59,8 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>depthimage_to_laserscan</exec_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>teb_local_planner</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -14,7 +14,6 @@
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_datatypes.h>
 #include <tf/transform_listener.h>
-#include <hardware_interface/joint_command_interface.h>
 using namespace std;
 
 //Podcar Gazebo-to-ROS plugin.   Simulates sensors and recieves wheel commands.
