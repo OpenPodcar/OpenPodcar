@@ -36,6 +36,8 @@ source <install location>/catkin_ws/devel/setup.bash
 
 To run the simulation, use:
 ```bash
+export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`: #Not needed if this has already been run in the terminal
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`: #Also not needed if this has already been run in the terminal
 roslaunch podcar podcarsim.launch
 ```
 The first run of this may take a while to load; this is because models used need to be downloaded from the gazebo (this is being done automatically).
