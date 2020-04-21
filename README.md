@@ -42,12 +42,12 @@ roslaunch podcar podcarsim.launch
 ```
 The first run of this may take a while to load; this is because models used need to be downloaded from the gazebo (this is being done automatically).
 
-To control the robot through a joystick, first connect a joystick and run:
+To control the robot through a joystick, first connect a joystick and run (in a new terminal):
 ``` bash
 roslaunch podcar joystick.launch
 ```
 
-To control the robot using move_base:
+To control the robot using move_base, run (in a new terminal):
 ```bash
 roslaunch podcar podcarsim_movebase.launch
 ```
