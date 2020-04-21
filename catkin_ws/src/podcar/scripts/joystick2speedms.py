@@ -18,7 +18,7 @@ class Node:
 		now = rospy.get_rostime()
 		self.received_reponse_to_last_command = True
 
-		self.pub = rospy.Publisher('speedcmd_meterssec', Float64, queue_size=10)
+		self.pub = rospy.Publisher('speedcmd_meterssec', Float64, queue_size=1)
 		self.sub = rospy.Subscriber("joystick",Joystick,self.callback_joystick, queue_size=1)
 		self.buffer = []
 		for i in range(0,100):
@@ -30,18 +30,19 @@ class Node:
 		joysticky = -data.y
 		rosdeadzonemin = -.2   #deadzone joystick positions - to allow turnign of front wheels while stationary without small back motions
 		rosdeadzonemax =  .2
-		maxspeed_meter_per_second_fwd = 3.0
-		maxspeed_meter_per_second_bkwd = 1.0
+		maxspeed_meter_per_second_fwd = 2
+		maxspeed_meter_per_second_bkwd = 2
 		if joysticky>rosdeadzonemin and joysticky<rosdeadzonemax:
 			velocity = 0.
 		elif joysticky > 0 :
 			velocity = rescale( joysticky, rosdeadzonemax, 1.,   0., maxspeed_meter_per_second_fwd)
 		elif joysticky < 0: 	
 			velocity = rescale( joysticky, -1., rosdeadzonemin,  -maxspeed_meter_per_second_bkwd, 0.)	
-#		print((data.y, velocity))
-                msg_out = Float64()
-                msg_out.data = velocity
-                self.pub.publish(msg_out)
+			# print((data.y, velocity))
+		msg_out = Float64(velocity)
+		print (velocity)
+		# msg_out.data = velocity
+		self.pub.publish(msg_out)
 
 if __name__ == '__main__':
 	rospy.init_node('joystick2speedms',anonymous=True)

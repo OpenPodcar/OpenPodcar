@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="podcar" type="joystick.py" name="joystick" />
+
+    <node pkg="podcar" type="joystick2speedms.py" name="joystick2speedms" />
+
+    <node pkg="podcar" type="joystick2wheelAngle.py" name="joystick2wheelAngle" />
+</launch>

@@ -45,7 +45,7 @@ class Controller:
 		if 1:
 			joystick = pygame.joystick.Joystick(0)
 			joystick.init()
-			msg = Joystick(joystick.get_axis(0), joystick.get_axis(1), joystick.get_axis(2), joystick.get_axis(3), joystick.get_button(0), joystick.get_button(1), joystick.get_button(2), joystick.get_button(3), joystick.get_button(4), joystick.get_button(5), joystick.get_button(6), joystick.get_button(7), joystick.get_button(8), joystick.get_button(9), joystick.get_button(10), joystick.get_button(11),0,0,0, 0 )
+			msg = Joystick(joystick.get_axis(0), joystick.get_axis(1), joystick.get_axis(2), joystick.get_axis(3), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1), joystick.get_button(1),0,0,0, 0 )
 			self.pub.publish(msg)
 
 	def __init__(self):

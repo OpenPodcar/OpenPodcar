@@ -15,6 +15,9 @@ class Node:
 
 	def callback_joystick(self,data): 
 		theta = -(math.pi/4)* data.x
+		print data.x
+		if abs(data.x) < 0.2:
+			theta = 0
 		msg_out = Float64()
 		msg_out.data = theta
 		self.pub.publish(msg_out)
