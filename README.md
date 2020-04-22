@@ -14,18 +14,50 @@ Including:
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
-To install the ros package and gazebo sim locally, clone/fork the repository and run the follow commands:
 
-(assumes ros kinetic already installed and gazebo 7)
+SIMULATION INSTALLATION:
+
+Assuming: ros kinetic and gazebo 7 already installed.
+
+To install the ros package and gazebo sim locally, clone the repository and run the follow commands (directories indicated by <> need to be replaced by their actual locations):
 
 ```bash
 cd <install location>/catkin_ws
 catkin_make
 source devel/setup.bash
 cd src/podcar/models/plugins
-cmake . ; make
+cmake .
+make
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`:
 cd ..
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:
-source /usr/share/gazebo/setup.sh
+roslaunch podcar podcarsim.launch
 ```
+
+The first run of Gazebo may take a while (e.g. 5 minutes) to load because models used need to be autmatically downloaded from the remote gazebo repositories.
+
+Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
+
+JOYSTICK CONTROL
+
+Open a new terminal and run,
+
+```bash
+source <install location>/catkin_ws/devel/setup.bash
+export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`: 
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`: 
+roslaunch podcar joystick.launch
+```
+
+MOVEBASE CONTROL
+
+Open a new terminal and run,
+
+```bash
+source <install location>/catkin_ws/devel/setup.bash
+export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`: 
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`: 
+roslaunch podcar podcarsim_movebase.launch
+```
+
+This will present a standard movebase GUI interface in rvis, enabling you to click desired destinations to command the vehicle to drive to.
