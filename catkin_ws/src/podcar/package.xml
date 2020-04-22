@@ -52,15 +52,22 @@
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>depthimage_to_laserscan</build_depend>
+  <build_depend>move_base</build_depend>
+  <build_depend>teb_local_planner</build_depend>
+  <build_depend>gmapping</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nodelet</exec_depend>
   <exec_depend>depthimage_to_laserscan</exec_depend>
   <exec_depend>move_base</exec_depend>
   <exec_depend>teb_local_planner</exec_depend>
+  <exec_depend>gmapping</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
