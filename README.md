@@ -40,9 +40,7 @@ Once the simulation is running, you can then launch one of two different systems
 
 ### Joystick control
 
-If you have a USB joystick connected,
-
-Open a new terminal and run,
+If you have a USB joystick connected, open a new terminal and run,
 
 ```bash
 source <install location>/catkin_ws/devel/setup.bash
