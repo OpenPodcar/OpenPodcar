@@ -55,7 +55,7 @@ Open a new terminal and run,
 
 ```bash
 source <install location>/catkin_ws/devel/setup.bash
-roslaunch podcar podcarsim_movebase.launch
+roslaunch podcar podcarsim_moveBase.launch
 ```
 
 This will present a standard movebase GUI interface in rvis, enabling you to click desired destinations to command the vehicle to drive to.
