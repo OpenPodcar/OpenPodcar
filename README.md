@@ -15,7 +15,7 @@ Including:
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
 
-SIMULATION INSTALLATION:
+##SIMULATION INSTALLATION:
 
 Assuming: ros kinetic and gazebo 7 already installed.
 
@@ -38,7 +38,7 @@ The first run of Gazebo may take a while (e.g. 5 minutes) to load because models
 
 Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
-JOYSTICK CONTROL
+###JOYSTICK CONTROL
 
 Open a new terminal and run,
 
@@ -49,7 +49,7 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:
 roslaunch podcar joystick.launch
 ```
 
-MOVEBASE CONTROL
+###MOVEBASE CONTROL
 
 Open a new terminal and run,
 
