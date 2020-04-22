@@ -11,7 +11,7 @@ Including:
 - Pololu software for steering control
 - ROS drivers for whole vehicle steering and speed
 - Gazebo simulation
-- move_base integration
+- move_base and gmapping integration
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
