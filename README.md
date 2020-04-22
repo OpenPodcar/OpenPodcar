@@ -18,7 +18,9 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 ## Simulation installation
 
-Assuming: ros kinetic and gazebo 7 already installed.
+Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
+
+Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found here: http://wiki.ros.org/rosdep
 
 To install the ros package and gazebo sim locally, clone the repository and run the follow commands (directories indicated by <> need to be replaced by their actual locations):
 
