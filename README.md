@@ -32,12 +32,15 @@ make
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`:
 cd ..
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:
+cd ../../../
+rosdep install --from-paths src --ignore-src -r -y
 roslaunch podcar podcarsim.launch
 ```
 
 The first run of Gazebo may take a while (e.g. 5 minutes) to load because models used need to be autmatically downloaded from the remote gazebo repositories.
 
 Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
+
 
 ### Joystick control
 
