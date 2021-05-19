@@ -17,18 +17,18 @@
 
 \begin{document}
     
-    \title{OpenPodCar: an open source vehicle for self-driving car research }
+    \title{OpenPodCar: An Open Source Vehicle For Self-Driving Car Research }
     
     \author{
-        \IEEEauthorblockN{Chris Waltham\IEEEauthorrefmark{2}, Fanta Camara\IEEEauthorrefmark{1}\IEEEauthorrefmark{2},David Churchill\IEEEauthorrefmark{2}, Charles W. Fox\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}}
-        \IEEEauthorblockA{\IEEEauthorrefmark{1}Institute for Transport Studies, University of Leeds, UK}
+        Fanta Camara\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, \IEEEauthorblockN{Chris Waltham\IEEEauthorrefmark{2}, David Churchill\IEEEauthorrefmark{2}, Charles W. Fox\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}}
+        \IEEEauthorblockA{\IEEEauthorrefmark{1} Institute for Transport Studies, University of Leeds, UK}
         \IEEEauthorblockA{\IEEEauthorrefmark{2} School of Computer Science, University of Lincoln, UK}
    %     \IEEEauthorblockA{\IEEEauthorrefmark{3} Ibex Automation Ltd., UK}
     }    
     \maketitle
     
     \begin{abstract} 
-Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform.   The Lincoln Podcar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another.  The vehicle uses Ackermann steering and Reeds-Sheppe curves.   Its total build cost in 2020 is around 7000USD in total, including sensors and computing equipment.
+Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform. The Lincoln Podcar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another.  The vehicle uses Ackermann steering and Reeds-Sheppe curves.   Its total build cost in 2020 is around 7000USD in total, including sensors and computing equipment.
     \end{abstract}    
     
     \begin{IEEEkeywords}
@@ -151,17 +151,25 @@ New vehicle electronics are added on an acrylic board mounted under the seat of 
       \label{fig:actuatorMounted}
     \end{figure}
 
-    \begin{figure}[h]
-      \includegraphics[width=\columnwidth]{hardware/circuitDiagram.png}
+    \begin{figure*}[h]
+      \includegraphics[width=\linewidth]{hardware/circuitDiagram.png}
       \caption{Circuit diagram for electronic modifications.}
       \label{fig:circuitDiagram}
-    \end{figure}
+    \end{figure*}
+    
+    \begin{figure*}
+    	\centering
+    	\includegraphics[width=0.9\linewidth]{hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf}
+    	\caption{Complete Circuit Diagram for electronic modifications.}
+    	\label{fig:CompleteCircuitDiagram}
+    \end{figure*}
     
     \begin{figure}[h]
       \includegraphics[width=\columnwidth]{hardware/drilling.png}
       \caption{Drilling.}
       \label{fig:drilling}
     \end{figure}
+
 
 \subsection{Steering control system}
 
@@ -246,21 +254,22 @@ An Arduino UNO \cite{oxer2011practical} is used to send electric signals to the 
 Arduino code is supplied in the distribution (/Arduino/ThrottleControlSerial.ino). When uploaded to the Arduino (using the standard Arduino IDE running on the laptop), it provides a simple serial port API running at 112000baud (TODO other erial options.)  It receives commands of the form “FA:210” as speed commands.   The test scripts /tools/zeroSpeed.py and /tools/testSpeed.py can be used to send example commands for debugging.
 
     \begin{center}
-        \begin{tabular}{ c c c }
+        \begin{tabular}{ l c c }
             \hline
-            FA:cmd &      Voltage            &  Effect \\
-        0    &    0        & stupid fast reverse  \\
-        80    &    0        & v fast reverse (ros limit) \\
-        132    &    1.82        & slowest reverse motion  \\
-            &            & stop - dead zone - allows signition \\
-        201    &    2.71        & slowest forward motion \\
-        240    &    2.78        & v fast forward (ros limit) \\
-        255    &    ?        & stupid fast forward \\
+        Command   &    Voltage            &  Effect \\
+        FA:0      &    0                  & stupid fast reverse  \\
+        FA:80     &    $\sim 0.9$         & v fast reverse (ros limit) \\
+        FA:132    &   $\sim 1.5$          & slowest reverse motion  \\
+                  &                       & dead zone - allows ignition \\
+        FA:170    &    1.9                & stop - zero/home position \\
+        FA:201    &    $\sim 2.3$         & slowest forward motion \\
+        FA:240    &    $\sim 2.7$         & v fast forward (ros limit) \\
+        FA:255    &    $\sim 3.0$         & stupid fast forward \\
             \hline\\
         \end{tabular}
     \end{center}    
 
-To start the ignition, the car safety system requires the control voltage to be in the dead range.   A problem is that this doesn’t correspond precisely to any fixed speed bytes, due to the USB power issues.  But if we pick a number solidly in the center of the dead zone, such as 164, this will work for most USB supplies.   (i.e. when the vehicle’s battery is flatter, the voltages provided to USB power by it are lower. For example, we might send 164 and get 1.9V instead of the usual 2.26V.)   This may result in the vehicle not starting - maybe by design or accident. (This produces a beep as is outside the start zone.)  The Arduino is getting lower power eg max 4.9V instead of 5V, which gets divided by the DAC value.  To deal with these instabilities, we added a potential divider at the battery to check the voltage and control the podcar accordingly, as in \fig. \ref{fig:potential_divider}. We provide a “BV” command in the Arduino serial protocol which allows callers to request the current battery voltage. This can then be used by the higher level (Python) systems to decide what speed bytes to sent, including compensating for the floating dead zone.
+To start the ignition, the car safety system requires the control voltage to be in the dead range.   A problem is that this doesn’t correspond precisely to any fixed speed bytes, due to the USB power issues.  But if we pick a number solidly in the center of the dead zone, such as 164, this will work for most USB supplies.   (i.e. when the vehicle’s battery is flatter, the voltages provided to USB power by it are lower. For example, we might send 164 and get 1.9V instead of the usual 2.26V.)   This may result in the vehicle not starting - maybe by design or accident. (This produces a beep as is outside the start zone.)  The Arduino is getting lower power eg max 4.9V instead of 5V, which gets divided by the DAC value.  To deal with these instabilities, we added a potential divider at the battery to check the voltage and control the podcar accordingly, as in Fig. \ref{fig:potential_divider}. We provide a “BV” command in the Arduino serial protocol which allows callers to request the current battery voltage. This can then be used by the higher level (Python) systems to decide what speed bytes to sent, including compensating for the floating dead zone.
 
       \begin{figure}
       \includegraphics[width=\columnwidth]{hardware/potential_divider.png}
@@ -274,7 +283,7 @@ A ROS interface to and from the physical vehicle is provided as illustrated in f
 
 \begin{figure*}[h]
       \includegraphics[width=\textwidth]{software/rosnodes.png}
-      \caption{ROS nodes and messages for low level control.}
+      \caption{ROS nodes and messages for low-level control.}
       \label{fig:meshSim}
 \end{figure*}
 
@@ -328,7 +337,7 @@ Desired vehicle control commands, as for the physical vehicle, consist of (speed
 
 The plugin then publishes sensor messages corresponding to those from the physical vehicle. These include:  /odometry/groundTruth, a (noiseless) standard odometry format estimate for the vehicle’s pose; and /camera/image\_raw and /camera\_depth, the depth camera data.
 
-A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes \ref{fig:meshSim}.  This may be important for experiments such as virtual reality interactions between the simulated vehicle and human subjects, e.g. \cite{TODOFANTAVR} as their psychological responses may depend on the apparent size and share of the vehicle.
+A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes \ref{fig:meshSim}.  This may be important for experiments such as virtual reality interactions between the simulated vehicle and human subjects, e.g. \cite{camara2021evaluating}, as their psychological responses may depend on the apparent size and share of the vehicle.
 
 A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Ffg. \ref{fig:sim_world}.
 
@@ -362,8 +371,7 @@ Front-wheel-steering means that the front two wheels are used to steer the vehic
       \label{fig:ackermann1}
     \end{figure}
 
-The values for parameters such as minimum turning radius were calculated from the
-technical specifications of the base vehicle \cite(SHOPRIDERSPECS).
+The values for parameters such as minimum turning radius were calculated from the technical specifications of the base vehicle \cite{shopriderflagship}.
 
 Move Base is a set of ROS nodes that are standard for controlling robots via ROS. It enforces
 conventions for being able to send messages to controllers, for example the use of Twist
@@ -403,7 +411,7 @@ We hope that the platform will be useful...
 
     
 \section{Acknowledgements}
-This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395.   Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods, Gabriel Walton for scoping simulation tools.
+This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395.   Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools.
     
 \bibliographystyle{plain}
 \bibliography{podcar}
