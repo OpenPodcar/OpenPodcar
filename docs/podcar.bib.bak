@@ -1,0 +1,269 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF8
+
+
+@Article{ackermann2009toward,
+  Title                    = {Toward open source hardware, 34 U},
+  Author                   = {Ackermann, John R},
+  Journal                  = {Dayton L. Rev},
+  Year                     = {2009},
+  Volume                   = {183}
+}
+
+@InCollection{bloch2003basic,
+  Title                    = {Basic concepts in Geometric Mechanics},
+  Author                   = {Bloch, AM},
+  Booktitle                = {Nonholonomic mechanics and control},
+  Publisher                = {Springer},
+  Year                     = {2003},
+  Pages                    = {119--174}
+}
+
+@Article{camara2021evaluating,
+  Title                    = {Evaluating pedestrian interaction preferences with a game theoretic autonomous vehicle in virtual reality},
+  Author                   = {Fanta Camara and Patrick Dickinson and Charles Fox},
+  Journal                  = {Transportation Research Part F: Traffic Psychology and Behaviour},
+  Year                     = {2021},
+  Pages                    = {410-423},
+  Volume                   = {78},
+
+  Abstract                 = {Localisation and navigation of autonomous vehicles (AVs) in static environments are now solved problems, but how to control their interactions with other road users in mixed traffic environments, especially with pedestrians, remains an open question. Recent work has begun to apply game theory to model and control AV-pedestrian interactions as they compete for space on the road whilst trying to avoid collisions. But this game theory model has been developed only in unrealistic lab environments. To improve their realism, this study empirically examines pedestrian behaviour during road crossing in the presence of approaching autonomous vehicles in more realistic virtual reality (VR) environments. The autonomous vehicles are controlled using game theory, and this study seeks to find the best parameters for these controls to produce comfortable interactions for the pedestrians. In a first experiment, participants’ trajectories reveal a more cautious crossing behaviour in VR than in previous laboratory experiments. In two further experiments, a gradient descent approach is used to investigate participants’ preference for AV driving style. The results show that the majority of participants were not expecting the AV to stop in some scenarios, and there was no change in their crossing behaviour in two environments and with different car models suggestive of car and last-mile style vehicles. These results provide some initial estimates for game theoretic parameters needed by future AVs in their pedestrian interactions and more generally show how such parameters can be inferred from virtual reality experiments.},
+  Doi                      = {https://doi.org/10.1016/j.trf.2021.02.017},
+  ISSN                     = {1369-8478},
+  Keywords                 = {Autonomous vehicles, Pedestrian crossing behaviour, Interactions, Game theory, Human factors},
+  Owner                    = {fanta},
+  Timestamp                = {2021.05.07},
+  Url                      = {https://www.sciencedirect.com/science/article/pii/S1369847821000413}
+}
+
+@Article{fisher2012open,
+  Title                    = {Open-source hardware is a low-cost alternative for scientific instrumentation and research},
+  Author                   = {Daniel K, Fisher and Peter J, Gould},
+  Journal                  = {Modern instrumentation},
+  Year                     = {2012},
+  Volume                   = {2012},
+
+  Publisher                = {Scientific Research Publishing}
+}
+
+@Article{dubins1957curves,
+  Title                    = {On curves of minimal length with a constraint on average curvature, and with prescribed initial and terminal positions and tangents},
+  Author                   = {Dubins, Lester E},
+  Journal                  = {American Journal of mathematics},
+  Year                     = {1957},
+  Number                   = {3},
+  Pages                    = {497--516},
+  Volume                   = {79},
+
+  Publisher                = {JSTOR}
+}
+
+@Article{einhorn2015generic,
+  Title                    = {Generic NDT mapping in dynamic environments and its application for lifelong SLAM},
+  Author                   = {Einhorn, Erik and Gross, Horst-Michael},
+  Journal                  = {Robotics and Autonomous Systems},
+  Year                     = {2015},
+  Pages                    = {28--39},
+  Volume                   = {69},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{grisetti2007improved,
+  Title                    = {Improved techniques for grid mapping with rao-blackwellized particle filters},
+  Author                   = {Grisetti, Giorgio and Stachniss, Cyrill and Burgard, Wolfram},
+  Journal                  = {IEEE transactions on Robotics},
+  Year                     = {2007},
+  Number                   = {1},
+  Pages                    = {34--46},
+  Volume                   = {23},
+
+  Publisher                = {IEEE}
+}
+
+@InProceedings{hilgert2003emergency,
+  Title                    = {Emergency path planning for autonomous vehicles using elastic band theory},
+  Author                   = {Hilgert, Jens and Hirsch, Karina and Bertram, Torsten and Hiller, Manfred},
+  Booktitle                = {Proceedings 2003 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM 2003)},
+  Year                     = {2003},
+  Organization             = {IEEE},
+  Pages                    = {1390--1395},
+  Volume                   = {2}
+}
+
+@InProceedings{kato2018autoware,
+  Title                    = {Autoware on board: Enabling autonomous vehicles with embedded systems},
+  Author                   = {Kato, Shinpei and Tokunaga, Shota and Maruyama, Yuya and Maeda, Seiya and Hirabayashi, Manato and Kitsukawa, Yuki and Monrroy, Abraham and Ando, Tomohito and Fujii, Yusuke and Azumi, Takuya},
+  Booktitle                = {2018 ACM/IEEE 9th International Conference on Cyber-Physical Systems (ICCPS)},
+  Year                     = {2018},
+  Organization             = {IEEE},
+  Pages                    = {287--296}
+}
+
+@InProceedings{koenig2004design,
+  Title                    = {Design and use paradigms for gazebo, an open-source multi-robot simulator},
+  Author                   = {Koenig, Nathan and Howard, Andrew},
+  Booktitle                = {2004 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)(IEEE Cat. No. 04CH37566)},
+  Year                     = {2004},
+  Organization             = {IEEE},
+  Pages                    = {2149--2154},
+  Volume                   = {3}
+}
+
+@Article{maclaurin2008comparing,
+  Title                    = {Comparing the steering performances of skid-and Ackermann-steered vehicles},
+  Author                   = {Maclaurin, Bruce},
+  Journal                  = {Proceedings of the Institution of Mechanical Engineers, Part D: Journal of Automobile Engineering},
+  Year                     = {2008},
+  Number                   = {5},
+  Pages                    = {739--756},
+  Volume                   = {222},
+
+  Publisher                = {Sage Publications Sage UK: London, England}
+}
+
+@InProceedings{mayoral2017shift,
+  Title                    = {The shift in the robotics paradigmâThe Hardware Robot Operating System (H-ROS); an infrastructure to create interoperable robot components},
+  Author                   = {Mayoral, Victor and Hern{\'a}ndez, Alejandro and Kojcev, Risto and Muguruza, I{\~n}igo and Zamalloa, Irati and Bilbao, Asier and Usategi, Lander},
+  Booktitle                = {2017 NASA/ESA Conference on Adaptive Hardware and Systems (AHS)},
+  Year                     = {2017},
+  Organization             = {IEEE},
+  Pages                    = {229--236}
+}
+
+@InProceedings{beetlebot,
+  Title                    = {BeetleBot: A Multi-Purpose AI-Driven Mobile Robot for Realistic Environments},
+  Author                   = {Anh Nguyen and Erman Tjiputra and Quang D. Tran},
+  Booktitle                = {Proceedings of the Third conference on UK Robotics and Automation (UKRAS)},
+  Year                     = {2020},
+  Organization             = {UKRAS}
+}
+
+@Book{oxer2011practical,
+  Title                    = {Practical Arduino: cool projects for open source hardware},
+  Author                   = {Oxer, Jonathan and Blemings, Hugh},
+  Publisher                = {Apress},
+  Year                     = {2011}
+}
+
+@Article{pearce2012building,
+  Title                    = {Building research equipment with free, open-source hardware},
+  Author                   = {Pearce, Joshua M},
+  Journal                  = {Science},
+  Year                     = {2012},
+  Number                   = {6100},
+  Pages                    = {1303--1304},
+  Volume                   = {337},
+
+  Publisher                = {American Association for the Advancement of Science}
+}
+
+@InProceedings{quigley2009ros,
+  Title                    = {ROS: an open-source Robot Operating System},
+  Author                   = {Quigley, Morgan and Conley, Ken and Gerkey, Brian and Faust, Josh and Foote, Tully and Leibs, Jeremy and Wheeler, Rob and Ng, Andrew Y},
+  Booktitle                = {ICRA workshop on open source software},
+  Year                     = {2009},
+  Number                   = {3.2},
+  Organization             = {Kobe, Japan},
+  Pages                    = {5},
+  Volume                   = {3}
+}
+
+@InProceedings{quinlan1993elastic,
+  Title                    = {Elastic bands: Connecting path planning and control},
+  Author                   = {Quinlan, Sean and Khatib, Oussama},
+  Booktitle                = {[1993] Proceedings IEEE International Conference on Robotics and Automation},
+  Year                     = {1993},
+  Organization             = {IEEE},
+  Pages                    = {802--807}
+}
+
+@InProceedings{rosmann2013efficient,
+  Title                    = {Efficient trajectory optimization using a sparse model},
+  Author                   = {R{\"o}smann, Christoph and Feiten, Wendelin and W{\"o}sch, Thomas and Hoffmann, Frank and Bertram, Torsten},
+  Booktitle                = {2013 European Conference on Mobile Robots},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {138--143}
+}
+
+@InProceedings{rosmann2012trajectory,
+  Title                    = {Trajectory modification considering dynamic constraints of autonomous robots},
+  Author                   = {R{\"o}smann, Christoph and Feiten, Wendelin and W{\"o}sch, Thomas and Hoffmann, Frank and Bertram, Torsten},
+  Booktitle                = {ROBOTIK 2012; 7th German Conference on Robotics},
+  Year                     = {2012},
+  Organization             = {VDE},
+  Pages                    = {1--6}
+}
+
+@Article{reeds1990optimal,
+  Title                    = {Optimal paths for a car that goes both forwards and backwards},
+  Author                   = {Reeds, James and Shepp, Lawrence},
+  Journal                  = {Pacific journal of mathematics},
+  Year                     = {1990},
+  Number                   = {2},
+  Pages                    = {367--393},
+  Volume                   = {145},
+
+  Publisher                = {Mathematical Sciences Publishers}
+}
+
+@InProceedings{sattel2005ground,
+  Title                    = {Ground vehicle guidance along collision-free trajectories using elastic bands},
+  Author                   = {Sattel, Thomas and Brandt, Thorsten},
+  Booktitle                = {Proceedings of the 2005, American Control Conference, 2005.},
+  Year                     = {2005},
+  Organization             = {IEEE},
+  Pages                    = {4991--4996}
+}
+
+@TechReport{shopriderflagship,
+  Title                    = {FLAGSHIP Luxury Scooter Model: TE-889XLSNUser Manual},
+  Author                   = {Shoprider},
+
+  Owner                    = {fanta},
+  Timestamp                = {2021.05.07}
+}
+
+@Article{shoprider2006,
+  Title                    = {Shoprider FLAGSHIP Luxury Scooter Model: TE-889XLSN User Manual.},
+  Author                   = {Shoprider},
+  Journal                  = {Manual},
+  Year                     = {2016},
+
+  Publisher                = {Shoprider}
+}
+
+@Article{thrun2002probabilistic,
+  Title                    = {Probabilistic robotics},
+  Author                   = {Thrun, Sebastian},
+  Journal                  = {Communications of the ACM},
+  Year                     = {2002},
+  Number                   = {3},
+  Pages                    = {52--57},
+  Volume                   = {45},
+
+  Publisher                = {ACM New York, NY, USA}
+}
+
+@InProceedings{wang2002hybrid,
+  Title                    = {Hybrid of global path planning and local navigation implemented on a mobile robot in indoor environment},
+  Author                   = {Wang, Lim Chee and Yong, Lim Ser and Ang, Marcelo H},
+  Booktitle                = {Proceedings of the IEEE Internatinal Symposium on Intelligent Control},
+  Year                     = {2002},
+  Organization             = {IEEE},
+  Pages                    = {821--826}
+}
+
+@Article{yuen2017improved,
+  Title                    = {Improved Map Generation by Addition of Gaussian Noise for Indoor SLAM using ROS},
+  Author                   = {Yuen, Barry Loh Tze and Sahari, Khairul Salleh Mohamed and Rafaai, Zubaidi Faiesal Mohamad},
+  Journal                  = {Journal of Robotics, Networking and Artificial Life},
+  Year                     = {2017},
+  Number                   = {2},
+  Pages                    = {118--123},
+  Volume                   = {4},
+
+  Publisher                = {Atlantis Press}
+}
+

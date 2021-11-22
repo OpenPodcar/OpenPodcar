@@ -16,6 +16,65 @@ Including:
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
 
+## Bill of Materials (BOM)
+
+- 1 Shoprider mobility scooter
+- 1 3D Velodyne Lidar (VLP-16) with its controller box
+- 1 laptop with Ubuntu 16.04 and ROS Kinetic and Gazebo 7 installed
+- 1 Gimson Robotics linear actuator with position feedback (250mm stroke)
+- 1 switch button
+- 1 Amazon USB hub (with at least 3 USB ports)
+- 1 USB A cable (Arduino <-> Laptop)
+- 1 USB mini B cable (Pololu <-> Laptop)
+- 1 Ethernet cable (Velodyne <-> Laptop) 
+- 1 deadman button for the vehicle ignition system
+- 1 Joystick with its USB cable
+
+### BOM for the PCB 
+- 2 XL4016 Step-Down Buck converters 
+- 1 Arduino Uno Rev3
+- 1 Pololu JRK 21v3 Motor Controller with Feedback
+- 1 MCP4725 DAC 
+- 1 7-segment LCD with 3 digits
+- Velodyne controller box
+- 1 10K Resistor
+- 1 100K Resistor
+- 3 connectors
+- Male and female headers for Arduino, Pololu and DAC 
+- M1.5, M2.5 and M3 bolts
+- M1.5, M2.5 and M3 nuts
+
+
+### Useful Tools
+- Soldering iron
+- Solder
+- Power supply
+- Screwdrivers, pliers etc.
+
+
+
+## Physical Podcar Setup
+
+
+### Buck converters' settings
+- Set buck converter 1's output voltage to 16V
+- Set buck converter 2's output voltage to 12V
+
+
+### Arduino Software
+- Download the MCP4725 library into Arduino's LIBRARIES
+- Upload the Arduino Code
+
+
+### Pololu Configuration
+- Download Pololu's Windows Configuration Tool, follow these steps: [CITE LINK]
+- Configure the Pololu:
+-- Input tab:
+-- Motor:
+-- PID:
+-- Error:
+
+
 ## Simulation installation
 
 Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)

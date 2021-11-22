@@ -69,7 +69,7 @@ A Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as Shoprider Traverso, 
 
 \subsection{Open source software base}
 
-ROS, is `an open source operating system’ for robots based on a publish-subscribe pattern \cite{quigley2009ros}, which is the robotics community’s standard interface.   Building on top of ROS, the `ROS ecosystem’ is a loosely-defined collection of open-source ROS packages with variously accepted standard message formats which act as conventional interfaces to enable many community packages to work together and to act as swappable alternatives for one another.   
+ROS, is `an open source operating system' for robots based on a publish-subscribe pattern \cite{quigley2009ros}, which is the robotics community’s standard interface.   Building on top of ROS, the `ROS ecosystem’ is a loosely-defined collection of open-source ROS packages with variously accepted standard message formats which act as conventional interfaces to enable many community packages to work together and to act as swappable alternatives for one another.   
 
 ROS drivers are packages in the ecosystem which wrap robot hardware with standard ROS interfaces.
 
@@ -143,7 +143,9 @@ TODO -- we need some Hall effect or other shaft encoders to measure odometry.
 
 \section{Electronics and Firmware}
 
-New vehicle electronics are added on an acrylic board mounted under the seat of the vehicle, as shown in fig. \ref{fig:circuitDiagram} and \ref{fig:actuatorMounted} and mounted as in fig. {fig:actuatorMounted}. Details are described below.  Where different voltage power supplies are required, DCDC converters are used and mounted in the same way.
+\subsection{Initial design}
+
+New vehicle electronics are added on an acrylic board mounted under the seat of the vehicle, as shown in fig. \ref{fig:circuitDiagram} and \ref{fig:actuatorMounted} and mounted as in fig. \ref{fig:actuatorMounted}. Details are described below.  Where different voltage power supplies are required, DCDC converters are used and mounted in the same way.
 
     \begin{figure}[h]
       \includegraphics[width=\columnwidth]{hardware/pic_boards.jpg}
@@ -169,13 +171,34 @@ New vehicle electronics are added on an acrylic board mounted under the seat of 
       \caption{Drilling.}
       \label{fig:drilling}
     \end{figure}
+    
+   \subsection{PCB design}
 
+	To robustify the initial electronics modifications, we further designed a PCB (Printed Circuit Board). The PCB is composed of two DC-DC Buck converters with XL4016 regulator, an Arduino Uno, a MCP4725 DAC (Digital-Analog Converter), a Pololu JRK 21v3 motor controller with position feedback, 2 resistors. We 3D printed parts to support the mounting of the LCD and the 3D LIDAR.  
+	
+	
+	\begin{figure}[h]
+		\includegraphics[width=\columnwidth]{hardware/pcb_version_1_5_pic1.png}
+		\caption{PCB Design.}
+		\label{fig:pcb_design}
+	\end{figure}
+	
+	
+	\begin{figure}[h]
+		\includegraphics[width=0.75\columnwidth, angle=90]{hardware/pcb_podcar.jpg}
+		\caption{PCB assembled.}
+		\label{fig:pcb_assembled}
+	\end{figure}
+
+	
 
 \subsection{Steering control system}
 
 The front wheels are steered by a Pololu JRK21v3 PID controller, which takes serial port desired positions as input. It also takes feedback position information as an analog voltage from the linear actuator as an input. It outputs analog high-power voltages to the linear actuator.
 
-TODO give PID settings.Windows app is needed to set them once only.
+TODO give PID settings.Windows app is needed to set them once only. 
+
+
 
 The relationship between the required central turning angle $\theta$ of the pair of front wheels and extending length $l$ of linear actuator is,    
     \begin{gather}
@@ -306,6 +329,8 @@ TODO Dom Li is working on this...
 
 \section{Simulation}
 
+\subsection{Podcar 3D Sim}
+
     \begin{figure}
       \includegraphics[width=\columnwidth]{software/podcar_phys_sim.png}
       \caption{Physical simulation of vehicle.}
@@ -350,10 +375,26 @@ Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during s
 
 \begin{figure}[h]
       \includegraphics[width=\columnwidth]{figs_sim/podcar_loaded_gazebo.png}
-      \caption{Gazebo simulation world}
+      \caption{Initial gazebo simulation world}
       \label{fig:sim_world}
 \end{figure}
 
+	\subsection{University of Lincoln 3D Map}
+	
+	We used the open source Blender 3D add-on called MapsModelsImporter [CITE] to create a 3D world representative of the University of Lincoln campus, the testing area for the podcar. Before using MapsModelsImporter, RenderDoc [CITE], a free graphics debugger, is used to capture 3D data from Google Streetviews.  
+	
+	\begin{figure*}[h]
+		\includegraphics[width=\textwidth]{figs_sim/INBLincoln_2.png}
+		\caption{University of Lincoln's Gazebo simulation world}
+		\label{fig:INB_world}
+	\end{figure*}
+
+
+	\begin{figure*}[h]
+		\includegraphics[width=\textwidth]{figs_sim/podcar_INB_teb.png}
+		\caption{Podar in the University of Lincoln's Gazebo simulation world with Rviz TEB output}
+		\label{fig:INB_teb}
+	\end{figure*}
 
 \section{Path planning and control (movebase)}
 
@@ -403,7 +444,7 @@ Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during m
 
 gmapping -- current
 
-TODO: Fanta and her Leeds student and working on OrbSLAM, NDT slam options?
+TODO
 
     
 \section{Discussion}
@@ -411,7 +452,9 @@ We hope that the platform will be useful...
 
     
 \section{Acknowledgements}
-This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395.   Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools.
+This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395. Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools, Yicheng Zhang for helping with the 3D printer and other useful tools.
+    
+    
     
 \bibliographystyle{plain}
 \bibliography{podcar}
@@ -441,7 +484,7 @@ Type: roslaunch podcar podcar.launch
 
 Use the joystick to control steering and speed for manual drive.
 
-\subsection{SImulation}
+\subsection{Simulation}
 To install and run the simulation:
 
 \begin{verbatim}

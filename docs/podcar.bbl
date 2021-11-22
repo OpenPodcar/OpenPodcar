@@ -1,0 +1,109 @@
+\begin{thebibliography}{10}
+
+\bibitem{ackermann2009toward}
+John~R Ackermann.
+\newblock Toward open source hardware, 34 u.
+\newblock {\em Dayton L. Rev}, 183, 2009.
+
+\bibitem{camara2021evaluating}
+Fanta Camara, Patrick Dickinson, and Charles Fox.
+\newblock Evaluating pedestrian interaction preferences with a game theoretic
+  autonomous vehicle in virtual reality.
+\newblock {\em Transportation Research Part F: Traffic Psychology and
+  Behaviour}, 78:410--423, 2021.
+
+\bibitem{fisher2012open}
+Fisher Daniel~K and Gould Peter~J.
+\newblock Open-source hardware is a low-cost alternative for scientific
+  instrumentation and research.
+\newblock {\em Modern instrumentation}, 2012, 2012.
+
+\bibitem{dubins1957curves}
+Lester~E Dubins.
+\newblock On curves of minimal length with a constraint on average curvature,
+  and with prescribed initial and terminal positions and tangents.
+\newblock {\em American Journal of mathematics}, 79(3):497--516, 1957.
+
+\bibitem{einhorn2015generic}
+Erik Einhorn and Horst-Michael Gross.
+\newblock Generic ndt mapping in dynamic environments and its application for
+  lifelong slam.
+\newblock {\em Robotics and Autonomous Systems}, 69:28--39, 2015.
+
+\bibitem{kato2018autoware}
+Shinpei Kato, Shota Tokunaga, Yuya Maruyama, Seiya Maeda, Manato Hirabayashi,
+  Yuki Kitsukawa, Abraham Monrroy, Tomohito Ando, Yusuke Fujii, and Takuya
+  Azumi.
+\newblock Autoware on board: Enabling autonomous vehicles with embedded
+  systems.
+\newblock In {\em 2018 ACM/IEEE 9th International Conference on Cyber-Physical
+  Systems (ICCPS)}, pages 287--296. IEEE, 2018.
+
+\bibitem{koenig2004design}
+Nathan Koenig and Andrew Howard.
+\newblock Design and use paradigms for gazebo, an open-source multi-robot
+  simulator.
+\newblock In {\em 2004 IEEE/RSJ International Conference on Intelligent Robots
+  and Systems (IROS)(IEEE Cat. No. 04CH37566)}, volume~3, pages 2149--2154.
+  IEEE, 2004.
+
+\bibitem{beetlebot}
+Anh Nguyen, Erman Tjiputra, and Quang~D. Tran.
+\newblock Beetlebot: A multi-purpose ai-driven mobile robot for realistic
+  environments.
+\newblock In {\em Proceedings of the Third conference on UK Robotics and
+  Automation (UKRAS)}. UKRAS, 2020.
+
+\bibitem{oxer2011practical}
+Jonathan Oxer and Hugh Blemings.
+\newblock {\em Practical Arduino: cool projects for open source hardware}.
+\newblock Apress, 2011.
+
+\bibitem{pearce2012building}
+Joshua~M Pearce.
+\newblock Building research equipment with free, open-source hardware.
+\newblock {\em Science}, 337(6100):1303--1304, 2012.
+
+\bibitem{quigley2009ros}
+Morgan Quigley, Ken Conley, Brian Gerkey, Josh Faust, Tully Foote, Jeremy
+  Leibs, Rob Wheeler, and Andrew~Y Ng.
+\newblock Ros: an open-source robot operating system.
+\newblock In {\em ICRA workshop on open source software}, volume~3, page~5.
+  Kobe, Japan, 2009.
+
+\bibitem{reeds1990optimal}
+James Reeds and Lawrence Shepp.
+\newblock Optimal paths for a car that goes both forwards and backwards.
+\newblock {\em Pacific journal of mathematics}, 145(2):367--393, 1990.
+
+\bibitem{rosmann2013efficient}
+Christoph R{\"o}smann, Wendelin Feiten, Thomas W{\"o}sch, Frank Hoffmann, and
+  Torsten Bertram.
+\newblock Efficient trajectory optimization using a sparse model.
+\newblock In {\em 2013 European Conference on Mobile Robots}, pages 138--143.
+  IEEE, 2013.
+
+\bibitem{shopriderflagship}
+Shoprider.
+\newblock Flagship luxury scooter model: Te-889xlsnuser manual.
+\newblock Technical report.
+
+\bibitem{shoprider2006}
+Shoprider.
+\newblock Shoprider flagship luxury scooter model: Te-889xlsn user manual.
+\newblock {\em Manual}, 2016.
+
+\bibitem{thrun2002probabilistic}
+Sebastian Thrun.
+\newblock Probabilistic robotics.
+\newblock {\em Communications of the ACM}, 45(3):52--57, 2002.
+
+\bibitem{yuen2017improved}
+Barry Loh~Tze Yuen, Khairul Salleh~Mohamed Sahari, and Zubaidi Faiesal~Mohamad
+  Rafaai.
+\newblock Improved map generation by addition of gaussian noise for indoor slam
+  using ros.
+\newblock {\em Journal of Robotics, Networking and Artificial Life},
+  4(2):118--123, 2017.
+
+\end{thebibliography}
