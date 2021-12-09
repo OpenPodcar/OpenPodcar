@@ -77,14 +77,14 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 		- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
 		- Go to "**Error**" tab:
 			- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
-			- Click on "**Apply settings to**"
+			- click on "**Apply settings to**"
 
-			- Wire the Pololu to power (VIN and GND)
-			- Wire the Pololu's motor outputs "A" and "B" to the linear actuator 
-			- Wire the Pololu's feedback pins to the linear actuator feedback wires
-			- Turn the power on
-			- Click on "**Reset**" and "**Clear**" in the "**Error**" tab
-			- The yellow LED on the Pololu should start blinking
+			- wire the Pololu to power (VIN and GND)
+			- wire the Pololu's motor outputs "A" and "B" to the linear actuator 
+			- wire the Pololu's feedback pins to the linear actuator feedback wires
+			- turn the power on
+			- click on "**Reset**" and "**Clear**" in the "**Error**" tab
+			- the yellow LED on the Pololu should start blinking
 
 		- Go to "**Input**" tab: 
 			- set "**Input mode**" to "**serial**"
@@ -105,7 +105,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 			- keep all other parameters to default values
 
 		- Go to "**Motor**" tab:
-			- tick "**Invert motor direct**"
+			- check "**Invert motor direct**"
 			- in the "**Forward column**", set "**Max. current (A)**" as "**0**"
 			- keep all other parameters to default values
 
