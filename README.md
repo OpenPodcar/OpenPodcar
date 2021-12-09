@@ -18,38 +18,38 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 ## Bill of Materials (BOM)
 
-- 1 Shoprider mobility scooter
-- 1 3D Velodyne Lidar (VLP-16) with its controller box
-- 1 laptop with Ubuntu 16.04 and ROS Kinetic and Gazebo 7 installed
-- 1 Gimson Robotics linear actuator with position feedback (250mm stroke)
-- 1 switch button
-- 1 Amazon USB hub (with at least 3 USB ports)
-- 1 USB A cable (Arduino <-> Laptop)
-- 1 USB mini B cable (Pololu <-> Laptop)
-- 1 Ethernet cable (Velodyne <-> Laptop) 
-- 1 deadman button for the vehicle ignition system
-- 1 Joystick with its USB cable
+	- 1 Shoprider mobility scooter
+	- 1 3D Velodyne Lidar (VLP-16) with its controller box
+	- 1 laptop with Ubuntu 16.04 and ROS Kinetic and Gazebo 7 installed
+	- 1 Gimson Robotics linear actuator with position feedback (250mm stroke)
+	- 1 switch button
+	- 1 Amazon USB hub (with at least 3 USB ports)
+	- 1 USB A cable (Arduino <-> Laptop)
+	- 1 USB mini B cable (Pololu <-> Laptop)
+	- 1 Ethernet cable (Velodyne <-> Laptop) 
+	- 1 deadman button for the vehicle ignition system
+	- 1 Joystick with its USB cable
 
 ### BOM for the PCB 
-- 2 XL4016 Step-Down Buck converters 
-- 1 Arduino Uno Rev3
-- 1 Pololu JRK 21v3 Motor Controller with Feedback
-- 1 MCP4725 DAC 
-- 1 7-segment LCD with 3 digits
-- Velodyne controller box
-- 1 10K Resistor
-- 1 100K Resistor
-- 3 connectors
-- Male and female headers for Arduino, Pololu and DAC 
-- M1.5, M2.5 and M3 bolts
-- M1.5, M2.5 and M3 nuts
+	- 2 XL4016 Step-Down Buck converters 
+	- 1 Arduino Uno Rev3
+	- 1 Pololu JRK 21v3 Motor Controller with Feedback
+	- 1 MCP4725 DAC 
+	- 1 7-segment LCD with 3 digits
+	- Velodyne controller box
+	- 1 10K Resistor
+	- 1 100K Resistor
+	- 3 connectors
+	- Male and female headers for Arduino, Pololu and DAC 
+	- M1.5, M2.5 and M3 bolts
+	- M1.5, M2.5 and M3 nuts
 
 
 ### Useful Tools
-- Soldering iron
-- Solder
-- Power supply
-- Screwdrivers, pliers etc.
+	- Soldering iron
+	- Solder
+	- Power supply
+	- Screwdrivers, pliers etc.
 
 
 
@@ -57,59 +57,59 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 
 ### Buck converters' settings
-- Buck converter 1
--- set output voltage to 16V (or the voltage required for your laptop)
--- Set output current to 3.75A (or the maximum current required for your laptop)
-- Buck converter 2
--- set output voltage to 12V (or the voltage required for the Pololu and 3D Lidar)
--- set output current to 3A (or the maximum current required for the linear actuator and 3D Lidar)
+	- Buck converter 1
+		- set output voltage to 16V (or the voltage required for your laptop)
+		- Set output current to 3.75A (or the maximum current required for your laptop)
+	- Buck converter 2
+		- set output voltage to 12V (or the voltage required for the Pololu and 3D Lidar)
+		- set output current to 3A (or the maximum current required for the linear actuator and 3D Lidar)
 
 
 ### Arduino Software
-- Download the MCP4725 library into Arduino's LIBRARIES
-- Upload the Arduino Code
+	- Download the MCP4725 library into Arduino's LIBRARIES
+	- Upload the Arduino Code
 
 
 ### Pololu JRK 21v3 Configuration
-- Download Pololu's Windows Configuration Tool by following these steps: [https://www.pololu.com/docs/0J38/3.a]
-- To configure the Pololu, please follow the instructions here: [https://www.pololu.com/docs/0J38/5]
-- For OpenPodCar, we followed the steps below:
--- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
--- Go to "Error" tab:
---- set "No power", "Motor driver error", "Feedback disconnected" and "Max. current exceeded" to "Enabled and latched"
---- Click on "Apply settings to"
+	- Download Pololu's Windows Configuration Tool by following these steps: [https://www.pololu.com/docs/0J38/3.a]
+	- To configure the Pololu, please follow the instructions here: [https://www.pololu.com/docs/0J38/5]
+	- For OpenPodCar, we followed the steps below:
+		- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
+		- Go to "Error" tab:
+			- set "No power", "Motor driver error", "Feedback disconnected" and "Max. current exceeded" to "Enabled and latched"
+			- Click on "Apply settings to"
 
---- Wire the Pololu to power (VIN and GND)
---- Wire the Pololu's motor outputs "A" and "B" to the linear actuator 
---- Wire the Pololu's feedback pins to the linear actuator feedback wires
---- Turn the power on
---- Click on "Reset" and "Clear" in the "Error" tab
---- The yellow LED on the Pololu should start blinking
+			- Wire the Pololu to power (VIN and GND)
+			- Wire the Pololu's motor outputs "A" and "B" to the linear actuator 
+			- Wire the Pololu's feedback pins to the linear actuator feedback wires
+			- Turn the power on
+			- Click on "Reset" and "Clear" in the "Error" tab
+			- The yellow LED on the Pololu should start blinking
 
--- Go to "Input" tab: 
---- set "Input mode" to "serial"
---- keep all other parameters to default values
+		- Go to "Input" tab: 
+			- set "Input mode" to "serial"
+			- keep all other parameters to default values
 
--- Go to "Feedback" tab:
---- set "Feedback mode" to "Analog voltage"
---- tick "Invert feedback direction"
---- Calibration:
----- set "Absolute Max" to "2600"
----- set "Maximum" to "2600"
----- set "Minimum" to "1000"
----- set Absolute Min" to "1000"
---- keep all other paramters to default values
+		- Go to "Feedback" tab:
+			- set "Feedback mode" to "Analog voltage"
+			- tick "Invert feedback direction"
+			- Calibration:
+			- set "Absolute Max" to "2600"
+			- set "Maximum" to "2600"
+			- set "Minimum" to "1000"
+			- set Absolute Min" to "1000"
+			- keep all other paramters to default values
 
--- Go to "PID" tab:
---- set "Proportional Coefficient" as "6" at the top and "1" at the bottom, so that to get a final "3"
---- keep all other parameters to default values
+		- Go to "PID" tab:
+			- set "Proportional Coefficient" as "6" at the top and "1" at the bottom, so that to get a final "3"
+			- keep all other parameters to default values
 
--- Go to "Motor" tab:
---- tick "Invert motor direct"
---- In the "Forward column", set "Max. current (A)" as "0"
---- keep all other parameters to default values
+		- Go to "Motor" tab:
+			- tick "Invert motor direct"
+			- in the "Forward column", set "Max. current (A)" as "0"
+			- keep all other parameters to default values
 
--- Click on "Apply settings to"
+		- Click on "Apply settings to"
 
 
 ### Velodyne 3D Lidar Configuration with ROS
