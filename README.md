@@ -57,8 +57,12 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 
 ### Buck converters' settings
-- Set buck converter 1's output voltage to 16V
-- Set buck converter 2's output voltage to 12V
+- Buck converter 1
+-- set output voltage to 16V (or the voltage required for your laptop)
+-- Set output current to 3.75A (or the maximum current required for your laptop)
+- Buck converter 2
+-- set output voltage to 12V (or the voltage required for the Pololu and 3D Lidar)
+-- set output current to 3A (or the maximum current required for the linear actuator and 3D Lidar)
 
 
 ### Arduino Software
@@ -66,14 +70,50 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 - Upload the Arduino Code
 
 
-### Pololu Configuration
-- Download Pololu's Windows Configuration Tool, follow these steps: [CITE LINK]
-- Configure the Pololu:
--- Input tab:
--- Motor:
--- PID:
--- Error:
+### Pololu JRK 21v3 Configuration
+- Download Pololu's Windows Configuration Tool by following these steps: [https://www.pololu.com/docs/0J38/3.a]
+- To configure the Pololu, please follow the instructions here: [https://www.pololu.com/docs/0J38/5]
+- For OpenPodCar, we followed the steps below:
+-- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
+-- Go to "Error" tab:
+--- set "No power", "Motor driver error", "Feedback disconnected" and "Max. current exceeded" to "Enabled and latched"
+--- Click on "Apply settings to"
 
+--- Wire the Pololu to power (VIN and GND)
+--- Wire the Pololu's motor outputs "A" and "B" to the linear actuator 
+--- Wire the Pololu's feedback pins to the linear actuator feedback wires
+--- Turn the power on
+--- Click on "Reset" and "Clear" in the "Error" tab
+--- The yellow LED on the Pololu should start blinking
+
+-- Go to "Input" tab: 
+--- set "Input mode" to "serial"
+--- keep all other parameters to default values
+
+-- Go to "Feedback" tab:
+--- set "Feedback mode" to "Analog voltage"
+--- tick "Invert feedback direction"
+--- Calibration:
+---- set "Absolute Max" to "2600"
+---- set "Maximum" to "2600"
+---- set "Minimum" to "1000"
+---- set Absolute Min" to "1000"
+--- keep all other paramters to default values
+
+-- Go to "PID" tab:
+--- set "Proportional Coefficient" as "6" at the top and "1" at the bottom, so that to get a final "3"
+--- keep all other parameters to default values
+
+-- Go to "Motor" tab:
+--- tick "Invert motor direct"
+--- In the "Forward column", set "Max. current (A)" as "0"
+--- keep all other parameters to default values
+
+-- Click on "Apply settings to"
+
+
+### Velodyne 3D Lidar Configuration with ROS
+- Please follow the instructions here: [http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16]
 
 ## Simulation installation
 

@@ -20,9 +20,9 @@
     \title{OpenPodCar: An Open Source Vehicle For Self-Driving Car Research }
     
     \author{
-        Fanta Camara\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, \IEEEauthorblockN{Chris Waltham\IEEEauthorrefmark{2}, David Churchill\IEEEauthorrefmark{2}, Charles W. Fox\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}}
-        \IEEEauthorblockA{\IEEEauthorrefmark{1} Institute for Transport Studies, University of Leeds, UK}
-        \IEEEauthorblockA{\IEEEauthorrefmark{2} School of Computer Science, University of Lincoln, UK}
+        Fanta Camara$^{1,2}$, \IEEEauthorblockN{Chris Waltham$^{2}$, David Churchill$^{2}$, Charles W. Fox$^{1,2}$}
+        \IEEEauthorblockA{$^{1}$ Institute for Transport Studies, University of Leeds, UK}
+        \IEEEauthorblockA{$^{2}$ School of Computer Science, University of Lincoln, UK}
    %     \IEEEauthorblockA{\IEEEauthorrefmark{3} Ibex Automation Ltd., UK}
     }    
     \maketitle
@@ -451,8 +451,8 @@ TODO
 We hope that the platform will be useful...
 
     
-\section{Acknowledgements}
-This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395. Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools, Yicheng Zhang for helping with the 3D printer and other useful tools.
+\section{Acknowledgments}
+This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395. Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools, Yicheng Zhang for helping with the 3D printer and many other useful tools.
     
     
     
@@ -484,23 +484,6 @@ Type: roslaunch podcar podcar.launch
 
 Use the joystick to control steering and speed for manual drive.
 
-\subsection{Simulation}
-To install and run the simulation:
-
-\begin{verbatim}
-cd <install location>/catkin_ws
-catkin_make
-source devel/setup.bash
-cd src/podcar/models/plugins
-cmake .
-make
-export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`:
-cd ..
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:
-cd ../../../
-rosdep install --from-paths src --ignore-src -r -y
-roslaunch podcar podcarsim.launch
-\end{verbatim}
 
 \subsection{Automation}
 TODO should be exactly the same as simulation but connect to real vehicle.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  22 NOV 2021 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  3 DEC 2021 16:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -624,7 +624,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-<hardware/onAxles.jpg, id=16, 424.58624pt x 417.56pt>
+<hardware/onAxles.jpg, id=18, 424.58624pt x 417.56pt>
 File: hardware/onAxles.jpg Graphic file (type jpg)
 
 <use hardware/onAxles.jpg>
@@ -634,7 +634,7 @@ Package pdftex.def Info: hardware/onAxles.jpg used on input line 115.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steering1.png, id=17, 799.98875pt x 298.11375pt>
+<hardware/steering1.png, id=19, 799.98875pt x 298.11375pt>
 File: hardware/steering1.png Graphic file (type png)
 
 <use hardware/steering1.png>
@@ -644,7 +644,7 @@ Package pdftex.def Info: hardware/steering1.png used on input line 121.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steeringActuatorMounted.jpg, id=18, 653.44125pt x 476.78125pt>
+<hardware/steeringActuatorMounted.jpg, id=20, 653.44125pt x 476.78125pt>
 File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
 
 <use hardware/steeringActuatorMounted.jpg>
@@ -655,7 +655,7 @@ e 128.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] <hardware/pic_boards.jpg, id=22, 5331.92pt x 2999.205pt>
+[3] <hardware/pic_boards.jpg, id=24, 5331.92pt x 2999.205pt>
 File: hardware/pic_boards.jpg Graphic file (type jpg)
 
 <use hardware/pic_boards.jpg>
@@ -665,7 +665,7 @@ Package pdftex.def Info: hardware/pic_boards.jpg used on input line 151.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/circuitDiagram.png, id=23, 1518.67375pt x 789.95125pt>
+<hardware/circuitDiagram.png, id=25, 1518.67375pt x 789.95125pt>
 File: hardware/circuitDiagram.png Graphic file (type png)
 
 <use hardware/circuitDiagram.png>
@@ -676,7 +676,7 @@ Package pdftex.def Info: hardware/circuitDiagram.png used on input line 157.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=25, 597.50786pt
+<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=27, 597.50786pt
  x 845.04686pt>
 File: hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf Graphic file (
 type pdf)
@@ -689,7 +689,7 @@ Package pdftex.def Info: hardware/OpenPodcar_Components_Circuit_Diagram_colored
 
 LaTeX Warning: Float too large for page by 6.38716pt on input line 167.
 
-<hardware/drilling.png, id=26, 1804.7425pt x 1088.065pt>
+<hardware/drilling.png, id=28, 1804.7425pt x 1088.065pt>
 File: hardware/drilling.png Graphic file (type png)
 
 <use hardware/drilling.png>
@@ -699,7 +699,7 @@ Package pdftex.def Info: hardware/drilling.png used on input line 170.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pcb_version_1_5_pic1.png, id=27, 1625.07124pt x 808.01875pt>
+<hardware/pcb_version_1_5_pic1.png, id=29, 1625.07124pt x 808.01875pt>
 File: hardware/pcb_version_1_5_pic1.png Graphic file (type png)
 
 <use hardware/pcb_version_1_5_pic1.png>
@@ -710,7 +710,7 @@ Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 1
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pcb_podcar.jpg, id=28, 3131.7pt x 4175.6pt>
+<hardware/pcb_podcar.jpg, id=30, 3131.7pt x 4175.6pt>
 File: hardware/pcb_podcar.jpg Graphic file (type jpg)
 
 <use hardware/pcb_podcar.jpg>
@@ -741,7 +741,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
  [5 <./hardware/circuitDiagram.png>] [6 <./hardware/OpenPodcar_Components_Circu
-it_Diagram_colored.pdf>] <hardware/pic_relay.jpg, id=45, 5331.92pt x 2999.205pt
+it_Diagram_colored.pdf>] <hardware/pic_relay.jpg, id=46, 5331.92pt x 2999.205pt
 >
 File: hardware/pic_relay.jpg Graphic file (type jpg)
 
@@ -795,7 +795,7 @@ Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 [7 <./hardware/drilling.png> <./hardware/pcb_version_1_5_pic1.png> <./hardware/
 pcb_podcar.jpg> <./hardware/pic_relay.jpg>]
-<hardware/potential_divider.png, id=51, 407.5225pt x 411.5375pt>
+<hardware/potential_divider.png, id=52, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
@@ -803,7 +803,7 @@ Package pdftex.def Info: hardware/potential_divider.png used on input line 298.
 
 (pdftex.def)             Requested size: 252.0pt x 254.48499pt.
 
-<software/rosnodes.png, id=52, 949.5475pt x 274.02374pt>
+<software/rosnodes.png, id=53, 949.5475pt x 274.02374pt>
 File: software/rosnodes.png Graphic file (type png)
 
 <use software/rosnodes.png>
@@ -818,14 +818,14 @@ Underfull \hbox (badness 6808) in paragraph at lines 316--317
 []\OT1/ptm/m/n/10 These two mes-sages are re-ceived by ROS nodes
  []
 
-<software/podcar_phys_sim.png, id=53, 1274.7625pt x 1234.6125pt>
+<software/podcar_phys_sim.png, id=54, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
 Package pdftex.def Info: software/podcar_phys_sim.png used on input line 335.
 (pdftex.def)             Requested size: 252.0pt x 244.05466pt.
 
-<software/podcar_mesh.png, id=54, 865.2325pt x 1072.005pt>
+<software/podcar_mesh.png, id=55, 865.2325pt x 1072.005pt>
 File: software/podcar_mesh.png Graphic file (type png)
 
 <use software/podcar_mesh.png>
@@ -845,7 +845,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-<figs_sim/sim_nodes.png, id=59, 1445.4pt x 414.54875pt>
+<figs_sim/sim_nodes.png, id=60, 1445.4pt x 414.54875pt>
 File: figs_sim/sim_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_nodes.png>
@@ -855,7 +855,7 @@ Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 371.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs_sim/podcar_loaded_gazebo.png, id=60, 792.9625pt x 654.445pt>
+<figs_sim/podcar_loaded_gazebo.png, id=61, 792.9625pt x 654.445pt>
 File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
 
 <use figs_sim/podcar_loaded_gazebo.png>
@@ -875,7 +875,7 @@ Underfull \hbox (badness 1454) in paragraph at lines 384--385
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
  [9 <./software/rosnodes.png> <./software/podcar_phys_sim.png> <./software/podc
-ar_mesh.png>] <figs_sim/INBLincoln_2.png, id=64, 1927.2pt x 1084.05pt>
+ar_mesh.png>] <figs_sim/INBLincoln_2.png, id=65, 1927.2pt x 1084.05pt>
 File: figs_sim/INBLincoln_2.png Graphic file (type png)
 
 <use figs_sim/INBLincoln_2.png>
@@ -885,7 +885,7 @@ Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 387.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs_sim/podcar_INB_teb.png, id=65, 1751.54375pt x 992.70876pt>
+<figs_sim/podcar_INB_teb.png, id=66, 1751.54375pt x 992.70876pt>
 File: figs_sim/podcar_INB_teb.png Graphic file (type png)
 
 <use figs_sim/podcar_INB_teb.png>
@@ -898,7 +898,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-<hardware/ackermann1.png, id=66, 341.275pt x 463.7325pt>
+<hardware/ackermann1.png, id=67, 341.275pt x 463.7325pt>
 File: hardware/ackermann1.png Graphic file (type png)
 
 <use hardware/ackermann1.png>
@@ -908,7 +908,7 @@ Package pdftex.def Info: hardware/ackermann1.png used on input line 404.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/ackermann2.png, id=67, 441.65pt x 309.155pt>
+<hardware/ackermann2.png, id=68, 441.65pt x 309.155pt>
 File: hardware/ackermann2.png Graphic file (type png)
 
 <use hardware/ackermann2.png>
@@ -936,7 +936,7 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-<figs_sim/sim_movebase_nodes.png, id=68, 2412.76407pt x 767.86874pt>
+<figs_sim/sim_movebase_nodes.png, id=69, 2412.76407pt x 767.86874pt>
 File: figs_sim/sim_movebase_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_movebase_nodes.png>
@@ -964,26 +964,6 @@ Underfull \hbox (badness 1968) in paragraph at lines 481--482
  []
 
 [11 <./figs_sim/INBLincoln_2.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 490.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (54.0pt too wide) in paragraph at lines 503--503
-[]\OT1/pcr/m/n/10 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH`pwd`:[] 
- []
-
-
-Overfull \hbox (42.0pt too wide) in paragraph at lines 503--503
-[]\OT1/pcr/m/n/10 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH`pwd`:[] 
- []
-
-
-Overfull \hbox (48.0pt too wide) in paragraph at lines 503--503
-[]\OT1/pcr/m/n/10 rosdep install --from-paths src --ignore-src -r -y[] 
- []
-
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1002,25 +982,25 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5996 strings out of 493029
- 93874 string characters out of 6136234
+ 5948 strings out of 493029
+ 93229 string characters out of 6136234
  163590 words of memory out of 5000000
- 9426 multiletter control sequences out of 15000+600000
- 42799 words of font info for 98 fonts, out of 8000000 for 9000
+ 9386 multiletter control sequences out of 15000+600000
+ 39589 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,13n,42p,1545b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,9n,42p,1545b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
-r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on podcar.pdf (13 pages, 19576261 bytes).
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on podcar.pdf (13 pages, 19568660 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
