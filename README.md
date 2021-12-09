@@ -75,41 +75,41 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 	- To configure the Pololu, please follow the instructions here: [https://www.pololu.com/docs/0J38/5]
 	- For OpenPodCar, we followed the steps below:
 		- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
-		- Go to "Error" tab:
-			- set "No power", "Motor driver error", "Feedback disconnected" and "Max. current exceeded" to "Enabled and latched"
-			- Click on "Apply settings to"
+		- Go to "**Error**" tab:
+			- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
+			- Click on "**Apply settings to**"
 
 			- Wire the Pololu to power (VIN and GND)
 			- Wire the Pololu's motor outputs "A" and "B" to the linear actuator 
 			- Wire the Pololu's feedback pins to the linear actuator feedback wires
 			- Turn the power on
-			- Click on "Reset" and "Clear" in the "Error" tab
+			- Click on "**Reset**" and "**Clear**" in the "**Error**" tab
 			- The yellow LED on the Pololu should start blinking
 
-		- Go to "Input" tab: 
-			- set "Input mode" to "serial"
+		- Go to "**Input**" tab: 
+			- set "**Input mode**" to "**serial**"
 			- keep all other parameters to default values
 
-		- Go to "Feedback" tab:
-			- set "Feedback mode" to "Analog voltage"
-			- tick "Invert feedback direction"
+		- Go to "**Feedback**" tab:
+			- set "**Feedback mode**" to "**Analog voltage**"
+			- check "**Invert feedback direction**"
 			- Calibration:
-			- set "Absolute Max" to "2600"
-			- set "Maximum" to "2600"
-			- set "Minimum" to "1000"
-			- set Absolute Min" to "1000"
+			- set "**Absolute Max**" to "**2600**"
+			- set "**Maximum**" to "**2600**"
+			- set "**Minimum**" to "**1000**"
+			- set "**Absolute Min**" to "**1000**"
 			- keep all other paramters to default values
 
-		- Go to "PID" tab:
-			- set "Proportional Coefficient" as "6" at the top and "1" at the bottom, so that to get a final "3"
+		- Go to "**PID**" tab:
+			- set "**Proportional Coefficient**" as "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
 			- keep all other parameters to default values
 
-		- Go to "Motor" tab:
-			- tick "Invert motor direct"
-			- in the "Forward column", set "Max. current (A)" as "0"
+		- Go to "**Motor**" tab:
+			- tick "**Invert motor direct**"
+			- in the "**Forward column**", set "**Max. current (A)**" as "**0**"
 			- keep all other parameters to default values
 
-		- Click on "Apply settings to"
+		- Click on "**Apply settings to**"
 
 
 - **Velodyne 3D Lidar Configuration with ROS**
