@@ -56,7 +56,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 ## Physical Podcar Setup
 
 
-- Buck converters' settings
+- **`Buck converters' settings'**
 	- Buck converter 1
 		- set output voltage to 16V (or the voltage required for your laptop)
 		- Set output current to 3.75A (or the maximum current required for your laptop)
@@ -65,12 +65,12 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 		- set output current to 3A (or the maximum current required for the linear actuator and 3D Lidar)
 
 
-- Arduino Software
+- **`Arduino Software'**`
 	- Download the MCP4725 library into Arduino's LIBRARIES
 	- Upload the Arduino Code
 
 
-- Pololu JRK 21v3 Configuration
+- **`Pololu JRK 21v3 Configuration'**
 	- Download Pololu's Windows Configuration Tool by following these steps: [https://www.pololu.com/docs/0J38/3.a]
 	- To configure the Pololu, please follow the instructions here: [https://www.pololu.com/docs/0J38/5]
 	- For OpenPodCar, we followed the steps below:
@@ -112,7 +112,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 		- Click on "Apply settings to"
 
 
-- Velodyne 3D Lidar Configuration with ROS
+- **`Velodyne 3D Lidar Configuration with ROS'**
 	- Please follow the instructions here: [http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16]
 
 ## Simulation installation
