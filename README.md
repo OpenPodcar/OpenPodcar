@@ -117,11 +117,11 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 ## Simulation Installation
 
-Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
+- Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
 
-Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found here: http://wiki.ros.org/rosdep
+- Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found here: http://wiki.ros.org/rosdep
 
-To install the ros package and gazebo sim locally, clone the repository and run the follow commands (directories indicated by <> need to be replaced by their actual locations):
+- To install the ros package and gazebo sim locally, clone the repository and run the follow commands (directories indicated by <> need to be replaced by their actual locations):
 
 ```bash
 cd <install location>/catkin_ws
@@ -140,7 +140,7 @@ roslaunch podcar podcarsim.launch
 
 The first run of Gazebo may take a while (e.g. 5 minutes) to load because models used need to be automatically downloaded from the remote gazebo repositories.
 
-Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
+- Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
 
 ### Joystick control
