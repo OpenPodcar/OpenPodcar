@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  3 DEC 2021 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  10 DEC 2021 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,8 +975,10 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[12 <./figs_sim/podcar_INB_teb.png>] [13 <./hardware/ackermann1.png> <./hardwar
-e/ackermann2.png> <./figs_sim/sim_movebase_nodes.png>] (./podcar.aux)
+[12
+
+ <./figs_sim/podcar_INB_teb.png>] [13 <./hardware/ackermann1.png> <./hardware/a
+ckermann2.png> <./figs_sim/sim_movebase_nodes.png>] (./podcar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1000,7 +1002,7 @@ m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on podcar.pdf (13 pages, 19568660 bytes).
+Output written on podcar.pdf (13 pages, 19567341 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream

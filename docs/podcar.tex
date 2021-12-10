@@ -487,36 +487,6 @@ Use the joystick to control steering and speed for manual drive.
 
 \subsection{Automation}
 TODO should be exactly the same as simulation but connect to real vehicle.
-
-\section*{Appendix B: Troubleshooting Guide}
-
-\subsection{Vehicle}
-\subsubsection{vehicle beeps continuous when press DMH and rear wheels do not move}
-This is due to a safety mode preventing ignition.
-
-Check: is the manual-auto switch under the rear motor on auto?
-
-Check: are the batteries well charged (must be 24V or over.)
-
-Check: is the control voltage is the dead zone, it should be.
-
-\subsubsection{Rear wheels do not move, control voltages are correct}
-Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 1.8 for forward and backwards.
-
-Check: main vehicle battery level, by connecting the vehicle charger and inspecting the battery charge level. Problem occurs if the battery is nearly flat.
-
-Check: charger must be disconnected for rear wheels to move (safety feature).
-
-\subsection{Lidar}
-\subsubsection{No velodyne\_points message published}
-Check: laptop must be on wired network, not wifi.
-
-Check: wired network must be configured correctly, see velodyne setup docs. Maybe be interfered if wifi has been used recently.  Check connections to Velodyne box including power and ethernet.
-   
-
-\subsection{Simulation}
-\subsubsection{AF\_NET error}
-If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
     
 
 
