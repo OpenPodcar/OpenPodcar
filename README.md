@@ -115,7 +115,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 - **Velodyne 3D Lidar Configuration with ROS**
 	- Please follow the instructions here: [http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16]
 
-## Simulation installation
+## Simulation Installation
 
 Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
 
@@ -171,9 +171,9 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 	- Check: is the manual-auto switch under the rear motor on auto?
 
-	- Check: are the batteries well charged (must be 24V or over.)
+	- Check: are the batteries well charged (must be 24V or over.) ?
 
-	- Check: is the control voltage is the dead zone, it should be.
+	- Check: is the control voltage is the dead zone ? It should be.
 
 - Rear wheels do not move, control voltages are correct}
 	- Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 1.8 for forward and backwards.
