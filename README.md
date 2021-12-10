@@ -162,3 +162,35 @@ roslaunch podcar podcarsim_moveBase.launch
 ```
 
 This will present a standard movebase GUI interface in rviz, enabling you to click desired destinations to command the vehicle to drive to.
+
+## Troubleshooting Guide
+
+### Vehicle
+- vehicle beeps continuous when press DMH and rear wheels do not move
+	- This is due to a safety mode preventing ignition.
+
+	- Check: is the manual-auto switch under the rear motor on auto?
+
+	- Check: are the batteries well charged (must be 24V or over.)
+
+	- Check: is the control voltage is the dead zone, it should be.
+
+- Rear wheels do not move, control voltages are correct}
+	- Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 1.8 for forward and backwards.
+
+	- Check: main vehicle battery level, by connecting the vehicle charger and inspecting the battery charge level. Problem occurs if the battery is nearly flat.
+
+	- Check: charger must be disconnected for rear wheels to move (safety feature).
+
+### Lidar
+- No velodyne_points message published
+	- Check: laptop must be on wired network, not wifi.
+
+	- Check: wired network must be configured correctly, see velodyne setup docs. Maybe be interfered if wifi has been used recently.
+	
+	- Check connections to Velodyne box including power and ethernet.
+   
+
+### Simulation
+- AF\_NET error
+	- If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
