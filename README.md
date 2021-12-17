@@ -194,3 +194,5 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 ### Simulation
 - AF\_NET error
 	- If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
+	
+- Cannot locate node i.e. you should make your Python scripts as executables in order to launch theml

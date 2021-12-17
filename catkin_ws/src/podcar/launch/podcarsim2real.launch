@@ -1,0 +1,22 @@
+<launch>
+
+
+ <include file="/home/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>
+
+ <node pkg="podcar" type="joystick.py" name="joystick" /> 
+ <node pkg="podcar" type="joystick2speedms.py" name="joystick2speedms" />
+ <node pkg="podcar" type="speedms2arduino.py" name="speedms2arduino" />
+
+ <node pkg="podcar" type="joystick2wheelAngle.py" name="joystick2wheelAngle" />
+ <node pkg="podcar" type="wheelAngle2pololu.py" name="wheelAngle2pololu" />
+ <node pkg="podcar" type="pololuController" name="pololuController" />
+
+ <node pkg="podcar" type="cmd_velHandler.py" name="cmd_velHandler" />
+ <node pkg="podcar" type="sensorMsgs_Pointcloud_Handler.py" name="sensorMsgs_Pointcloud_Handler" />
+ <node pkg="podcar" type="odometry_Handler.py" name="odometry_Handler" />
+ <node pkg="podcar" type="podcar_tf_broadcaster.py" name="podcar_tf_broadcaster" />
+  
+ <node pkg="nodelet" type="nodelet" name="laserscan_nodelet_manager" args="manager"/>
+
+</launch>
+

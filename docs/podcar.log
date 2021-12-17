@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  10 DEC 2021 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  17 DEC 2021 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,6 +401,317 @@ ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \c@lotdepth=\count125
 \sf@top=\skip55
 \sf@bottom=\skip56
+) (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
+Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
+Package: todonotes 2012/07/25
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks24
+\XKV@tempa@toks=\toks25
+)
+\XKV@depth=\count126
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen158
+\pgfutil@tempdimb=\dimen159
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box35
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks29
+))
+\pgf@x=\dimen160
+\pgf@y=\dimen161
+\pgf@xa=\dimen162
+\pgf@ya=\dimen163
+\pgf@xb=\dimen164
+\pgf@yb=\dimen165
+\pgf@xc=\dimen166
+\pgf@yc=\dimen167
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count127
+\c@pgf@countb=\count128
+\c@pgf@countc=\count129
+\c@pgf@countd=\count130
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count131
+\pgfsyssoftpath@bigbuffer@items=\count132
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen168
+\pgfmath@count=\count133
+\pgfmath@box=\box36
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count134
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen169
+\pgf@picmaxx=\dimen170
+\pgf@picminy=\dimen171
+\pgf@picmaxy=\dimen172
+\pgf@pathminx=\dimen173
+\pgf@pathmaxx=\dimen174
+\pgf@pathminy=\dimen175
+\pgf@pathmaxy=\dimen176
+\pgf@xx=\dimen177
+\pgf@xy=\dimen178
+\pgf@yx=\dimen179
+\pgf@yy=\dimen180
+\pgf@zx=\dimen181
+\pgf@zy=\dimen182
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen183
+\pgf@path@lasty=\dimen184
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen185
+\pgf@shorten@start@additional=\dimen186
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box37
+\pgf@hbox=\box38
+\pgf@layerbox@main=\box39
+\pgf@picture@serial@count=\count135
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen187
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen188
+\pgf@pt@y=\dimen189
+\pgf@pt@temp=\dimen190
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen191
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen192
+\pgf@sys@shading@range@num=\count136
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box40
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box41
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen193
+\pgf@nodesepend=\dimen194
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen195
+\pgffor@skip=\dimen196
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count137
+\pgfplotmarksize=\dimen197
+)
+\tikz@lastx=\dimen198
+\tikz@lasty=\dimen199
+\tikz@lastxsaved=\dimen256
+\tikz@lastysaved=\dimen257
+\tikzleveldistance=\dimen258
+\tikzsiblingdistance=\dimen259
+\tikz@figbox=\box42
+\tikz@figbox@bg=\box43
+\tikz@tempbox=\box44
+\tikz@tempbox@bg=\box45
+\tikztreelevel=\count138
+\tikznumberofchildren=\count139
+\tikznumberofcurrentchild=\count140
+\tikz@fig@count=\count141
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count142
+\pgfmatrixcurrentcolumn=\count143
+\pgf@matrix@numberofcolumns=\count144
+)
+\tikz@expandcount=\count145
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count146
+\calc@Bcount=\count147
+\calc@Adimen=\dimen260
+\calc@Bdimen=\dimen261
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count148
+\calc@Cskip=\skip59
+)
+\c@@todonotes@numberoftodonotes=\count149
 ) (./podcar.aux
 
 LaTeX Warning: Label `fig:actuatorMounted' multiply defined.
@@ -417,39 +728,39 @@ LaTeX Warning: Label `fig:ackermann1' multiply defined.
 )
 \openout1 = `podcar.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    ... okay on input line 19.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen158
-\scratchbox=\box35
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen159
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count150
+\scratchdimen=\dimen262
+\scratchbox=\box46
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen263
+\MPnumerator=\count154
+\makeMPintoPDFobject=\count155
+\everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -501,13 +812,15 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 28.
-LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+
+ABD: EveryShipout initializing macros
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 28.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -516,12 +829,115 @@ Missing character: There is no ‚ in font ptmb7t!
 Missing character: There is no Ä in font ptmb7t!
 Missing character: There is no ô in font ptmb7t!
 
-<hardware/testDrive.png, id=1, 734.745pt x 646.415pt>
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 40--40
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (4.60991pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 new 
+ []
+
+
+Overfull \hbox (2.63994pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 one  
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 40--40
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (4.60991pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 new 
+ []
+
+
+Overfull \hbox (2.63994pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 one  
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 40--40
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (4.60991pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 new 
+ []
+
+
+Overfull \hbox (2.63994pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 one  
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 40--40
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (4.60991pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 new 
+ []
+
+
+Overfull \hbox (2.63994pt too wide) in paragraph at lines 40--40
+\OT1/ptm/m/n/10 one  
+ []
+
+<hardware/testDrive.png, id=4, 734.745pt x 646.415pt>
 File: hardware/testDrive.png Graphic file (type png)
 
 <use hardware/testDrive.png>
-Package pdftex.def Info: hardware/testDrive.png used on input line 40.
+Package pdftex.def Info: hardware/testDrive.png used on input line 42.
 (pdftex.def)             Requested size: 252.0pt x 221.70157pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -558,7 +974,7 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./hardware/testDrive.png>]
@@ -623,98 +1039,97 @@ Missing character: There is no ù in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-
-<hardware/onAxles.jpg, id=18, 424.58624pt x 417.56pt>
+ <hardware/onAxles.jpg, id=21, 424.58624pt x 417.56pt>
 File: hardware/onAxles.jpg Graphic file (type jpg)
 
 <use hardware/onAxles.jpg>
-Package pdftex.def Info: hardware/onAxles.jpg used on input line 115.
+Package pdftex.def Info: hardware/onAxles.jpg used on input line 121.
 (pdftex.def)             Requested size: 252.0pt x 247.83005pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steering1.png, id=19, 799.98875pt x 298.11375pt>
+<hardware/steering1.png, id=22, 799.98875pt x 298.11375pt>
 File: hardware/steering1.png Graphic file (type png)
 
 <use hardware/steering1.png>
-Package pdftex.def Info: hardware/steering1.png used on input line 121.
+Package pdftex.def Info: hardware/steering1.png used on input line 127.
 (pdftex.def)             Requested size: 252.0pt x 93.90633pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steeringActuatorMounted.jpg, id=20, 653.44125pt x 476.78125pt>
+<hardware/steeringActuatorMounted.jpg, id=23, 653.44125pt x 476.78125pt>
 File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
 
 <use hardware/steeringActuatorMounted.jpg>
 Package pdftex.def Info: hardware/steeringActuatorMounted.jpg used on input lin
-e 128.
+e 134.
 (pdftex.def)             Requested size: 252.0pt x 183.87053pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] <hardware/pic_boards.jpg, id=24, 5331.92pt x 2999.205pt>
+[3] <hardware/pic_boards.jpg, id=27, 5331.92pt x 2999.205pt>
 File: hardware/pic_boards.jpg Graphic file (type jpg)
 
 <use hardware/pic_boards.jpg>
-Package pdftex.def Info: hardware/pic_boards.jpg used on input line 151.
+Package pdftex.def Info: hardware/pic_boards.jpg used on input line 157.
 (pdftex.def)             Requested size: 252.0pt x 141.73149pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/circuitDiagram.png, id=25, 1518.67375pt x 789.95125pt>
+<hardware/circuitDiagram.png, id=28, 1518.67375pt x 789.95125pt>
 File: hardware/circuitDiagram.png Graphic file (type png)
 
 <use hardware/circuitDiagram.png>
-Package pdftex.def Info: hardware/circuitDiagram.png used on input line 157.
+Package pdftex.def Info: hardware/circuitDiagram.png used on input line 163.
 (pdftex.def)             Requested size: 516.0pt x 268.39906pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=27, 597.50786pt
+<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=30, 597.50786pt
  x 845.04686pt>
 File: hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf Graphic file (
 type pdf)
 
 <use hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf>
 Package pdftex.def Info: hardware/OpenPodcar_Components_Circuit_Diagram_colored
-.pdf used on input line 164.
+.pdf used on input line 170.
 (pdftex.def)             Requested size: 464.39685pt x 656.78712pt.
 
 
-LaTeX Warning: Float too large for page by 6.38716pt on input line 167.
+LaTeX Warning: Float too large for page by 6.38716pt on input line 173.
 
-<hardware/drilling.png, id=28, 1804.7425pt x 1088.065pt>
+<hardware/drilling.png, id=31, 1804.7425pt x 1088.065pt>
 File: hardware/drilling.png Graphic file (type png)
 
 <use hardware/drilling.png>
-Package pdftex.def Info: hardware/drilling.png used on input line 170.
+Package pdftex.def Info: hardware/drilling.png used on input line 176.
 (pdftex.def)             Requested size: 252.0pt x 151.913pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pcb_version_1_5_pic1.png, id=29, 1625.07124pt x 808.01875pt>
+<hardware/pcb_version_1_5_pic1.png, id=32, 1625.07124pt x 808.01875pt>
 File: hardware/pcb_version_1_5_pic1.png Graphic file (type png)
 
 <use hardware/pcb_version_1_5_pic1.png>
 Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 1
-81.
+87.
 (pdftex.def)             Requested size: 252.0pt x 125.29092pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pcb_podcar.jpg, id=30, 3131.7pt x 4175.6pt>
+<hardware/pcb_podcar.jpg, id=33, 3131.7pt x 4175.6pt>
 File: hardware/pcb_podcar.jpg Graphic file (type jpg)
 
 <use hardware/pcb_podcar.jpg>
-Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 188.
+Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 194.
 (pdftex.def)             Requested size: 189.0pt x 251.99062pt.
 
 
@@ -734,19 +1149,19 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
+ [5 <./hardware/circuitDiagram.png>] [6 <./hardware/OpenPodcar_Components_Circu
+it_Diagram_colored.pdf>]
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no ì in font ptmri7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
- [5 <./hardware/circuitDiagram.png>] [6 <./hardware/OpenPodcar_Components_Circu
-it_Diagram_colored.pdf>] <hardware/pic_relay.jpg, id=46, 5331.92pt x 2999.205pt
->
+ <hardware/pic_relay.jpg, id=49, 5331.92pt x 2999.205pt>
 File: hardware/pic_relay.jpg Graphic file (type jpg)
 
 <use hardware/pic_relay.jpg>
-Package pdftex.def Info: hardware/pic_relay.jpg used on input line 261.
+Package pdftex.def Info: hardware/pic_relay.jpg used on input line 267.
 (pdftex.def)             Requested size: 252.0pt x 141.73149pt.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
@@ -777,10 +1192,15 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 5119) in paragraph at lines 277--278
+Underfull \hbox (badness 5119) in paragraph at lines 283--284
 []\OT1/ptm/m/n/10 Arduino code is sup-plied in the dis-tri-bu-tion (/Ar-
  []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./hardware/drilling.png> <./hardware/pcb_version_1_5_pic1.png> <./hardware
+/pcb_podcar.jpg> <./hardware/pic_relay.jpg>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
@@ -793,103 +1213,257 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
-[7 <./hardware/drilling.png> <./hardware/pcb_version_1_5_pic1.png> <./hardware/
-pcb_podcar.jpg> <./hardware/pic_relay.jpg>]
-<hardware/potential_divider.png, id=52, 407.5225pt x 411.5375pt>
+
+<hardware/potential_divider.png, id=55, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
-Package pdftex.def Info: hardware/potential_divider.png used on input line 298.
+Package pdftex.def Info: hardware/potential_divider.png used on input line 304.
 
 (pdftex.def)             Requested size: 252.0pt x 254.48499pt.
 
-<software/rosnodes.png, id=53, 949.5475pt x 274.02374pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<software/rosnodes.png, id=56, 949.5475pt x 274.02374pt>
 File: software/rosnodes.png Graphic file (type png)
 
 <use software/rosnodes.png>
-Package pdftex.def Info: software/rosnodes.png used on input line 308.
+Package pdftex.def Info: software/rosnodes.png used on input line 314.
 (pdftex.def)             Requested size: 516.0pt x 148.91557pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 316--317
+Underfull \hbox (badness 6808) in paragraph at lines 322--323
 []\OT1/ptm/m/n/10 These two mes-sages are re-ceived by ROS nodes
  []
 
-<software/podcar_phys_sim.png, id=54, 1274.7625pt x 1234.6125pt>
+<software/podcar_phys_sim.png, id=57, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
 Package pdftex.def Info: software/podcar_phys_sim.png used on input line 335.
 (pdftex.def)             Requested size: 252.0pt x 244.05466pt.
 
-<software/podcar_mesh.png, id=55, 865.2325pt x 1072.005pt>
+<software/podcar_mesh.png, id=58, 865.2325pt x 1072.005pt>
 File: software/podcar_mesh.png Graphic file (type png)
 
 <use software/podcar_mesh.png>
 Package pdftex.def Info: software/podcar_mesh.png used on input line 341.
 (pdftex.def)             Requested size: 252.0pt x 312.2148pt.
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
- [8 <./hardware/potential_divider.png>]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
 
-<figs_sim/sim_nodes.png, id=60, 1445.4pt x 414.54875pt>
-File: figs_sim/sim_nodes.png Graphic file (type png)
-
-<use figs_sim/sim_nodes.png>
-Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 371.
-(pdftex.def)             Requested size: 252.0pt x 72.27512pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs_sim/podcar_loaded_gazebo.png, id=61, 792.9625pt x 654.445pt>
-File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
-
-<use figs_sim/podcar_loaded_gazebo.png>
-Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 3
-77.
-(pdftex.def)             Requested size: 252.0pt x 207.9787pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 1454) in paragraph at lines 384--385
-[]\OT1/ptm/m/n/10 We used the open source Blender 3D add-on called
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 348--348
+[][][][]\OT1/ptm/m/n/10 Change 
  []
 
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (3.18973pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 real 
+ []
+
+
+Overfull \hbox (10.3699pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 phys- 
+ []
+
+
+Overfull \hbox (5.97963pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 sim- 
+ []
+
+
+Overfull \hbox (3.75978pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 tion 
+ []
+
+
+Overfull \hbox (0.81999pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 ve- 
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 348--348
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (3.18973pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 real 
+ []
+
+
+Overfull \hbox (10.3699pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 phys- 
+ []
+
+
+Overfull \hbox (5.97963pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 sim- 
+ []
+
+
+Overfull \hbox (3.75978pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 tion 
+ []
+
+
+Overfull \hbox (0.81999pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 ve- 
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 348--348
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (3.18973pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 real 
+ []
+
+
+Overfull \hbox (10.3699pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 phys- 
+ []
+
+
+Overfull \hbox (5.97963pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 sim- 
+ []
+
+
+Overfull \hbox (3.75978pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 tion 
+ []
+
+
+Overfull \hbox (0.81999pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 ve- 
+ []
+
+
+Overfull \hbox (18.7498pt too wide) in paragraph at lines 348--348
+[][][][]\OT1/ptm/m/n/10 Change 
+ []
+
+
+Overfull \hbox (4.03983pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 Fig. 
+ []
+
+
+Overfull \hbox (5.97975pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 with 
+ []
+
+
+Overfull \hbox (3.18973pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 real 
+ []
+
+
+Overfull \hbox (10.3699pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 phys- 
+ []
+
+
+Overfull \hbox (5.97963pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 sim- 
+ []
+
+
+Overfull \hbox (3.75978pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 tion 
+ []
+
+
+Overfull \hbox (0.81999pt too wide) in paragraph at lines 348--348
+\OT1/ptm/m/n/10 ve- 
+ []
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+[8 <./hardware/potential_divider.png>]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
 
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
  [9 <./software/rosnodes.png> <./software/podcar_phys_sim.png> <./software/podc
-ar_mesh.png>] <figs_sim/INBLincoln_2.png, id=65, 1927.2pt x 1084.05pt>
+ar_mesh.png>] <figs_sim/sim_nodes.png, id=66, 1445.4pt x 414.54875pt>
+File: figs_sim/sim_nodes.png Graphic file (type png)
+
+<use figs_sim/sim_nodes.png>
+Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 373.
+(pdftex.def)             Requested size: 252.0pt x 72.27512pt.
+
+<figs_sim/podcar_loaded_gazebo.png, id=67, 792.9625pt x 654.445pt>
+File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
+
+<use figs_sim/podcar_loaded_gazebo.png>
+Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 3
+79.
+(pdftex.def)             Requested size: 252.0pt x 207.9787pt.
+
+Underfull \hbox (badness 1454) in paragraph at lines 386--387
+[]\OT1/ptm/m/n/10 We used the open source Blender 3D add-on called
+ []
+
+<figs_sim/INBLincoln_2.png, id=68, 1927.2pt x 1084.05pt>
 File: figs_sim/INBLincoln_2.png Graphic file (type png)
 
 <use figs_sim/INBLincoln_2.png>
-Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 387.
+Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 389.
 (pdftex.def)             Requested size: 516.0pt x 290.24931pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs_sim/podcar_INB_teb.png, id=66, 1751.54375pt x 992.70876pt>
+<figs_sim/podcar_INB_teb.png, id=69, 1751.54375pt x 992.70876pt>
 File: figs_sim/podcar_INB_teb.png Graphic file (type png)
 
 <use figs_sim/podcar_INB_teb.png>
-Package pdftex.def Info: figs_sim/podcar_INB_teb.png used on input line 394.
+Package pdftex.def Info: figs_sim/podcar_INB_teb.png used on input line 396.
 (pdftex.def)             Requested size: 516.0pt x 292.45271pt.
 
 
@@ -898,21 +1472,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-<hardware/ackermann1.png, id=67, 341.275pt x 463.7325pt>
+<hardware/ackermann1.png, id=70, 341.275pt x 463.7325pt>
 File: hardware/ackermann1.png Graphic file (type png)
 
 <use hardware/ackermann1.png>
-Package pdftex.def Info: hardware/ackermann1.png used on input line 404.
+Package pdftex.def Info: hardware/ackermann1.png used on input line 406.
 (pdftex.def)             Requested size: 252.0pt x 342.42784pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/ackermann2.png, id=68, 441.65pt x 309.155pt>
+<hardware/ackermann2.png, id=71, 441.65pt x 309.155pt>
 File: hardware/ackermann2.png Graphic file (type png)
 
 <use hardware/ackermann2.png>
-Package pdftex.def Info: hardware/ackermann2.png used on input line 410.
+Package pdftex.def Info: hardware/ackermann2.png used on input line 412.
 (pdftex.def)             Requested size: 252.0pt x 176.39943pt.
 
 
@@ -936,22 +1510,22 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-<figs_sim/sim_movebase_nodes.png, id=69, 2412.76407pt x 767.86874pt>
+<figs_sim/sim_movebase_nodes.png, id=72, 2412.76407pt x 767.86874pt>
 File: figs_sim/sim_movebase_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_movebase_nodes.png>
-Package pdftex.def Info: figs_sim/sim_movebase_nodes.png used on input line 438
+Package pdftex.def Info: figs_sim/sim_movebase_nodes.png used on input line 440
 .
 (pdftex.def)             Requested size: 252.0pt x 80.18921pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./podcar.bbl [10 <./figs_sim/sim_nodes.png (PNG copy)> <./figs_sim/podcar_load
-ed_gazebo.png (PNG copy)>]
+[10 <./figs_sim/sim_nodes.png (PNG copy)> <./figs_sim/podcar_loaded_gazebo.png 
+(PNG copy)>] (./podcar.bbl
 Underfull \vbox (badness 2460) has occurred while \output is active []
 
-)
+ [11 <./figs_sim/INBLincoln_2.png>])
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
@@ -959,11 +1533,10 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-Underfull \hbox (badness 1968) in paragraph at lines 481--482
+Underfull \hbox (badness 1968) in paragraph at lines 493--494
 []\OT1/ptm/m/n/10 Run the test script pod-car/tools/pololuCSerialTest/a.out
  []
 
-[11 <./figs_sim/INBLincoln_2.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -975,22 +1548,20 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[12
-
- <./figs_sim/podcar_INB_teb.png>] [13 <./hardware/ackermann1.png> <./hardware/a
-ckermann2.png> <./figs_sim/sim_movebase_nodes.png>] (./podcar.aux)
+[12 <./figs_sim/podcar_INB_teb.png>] [13 <./hardware/ackermann1.png> <./hardwar
+e/ackermann2.png> <./figs_sim/sim_movebase_nodes.png>] (./podcar.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5948 strings out of 493029
- 93229 string characters out of 6136234
- 163590 words of memory out of 5000000
- 9386 multiletter control sequences out of 15000+600000
+ 16385 strings out of 493029
+ 315661 string characters out of 6136234
+ 363000 words of memory out of 5000000
+ 19595 multiletter control sequences out of 15000+600000
  39589 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,9n,42p,1545b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,77p,1545b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1002,10 +1573,10 @@ m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmri8a.pfb>
-Output written on podcar.pdf (13 pages, 19567341 bytes).
+Output written on podcar.pdf (13 pages, 19568740 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

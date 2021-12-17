@@ -11,6 +11,7 @@
 \usepackage{array}
 \usepackage{tabu}
 \usepackage{subfig}
+\usepackage{todonotes}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
         T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \makeatletter
@@ -35,14 +36,19 @@ Open source software for autonomous vehicle (`self driving car’) control is no
         Autonomous Vehicles,  Pedestrian - Vehicle Interaction
         [3 maximum]
     \end{IEEEkeywords}
-    
+
+\todo{Change Fig. 1 with a new one}    
     \begin{figure}[h]
       \includegraphics[width=\columnwidth]{hardware/testDrive.png}
       \caption{OpenPodcar test drive.}
       \label{fig:testDrive}
     \end{figure}
 
+
 \section{Introduction}
+
+Pick a licence for the paper github: e.g. CERN hardware licence
+
 \subsection{Open source hardware}
 
 The use of OSH allows for more effective and accessible sharing and collaboration among researchers \cite{fisher2012open}, as well as more accessible entry-level projects such as examples from Oxer and Blummings (2009). OSH brings a number of benefits to a research community, as a common context for results and accessible platform with which to test new ideas allows for more engagement, leading to a more mature field of study.
@@ -321,12 +327,6 @@ Converters from a standard ROS USB joystick driver node to the speed and angle c
 \subsection{Lidar option}
 Velodyne works with the velodyne ROS package. But it needs to be set up so we can talk to the Velodyne over ethernet.  The laptop must be on a wired network, not wifi.   The IPs must be configured as in the velodyne docs TODO details/refs.  The lidar IP is 192.168.1.201.
 
-\subsection{Depth camera option}
-
-TODO Dom Li is working on this...
-
-    
-
 \section{Simulation}
 
 \subsection{Podcar 3D Sim}
@@ -344,6 +344,8 @@ TODO Dom Li is working on this...
     \end{figure}
 
 A robotics simulation of the vehicle is provided for use in Gazebo 8.6.0 under ROS Kinetic and Ubuntu 16.04 (Xenial).
+
+\todo{Change Fig. 14 with a real physical simulation of the vehicle} 
 
 The physics simulation is based on a simplified vehicle geometry with two large cuboids containing the vehicles’ mass. \ref{fig:physSim} Parallel steering linkage is simulated via ODE joints forming a tracking rod. Rear drive motor and the steering linear actuator are simulated via ODE PID controllers.  Wheel geometry was measured from the physical vehicle.   Wheel forwards and lateral Coulomb friction coefficients were tuned by trial and error to produce realistic motion and steering.  The model is represented in SDF format, which is easy portable for use in other simulation and CAD systems.
 
@@ -450,9 +452,19 @@ TODO
 \section{Discussion}
 We hope that the platform will be useful...
 
+\section{Future work}
+
+\subsection{Depth camera option}
+
+(Dom Li ?)
+
+\subsection{Motor controller with OSMC}
+
+
+
     
 \section{Acknowledgments}
-This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395. Thanks to Jacob Lord for creating the graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools, Yicheng Zhang for helping with the 3D printer and many other useful tools.
+This project has received funding from EU H2020 interACT: Designing cooperative interaction of automated vehicles with other road users in mixed traffic environments under grant agreement No 723395. Thanks to Jacob Lord for creating the vehicle graphical mesh model, Yao Chen for scoping Dubins path methods and the mechanical design, Gabriel Walton for scoping simulation tools, Yicheng Zhang for helping with the 3D printer and many other useful tools for the PCB board.
     
     
     
