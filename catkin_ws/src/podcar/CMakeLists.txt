@@ -200,8 +200,16 @@ include_directories(
 
 
 
-
-
 add_executable(pololuController src/pololuController.cpp)
 target_link_libraries(pololuController ${catkin_LIBRARIES})
 add_dependencies(pololuController  podcar_generate_messages_cpp)
+
+
+add_executable(speed2arduino src/speed2arduino.cpp)
+target_link_libraries(speed2arduino ${catkin_LIBRARIES})
+add_dependencies(speed2arduino  podcar_generate_messages_cpp)
+
+add_executable(speed2arduino_sim2real src/speed2arduino_sim2real.cpp)
+target_link_libraries(speed2arduino_sim2real ${catkin_LIBRARIES})
+add_dependencies(speed2arduino_sim2real  podcar_generate_messages_cpp)
+

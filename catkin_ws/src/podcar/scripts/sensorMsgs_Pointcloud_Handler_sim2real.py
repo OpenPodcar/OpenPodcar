@@ -9,7 +9,7 @@ def callback(msg):
 
 rospy.init_node("sensor_msgs_handler", anonymous=True)
 
-cameraSub = rospy.Subscriber("camera/depth/points", PointCloud2, callback, queue_size=1) 
+cameraSub = rospy.Subscriber("velodyne_points", PointCloud2, callback, queue_size=1)
 sensorPub = rospy.Publisher("sensor_msgs/PointCloud", PointCloud2, queue_size=1)
 laserScanSub = rospy.Subscriber("sensor_msgs/LaserScan", LaserScan, queue_size=1)
 

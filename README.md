@@ -53,7 +53,7 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 
 
-## Physical Podcar Setup
+## Physical Podcar Hardware Setup
 
 
 - **Buck converters' settings**
@@ -111,9 +111,22 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 
 		- Click on "**Apply settings to**"
 
+## Physical Podcar Software Setup
 
 - **Velodyne 3D Lidar Configuration with ROS**
 	- Please follow the instructions here: [http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16]
+	
+	
+- **Simlink USB COM Ports**
+	- In terminal: "cd /etc/udev/rules.d"
+	- Create a file called "99-tty.rules" e.g. "gedit 99-tty.rules"
+	- Copy the following lines in the file:
+		#Arduino com-port rules
+		SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
+		#Pololu com-port rules -- NB the pololu has two virtual serial ports on a single USB interface.
+		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
+		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
+
 
 ## Simulation Installation
 

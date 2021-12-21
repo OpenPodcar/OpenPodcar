@@ -1,0 +1,9 @@
+obstacle_range: 5
+raytrace_range: 3.0
+footprint: [[-0.6, 0.285475], [-0.6, -0.285475], [0.6, 0.285475], [0.6, -0.285475]]
+#robot_radius: ir_of_robot
+inflation_radius: 0.5
+
+observation_sources: laser_scan_sensor
+
+laser_scan_sensor: {sensor_frame: velodyne, data_type: LaserScan, topic: sensor_msgs/LaserScan, marking: true, clearing: true}
