@@ -3,6 +3,7 @@
 ### Author: Fanta Camara Dec 2021
 ### For odometry/groundTruth publisher
 ### inspired by: https://gist.github.com/atotto/f2754f75bedb6ea56e3e0264ec405dcf
+### and http://wiki.ros.org/turtlesim/Tutorials/Rotating%20Left%20and%20Right
 
 import math
 from math import sin, cos, pi
@@ -12,9 +13,8 @@ import tf
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Point, Pose, Quaternion, Twist, Vector3
 from std_msgs.msg import Float64
+from std_msgs.msg import Int64
 
-
-PODCAR_ANGULAR_SPEED = 0.175   # podcar turns about 0.175 rad/s ~= 10deg/sec
 
 class OdomNode:
 	def __init__(self):
@@ -30,36 +30,26 @@ class OdomNode:
 		self.vth = 0.  
 		
 		self.dt = 0.
-		self.delta_th =  0.
-		
-		self.target_angle = 0.
+		self.current_angle = 0.
 
 		# subscribe to speed_meterssec & wheelAngleCmd
-		self.speed_sub = rospy.Subscriber("speedcmd_meterssec",Float64, self.callback_speed, queue_size=1)
-		self.angle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_angle, queue_size=10) 
+		self.speed_sub = rospy.Subscriber("speedcmd_meterssec",Float64, self.callback_speed, queue_size=10)
+		self.angle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_angular_speed, queue_size=1) 
+		self.angle_sub = rospy.Subscriber("pololuFdbk",Int64, self.callback_angle, queue_size=1) 
 
-	# compute odometry in a typical way given the velocities of the robot
-
+	# compute odometry in a way that reflfects the podcar's behaviour
 	def callback_speed(self, msg):
-	
-		self.vx = msg.data	  # linear x velocity
-		
-		if self.vx > 0:
-			self.vx = self.vx/15.0   # podcar moves 0.2m/s forward
-		else:
-			self.vx = self.vx/5.0	 # podcar moves 0.2m/s backward
+		self.vx = msg.data/3	  # linear x velocity  # podcar moves between 0.1m/s (slow) and 0.2m/s (fast)
 			
-	
-	def callback_angle(self, msg):
-	
-		self.target_angle = msg.data
-		if abs(self.target_angle - self.th) > 0.01 :
-			if self.target_angle > self.th:  # anticlockwise
-				self.vth = PODCAR_ANGULAR_SPEED
-			else:                   # clockwise
-				self.vth = - PODCAR_ANGULAR_SPEED
+	def callback_angular_speed(self, msg):
+		self.vth = msg.data
+					
+	def callback_angle(self, msg): 
+		feedback = msg.data  # to be converted back to angular speed
+		if feedback > 1900:    
+			self.current_angle = - (math.pi/4) * (feedback - 1900) / 290 # turning on the left
 		else:
-			self.vth = 0.0
+			self.current_angle = - (math.pi/4) * (feedback - 1900) / 240 # turning on the right
 		
 
 if __name__ == '__main__':
@@ -71,7 +61,7 @@ if __name__ == '__main__':
 	
 	node = OdomNode()
 
-	r = rospy.Rate(10)
+	r = rospy.Rate(5)
 	while not rospy.is_shutdown():
 	
 		node.current_time = rospy.Time.now()
@@ -83,9 +73,7 @@ if __name__ == '__main__':
 		node.x += delta_x
 		node.y += delta_y
 		
-		if node.target_angle != node.th:
-			node.delta_th = node.vth * node.dt
-			node.th += node.delta_th
+		node.th = node.current_angle
 		
 		# since all odometry is 6DOF we'll need a quaternion created from yaw
 		odom_quat = tf.transformations.quaternion_from_euler(0, 0, node.th)

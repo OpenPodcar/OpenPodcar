@@ -37,7 +37,7 @@ using namespace std;
 //#else
 
 #define MIN_VEL_FORWARD 0.5
-#define MIN_VEL_BACKWARD -0.5
+#define MIN_VEL_BACKWARD -0.6
 
 #define MAX_VEL_FORWARD 1
 #define MAX_VEL_BACKWARD -1

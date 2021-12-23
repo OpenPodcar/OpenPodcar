@@ -1,11 +1,12 @@
 <launch>
 
- <include file="/home/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/> 
+ <!-- <include file="/home/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>  -->
+ <include file="/home/fanta/phd_work/Podcar_github/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>
 
  <node pkg="podcar" type="joystick.py" name="joystick" />
  
  <node pkg="podcar" type="joystick2speedms.py" name="joystick2speedms" />
- <node pkg="podcar" type="speedms2arduino" name="speedms2arduino" />
+ <node pkg="podcar" type="speed2arduino" name="speed2arduino" />
 
  <node pkg="podcar" type="joystick2wheelAngle.py" name="joystick2wheelAngle" />
  <node pkg="podcar" type="wheelAngle2pololu.py" name="wheelAngle2pololu" />
