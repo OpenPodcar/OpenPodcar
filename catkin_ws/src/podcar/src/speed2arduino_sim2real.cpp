@@ -37,13 +37,13 @@ using namespace std;
 //#else
 
 #define MIN_VEL_FORWARD 0.5
-#define MIN_VEL_BACKWARD -0.6
+#define MIN_VEL_BACKWARD -0.65
 
 #define MAX_VEL_FORWARD 1
 #define MAX_VEL_BACKWARD -1
 
 int fd;  //file descriptor for serial port
-//ros::Publisher pub;  //publisher
+ros::Publisher pub;  //publisher
 
 bool received_reponse_to_last_command = true;
 char buffer[100];
@@ -131,20 +131,19 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 		float velocity;
 		// HACK probably best to convert direct from ms to arduino bytes later on - need to actually measure speeds per byte though	
 		// convert to -1:1 range  (careful, these values are also used in joystick2speedms)
-		if(velocity_ms>0 && velocity_ms < MIN_VEL_FORWARD)
+		if(velocity_ms>0.1 && velocity_ms < MIN_VEL_FORWARD)
 			velocity = MIN_VEL_FORWARD; //velocity_ms/3.0;
 		else if (velocity_ms > MIN_VEL_FORWARD && velocity_ms < MAX_VEL_FORWARD)
 			velocity = velocity_ms;
 		else if (velocity_ms >= MAX_VEL_FORWARD)
 			velocity = MAX_VEL_FORWARD;
-		else if (velocity_ms < 0 && velocity_ms > MIN_VEL_BACKWARD)
+		else if (velocity_ms < -0.1 && velocity_ms > MIN_VEL_BACKWARD)
 			velocity = MIN_VEL_BACKWARD;//velocity_ms/1.0;  //reverse is slower
 		else if (velocity_ms < MIN_VEL_BACKWARD && velocity_ms > MAX_VEL_BACKWARD)
 			velocity = velocity_ms;
 		else if (velocity_ms <= MAX_VEL_BACKWARD)
 			velocity = MAX_VEL_BACKWARD;
 			
-
 		printf("Velocity: %f\n", velocity);
 		// speedbytes are converted linearly to voltage as 
 		// V = (4096/V_usb)*speedbyte   : range 0:5V
@@ -165,10 +164,10 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 		{
 			int speed_byte;
 			
-			if(abs(velocity)<0.01)
+			if(abs(velocity)<0.1)
 				speed_byte=byte_stop;  // dead range center, good to startup
 				
-			else if (velocity>=0.01)    // 240 is racing fast ; use less for safety for now eg 210
+			else if (velocity>=0.1)    // 240 is racing fast ; use less for safety for now eg 210
 				speed_byte = int(byte_dead_zone_top+velocity*(byte_max_speed-byte_dead_zone_top));  // from top of dead range tocapped max
 				
 			else
@@ -186,9 +185,13 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 			printf("Cmd written: %s", lineout);
 			
 			received_reponse_to_last_command = false;    // cmd executed so time to get response from Arduino
+
 		}
 
-		
+		// publish velocity for odometry
+		std_msgs::Float64 msg_out;
+		msg_out.data = velocity;
+		pub.publish(msg_out);
 
 		int nwaiting;
 		ioctl(fd, FIONREAD, &nwaiting);  // get the number of bytes waiting to be read
@@ -235,6 +238,8 @@ int main(int argc, char **argv)
   cout << "Hello" << endl;
   ros::init(argc, argv, "speed2arduino");
   ros::NodeHandle n;
+  
+  pub = n.advertise<std_msgs::Float64>("speed4arduino", 1000);
 
   printf("start\n");
   const char * device = "/dev/ttyArduino";  // Linux

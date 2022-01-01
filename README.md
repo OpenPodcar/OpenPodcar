@@ -126,6 +126,34 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 		#Pololu com-port rules -- NB the pololu has two virtual serial ports on a single USB interface.
 		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
 		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
+		
+## Physical Podcar User Guide 
+
+- Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
+
+- Power on the vehicle using the original on-off switch located under the seat on the left. It is marked ON-OFF.
+
+- Power on the modified electronics using the new toggle switch.   (This lights LEDs on the DCDCs and Pololu, and the lidar makes a whirring sound).
+
+- Check that the batteries are charged (use a multimeter across one of the DCDC converters, need to see 24V or over. {\em Do not use the vehicle if it is undercharged, this is dangerous.}
+
+- Power on the laptop using the slider switch on its front right.
+
+- Login as user podcar, password TODO.
+
+- Type:  roscd podcar
+
+- Unplug the laptop’s USB connection and plug it in again.  (HACK) (not really needed ?!)
+
+- Run the test script podcar/tools/pololuCSerialTest/a.out  (HACK) (not really needed ?!)
+
+- Type: roslaunch podcar podcar.launch
+
+- Use the joystick to control steering and speed for manual drive.
+
+- For automation, the steps should be exactly the same as above but with the automation launch file.
+    
+
 
 
 ## Simulation Installation

@@ -456,8 +456,6 @@ We hope that the platform will be useful...
 
 \subsection{Depth camera option}
 
-(Dom Li ?)
-
 \subsection{Motor controller with OSMC}
 
 
@@ -470,35 +468,6 @@ This project has received funding from EU H2020 interACT: Designing cooperative 
     
 \bibliographystyle{plain}
 \bibliography{podcar}
-    
-\section*{Appendix A: User Guide}    
-
-\subsection{Vehicle}
-Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
-
-Power on the vehicle using the original on-off switch located under the seat on the left. It is marked ON-OFF.
-
-Power on the modified electronics using the new toggle switch.   (This lights LEDs on the DCDCs and Pololu, and the lidar makes a whirring sound).
-
-Check that the batteries are charged (use a multimeter across one of the DCDC converters, need to see 24V or over. {\em Do not use the vehicle if it is undercharged, this is dangerous.}
-
-Power on the laptop using the slider switch on its front right.
-
-Login as user podcar, password TODO.
-
-Type:  roscd podcar
-
-Unplug the laptop’s USB connection and plug it in again.  (HACK)
-
-Run the test script podcar/tools/pololuCSerialTest/a.out  (HACK)
-
-Type: roslaunch podcar podcar.launch
-
-Use the joystick to control steering and speed for manual drive.
-
-
-\subsection{Automation}
-TODO should be exactly the same as simulation but connect to real vehicle.
     
 
 

@@ -33,23 +33,23 @@ class OdomNode:
 		self.current_angle = 0.
 
 		# subscribe to speed_meterssec & wheelAngleCmd
-		self.speed_sub = rospy.Subscriber("speedcmd_meterssec",Float64, self.callback_speed, queue_size=10)
+		self.speed_sub = rospy.Subscriber("speed4arduino",Float64, self.callback_speed, queue_size=10)
 		self.angle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_angular_speed, queue_size=1) 
 		self.angle_sub = rospy.Subscriber("pololuFdbk",Int64, self.callback_angle, queue_size=1) 
 
 	# compute odometry in a way that reflfects the podcar's behaviour
 	def callback_speed(self, msg):
-		self.vx = msg.data/3	  # linear x velocity  # podcar moves between 0.1m/s (slow) and 0.2m/s (fast)
+		self.vx = msg.data/6	  # linear x velocity  # podcar moves between 0.1m/s (slow) and 0.2m/s (fast)
 			
 	def callback_angular_speed(self, msg):
 		self.vth = msg.data
 					
 	def callback_angle(self, msg): 
 		feedback = msg.data  # to be converted back to angular speed
-		if feedback > 1900:    
-			self.current_angle = - (math.pi/4) * (feedback - 1900) / 290 # turning on the left
+		if feedback > 1875:    
+			self.current_angle = (math.pi/4) * (1875 - feedback) / 300 # turning on the left
 		else:
-			self.current_angle = - (math.pi/4) * (feedback - 1900) / 240 # turning on the right
+			self.current_angle = (math.pi/4) * (1875 - feedback) / 220 # turning on the right
 		
 
 if __name__ == '__main__':
