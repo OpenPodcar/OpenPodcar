@@ -16,6 +16,8 @@
         T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \makeatletter
 
+\onecolumn
+
 \begin{document}
     
     \title{OpenPodCar: An Open Source Vehicle For Self-Driving Car Research }
@@ -28,13 +30,13 @@
     }    
     \maketitle
     
+    
     \begin{abstract} 
-Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform. The Lincoln Podcar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another.  The vehicle uses Ackermann steering and Reeds-Sheppe curves.   Its total build cost in 2020 is around 7000USD in total, including sensors and computing equipment.
+Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform. The Lincoln OpenPodCar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) hardware components: CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another. The vehicle uses Ackermann steering and Reeds-Sheppe curves. Its total build cost in 2022 is around 7000USD in total, including sensors and computing equipment.
     \end{abstract}    
     
     \begin{IEEEkeywords}
-        Autonomous Vehicles,  Pedestrian - Vehicle Interaction
-        [3 maximum]
+        Autonomous Vehicles,  Open Source Hardware and Software, Human-Robot Interaction.
     \end{IEEEkeywords}
 
 \todo{Change Fig. 1 with a new one}    
@@ -45,37 +47,31 @@ Open source software for autonomous vehicle (`self driving car’) control is no
     \end{figure}
 
 
+
+
 \section{Introduction}
 
 Pick a licence for the paper github: e.g. CERN hardware licence
 
 \subsection{Open source hardware}
 
-The use of OSH allows for more effective and accessible sharing and collaboration among researchers \cite{fisher2012open}, as well as more accessible entry-level projects such as examples from Oxer and Blummings (2009). OSH brings a number of benefits to a research community, as a common context for results and accessible platform with which to test new ideas allows for more engagement, leading to a more mature field of study.
+The use of open source hardware (OSH) allows for more effective and accessible sharing and collaboration among researchers \cite{fisher2012open}, as well as more accessible entry-level projects such as examples from Oxer and Blummings (2009)\todo{who?}. OSH brings a number of benefits to a research community, as a common context for results and accessible platform with which to test new ideas allows for more engagement, leading to a more mature field of study.
 
-The precise meaning of open-source hardware (OSH) remains widely debated, unlike open-source software which has become widely accepted to be defined by standard documents such as the GNU General Public License and BSD licence. The OSH issues debated stem from the differing design process between hardware and software, as the development of hardware is much more expensive to iterate and has a much higher entry-level skill requirement \cite{ackermann2009toward}. This topic has been augmented by the combination of “3-D printing with open-source microcontrollers” \cite{pearce2012building}, however is not yet as widely accepted open-source software.  
 
-For software to be open source, its entire stack of {\em compiler-linked} dependencies must also be open source, while non-linked dependencies need not be open source.  For example, an open source program might depend on a non-open operating system which it calleds through non-compiler linked shared object libraries (“so” or “dll” files).   The main debate around OSH definitions is what the equivalent boundary should be for hardware.   In conventional product design, a “product” is a legally defined entity which may, for example, be registered as an entity via a patent or receive safety certification as an entity. Such a product will specify as part of its legal existence that is it is comprised from, or manufactured using, other products, which themselves have legal definitions.  For example, to obtain a CE safety mark, all the component products must themselves have CE marks.  The OSH community does not usually use the term “product” as this denotes a commitment to certain commercial worldviews, but may use the term “design” in an analogous way.  
+It is currently almost impossible to build any large hardware design that does not incorporate non-open designs or make use of non-open designs as tools during construction. In contrast, open source simulation platforms are widely available for autonomous vehicle research, such as CARLA \cite{dosovitskiy2017carla}, SUMMIT \cite{cai2020summit}, FLOW\footnote{https://flow-project.github.io/}, DEEPDRIVE\footnote{https://github.com/deepdrive/deepdrive}, AirSim\cite{shah2017airsim}, LGSVL Simulator \cite{rong2020lgsvl} and Gym-Duckietown \cite{chevalier-boisvert2018duckietown}.
 
-It is currently impossible to build almost any large hardware design that does not incorporate non-open designs or make use of non-open designs as tools during construction.   So various definitions of OSH of different strengths have been proposed as difference balances between openness and pragmatism:
-
-{\em Deep OSH}.  The strongest form of OSH, as aimed for but not yet realised in the Open Source Ecology (OSE) project, would build a complete stack of OSH such that there are no non-open components or tools used at any level.  While we support the idea of deep OSH and plan to work towards a strong OSH version of our system, this is beyond the scope of our current work.
-
-{\em Weak OSH}. The weakest form of OSH is based on conventional product design, and considers the design itself to be the only component in need of openness.  Only the design for how to combine it with other components is OSH.   This means that the new design could be completely dependent on patented component and tool designs, and on the “owners” of these designs allowing their use.  For example, the Arduino computer is Weak OSH because its component microcontroller, the Atmel AVR, is a patented design and can only be made and sold by its owner.
-
-{\em Shallow OSH}.    This intermediate view of OSH is that openness refers to a design, which may be built from non-open component designs and tools if and only if the {\em interface} to these designs and tools is non-patented.  This enables multiple suppliers to produce competing alternatives which can be swapped in for these components, including Deep or other OSH alternatives.  International standards exist to define many such open interfaces, for example ISO and EU standards.   This gives some protection to the life of the new design, making it resilient to suppliers of components going out of business, stopping production, or overcharging for patents.   OSE recommends the use of this approach at least as a stopgap measure until Deep OSH alternatives become available.   Deep and shallow are thus ends of a continuum, in which the depth of an OSH design can increase as more components are swapped for deeper OSH designs, until a fully deep design is reached.
-
-The podcar is currently only Weak OSH, like the Arduino, because it depends on the use of a patented donor vehicle. It is intended as a basis for future work which could replace the patented components with open interfaces to progress it to shallow and the deeper OSH.
+The podcar is currently only "weak" OSH, like the Arduino, because it depends on the use of a patented donor vehicle and uses sensors or other components e.g. 3D Lidar that are also patented. It is intended as a basis for future work which could replace the patented components with open interfaces to progress it to "deeper" OSH.
+   
 
 \subsection{Requirements}
-Specific requirements for such a platform are that it needs to be as low cost as possible, and easy to build.  This is to enable the community to reproduce and use it.   Consumer levels of safety and reliability are not required, preferring to minimise cost, through research standards of safety and reliability are required.
+Specific requirements for such a platform are that it needs to be as low cost as possible, and easy to build.  This is to enable the community to reproduce and use it. Consumer levels of safety and reliability are not required, preferring to minimise cost, though research standards of safety and reliability are required.
     
 \subsection{Donor vehicle base}    
-A Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as Shoprider Traverso, \cite{shoprider2006}) is used as the podcar platform. It is an electric mobility scooter powered by two 12V batteries connected in series to provide 24V operating voltage and containing 75Ah. In its standard configuration, the donor vehicle’s steering is controlled by a human operated loop handle bar.  The speed and braking systems are both powered by an electric motor and an electric brake via the trans-axle assembly, controlled by an AC2 digital controller receiving different voltage signals to drive forward or brake. The manual speeding and braking systems are controlled by three buttons connected in series on the handle bar.  A toggle switch in parallel with a resistor (10k$\Omega$) to choose speed mode high or low; A speed dial knob via a variable resistor (20k$\Omega$) to choose a maximum speed value; A throttle lever connected with a potentiometer (5k$\Omega$), 2.5k$\Omega$ to 2.6k$\Omega$ for each side to speed or brake. 
+A Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as Shoprider Traverso, \cite{shoprider2006}) is used as the podcar platform. It is an electric mobility scooter powered by two 12V batteries connected in series to provide 24V operating voltage and containing 75Ah. In its standard configuration, the donor vehicle’s steering is controlled by a human operated loop handle bar. The speed and braking systems are both powered by an electric motor and an electric brake via the trans-axle assembly, controlled by an AC2 digital controller receiving different voltage signals to drive forward or brake. The manual speeding and braking systems are controlled by three buttons connected in series on the handle bar.  A toggle switch in parallel with a resistor (10k$\Omega$) to choose speed mode high or low; A speed dial knob via a variable resistor (20k$\Omega$) to choose a maximum speed value; A throttle lever connected with a potentiometer (5k$\Omega$), 2.5k$\Omega$ to 2.6k$\Omega$ for each side to speed or brake. 
 
 \subsection{Open source software base}
 
-ROS, is `an open source operating system' for robots based on a publish-subscribe pattern \cite{quigley2009ros}, which is the robotics community’s standard interface.   Building on top of ROS, the `ROS ecosystem’ is a loosely-defined collection of open-source ROS packages with variously accepted standard message formats which act as conventional interfaces to enable many community packages to work together and to act as swappable alternatives for one another.   
+ROS, is `an open source operating system' for robots based on a publish-subscribe pattern \cite{quigley2009ros}, which is the robotics community’s standard interface. Building on top of ROS, the `ROS ecosystem’ is a loosely-defined collection of open-source ROS packages with variously accepted standard message formats which act as conventional interfaces to enable many community packages to work together and to act as swappable alternatives for one another.   
 
 ROS drivers are packages in the ecosystem which wrap robot hardware with standard ROS interfaces.
 
@@ -101,14 +97,24 @@ OrbSLAM is a ROS 3D SLAM based on the Octomap algorithm, which can operate with 
 
 NDT SLAM  (used in Autoware and ILIAD) is another 3D SLAM implementation and algorithm based on Normal Distribution Transforms \cite{einhorn2015generic}.
 
-\subsection{Related systems}
+\section{Related systems}
 
-SMART is a design to modify an existing donor golf cart vehicle for automation research, developed by MIT and Singapore.  The vehicle is a similar size and power to podcar but is not OSH.
-Beetlebot \cite{beetlebot} is a weak OSH system similar to podcar but for last-mile freight delivery, without human carrying capacity, and including ROS integration.
-Open Source Ecology (OSE) is an ambition project which ultimately aims to develop Deep OSH vehicles including a car and tractor, via a process of progressively deeper Shallow OSH designs.  OSE is optimised for reliability and for users in developing countries so uses hydraulic power rather than electric as used in podcar.
-Several functioning Weak OSH designs for large cars exist, including BARC (www.barc-project.com/), OSVehicle Tabby (www.openmotors.co/tabbyevo/).   Of these, only BARC includes ROS integration.   It is difficult to classify what constitutes a Weak OSH design because, for example, any small modification made to an existing “donor” vehicle and sufficiently document -- such as by a simple tutorial video on how to update a standard car’s music system, or the conversion of donor cars into racing vehicles  -- technically falls under the Weak OSH definition.  
+SMART [CITE] is a design to modify an existing donor golf cart vehicle for automation research, developed by MIT and Singapore.  The vehicle is a similar size and power to OpenPodCar but is not open source.
+Beetlebot \cite{beetlebot} is a OSH system similar to OpenPodCar but for last-mile freight delivery, without human carrying capacity, and including ROS integration.
+Open Source Ecology (OSE) [CITE??] is an ambition project which ultimately aims to develop Deep OSH vehicles including a car and tractor, via a process of progressively deeper Shallow OSH designs.  OSE is optimised for reliability and for users in developing countries so uses hydraulic power rather than electric as used in OPenPodCar.
+Several functioning OSH designs for large cars exist, including Apollo\footnote{https://github.com/ApolloAuto/apollo}, PixBot\footnote{https://gitlab.com/pixmoving/pixbot} and OSVehicle Tabby \footnote{www.openmotors.co/tabbyevo/}.  AutoRally\footnote{https://autorally.github.io/} \cite{goldfain2019autorally} developed researchers at Georgia Tech and the Berkeley Autonomous Race Car (BARC\footnote{www.barc-project.com/}) are small-scaled autonomous vehicles for research, but only BARC includes ROS integration. 
+ 
 Autoware \cite{kato2018autoware} is a heavyweight open source software project to construct a ROS based automation stack for large on-road cars with power on-board computers.
+The state of Georgia, in the USA, provides a level 3 open-source autonomous vehicle based on a Ford-Edge at the Curiosity Lab at Peachtree Corners \footnote{https://www.peachtreecornersga.gov/businesses/curiosity-lab-at-peachtree-corners}, where technologists and researchers can use the platform in the smart city environment free of charge.
+
+
 OSH and OSS are inherently cooperative design processes and legal structures, so it is possible that components from all of the above and from podcar will be interchanged and evolve together in the future.
+
+https://ieeexplore.ieee.org/document/8926794
+
+
+https://ieeexplore.ieee.org/document/8813784
+
  
 \section{Mechanical modification}
 

@@ -1,9 +1,10 @@
 \begin{thebibliography}{10}
 
-\bibitem{ackermann2009toward}
-John~R Ackermann.
-\newblock Toward open source hardware, 34 u.
-\newblock {\em Dayton L. Rev}, 183, 2009.
+\bibitem{cai2020summit}
+Panpan Cai, Yiyuan Lee, Yuanfu Luo, and David Hsu.
+\newblock Summit: A simulator for urban driving in massive mixed traffic.
+\newblock In {\em 2020 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 4023--4029. IEEE, 2020.
 
 \bibitem{camara2021evaluating}
 Fanta Camara, Patrick Dickinson, and Charles Fox.
@@ -12,11 +13,23 @@ Fanta Camara, Patrick Dickinson, and Charles Fox.
 \newblock {\em Transportation Research Part F: Traffic Psychology and
   Behaviour}, 78:410--423, 2021.
 
+\bibitem{chevalier-boisvert2018duckietown}
+Maxime Chevalier-Boisvert, Florian Golemo, Yanjun Cao, Bhairav Mehta, and Liam
+  Paull.
+\newblock Duckietown environments for openai gym, 2018.
+
 \bibitem{fisher2012open}
 Fisher Daniel~K and Gould Peter~J.
 \newblock Open-source hardware is a low-cost alternative for scientific
   instrumentation and research.
 \newblock {\em Modern instrumentation}, 2012, 2012.
+
+\bibitem{dosovitskiy2017carla}
+Alexey Dosovitskiy, German Ros, Felipe Codevilla, Antonio Lopez, and Vladlen
+  Koltun.
+\newblock {CARLA}: {An} open urban driving simulator.
+\newblock In {\em Proceedings of the 1st Annual Conference on Robot Learning},
+  pages 1--16, 2017.
 
 \bibitem{dubins1957curves}
 Lester~E Dubins.
@@ -29,6 +42,12 @@ Erik Einhorn and Horst-Michael Gross.
 \newblock Generic ndt mapping in dynamic environments and its application for
   lifelong slam.
 \newblock {\em Robotics and Autonomous Systems}, 69:28--39, 2015.
+
+\bibitem{goldfain2019autorally}
+Brian Goldfain, Paul Drews, Changxi You, Matthew Barulic, Orlin Velev,
+  Panagiotis Tsiotras, and James~M Rehg.
+\newblock Autorally: An open platform for aggressive autonomous driving.
+\newblock {\em IEEE Control Systems Magazine}, 39(1):26--55, 2019.
 
 \bibitem{kato2018autoware}
 Shinpei Kato, Shota Tokunaga, Yuya Maruyama, Seiya Maeda, Manato Hirabayashi,
@@ -59,11 +78,6 @@ Jonathan Oxer and Hugh Blemings.
 \newblock {\em Practical Arduino: cool projects for open source hardware}.
 \newblock Apress, 2011.
 
-\bibitem{pearce2012building}
-Joshua~M Pearce.
-\newblock Building research equipment with free, open-source hardware.
-\newblock {\em Science}, 337(6100):1303--1304, 2012.
-
 \bibitem{quigley2009ros}
 Morgan Quigley, Ken Conley, Brian Gerkey, Josh Faust, Tully Foote, Jeremy
   Leibs, Rob Wheeler, and Andrew~Y Ng.
@@ -76,12 +90,25 @@ James Reeds and Lawrence Shepp.
 \newblock Optimal paths for a car that goes both forwards and backwards.
 \newblock {\em Pacific journal of mathematics}, 145(2):367--393, 1990.
 
+\bibitem{rong2020lgsvl}
+Guodong Rong, Byung~Hyun Shin, Hadi Tabatabaee, Qiang Lu, Steve Lemke,
+  M{\=a}rti{\c{n}}{\v{s}} Mo{\v{z}}eiko, Eric Boise, Geehoon Uhm, Mark Gerow,
+  Shalin Mehta, et~al.
+\newblock Lgsvl simulator: A high fidelity simulator for autonomous driving.
+\newblock {\em arXiv preprint arXiv:2005.03778}, 2020.
+
 \bibitem{rosmann2013efficient}
 Christoph R{\"o}smann, Wendelin Feiten, Thomas W{\"o}sch, Frank Hoffmann, and
   Torsten Bertram.
 \newblock Efficient trajectory optimization using a sparse model.
 \newblock In {\em 2013 European Conference on Mobile Robots}, pages 138--143.
   IEEE, 2013.
+
+\bibitem{shah2017airsim}
+Shital Shah, Debadeepta Dey, Chris Lovett, and Ashish Kapoor.
+\newblock Airsim: High-fidelity visual and physical simulation for autonomous
+  vehicles.
+\newblock In {\em Field and Service Robotics}, 2017.
 
 \bibitem{shopriderflagship}
 Shoprider.

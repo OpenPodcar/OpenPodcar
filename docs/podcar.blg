@@ -6,45 +6,45 @@ Database file #1: podcar.bib
 Warning--can't use both volume and number fields in quigley2009ros
 Warning--empty institution in shopriderflagship
 Warning--empty year in shopriderflagship
-You've used 17 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            605 strings with 7208 characters,
-and the built_in function-call counts, 6004 in all, are:
-= -- 600
-> -- 285
-< -- 6
-+ -- 113
-- -- 96
-* -- 419
-:= -- 999
-add.period$ -- 56
-call.type$ -- 17
-change.case$ -- 99
+            622 strings with 8321 characters,
+and the built_in function-call counts, 8169 in all, are:
+= -- 787
+> -- 469
+< -- 8
++ -- 185
+- -- 164
+* -- 594
+:= -- 1356
+add.period$ -- 68
+call.type$ -- 21
+change.case$ -- 144
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 229
-empty$ -- 458
-format.name$ -- 96
-if$ -- 1259
+cite$ -- 24
+duplicate$ -- 294
+empty$ -- 584
+format.name$ -- 164
+if$ -- 1702
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 17
-newline$ -- 88
-num.names$ -- 34
-pop$ -- 101
+int.to.str$ -- 21
+missing$ -- 20
+newline$ -- 107
+num.names$ -- 42
+pop$ -- 163
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 123
 quote$ -- 0
-skip$ -- 158
+skip$ -- 208
 stack$ -- 0
-substring$ -- 356
-swap$ -- 56
-text.length$ -- 6
+substring$ -- 423
+swap$ -- 79
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 82
 warning$ -- 3
-while$ -- 57
-width$ -- 19
-write$ -- 191
+while$ -- 71
+width$ -- 23
+write$ -- 231
 (There were 3 warnings)
