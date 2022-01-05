@@ -5,7 +5,7 @@
 using namespace std;
 
 
-// Author: Fanta Camara, July 2019
+// Author: Fanta Camara, July 2019, with new edits in Dec. 2021 and Jan. 2022
 
 //ROS node for the Pololu PID controller
 //represents only the Pololu
@@ -36,7 +36,7 @@ using namespace std;
 //#define O_NOCTTY 0
 //#else
 
-#define MIN_VEL_FORWARD 0.5
+#define MIN_VEL_FORWARD 0.65
 #define MIN_VEL_BACKWARD -0.65
 
 #define MAX_VEL_FORWARD 1
@@ -131,18 +131,20 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 		float velocity;
 		// HACK probably best to convert direct from ms to arduino bytes later on - need to actually measure speeds per byte though	
 		// convert to -1:1 range  (careful, these values are also used in joystick2speedms)
-		if(velocity_ms>0.1 && velocity_ms < MIN_VEL_FORWARD)
-			velocity = MIN_VEL_FORWARD; //velocity_ms/3.0;
-		else if (velocity_ms > MIN_VEL_FORWARD && velocity_ms < MAX_VEL_FORWARD)
+		if(velocity_ms>=0.01 && velocity_ms < 0.4)
+			velocity = MIN_VEL_FORWARD + velocity_ms; //velocity_ms/3.0;
+		else if (velocity_ms >= MIN_VEL_FORWARD && velocity_ms < MAX_VEL_FORWARD)
 			velocity = velocity_ms;
-		else if (velocity_ms >= MAX_VEL_FORWARD)
+		else if (velocity_ms >= 0.4)
 			velocity = MAX_VEL_FORWARD;
-		else if (velocity_ms < -0.1 && velocity_ms > MIN_VEL_BACKWARD)
-			velocity = MIN_VEL_BACKWARD;//velocity_ms/1.0;  //reverse is slower
-		else if (velocity_ms < MIN_VEL_BACKWARD && velocity_ms > MAX_VEL_BACKWARD)
+		else if (velocity_ms <= -0.01 && velocity_ms > -0.4)
+			velocity = MIN_VEL_BACKWARD + velocity_ms;//velocity_ms/1.0;  //reverse is slower
+		else if (velocity_ms <= MIN_VEL_BACKWARD && velocity_ms > MAX_VEL_BACKWARD)
 			velocity = velocity_ms;
-		else if (velocity_ms <= MAX_VEL_BACKWARD)
+		else if (velocity_ms <= -0.4)
 			velocity = MAX_VEL_BACKWARD;
+		else if (velocity_ms > -0.01 &&  velocity_ms < 0.01)
+			velocity = 0.;
 			
 		printf("Velocity: %f\n", velocity);
 		// speedbytes are converted linearly to voltage as 
@@ -164,10 +166,10 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 		{
 			int speed_byte;
 			
-			if(abs(velocity)<0.1)
+			if(abs(velocity)<0.01)
 				speed_byte=byte_stop;  // dead range center, good to startup
 				
-			else if (velocity>=0.1)    // 240 is racing fast ; use less for safety for now eg 210
+			else if (velocity>=0.01)    // 240 is racing fast ; use less for safety for now eg 210
 				speed_byte = int(byte_dead_zone_top+velocity*(byte_max_speed-byte_dead_zone_top));  // from top of dead range tocapped max
 				
 			else
@@ -187,11 +189,6 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 			received_reponse_to_last_command = false;    // cmd executed so time to get response from Arduino
 
 		}
-
-		// publish velocity for odometry
-		std_msgs::Float64 msg_out;
-		msg_out.data = velocity;
-		pub.publish(msg_out);
 
 		int nwaiting;
 		ioctl(fd, FIONREAD, &nwaiting);  // get the number of bytes waiting to be read
@@ -226,6 +223,11 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 					
 					buffer_idx_next=0;
 					received_reponse_to_last_command = true;   // enables us to send a new command
+					
+					// publish velocity for odometry
+		      std_msgs::Float64 msg_out;
+		      msg_out.data = velocity;
+		      pub.publish(msg_out);
 				}
 			}
 		}
@@ -239,7 +241,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "speed2arduino");
   ros::NodeHandle n;
   
-  pub = n.advertise<std_msgs::Float64>("speed4arduino", 1000);
+  pub = n.advertise<std_msgs::Float64>("speed4arduino", 10);
 
   printf("start\n");
   const char * device = "/dev/ttyArduino";  // Linux

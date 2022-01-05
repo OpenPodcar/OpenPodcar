@@ -133,7 +133,7 @@ https://ieeexplore.ieee.org/document/8813784
 
 
 
-\subsection{Overall Implementation and design}\label{h.1u7vph94gfbt}
+\section{(1) Overall Implementation and design}\label{h.1u7vph94gfbt}
 
 %The hardware of Vitaprint is divided into two parts, namely the CNC part and the extruder. The CNC construction the miniCNC design by AL was used. MiniCNC is a small and robust version of a standard 3-axis CNC router. The support is made of steel and holds in place the aluminium head and table. Stainless steel rods are used with ball bearings to ensure smooth movement. Linear motion is controlled by three Nema32 stepper motors coupled with ball screws.
 
@@ -143,9 +143,8 @@ https://ieeexplore.ieee.org/document/8813784
 
 %A common feature of most high-end 3D bioprinters is multiple-extruder technology and fast extruder switching. A 24BYJ-48 stepper motor was therefore added to each extruder to add the possibility to move each extruder in the Z-direction separately.
 
-\subsection{Mechanical modification}
+\subsection{Mechanical Modification for Steering}
 
-\subsubsection{Steering}
 To automate steering, a Gimson GLA750-P 12V DC linear actuator with position feedback is mounted between an anchor on the underside of the chassis and the car's front axle via bearings.  This actuator has a 8mm/s full load (750N) speed and 250mm stroke length (installation length is 390mm).  
 
 To access the underside of the vehicle, use two axle stands as in fig. \ref{fig:axelStands}. There is an existing hole in the right front wheel axle.  Mount the linear actuator via rear hole to the left side of the front chassis and connect it through the front hole of the actuator with the hole in the car's right front wheel axle via bearings as shown in fig. \ref{fig:steering} and fig. \ref{fig:actuatorMounted}.
@@ -168,16 +167,6 @@ To access the underside of the vehicle, use two axle stands as in fig. \ref{fig:
 	\caption{Underside with linear actuator added for steering.}
 	\label{fig:actuatorMounted}
 \end{figure}
-
-\subsubsection{Sensor installation}
-\paragraph{Lidar option}
-A Velodyne16 lidar sensor is mounted on the vehicle roof using a small optical tripod (TODO give model). Note that optical devices have unusual physical mounting standards which use Imperial rather than metrics units.  This system is used by optics research based on optical table sizing.   The lidar screws onto the tripod. The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in fig. TODO.  It is mounted at a 10 degree tilt downwards (to allow pedestrians to be most clearly seen in the 16 scan lines).
-
-\paragraph{Depth camera option}
-A lower cost alternative to lidar is to use a stereo camera for point cloud sensing. In this option, a StereoLabs ZedCam is mounted similarly on the vehicle roof.
-
-\paragraph{TODO Odometry}
-TODO -- we need some Hall effect or other shaft encoders to measure odometry.
 
 
 \subsection{Electronics and Firmware}
@@ -304,6 +293,10 @@ To start the ignition, the car safety system requires the control voltage to be 
 	\label{fig:potential_divider}
 \end{figure}
 
+
+\subsection{3D Lidar Sensor}
+A Velodyne16 lidar sensor is mounted on the vehicle roof using a small optical tripod (TODO give model). Note that optical devices have unusual physical mounting standards which use Imperial rather than metrics units.  This system is used by optics research based on optical table sizing.   The lidar screws onto the tripod. The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in fig. TODO.  It is mounted at a 10 degree tilt downwards (to allow pedestrians to be most clearly seen in the 16 scan lines).
+
 \subsection{Physical vehicle software interface (ROS)}
 
 A ROS interface to and from the physical vehicle is provided as illustrated in fig. \ref{fig:meshSim} and described below. This runs on a Panasonic CF-19 Toughbook computer mounted on-board the vehicle (and powered from a DCDC converter from the  vehicle battery) running Xubuntu 16.04 (Xenial) and ROS Kinetic.
@@ -314,23 +307,32 @@ A ROS interface to and from the physical vehicle is provided as illustrated in f
 	\label{fig:meshSim}
 \end{figure*}
 
-\subsection{Control system interface}
+\subsubsection{Control system interface}
 The system expects to hear two incoming ROS control messages:     speedcmd\_meterssec and wheelAngleCmd, which contain single floats representing the desired speed in meters per second, and the desired front wheel orientation in radians respectively.
 
 These two messages are received by ROS nodes speedm2arduino and wheelAngle2Pololu, which are ROS drivers for the Arduino speed controller and the Polulo steering controller respectively.
 
-\subsection{Manual joystick control}
+\subsubsection{Manual joystick control}
 Converters from a standard ROS USB joystick driver node to the speed and angle command interface messages are provided, by joystick2speedms and joystick2wheelAngle.  These use the $y$ axis of a joystick for speed and $x$ for steering.
 
-\subsection{Lidar option}
+\subsubsection{Lidar option}
 Velodyne works with the velodyne ROS package. But it needs to be set up so we can talk to the Velodyne over ethernet.  The laptop must be on a wired network, not wifi.   The IPs must be configured as in the velodyne docs TODO details/refs.  The lidar IP is 192.168.1.201.
 
 
-\subsubsection{Universality of the design}\label{h.q32f2nclh4e5}
+\subsection{Universality of the design}\label{h.q32f2nclh4e5}
 
 %One of the biggest advantages that Vitaprint brings is that each extruder is a self-contained unit. First and foremost, the user is able to add as many extruders as needed to the head without significant modifications of any of the hardware pieces. Moreover, the extruder unit can be attached to any other CNC system with very little modification. This means that the user can build a Vitaprint extruder unit for their own CNC router.
 
 One of the biggest advantages of OpenPodCar is that the mechanical, electronic and software components can be easily ported to other vehicles/platforms and only require small changes in the software side to adapt and fix some parameters specific to the new vehicle requirements. The authors are currently replicating such a portability to another type of vehicle. 
+
+\subsubsection{Possible Sensor installation}
+
+\paragraph{Depth camera option}
+A lower cost alternative to lidar is to use a stereo camera for point cloud sensing. In this option, a StereoLabs ZedCam is mounted similarly on the vehicle roof.
+
+\paragraph{TODO Odometry}
+TODO -- we need some Hall effect or other shaft encoders to measure odometry.
+
 
 
 \section{(2) Quality control}\label{h.f8237gmzmwc6}

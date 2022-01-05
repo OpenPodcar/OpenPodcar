@@ -39,7 +39,7 @@ class OdomNode:
 
 	# compute odometry in a way that reflfects the podcar's behaviour
 	def callback_speed(self, msg):
-		self.vx = msg.data/6	  # linear x velocity  # podcar moves between 0.1m/s (slow) and 0.2m/s (fast)
+		self.vx = msg.data/3.5	  # linear x velocity  # podcar moves between 0.1m/s (slow) and 0.2m/s (fast)
 			
 	def callback_angular_speed(self, msg):
 		self.vth = msg.data

@@ -14,7 +14,7 @@ class Node:
 		self.sub = rospy.Subscriber("wheelAngleCmd",Float64,self.callback_wheelAngleCmd, queue_size=1)
 		
 		# initialise linear actuator to zero degree (i.e. 1900 increments)
-		self.linearPos = 1900
+		self.linearPos = 1875
 		
 
 	def callback_wheelAngleCmd(self,msg): 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 	ic = Node()
 	
 	initial_pos = Int64()
-	initial_pos.data = 1900
+	initial_pos.data = 1875
 	ic.pub.publish(initial_pos.data)
 	
 	try:
