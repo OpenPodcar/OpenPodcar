@@ -12,7 +12,7 @@
 
 TebLocalPlannerROS:
 
- odom_topic: odom
+ odom_topic: odometry/groundTruth
  map_frame: /map
     
  # Trajectory
@@ -30,25 +30,26 @@ TebLocalPlannerROS:
  max_vel_x_backwards: 1.
 #min_vel_x: 2.0           #FC
 #min_vel_x_backwards: 0.5 #FC
- max_vel_theta: 0.15   # i.e. no more than 11deg/sec. FC was 1
+ max_vel_theta: 0.1   # i.e. no more than 11deg/sec. FC was 1
  acc_lim_x: 1.   #FC was 1
- acc_lim_theta: 0.05  #FC was 
+ acc_lim_theta: 0.3  #FC was 1
  min_turning_radius: 1.8
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "point"
    radius: 0.7
    vertices: [ [-0.7, 0.4], [-0.7, -0.4], [0.7, 0.4], [0.7, -0.4] ] # for type "polygon"
- cmd_angle_instead_rotvel: True
+ cmd_angle_instead_rotvel: False #FC was true
 
  # GoalTolerance
     
- xy_goal_tolerance: 0.05  # FC was 0.25
+ xy_goal_tolerance: 0.1  # FC was 0.25
  yaw_goal_tolerance: 0.05   #FC was 3
  free_goal_vel: False
     
  # Obstacles
     
- min_obstacle_dist: 0.35  #FC was 0.7
+ min_obstacle_dist: 0.5  #FC was 0.7
+ inflation_dist: 0.5 # FC new param
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
@@ -66,7 +67,7 @@ TebLocalPlannerROS:
  weight_max_vel_x: 1   #FC was 2
  weight_max_vel_theta: 0.19 # FC was 1
  weight_acc_lim_x: 1.   # FC was 1
- weight_acc_lim_theta: 0.15  #FC was 1
+ weight_acc_lim_theta: 0.2  #FC was 1
  weight_kinematics_nh: 1000
  weight_kinematics_forward_drive: 1  #FC was 1
  weight_kinematics_turning_radius: 1.0
@@ -92,3 +93,5 @@ TebLocalPlannerROS:
  # Local cost function
 # pdist_scale: 0.6
 # gdist_scale: 0.3 # Also controls speed
+
+

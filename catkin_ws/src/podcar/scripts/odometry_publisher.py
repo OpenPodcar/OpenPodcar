@@ -34,8 +34,8 @@ class OdomNode:
 
 		# subscribe to speed_meterssec & wheelAngleCmd
 		self.speed_sub = rospy.Subscriber("speed4arduino",Float64, self.callback_speed, queue_size=10)
-		self.angle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_angular_speed, queue_size=1) 
-		self.angle_sub = rospy.Subscriber("pololuFdbk",Int64, self.callback_angle, queue_size=1) 
+		self.wheelangle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_angular_speed, queue_size=1) 
+		self.fdkangle_sub = rospy.Subscriber("pololuFdbk",Int64, self.callback_angle, queue_size=1) 
 
 	# compute odometry in a way that reflfects the podcar's behaviour
 	def callback_speed(self, msg):
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 	
 	node = OdomNode()
 
-	r = rospy.Rate(5)
+	r = rospy.Rate(10)
 	while not rospy.is_shutdown():
 	
 		node.current_time = rospy.Time.now()
@@ -79,7 +79,7 @@ if __name__ == '__main__':
 		odom_quat = tf.transformations.quaternion_from_euler(0, 0, node.th)
 		
 		# first, we'll publish the transform over tf
-		odom_broadcaster.sendTransform((node.x, node.y, 0.), odom_quat, node.current_time, "odom", "map")
+		odom_broadcaster.sendTransform((node.x, node.y, 0.), odom_quat, node.current_time, "base_link", "map")
 		
 		# next, we'll publish the odometry message over ROS
 		odom = Odometry()
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 		odom.pose.pose = Pose(Point(node.x, node.y, 0.), Quaternion(*odom_quat))
 		
 		# set the velocity
-		odom.child_frame_id = "odom"
+		odom.child_frame_id = "base_link"
 		odom.twist.twist = Twist(Vector3(node.vx, node.vy, 0), Vector3(0, 0, node.vth))
 		
 		# publish the message

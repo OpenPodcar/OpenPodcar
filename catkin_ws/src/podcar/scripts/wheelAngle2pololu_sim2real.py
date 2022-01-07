@@ -19,7 +19,7 @@ class Node:
 
 	def callback_wheelAngleCmd(self,msg): 
 		angular_speed = msg.data
-		dt = 0.05 # suppose the angular command has to be executed within 0.1 seconds
+		dt = 0.1 # suppose the angular command has to be executed within 0.1 seconds
 		angle = angular_speed * dt
 		joystickx = angle / (math.pi/4)   #convert back from angle to virtual joystick -1:1
 		if joystickx>=0:
