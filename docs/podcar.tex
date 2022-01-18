@@ -29,7 +29,7 @@
 %% \date{}
 
 
-\title{OpenPodCar: an Open Source Vehicle for Self-Driving Car Research}
+\title{OpenPodcar: an Open Source Vehicle for Self-Driving Car Research}
 \usepackage{authblk} 
 \author[1,2]{Fanta Camara}
 \author[2]{Chris Waltham} 
@@ -45,7 +45,7 @@
 
 % Include your abstract here MAX 250 words
 \begin{abstract}
-Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform. The Lincoln OpenPodCar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) hardware components: CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another. The vehicle uses Ackermann steering and Reeds-Sheppe curves. Its total build cost in 2022 is around 7000USD in total, including sensors and computing equipment.
+Open source software for autonomous vehicle (`self driving car’) control is now available but there is a need for a corresponding open-source hardware platform to enable researchers to build standard setups and share research in this field.   Here we are constructing such a platform. The Lincoln OpenPodcar is a physical vehicle based on a low cost off the shelf, hard canopy, mobility scooter.  It is large enough to transport one person at speeds up to 15kmh, for example for use as a last-mile autonomous taxi service from the train station to the office; or to transport up to three Deliveroo-sized freight containers similarly around a city center. But it is also small enough to make serious injury to pedestrians unlikely in the event of a collision.  Together with its low costs it thus forms an ideal balance between real world utility, safety, cost and research convenience.  The open source platform consists of (a) hardware components: CAD designs, sample bill of materials, and build instructions to modify the off the shelf donor vehicle for electronic control; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard medium-level robot control, including the movebase interface which enacts command to get the vehicle from one pose to another. The vehicle uses Ackermann steering and Reeds-Sheppe curves. Its total build cost in 2022 is around 7000USD in total, including sensors and computing equipment.
 \end{abstract}
 
 \begin{longtable}[]{@{}l@{}}
@@ -60,7 +60,7 @@ Target group: researchers and hobbyists interested in autonomous vehicle researc
 
 Skills required: Mechanical assembly – easy; electrical assembly – advanced; Software – advanced.
 
-Replication: The work in this project is being replicated on a courrier-type manually-driven platform for a vehicle manufacturer. The current OpenPodCar is being used by some of the authors for Human-Robot Interaction experiments.
+Replication: The work in this project is being replicated on a courrier-type manually-driven platform for a vehicle manufacturer. The current OpenPodcar is being used by some of the authors for Human-Robot Interaction experiments.
 
 
 
@@ -115,9 +115,9 @@ Gazebo \cite{koenig2004design} is a robotics 3D physical simulation and 3D graph
 
 \subsubsection{Related systems}
 
-SMART [CITE] is a design to modify an existing donor golf cart vehicle for automation research, developed by MIT and Singapore.  The vehicle is a similar size and power to OpenPodCar but is not open source.
-Beetlebot \cite{beetlebot} is a OSH system similar to OpenPodCar but for last-mile freight delivery, without human carrying capacity, and including ROS integration.
-Open Source Ecology (OSE) [CITE??] is an ambition project which ultimately aims to develop Deep OSH vehicles including a car and tractor, via a process of progressively deeper Shallow OSH designs.  OSE is optimised for reliability and for users in developing countries so uses hydraulic power rather than electric as used in OPenPodCar.
+SMART [CITE] is a design to modify an existing donor golf cart vehicle for automation research, developed by MIT and Singapore.  The vehicle is a similar size and power to OpenPodcar but is not open source.
+Beetlebot \cite{beetlebot} is a OSH system similar to OpenPodcar but for last-mile freight delivery, without human carrying capacity, and including ROS integration.
+Open Source Ecology (OSE) [CITE??] is an ambition project which ultimately aims to develop Deep OSH vehicles including a car and tractor, via a process of progressively deeper Shallow OSH designs.  OSE is optimised for reliability and for users in developing countries so uses hydraulic power rather than electric as used in OpenPodcar.
 Several functioning OSH designs for large cars exist, including Apollo\footnote{https://github.com/ApolloAuto/apollo}, PixBot\footnote{https://gitlab.com/pixmoving/pixbot} and OSVehicle Tabby \footnote{www.openmotors.co/tabbyevo/}.  AutoRally\footnote{https://autorally.github.io/} \cite{goldfain2019autorally} developed researchers at Georgia Tech and the Berkeley Autonomous Race Car (BARC\footnote{www.barc-project.com/}) are small-scaled autonomous vehicles for research, but only BARC includes ROS integration. 
 
 Autoware \cite{kato2018autoware} is a heavyweight open source software project to construct a ROS based automation stack for large on-road cars with power on-board computers.
@@ -323,7 +323,7 @@ Velodyne works with the velodyne ROS package. But it needs to be set up so we ca
 
 %One of the biggest advantages that Vitaprint brings is that each extruder is a self-contained unit. First and foremost, the user is able to add as many extruders as needed to the head without significant modifications of any of the hardware pieces. Moreover, the extruder unit can be attached to any other CNC system with very little modification. This means that the user can build a Vitaprint extruder unit for their own CNC router.
 
-One of the biggest advantages of OpenPodCar is that the mechanical, electronic and software components can be easily ported to other vehicles/platforms and only require small changes in the software side to adapt and fix some parameters specific to the new vehicle requirements. The authors are currently replicating such a portability to another type of vehicle. 
+One of the biggest advantages of OpenPodcar is that the mechanical, electronic and software components can be easily ported to other vehicles/platforms and only require small changes in the software side to adapt and fix some parameters specific to the new vehicle requirements. The authors are currently replicating such a portability to another type of vehicle. 
 
 \subsubsection{Possible Sensor installation}
 
@@ -355,7 +355,7 @@ We included limitations in the steering controller for the linear actuator range
 
 \subsubsection{Safety System for Speed Control System}
 
-Autonomous vehicles can present a significant hazard to people and the environment in which they operated. Damage to surroundings and possible injury to operators and bystanders could result from inappropriate use or malfunction. It is essential that a suitable emergency stop system is implemented in all autonomous vehicles.   Given the development platform nature of the OpenPodCar, a safety mechanism which stops the vehicle under fault conditions is an especially important part of the design.   The design thus requires a series of positive heartbeat signals to be present and timely and also a dead-mans handle (DMH) to be depressed by a human experimenter at all times, in order for a hardware relay to actively continue to supply power from the vehicle’s batteries to all other systems.  The relay will naturally cut out if these signals are absent for any reason, including failures in the safety systems themselves.
+Autonomous vehicles can present a significant hazard to people and the environment in which they operated. Damage to surroundings and possible injury to operators and bystanders could result from inappropriate use or malfunction. It is essential that a suitable emergency stop system is implemented in all autonomous vehicles.   Given the development platform nature of the OpenPodcar, a safety mechanism which stops the vehicle under fault conditions is an especially important part of the design.   The design thus requires a series of positive heartbeat signals to be present and timely and also a dead-mans handle (DMH) to be depressed by a human experimenter at all times, in order for a hardware relay to actively continue to supply power from the vehicle’s batteries to all other systems.  The relay will naturally cut out if these signals are absent for any reason, including failures in the safety systems themselves.
 
 Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 

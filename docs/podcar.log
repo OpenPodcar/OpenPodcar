@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  4 JAN 2022 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  13 JAN 2022 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,7 +1211,7 @@ rottleControlSerial.ino).
  []
 
 [8 <./hardware/steeringActuatorMounted.jpg>]
-<hardware/potential_divider.png, id=344, 407.5225pt x 411.5375pt>
+<hardware/potential_divider.png, id=341, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
@@ -1219,7 +1219,7 @@ Package pdftex.def Info: hardware/potential_divider.png used on input line 291.
 
 (pdftex.def)             Requested size: 345.0pt x 348.41447pt.
  [9 <./hardware/pic_boards.jpg>]
-<software/rosnodes.png, id=352, 949.5475pt x 274.02374pt>
+<software/rosnodes.png, id=349, 949.5475pt x 274.02374pt>
 File: software/rosnodes.png Graphic file (type png)
 
 <use software/rosnodes.png>
@@ -1239,14 +1239,14 @@ File: hardware/pic_relay.jpg Graphic file (type jpg)
 Package pdftex.def Info: hardware/pic_relay.jpg used on input line 377.
 (pdftex.def)             Requested size: 345.0pt x 194.03989pt.
  [16 <./software/rosnodes.png> <./hardware/pic_relay.jpg>] [17] <software/podca
-r_phys_sim.png, id=402, 1274.7625pt x 1234.6125pt>
+r_phys_sim.png, id=401, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
 Package pdftex.def Info: software/podcar_phys_sim.png used on input line 458.
 (pdftex.def)             Requested size: 345.0pt x 334.12222pt.
 
-<software/podcar_mesh.png, id=403, 865.2325pt x 1072.005pt>
+<software/podcar_mesh.png, id=402, 865.2325pt x 1072.005pt>
 File: software/podcar_mesh.png Graphic file (type png)
 
 <use software/podcar_mesh.png>
@@ -1295,7 +1295,7 @@ Package pdftex.def Info: figs_sim/podcar_INB_teb.png used on input line 519.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./figs_sim/sim_nodes.png (PNG copy)>]
-<hardware/ackermann1.png, id=441, 341.275pt x 463.7325pt>
+<hardware/ackermann1.png, id=440, 341.275pt x 463.7325pt>
 File: hardware/ackermann1.png Graphic file (type png)
 
 <use hardware/ackermann1.png>
@@ -1305,7 +1305,7 @@ Package pdftex.def Info: hardware/ackermann1.png used on input line 535.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/ackermann2.png, id=442, 441.65pt x 309.155pt>
+<hardware/ackermann2.png, id=441, 441.65pt x 309.155pt>
 File: hardware/ackermann2.png Graphic file (type png)
 
 <use hardware/ackermann2.png>
@@ -1316,7 +1316,7 @@ Package pdftex.def Info: hardware/ackermann2.png used on input line 541.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./figs_sim/podcar_loaded_gazebo.png (PNG copy)>]
-<figs_sim/sim_movebase_nodes.png, id=450, 2412.76407pt x 767.86874pt>
+<figs_sim/sim_movebase_nodes.png, id=449, 2412.76407pt x 767.86874pt>
 File: figs_sim/sim_movebase_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_movebase_nodes.png>
@@ -1345,15 +1345,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 729.
  (./podcar.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 729.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 729.
+Package rerunfilecheck Info: File `podcar.out' has not changed.
+(rerunfilecheck)             Checksum: 0E903BED3BF62C677B1A06D682266D74;8641.
 
-
-Package rerunfilecheck Warning: File `podcar.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `podcar.out':
-(rerunfilecheck)             Before: 357671B43B43B0E90F0673D3A0E54038;8481
-(rerunfilecheck)             After:  0E903BED3BF62C677B1A06D682266D74;8641.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1364,34 +1358,31 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 729.
 ### simple group (level 1) entered at line 662 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20799 strings out of 493029
- 364925 string characters out of 6136234
- 406652 words of memory out of 5000000
+ 20798 strings out of 493029
+ 364914 string characters out of 6136234
+ 406646 words of memory out of 5000000
  23791 multiletter control sequences out of 15000+600000
  88704 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,76p,1585b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.60} has been referenced bu
-t does not exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx9.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmsy10.pfb>
-Output written on podcar.pdf (30 pages, 19795763 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
+f/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.e
+nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on podcar.pdf (30 pages, 19796019 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 512 compressed objects within 6 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 592 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 147 named destinations out of 1000 (max. 500000)
  539 words of extra memory for PDF output out of 10000 (max. 10000000)
 

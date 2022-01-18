@@ -137,6 +137,13 @@ Disclaimer: Neither the authors nor the University of Lincoln are repsonsible fo
 		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
 		SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
 		
+		
+- **Object Detection and Tracking**
+	- Install the FLOBOT project: please follow the "Install & Build" guide here: [https://github.com/LCAS/FLOBOT]
+	- BSON for Python is required, this can be installed via ``` pip install pymongo==3.5.1 ```
+	- Open flobot_tracker.launch and change frame names and paths to the ones your system use
+	
+
 ## Physical Podcar User Guide 
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
