@@ -7,12 +7,12 @@ import math
 
 def callback(msg):
     br = tf.TransformBroadcaster()
-    #quatArray = [msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w]
-    #br.sendTransform((msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z),
-     #                   quatArray,
-      #                  rospy.Time.now(),
-       #                 "base_link",
-        #                "odom")
+    quatArray = [msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w]
+    br.sendTransform((msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z),
+                        quatArray,
+                        rospy.Time.now(),
+                        "base_link",
+                        "odom")
     br.sendTransform((-0.2, 0, 1.6),
     #br.sendTransform((0.66, 0, 0),
                         #tf.transformations.quaternion_from_euler(math.pi/2, 0, -math.pi/2, 'ryxz'),

@@ -12,10 +12,10 @@
  
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-        <param name="controller_frequency" value="2.5" />
+        <param name="controller_frequency" value="1.5" />
         <rosparam file="$(find podcar)/params/costmap_common_params_sim2real.yaml" command="load" ns="global_costmap" /> 
         <rosparam file="$(find podcar)/params/costmap_common_params_sim2real.yaml" command="load" ns="local_costmap" />
-        <rosparam file="$(find podcar)/params/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find podcar)/params/local_costmap_params_sim2real.yaml" command="load" />
         <rosparam file="$(find podcar)/params/global_costmap_params_sim2real.yaml" command="load" /> 
         <rosparam file="$(find podcar)/params/base_local_planner_params_sim2real.yaml" command="load" />
 
@@ -24,7 +24,7 @@
     </node>
     
 
-    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find podcar)/scripts/podcar_teb_view.rviz" /> 
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find podcar)/scripts/podcar_teb_view_sim2real.rviz" /> 
 
 
 </launch>

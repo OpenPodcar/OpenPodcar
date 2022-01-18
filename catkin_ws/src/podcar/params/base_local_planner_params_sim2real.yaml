@@ -32,13 +32,13 @@ TebLocalPlannerROS:
 #min_vel_x_backwards: 0.5 #FC
  max_vel_theta: 0.1   # i.e. no more than 11deg/sec. FC was 1
  acc_lim_x: 1.   #FC was 1
- acc_lim_theta: 0.3  #FC was 1
+ acc_lim_theta: 0.2  #FC was 1
  min_turning_radius: 1.8
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
    type: "point"
    radius: 0.7
    vertices: [ [-0.7, 0.4], [-0.7, -0.4], [0.7, 0.4], [0.7, -0.4] ] # for type "polygon"
- cmd_angle_instead_rotvel: False #FC was true
+ cmd_angle_instead_rotvel: True #FC was true
 
  # GoalTolerance
     
@@ -48,8 +48,8 @@ TebLocalPlannerROS:
     
  # Obstacles
     
- min_obstacle_dist: 0.5  #FC was 0.7
- inflation_dist: 0.5 # FC new param
+ min_obstacle_dist: 0.3  #FC was 0.7
+ inflation_dist: 0.2 # FC new param
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
