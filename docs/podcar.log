@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  13 JAN 2022 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  18 JAN 2022 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,7 +1091,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<hardware/testDrive.png, id=230, 734.745pt x 646.415pt>
+<hardware/testDrive.png, id=234, 734.745pt x 646.415pt>
 File: hardware/testDrive.png Graphic file (type png)
 
 <use hardware/testDrive.png>
@@ -1105,7 +1105,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 92.
  [3] [4]
-<hardware/onAxles.jpg, id=286, 424.58624pt x 417.56pt>
+<hardware/onAxles.jpg, id=290, 424.58624pt x 417.56pt>
 File: hardware/onAxles.jpg Graphic file (type jpg)
 
 <use hardware/onAxles.jpg>
@@ -1115,7 +1115,7 @@ Package pdftex.def Info: hardware/onAxles.jpg used on input line 153.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steering1.png, id=287, 799.98875pt x 298.11375pt>
+<hardware/steering1.png, id=291, 799.98875pt x 298.11375pt>
 File: hardware/steering1.png Graphic file (type png)
 
 <use hardware/steering1.png>
@@ -1125,7 +1125,7 @@ Package pdftex.def Info: hardware/steering1.png used on input line 159.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steeringActuatorMounted.jpg, id=288, 653.44125pt x 476.78125pt>
+<hardware/steeringActuatorMounted.jpg, id=292, 653.44125pt x 476.78125pt>
 File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
 
 <use hardware/steeringActuatorMounted.jpg>
@@ -1136,7 +1136,7 @@ e 166.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pic_boards.jpg, id=292, 5331.92pt x 2999.205pt>
+<hardware/pic_boards.jpg, id=296, 5331.92pt x 2999.205pt>
 File: hardware/pic_boards.jpg Graphic file (type jpg)
 
 <use hardware/pic_boards.jpg>
@@ -1146,7 +1146,7 @@ Package pdftex.def Info: hardware/pic_boards.jpg used on input line 179.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/circuitDiagram.png, id=293, 1518.67375pt x 789.95125pt>
+<hardware/circuitDiagram.png, id=297, 1518.67375pt x 789.95125pt>
 File: hardware/circuitDiagram.png Graphic file (type png)
 
 <use hardware/circuitDiagram.png>
@@ -1157,7 +1157,7 @@ Package pdftex.def Info: hardware/circuitDiagram.png used on input line 185.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=295, 597.50786p
+<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=299, 597.50786p
 t x 845.04686pt>
 File: hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf Graphic file (
 type pdf)
@@ -1167,7 +1167,7 @@ Package pdftex.def Info: hardware/OpenPodcar_Components_Circuit_Diagram_colored
 .pdf used on input line 192.
 (pdftex.def)             Requested size: 310.4979pt x 439.13033pt.
 
-<hardware/drilling.png, id=296, 1804.7425pt x 1088.065pt>
+<hardware/drilling.png, id=300, 1804.7425pt x 1088.065pt>
 File: hardware/drilling.png Graphic file (type png)
 
 <use hardware/drilling.png>
@@ -1177,7 +1177,7 @@ Package pdftex.def Info: hardware/drilling.png used on input line 198.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] <hardware/pcb_version_1_5_pic1.png, id=311, 1625.07124pt x 808.01875pt>
+[5] <hardware/pcb_version_1_5_pic1.png, id=315, 1625.07124pt x 808.01875pt>
 File: hardware/pcb_version_1_5_pic1.png Graphic file (type png)
 
 <use hardware/pcb_version_1_5_pic1.png>
@@ -1188,7 +1188,7 @@ Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 2
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/pcb_podcar.jpg, id=312, 3131.7pt x 4175.6pt>
+<hardware/pcb_podcar.jpg, id=316, 3131.7pt x 4175.6pt>
 File: hardware/pcb_podcar.jpg Graphic file (type jpg)
 
 <use hardware/pcb_podcar.jpg>
@@ -1211,7 +1211,7 @@ rottleControlSerial.ino).
  []
 
 [8 <./hardware/steeringActuatorMounted.jpg>]
-<hardware/potential_divider.png, id=341, 407.5225pt x 411.5375pt>
+<hardware/potential_divider.png, id=345, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
@@ -1219,7 +1219,7 @@ Package pdftex.def Info: hardware/potential_divider.png used on input line 291.
 
 (pdftex.def)             Requested size: 345.0pt x 348.41447pt.
  [9 <./hardware/pic_boards.jpg>]
-<software/rosnodes.png, id=349, 949.5475pt x 274.02374pt>
+<software/rosnodes.png, id=353, 949.5475pt x 274.02374pt>
 File: software/rosnodes.png Graphic file (type png)
 
 <use software/rosnodes.png>
@@ -1232,28 +1232,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [10 <./hardware/circuitDiagram.png>] [11 <./hardware/OpenPodcar_Components_Circ
 uit_Diagram_colored.pdf>] [12 <./hardware/drilling.png>] [13 <./hardware/pcb_ve
 rsion_1_5_pic1.png>] [14 <./hardware/pcb_podcar.jpg>] [15 <./hardware/potential
-_divider.png>] <hardware/pic_relay.jpg, id=390, 5331.92pt x 2999.205pt>
+_divider.png>] <hardware/pic_relay.jpg, id=394, 5331.92pt x 2999.205pt>
 File: hardware/pic_relay.jpg Graphic file (type jpg)
 
 <use hardware/pic_relay.jpg>
 Package pdftex.def Info: hardware/pic_relay.jpg used on input line 377.
 (pdftex.def)             Requested size: 345.0pt x 194.03989pt.
  [16 <./software/rosnodes.png> <./hardware/pic_relay.jpg>] [17] <software/podca
-r_phys_sim.png, id=401, 1274.7625pt x 1234.6125pt>
+r_phys_sim.png, id=405, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
 Package pdftex.def Info: software/podcar_phys_sim.png used on input line 458.
 (pdftex.def)             Requested size: 345.0pt x 334.12222pt.
 
-<software/podcar_mesh.png, id=402, 865.2325pt x 1072.005pt>
+<software/podcar_mesh.png, id=406, 865.2325pt x 1072.005pt>
 File: software/podcar_mesh.png Graphic file (type png)
 
 <use software/podcar_mesh.png>
 Package pdftex.def Info: software/podcar_mesh.png used on input line 464.
 (pdftex.def)             Requested size: 345.0pt x 427.4531pt.
  [18 <./software/podcar_phys_sim.png>] [19 <./software/podcar_mesh.png>]
-<figs_sim/sim_nodes.png, id=419, 1445.4pt x 414.54875pt>
+<figs_sim/sim_nodes.png, id=423, 1445.4pt x 414.54875pt>
 File: figs_sim/sim_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_nodes.png>
@@ -1263,7 +1263,7 @@ Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 496.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs_sim/podcar_loaded_gazebo.png, id=420, 792.9625pt x 654.445pt>
+<figs_sim/podcar_loaded_gazebo.png, id=424, 792.9625pt x 654.445pt>
 File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
 
 <use figs_sim/podcar_loaded_gazebo.png>
@@ -1274,7 +1274,7 @@ Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 5
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] <figs_sim/INBLincoln_2.png, id=428, 1927.2pt x 1084.05pt>
+[20] <figs_sim/INBLincoln_2.png, id=432, 1927.2pt x 1084.05pt>
 File: figs_sim/INBLincoln_2.png Graphic file (type png)
 
 <use figs_sim/INBLincoln_2.png>
@@ -1284,7 +1284,7 @@ Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 512.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs_sim/podcar_INB_teb.png, id=429, 1751.54375pt x 992.70876pt>
+<figs_sim/podcar_INB_teb.png, id=433, 1751.54375pt x 992.70876pt>
 File: figs_sim/podcar_INB_teb.png Graphic file (type png)
 
 <use figs_sim/podcar_INB_teb.png>
@@ -1295,7 +1295,7 @@ Package pdftex.def Info: figs_sim/podcar_INB_teb.png used on input line 519.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./figs_sim/sim_nodes.png (PNG copy)>]
-<hardware/ackermann1.png, id=440, 341.275pt x 463.7325pt>
+<hardware/ackermann1.png, id=444, 341.275pt x 463.7325pt>
 File: hardware/ackermann1.png Graphic file (type png)
 
 <use hardware/ackermann1.png>
@@ -1305,7 +1305,7 @@ Package pdftex.def Info: hardware/ackermann1.png used on input line 535.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/ackermann2.png, id=441, 441.65pt x 309.155pt>
+<hardware/ackermann2.png, id=445, 441.65pt x 309.155pt>
 File: hardware/ackermann2.png Graphic file (type png)
 
 <use hardware/ackermann2.png>
@@ -1316,7 +1316,7 @@ Package pdftex.def Info: hardware/ackermann2.png used on input line 541.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22 <./figs_sim/podcar_loaded_gazebo.png (PNG copy)>]
-<figs_sim/sim_movebase_nodes.png, id=449, 2412.76407pt x 767.86874pt>
+<figs_sim/sim_movebase_nodes.png, id=453, 2412.76407pt x 767.86874pt>
 File: figs_sim/sim_movebase_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_movebase_nodes.png>
@@ -1329,39 +1329,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23 <./figs_sim/INBLincoln_2.png>] [24 <./figs_sim/podcar_INB_teb.png>]
 [25] (./podcar.bbl [26] [27])
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 725.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 729.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 725.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 729.
 
 [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 729.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 733.
  [29 <./hardware/ackermann1.png>] [30 <./hardware/ackermann2.png> <./figs_sim/s
 im_movebase_nodes.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 729.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 733.
  (./podcar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 729.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 729.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 733.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 733.
 Package rerunfilecheck Info: File `podcar.out' has not changed.
-(rerunfilecheck)             Checksum: 0E903BED3BF62C677B1A06D682266D74;8641.
+(rerunfilecheck)             Checksum: 013EA6B6AF99309FA1334A06C97F30E2;8872.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 729.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 733.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 662 ({)
+### simple group (level 1) entered at line 666 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20798 strings out of 493029
- 364914 string characters out of 6136234
+ 20800 strings out of 493029
+ 364938 string characters out of 6136234
  406646 words of memory out of 5000000
- 23791 multiletter control sequences out of 15000+600000
+ 23792 multiletter control sequences out of 15000+600000
  88704 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,76p,1585b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1379,10 +1379,10 @@ ype1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/
 share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on podcar.pdf (30 pages, 19796019 bytes).
+Output written on podcar.pdf (30 pages, 19796236 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
- 511 compressed objects within 6 object streams
- 147 named destinations out of 1000 (max. 500000)
- 539 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 596 PDF objects out of 1000 (max. 8388607)
+ 515 compressed objects within 6 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 547 words of extra memory for PDF output out of 10000 (max. 10000000)
 
