@@ -241,7 +241,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "speed2arduino");
   ros::NodeHandle n;
   
-  pub = n.advertise<std_msgs::Float64>("speed4arduino", 10);
+  pub = n.advertise<std_msgs::Float64>("speed4arduino", 1);
 
   printf("start\n");
   const char * device = "/dev/ttyArduino";  // Linux

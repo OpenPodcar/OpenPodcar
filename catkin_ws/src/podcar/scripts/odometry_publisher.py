@@ -33,7 +33,7 @@ class OdomNode:
 		self.current_angle = 0.
 
 		# subscribe to speed_meterssec & wheelAngleCmd
-		self.speed_sub = rospy.Subscriber("speed4arduino",Float64, self.callback_speed, queue_size=10)
+		self.speed_sub = rospy.Subscriber("speed4arduino",Float64, self.callback_speed, queue_size=1)
 		#self.wheelangle_sub = rospy.Subscriber("wheelAngleCmd",Float64, self.callback_wheelangle, queue_size=1) 
 		self.fdkangle_sub = rospy.Subscriber("pololuFdbk",Int64, self.callback_fdkangle, queue_size=1) 
 
@@ -59,11 +59,11 @@ if __name__ == '__main__':
 	
 	rospy.init_node('odometry_publisher')
 	
-	odom_pub = rospy.Publisher("odometry/groundTruth", Odometry, queue_size=1000)
+	odom_pub = rospy.Publisher("odometry/groundTruth", Odometry, queue_size=1)
 	
 	node = OdomNode()
 
-	r = rospy.Rate(10)
+	r = rospy.Rate(5)
 	while not rospy.is_shutdown():
 	
 		node.current_time = rospy.Time.now()
