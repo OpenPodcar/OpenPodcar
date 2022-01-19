@@ -63,7 +63,7 @@ if __name__ == '__main__':
 	
 	node = OdomNode()
 
-	r = rospy.Rate(5)
+	r = rospy.Rate(10)
 	while not rospy.is_shutdown():
 	
 		node.current_time = rospy.Time.now()
@@ -90,13 +90,13 @@ if __name__ == '__main__':
 		# next, we'll publish the odometry message over ROS
 		odom = Odometry()
 		odom.header.stamp = node.current_time
-		odom.header.frame_id = "odom"
+		odom.header.frame_id = "map"
 		
 		# set the position
 		odom.pose.pose = Pose(Point(node.x, node.y, 0.), Quaternion(*odom_quat))
 		
 		# set the velocity
-		odom.child_frame_id = "base_link"
+		#odom.child_frame_id = "base_link"
 		#odom.twist.twist = Twist(Vector3(node.vx, 0, 0), Vector3(0, 0, node.vth))
 		
 		# publish the message
