@@ -1,5 +1,5 @@
 local_costmap:
-  global_frame: odom
+  global_frame: odom 
   robot_base_frame: base_link
   update_frequency: 0.5 # FC was 0.5  
   publish_frequency: 0.5 # FC0.5

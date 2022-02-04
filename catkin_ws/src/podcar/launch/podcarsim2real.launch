@@ -13,6 +13,8 @@
  <node pkg="podcar" type="sensorMsgs_Pointcloud_Handler_sim2real.py" name="sensorMsgs_Pointcloud_Handler" />
  <node pkg="podcar" type="odometry_Handler.py" name="odometry_Handler" />
  <node pkg="podcar" type="podcar_tf_broadcaster_sim2real.py" name="podcar_tf_broadcaster" />
+
+  </node>
  
 
 </launch>

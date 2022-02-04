@@ -47,10 +47,10 @@ class OdomNode:
 					
 	def callback_fdkangle(self, msg): 
 		feedback = msg.data  # to be converted back to angle
-		if feedback > 1875:    
-			self.current_angle = (math.pi/4) * (feedback - 1875) / 300. # turning on the left
-		elif feedback < 1860:
-			self.current_angle = (math.pi/4) * (feedback - 1860) / 300. # turning on the right
+		if feedback > 1879:    
+			self.current_angle = (math.pi/4) * (feedback - 1879) / 300. # turning on the left
+		elif feedback < 1870:
+			self.current_angle = (math.pi/4) * (feedback - 1870) / 200. # turning on the right
 		else:
 			self.current_angle = 0.
 		
@@ -71,32 +71,40 @@ if __name__ == '__main__':
 		
 		node.vth = node.vx * math.tan(node.current_angle) / node.wheelbase
 		
-		delta_th = node.vth*node.dt  
-		#node.th = node.current_angle 
+		print("Current angle: " + str(node.current_angle) + "\n")
 		
-		delta_x = (node.vx * cos(node.th + delta_th/2)) * node.dt
-		delta_y = (node.vx * sin(node.th + delta_th/2)) * node.dt
+		delta_th = node.vth*node.dt  
+		print("Delta_th: " + str(delta_th) + "\n")
+		#delta_th = 0.0
+		#node.th = node.current_angle 
+	
+		#delta_x = (node.vx * cos(node.th + delta_th/2)) * node.dt
+		#delta_y = (node.vx * sin(node.th + delta_th/2)) * node.dt
+		
+		delta_x = (node.vx * cos(node.th)) * node.dt
+		delta_y = (node.vx * sin(node.th)) * node.dt
 		
 		node.x += delta_x
 		node.y += delta_y
 		
-		#node.th += delta_th
+		node.th += delta_th
+		print("Theta: " + str(node.th) + "\n")
 		
-		node.th = node.current_angle
+		#node.th = node.current_angle
 		
 		# since all odometry is 6DOF we'll need a quaternion created from yaw
-		odom_quat = tf.transformations.quaternion_from_euler(0, 0, node.th)
+		odom_quat = tf.transformations.quaternion_from_euler(0., 0., node.th/2)
 		
 		# next, we'll publish the odometry message over ROS
 		odom = Odometry()
 		odom.header.stamp = node.current_time
-		odom.header.frame_id = "map"
+		odom.header.frame_id = "odom"
 		
 		# set the position
 		odom.pose.pose = Pose(Point(node.x, node.y, 0.), Quaternion(*odom_quat))
 		
 		# set the velocity
-		#odom.child_frame_id = "base_link"
+		odom.child_frame_id = "base_link"
 		#odom.twist.twist = Twist(Vector3(node.vx, 0, 0), Vector3(0, 0, node.vth))
 		
 		# publish the message

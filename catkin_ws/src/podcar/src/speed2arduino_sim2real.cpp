@@ -39,8 +39,8 @@ using namespace std;
 #define MIN_VEL_FORWARD 0.65
 #define MIN_VEL_BACKWARD -0.65
 
-#define MAX_VEL_FORWARD 1
-#define MAX_VEL_BACKWARD -1
+#define MAX_VEL_FORWARD 1.00
+#define MAX_VEL_BACKWARD -1.00
 
 int fd;  //file descriptor for serial port
 ros::Publisher pub;  //publisher
@@ -131,17 +131,17 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 		float velocity;
 		// HACK probably best to convert direct from ms to arduino bytes later on - need to actually measure speeds per byte though	
 		// convert to -1:1 range  (careful, these values are also used in joystick2speedms)
-		if(velocity_ms>=0.01 && velocity_ms < 0.4)
+		if(velocity_ms>=0.01 && velocity_ms < 0.35)
 			velocity = MIN_VEL_FORWARD + velocity_ms; //velocity_ms/3.0;
 		else if (velocity_ms >= MIN_VEL_FORWARD && velocity_ms < MAX_VEL_FORWARD)
 			velocity = velocity_ms;
-		else if (velocity_ms >= 0.4)
+		else if (velocity_ms >= 0.35)
 			velocity = MAX_VEL_FORWARD;
-		else if (velocity_ms <= -0.01 && velocity_ms > -0.4)
+		else if (velocity_ms <= -0.01 && velocity_ms > -0.35)
 			velocity = MIN_VEL_BACKWARD + velocity_ms;//velocity_ms/1.0;  //reverse is slower
 		else if (velocity_ms <= MIN_VEL_BACKWARD && velocity_ms > MAX_VEL_BACKWARD)
 			velocity = velocity_ms;
-		else if (velocity_ms <= -0.4)
+		else if (velocity_ms <= -0.35)
 			velocity = MAX_VEL_BACKWARD;
 		else if (velocity_ms > -0.01 &&  velocity_ms < 0.01)
 			velocity = 0.;
@@ -224,10 +224,20 @@ void callback_cmd(const std_msgs::Float64::ConstPtr& msg)
 					buffer_idx_next=0;
 					received_reponse_to_last_command = true;   // enables us to send a new command
 					
-					// publish velocity for odometry
-		      std_msgs::Float64 msg_out;
-		      msg_out.data = velocity;
-		      pub.publish(msg_out);
+					if(strstr(chars, "DAC LIMITS EXCEDED - THROTTLE SETTING UNCHANGED") == NULL)
+					{
+						// publish velocity for odometry
+				    std_msgs::Float64 msg_out;
+				    msg_out.data = velocity;
+				    pub.publish(msg_out);
+				  }
+				  else
+				  {
+				  	// publish velocity for odometry
+				    std_msgs::Float64 msg_out;
+				    msg_out.data = 0.;
+				    pub.publish(msg_out);
+				  }
 				}
 			}
 		}

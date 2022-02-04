@@ -54,13 +54,13 @@ Open source software for autonomous vehicle (`self driving car’) control is no
 
 \subsection{Metadata Overview}\label{h.akaipbqoqfs8}
 
-Main design files: link to repository with design files and assembly instructions
+Main design files: \url{https://github.com/charles-fox/podcar}
 
 Target group: researchers and hobbyists interested in autonomous vehicle research and robotics. 
 
-Skills required: Mechanical assembly – easy; electrical assembly – advanced; Software – advanced.
+Skills required: Mechanical assembly – intermediate; electrical assembly – advanced; Software – advanced.
 
-Replication: The work in this project is being replicated on a courrier-type manually-driven platform for a vehicle manufacturer. The current OpenPodcar is being used by some of the authors for Human-Robot Interaction experiments.
+Replication: The work in this project is being replicated on a courrier-type manually-driven platform for a vehicle manufacturer. The current OpenPodcar is being used by some of the authors for Human-Robot Interaction experiments and another mobility scooter will be built based on the documentation to improve its accuracy.
 
 
 
@@ -82,8 +82,6 @@ Replication: The work in this project is being replicated on a courrier-type man
 \subsection{Introduction}\label{h.pnj38xyr5dyy}
 
 %{Bioprinting is a fast growing field, APPLICATION, TECHNOLOGY, why OS...}
-
-Pick a licence for the paper github: e.g. CERN hardware licence
 
 \subsubsection{Open source hardware}
 
@@ -222,9 +220,9 @@ To robustify the initial electronics modifications, we further designed a PCB (P
 
 \subsubsection{Steering control system}
 
-The front wheels are steered by a Pololu JRK21v3 PID controller, which takes serial port desired positions as input. It also takes feedback position information as an analog voltage from the linear actuator as an input. It outputs analog high-power voltages to the linear actuator.
+The front wheels are steered by a Pololu jrk21v3 PID controller, which takes serial port desired positions as input. It also takes feedback position information as an analog voltage from the linear actuator as an input. It outputs analog high-power voltages to the linear actuator.
 
-TODO give PID settings.Windows app is needed to set them once only. 
+A Windows app is required (once) to set the PID parameters for the linear actuator, the details are explained in the documentation. 
 
 
 
@@ -625,49 +623,32 @@ The work mainly requires Arduino IDE, Pololu Configuration Utility Manager, Ubun
 E.g. other hardware or software projects, modular components,
 libraries, frameworks, incl. minimum version compatibility.
 
+Software required for this project include:
+\begin{itemize}
+	\item Robot Operating System (ROS) Kinetic Kame: 
+	\item Gazebo 7: 
+	\item FLOBOT EU Project for people detection and tracking:
+	\item KiCad for PCB Design:
+	\item Arduino IDE for speed control: 
+	\item Pololu Configuration Utility Manager for linear actuator control
+\end{itemize}
+
 
 \subsection{Hardware documentation and files location:}\label{h.nbisrsde6sc3}
 
-Archive for hardware documentation and build files (required.
-We recommend the use the DocuBricks repository, please see author guide for criteria and alternative
-repositories.) Note: We require the inclusion of modifiable design
-files as well as a detailed documentation of the functionality of the
-hardware with assembly instructions. This will be assessed as part of
-the journal peer review process.
+\textbf{Archive for hardware documentation, build files and software}
 
-Name: The name of the archive
+\textbf{Name}: GitHub
 
-Persistent identifier: e.g. DOI, etc.
+\textbf{Persistent identifier:} e.g. DOI, etc.
 
-Licence: Open hardware license under which the documentation and
-files are licensed - see author guide for more information
+\textbf{Project repository:} \url{https://github.com/charles-fox/podcar}
 
-Publisher: Name of the person who deposited the documentation
+\textbf{Licence:} CERN-OHL-W (weakly reciprocal)
 
-Date published: dd/mm/yy
+\textbf{Date published:} dd/mm/yy
 
-Modifiable design files (if different from above)
-
-Name:The name of the emulation environment
-
-Persistent identifier: e.g. DOI, handle, PURL, etc.
-
-Licence: Open license under which the software is licensed here
-
-Publisher: Name of the person who deposited the documentation
-
-Date published: dd/mm/yy
-
-Software code repository (e.g. SourceForge, GitHub etc.)
-(required)
-
-Name: The name of the code repository
-
-Identifier: {The identifier (or URI) used by the repository
-
-Licence: Open license under which the software is licensed
-
-Date published: dd/mm/yy
+This project is also seeking for OSHWA certification.
 
 
 \section{(5) Discussion}\label{h.90jl7wm65t65}

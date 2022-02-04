@@ -18,8 +18,9 @@ class Node:
 		
 
 	def callback_wheelAngleCmd(self,msg): 
-		angle = -msg.data/2 # suppose move_base angle cmd are between -pi/2 and pi/2, we want instead -pi/4 and pi/4
+		angle = -msg.data # suppose move_base angle cmd are between -pi/2 and pi/2, we want instead -pi/4 and pi/4
 		joystickx = angle / (math.pi/4)   #convert back from angle to virtual joystick -1:1
+		#joystickx = angle/2
 		
 		if joystickx>=0:
 			ic.linearPos = int(1900 + joystickx*600.)  # right   - linear actuatior position, in pololu ints
