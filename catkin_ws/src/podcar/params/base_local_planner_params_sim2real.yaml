@@ -23,6 +23,7 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: True
  max_global_plan_lookahead_dist: 3.0
  feasibility_check_no_poses: 5
+ min_samples: 10. # FC new
     
  # Robot
          
@@ -30,11 +31,12 @@ TebLocalPlannerROS:
  max_vel_x_backwards: 1.
 #min_vel_x: 2.0           #FC
 #min_vel_x_backwards: 0.5 #FC
- max_vel_theta: 0.3   # i.e. no more than 11deg/sec. FC was 1
+ max_vel_theta: 0.15   # i.e. no more than 11deg/sec. FC was 1
  acc_lim_x: 1.   #FC was 1
- acc_lim_theta: 0.2  #FC was 1
+ acc_lim_theta: 0.1  #FC was 1
  min_turning_radius: 1.8
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
+#type: "polygon"
    type: "point"
    radius: 0.7
 #vertices: [ [-0.7, 0.4], [-0.7, -0.4], [0.7, 0.4], [0.7, -0.4] ] # for type "polygon"
@@ -45,13 +47,14 @@ TebLocalPlannerROS:
  # GoalTolerance
     
  xy_goal_tolerance: 0.1  # FC was 0.25
- yaw_goal_tolerance: 0.05   #FC was 3
+ yaw_goal_tolerance: 0.1   #FC was 3
  free_goal_vel: False
     
  # Obstacles
     
- min_obstacle_dist: 1.2  #FC was 0.7
-#inflation_dist: 0.2 # FC new param
+ min_obstacle_dist: 0.5  #FC was 0.7
+ inflation_dist: 0.7 # FC new param
+#dynamic_obstacle_inflation_dist: 0.7 #FC new param
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
@@ -66,7 +69,7 @@ TebLocalPlannerROS:
  optimization_activate: True
  optimization_verbose: False
  penalty_epsilon: 0.1
- weight_max_vel_x: 1   #FC was 2
+ weight_max_vel_x: 2   #FC was 2
  weight_max_vel_theta: 0.19 # FC was 1
  weight_acc_lim_x: 1.   # FC was 1
  weight_acc_lim_theta: 0.2  #FC was 1
@@ -75,7 +78,8 @@ TebLocalPlannerROS:
  weight_kinematics_turning_radius: 1.0
  weight_optimaltime: 1
  weight_obstacle: 50
- weight_dynamic_obstacle: 10 # not in use yet
+ weight_viapoint: 5.0 #FC new param #5.0 #1.0
+ weight_dynamic_obstacle: 10 # FC new param #not in use yet
  alternative_time_cost: False # not in use yet
 
  # Homotopy Class Planner
@@ -91,6 +95,13 @@ TebLocalPlannerROS:
  obstacle_keypoint_offset: 0.1
  obstacle_heading_threshold: 0.45
  visualize_hc_graph: True #FC was False
+ 
+ #ViaPoints # FC new params
+#global_plan_viapoint_sep: 0.5 #negative if none
+#via_points_ordered: False #adhere to order of via points
+ 
+#allow_init_with_backwards_motion: True
+ 
  
  # Local cost function
 # pdist_scale: 0.6

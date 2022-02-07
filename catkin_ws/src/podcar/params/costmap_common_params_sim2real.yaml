@@ -1,9 +1,13 @@
-obstacle_range: 5
-raytrace_range: 3.0
-footprint: [[-0.6, 0.285475], [-0.6, -0.285475], [0.6, 0.285475], [0.6, -0.285475]]
+obstacle_range: 10 #FC was 5
+raytrace_range: 10.0 #FC was 3.0
+#footprint: [[-0.6, 0.285475], [-0.6, -0.285475], [0.6, 0.285475], [0.6, -0.285475]]
+vertices: [ [-0.75, 0.4], [-0.75, -0.4], [0.75, 0.4], [0.75, -0.4] ] # for type "polygon"
 #robot_radius: ir_of_robot
-#inflation_radius: 0.5
-inflation_radius: 0.75
+inflation_radius: 0.7   #FC commented
+#inflation_dist: 0.9  #FC new
+
+#lethal_cost_threshold: 100
+#track_unknown_space: true
 
 observation_sources: laser_scan_sensor
 
