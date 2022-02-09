@@ -4,6 +4,7 @@ global_costmap:
   update_frequency: 5.0
   static_map: false #FC was false
   resolution: 0.025 # FC was 0.001
+  
 
   transform_tolerance: 0.5
   plugins:
