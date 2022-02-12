@@ -5,9 +5,9 @@ local_costmap:
   publish_frequency: 0.5 # FC0.5
   static_map: false
   rolling_window: true
-  width: 15 #FC was 10
-  height: 15 # FC was 10
-  resolution: 0.025 #FC was 0.025
+  width: 10 #FC was 10
+  height: 10 # FC was 10
+  resolution: 0.1 #FC was 0.025
   
   
 #plugins:

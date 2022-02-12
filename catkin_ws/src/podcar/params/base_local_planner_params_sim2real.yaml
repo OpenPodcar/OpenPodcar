@@ -46,13 +46,13 @@ TebLocalPlannerROS:
 
  # GoalTolerance
     
- xy_goal_tolerance: 0.1  # FC was 0.25
- yaw_goal_tolerance: 0.1   #FC was 3
+ xy_goal_tolerance: 0.15  # FC was 0.25
+ yaw_goal_tolerance: 0.15   #FC was 3
  free_goal_vel: False
     
  # Obstacles
     
- min_obstacle_dist: 2.  #FC was 0.7, then 3.
+ min_obstacle_dist: .7  #FC was 0.7, then 3.
  inflation_dist: 2.5 # FC new param, was 3.5
 #inflation_radius: 2.5 # FC new param
  dynamic_obstacle_inflation_dist: 3. #FC new param

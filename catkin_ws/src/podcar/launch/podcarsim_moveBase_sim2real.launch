@@ -9,9 +9,9 @@
         <param name="base_frame" value="base_link" />
         <param name="map_frame" value="map"/>
         
-        <param name="map_update_interval" value="5.0"/>
-				<param name="maxUrange" value="50.0"/>
-				<param name="maxRange" value="100.0"/>
+        <param name="map_update_interval" value="5."/>
+				<param name="maxUrange" value="10.0"/>
+				<param name="maxRange" value="20.0"/>
 				<param name="sigma" value="0.05"/>
 				<param name="kernelSize" value="1"/>
 				<param name="lstep" value="0.05"/>
@@ -29,12 +29,12 @@
 				<param name="angularUpdate" value="0.436"/>
 				<param name="temporalUpdate" value="-1.0"/>
 				<param name="resampleThreshold" value="0.5"/>
-				<param name="particles" value="100"/>
+				<param name="particles" value="50"/>
 				
 				<param name="xmin" value="-10.0"/>
 				<param name="ymin" value="-10.0"/>
-				<param name="xmax" value="100.0"/>
-				<param name="ymax" value="100.0"/>
+				<param name="xmax" value="20.0"/>
+				<param name="ymax" value="20.0"/>
 
 				<param name="delta" value="0.05"/>
 				<param name="llsamplerange" value="0.01"/>
@@ -46,7 +46,7 @@
  
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-        <param name="controller_frequency" value="15" />
+        <param name="controller_frequency" value="2." />
         <rosparam file="$(find podcar)/params/costmap_common_params_sim2real.yaml" command="load" ns="global_costmap" /> 
         <rosparam file="$(find podcar)/params/costmap_common_params_sim2real.yaml" command="load" ns="local_costmap" />
         <rosparam file="$(find podcar)/params/local_costmap_params_sim2real.yaml" command="load" />
