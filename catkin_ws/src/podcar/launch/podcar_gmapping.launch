@@ -3,7 +3,7 @@
    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find podcar)/scans/fab_lab.yaml"/>  -->
    <!-- <<node name="map_server" pkg="map_server" type="map_server"/> -->
 
-   
+ <!--
     <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
         <remap from="scan" to="sensor_msgs/LaserScan" />
         <param name="odom_frame" value="odom" />
@@ -45,7 +45,7 @@
     </node>  
  
  
- <!--
+
       
   <arg name="use_map_topic" default="true"/>
   <arg name="scan_topic" default="sensor_msgs/LaserScan" />
@@ -87,10 +87,11 @@
   </node>
   
 
- 
+  
+ -->
   
    
-	 <node pkg="marvelmind_nav" type="velodyne2tf.py" name="velodyne2tf" />
+	 <node pkg="marvelmind_nav" type="velodyne2tf.py" name="velodyne2tf" /> 
 	 <node pkg="podcar" type="odometry_publisher_laser_scan.py" name="odometry_publisher_laser_scan" />
 	 <node pkg="podcar" type="sensorMsgs_Pointcloud_Handler_sim2real.py" name="sensorMsgs_Pointcloud_Handler" />
 
@@ -130,7 +131,6 @@
     <param name="epsilon_theta" value="0.000001"/>
     <param name="outliers_maxPerc" value="0.90"/>
   </node>
- 
- -->
+
 
 </launch>

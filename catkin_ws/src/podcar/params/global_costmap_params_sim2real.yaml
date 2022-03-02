@@ -2,7 +2,7 @@ global_costmap:
   global_frame: map
   robot_base_frame: base_link
   update_frequency: 5. #FC was 5.
-  static_map: false #FC was false
+  static_map: false
   resolution: 0.1 # FC was 0.001
   
 
