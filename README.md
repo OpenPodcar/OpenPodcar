@@ -55,7 +55,7 @@ To build OpenPodcar, first obtain the components from the Bill of Materials, whi
 
 - **Printed Circuit Board (PCB)**
 
-	- Manufacture the PCB board
+	- Manufacture the PCB board.   This can be done by sending the gerber files to an online PCB manufacturer such as pcbway.com.   They will then post the bare board to you.  (At this stage there are no components on it, you will solder them on later in these instructions.)
 
 
 	- **Buck converters' settings**
