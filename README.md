@@ -141,6 +141,8 @@ Including:
 	- Open flobot_tracker.launch and change frame names and paths to the ones your system uses
 	
 
+	
+
 ## Physical Podcar User Guide 
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
@@ -236,6 +238,12 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Check: main vehicle battery level, by connecting the vehicle charger and inspecting the battery charge level. Problem occurs if the battery is nearly flat.
 
 	- Check: charger must be disconnected for rear wheels to move (safety feature).
+	
+- Linear Actuator
+	- Diagnostic test commands can be passed to the Polulo using the commands provided in /tools/cmdSteer.   {\em Do not give commands outside the range 1000-2500 as they have mechanically destroyed the the vehicle.} A non-ROS test of the C API for the Pololu is provided in /tools/pololuTestCSerial.
+	
+- Speed
+	- It receives commands of the form “FA:210” as speed commands. The test scripts /tools/zeroSpeed.py and /tools/testSpeed.py can be used to send example commands for debugging.
 
 ### Lidar
 - No velodyne_points message published

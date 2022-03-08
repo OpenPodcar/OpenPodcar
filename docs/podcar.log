@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  27 JAN 2022 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  8 MAR 2022 02:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -789,6 +789,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count123
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen162
+\captionmargin@=\dimen163
+\captionwidth=\dimen164
+\caption@tempdima=\dimen165
+\caption@indent=\dimen166
+\caption@parindent=\dimen167
+\caption@hangindent=\dimen168
+)
+\c@ContinuedFloat=\count124
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+\c@subfigure=\count125
+\c@subtable=\count126
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -846,16 +867,16 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen162
-\Hy@linkcounter=\count124
-\Hy@pagecounter=\count125
+\@linkdim=\dimen169
+\Hy@linkcounter=\count127
+\Hy@pagecounter=\count128
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count126
+\Hy@SavedSpaceFactor=\count129
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -867,17 +888,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count127
+\c@Hy@tempcnt=\count130
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen163
-\Fld@menulength=\count128
-\Field@Width=\dimen164
-\Fld@charsize=\dimen165
+\XeTeXLinkMargin=\dimen170
+\Fld@menulength=\count131
+\Field@Width=\dimen171
+\Fld@charsize=\dimen172
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -887,17 +908,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count129
-\c@Item=\count130
-\c@Hfootnote=\count131
+\Hy@abspage=\count132
+\c@Item=\count133
+\c@Hfootnote=\count134
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count132
-\c@bookmark@seq@number=\count133
+\Fld@listcount=\count135
+\c@bookmark@seq@number=\count136
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -906,14 +927,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-Package hyperref Info: Option `unicode' set `true' on input line 14.
+Package hyperref Info: Option `unicode' set `true' on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 14.
+Package hyperref Info: Option `breaklinks' set `true' on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
@@ -921,37 +942,37 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTright=\skip51
 \LTpre=\skip52
 \LTpost=\skip53
-\LTchunksize=\count134
-\LTcapwidth=\dimen166
+\LTchunksize=\count137
+\LTcapwidth=\dimen173
 \LT@head=\box39
 \LT@firsthead=\box40
 \LT@foot=\box41
 \LT@lastfoot=\box42
-\LT@cols=\count135
-\LT@rows=\count136
-\c@LT@tables=\count137
-\c@LT@chunks=\count138
+\LT@cols=\count138
+\LT@rows=\count139
+\c@LT@tables=\count140
+\c@LT@chunks=\count141
 \LT@p@ftn=\toks36
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen167
-\lightrulewidth=\dimen168
-\cmidrulewidth=\dimen169
-\belowrulesep=\dimen170
-\belowbottomsep=\dimen171
-\aboverulesep=\dimen172
-\abovetopsep=\dimen173
-\cmidrulesep=\dimen174
-\cmidrulekern=\dimen175
-\defaultaddspace=\dimen176
-\@cmidla=\count139
-\@cmidlb=\count140
-\@aboverulesep=\dimen177
-\@belowrulesep=\dimen178
-\@thisruleclass=\count141
-\@lastruleclass=\count142
-\@thisrulewidth=\dimen179
+\heavyrulewidth=\dimen174
+\lightrulewidth=\dimen175
+\cmidrulewidth=\dimen176
+\belowrulesep=\dimen177
+\belowbottomsep=\dimen178
+\aboverulesep=\dimen179
+\abovetopsep=\dimen180
+\cmidrulesep=\dimen181
+\cmidrulekern=\dimen182
+\defaultaddspace=\dimen183
+\@cmidla=\count142
+\@cmidlb=\count143
+\@aboverulesep=\dimen184
+\@belowrulesep=\dimen185
+\@thisruleclass=\count144
+\@lastruleclass=\count145
+\@thisrulewidth=\dimen186
 )
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
@@ -960,57 +981,48 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip54
 \@affilsep=\skip55
-\c@Maxaffil=\count143
-\c@authors=\count144
-\c@affil=\count145
+\c@Maxaffil=\count146
+\c@authors=\count147
+\c@affil=\count148
 ) (./podcar.aux
 
-LaTeX Warning: Label `fig:actuatorMounted' multiply defined.
-
-
-LaTeX Warning: Label `fig:actuatorMounted' multiply defined.
-
-
 LaTeX Warning: Label `fig:meshSim' multiply defined.
-
-
-LaTeX Warning: Label `fig:ackermann1' multiply defined.
 
 )
 \openout1 = `podcar.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 43.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count146
-\scratchdimen=\dimen180
+\scratchcounter=\count149
+\scratchdimen=\dimen187
 \scratchbox=\box43
-\nofMPsegments=\count147
-\nofMParguments=\count148
+\nofMPsegments=\count150
+\nofMParguments=\count151
 \everyMPshowfont=\toks37
-\MPscratchCnt=\count149
-\MPscratchDim=\dimen181
-\MPnumerator=\count150
-\makeMPintoPDFobject=\count151
+\MPscratchCnt=\count152
+\MPscratchDim=\dimen188
+\MPnumerator=\count153
+\makeMPintoPDFobject=\count154
 \everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -1028,8 +1040,16 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1037,327 +1057,266 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count152
+\c@section@level=\count155
 )
-LaTeX Info: Redefining \ref on input line 42.
-LaTeX Info: Redefining \pageref on input line 42.
-LaTeX Info: Redefining \nameref on input line 42.
+LaTeX Info: Redefining \ref on input line 43.
+LaTeX Info: Redefining \pageref on input line 43.
+LaTeX Info: Redefining \nameref on input line 43.
 
 (./podcar.out) (./podcar.out)
 \@outlinefile=\write4
 \openout4 = `podcar.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 44.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 43.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 44.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 43.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 44.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 43.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 44.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 43.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 43.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+(Font)              <6> on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 43.
+(Font)              <9> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 43.
+(Font)              <5> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 57.
+(Font)              <10> on input line 60.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 57.
+(Font)              <7> on input line 60.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<hardware/testDrive.png, id=235, 734.745pt x 646.415pt>
-File: hardware/testDrive.png Graphic file (type png)
-
-<use hardware/testDrive.png>
-Package pdftex.def Info: hardware/testDrive.png used on input line 76.
-(pdftex.def)             Requested size: 345.0pt x 303.52905pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 88.
- [2 <./hardware/testDrive.png>] [3] [4]
-<hardware/onAxles.jpg, id=295, 424.58624pt x 417.56pt>
+ine 81.
+ [2] [3]
+<hardware/onAxles.jpg, id=227, 424.58624pt x 417.56pt>
 File: hardware/onAxles.jpg Graphic file (type jpg)
 
 <use hardware/onAxles.jpg>
-Package pdftex.def Info: hardware/onAxles.jpg used on input line 151.
-(pdftex.def)             Requested size: 345.0pt x 339.30487pt.
+Package pdftex.def Info: hardware/onAxles.jpg used on input line 122.
+(pdftex.def)             Requested size: 123.12685pt x 121.0893pt.
 
+<hardware/steeringActuatorMounted.jpg, id=228, 653.44125pt x 476.78125pt>
+File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use hardware/steeringActuatorMounted.jpg>
+Package pdftex.def Info: hardware/steeringActuatorMounted.jpg used on input lin
+e 129.
+(pdftex.def)             Requested size: 150.28831pt x 109.65738pt.
 
-<hardware/steering1.png, id=296, 799.98875pt x 298.11375pt>
+Underfull \hbox (badness 1616) in paragraph at lines 130--130
+[]\T1/lmr/m/n/9 (b) |Un-der-side with lin-ear ac-tu-a-tor
+ []
+
+<hardware/steering1.png, id=229, 799.98875pt x 298.11375pt>
 File: hardware/steering1.png Graphic file (type png)
 
 <use hardware/steering1.png>
-Package pdftex.def Info: hardware/steering1.png used on input line 157.
+Package pdftex.def Info: hardware/steering1.png used on input line 138.
 (pdftex.def)             Requested size: 345.0pt x 128.56396pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/steeringActuatorMounted.jpg, id=297, 653.44125pt x 476.78125pt>
-File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
-
-<use hardware/steeringActuatorMounted.jpg>
-Package pdftex.def Info: hardware/steeringActuatorMounted.jpg used on input lin
-e 164.
-(pdftex.def)             Requested size: 345.0pt x 251.72527pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<hardware/pic_boards.jpg, id=301, 5331.92pt x 2999.205pt>
-File: hardware/pic_boards.jpg Graphic file (type jpg)
-
-<use hardware/pic_boards.jpg>
-Package pdftex.def Info: hardware/pic_boards.jpg used on input line 177.
-(pdftex.def)             Requested size: 345.0pt x 194.03989pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<hardware/circuitDiagram.png, id=302, 1518.67375pt x 789.95125pt>
+<hardware/circuitDiagram.png, id=230, 1518.67375pt x 789.95125pt>
 File: hardware/circuitDiagram.png Graphic file (type png)
 
 <use hardware/circuitDiagram.png>
-Package pdftex.def Info: hardware/circuitDiagram.png used on input line 183.
+Package pdftex.def Info: hardware/circuitDiagram.png used on input line 147.
 (pdftex.def)             Requested size: 345.0pt x 179.45503pt.
+ [4 <./hardware/onAxles.jpg> <./hardware/steeringActuatorMounted.jpg>] [5 <./ha
+rdware/steering1.png (PNG copy)> <./hardware/circuitDiagram.png>] <hardware/pic
+_boards.jpg, id=258, 5331.92pt x 2999.205pt>
+File: hardware/pic_boards.jpg Graphic file (type jpg)
 
+<use hardware/pic_boards.jpg>
+Package pdftex.def Info: hardware/pic_boards.jpg used on input line 159.
+(pdftex.def)             Requested size: 172.5pt x 97.01994pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-<hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf, id=304, 597.50786p
-t x 845.04686pt>
-File: hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf Graphic file (
-type pdf)
-
-<use hardware/OpenPodcar_Components_Circuit_Diagram_colored.pdf>
-Package pdftex.def Info: hardware/OpenPodcar_Components_Circuit_Diagram_colored
-.pdf used on input line 190.
-(pdftex.def)             Requested size: 310.4979pt x 439.13033pt.
-
-<hardware/drilling.png, id=305, 1804.7425pt x 1088.065pt>
-File: hardware/drilling.png Graphic file (type png)
-
-<use hardware/drilling.png>
-Package pdftex.def Info: hardware/drilling.png used on input line 196.
-(pdftex.def)             Requested size: 345.0pt x 207.99629pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<hardware/pcb_version_1_5_pic1.png, id=306, 1625.07124pt x 808.01875pt>
+<hardware/pcb_version_1_5_pic1.png, id=259, 1625.07124pt x 808.01875pt>
 File: hardware/pcb_version_1_5_pic1.png Graphic file (type png)
 
 <use hardware/pcb_version_1_5_pic1.png>
-Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 2
-07.
-(pdftex.def)             Requested size: 345.0pt x 171.53835pt.
+Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 1
+68.
+(pdftex.def)             Requested size: 155.24895pt x 77.18178pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<hardware/pcb_podcar.jpg, id=307, 3131.7pt x 4175.6pt>
+<hardware/pcb_podcar.jpg, id=260, 3131.7pt x 4175.6pt>
 File: hardware/pcb_podcar.jpg Graphic file (type jpg)
 
 <use hardware/pcb_podcar.jpg>
-Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 214.
-(pdftex.def)             Requested size: 258.75pt x 344.95pt.
+Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 175.
+(pdftex.def)             Requested size: 77.62447pt x 103.47224pt.
 
+<hardware/pcb_enclosure.jpg, id=261, 4175.6pt x 3131.7pt>
+File: hardware/pcb_enclosure.jpg Graphic file (type jpg)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5] [6 <./hardware/onAxles.jpg>]
-Overfull \hbox (11.82832pt too wide) in paragraph at lines 248--249
-[]\T1/lmr/m/n/10 A non-ROS test of the C API for the Pololu is pro-vided in /to
-ols/pololuTestCSerial. 
- []
-
-[7 <./hardware/steering1.png (PNG copy)>]
-Overfull \hbox (9.22159pt too wide) in paragraph at lines 268--269
+<use hardware/pcb_enclosure.jpg>
+Package pdftex.def Info: hardware/pcb_enclosure.jpg used on input line 185.
+(pdftex.def)             Requested size: 241.49895pt x 181.1083pt.
+ [6 <./hardware/pic_boards.jpg> <./hardware/pcb_version_1_5_pic1.png> <./hardwa
+re/pcb_podcar.jpg>]
+Overfull \hbox (9.22159pt too wide) in paragraph at lines 234--235
 []\T1/lmr/m/n/10 Arduino code is sup-plied in the dis-tri-bu-tion (/Ar-duino/Th
 rottleControlSerial.ino).
  []
 
-[8 <./hardware/steeringActuatorMounted.jpg>]
-<hardware/potential_divider.png, id=346, 407.5225pt x 411.5375pt>
+[7 <./hardware/pcb_enclosure.jpg>]
+<hardware/potential_divider.png, id=289, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
-Package pdftex.def Info: hardware/potential_divider.png used on input line 289.
+Package pdftex.def Info: hardware/potential_divider.png used on input line 261.
 
-(pdftex.def)             Requested size: 345.0pt x 348.41447pt.
-
-<software/rosnodes.png, id=348, 949.5475pt x 274.02374pt>
+(pdftex.def)             Requested size: 172.5pt x 174.20096pt.
+ [8 <./hardware/potential_divider.png>]
+<software/rosnodes.png, id=297, 949.5475pt x 274.02374pt>
 File: software/rosnodes.png Graphic file (type png)
 
 <use software/rosnodes.png>
-Package pdftex.def Info: software/rosnodes.png used on input line 303.
+Package pdftex.def Info: software/rosnodes.png used on input line 275.
 (pdftex.def)             Requested size: 345.0pt x 99.55998pt.
 
+<hardware/testDrive.png, id=298, 734.745pt x 646.415pt>
+File: hardware/testDrive.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use hardware/testDrive.png>
+Package pdftex.def Info: hardware/testDrive.png used on input line 290.
+(pdftex.def)             Requested size: 172.5pt x 151.75958pt.
+ [9 <./software/rosnodes.png>] [10 <./hardware/testDrive.png>] [11] <hardware/p
+cb_testing.png, id=320, 1784.6675pt x 1339.0025pt>
+File: hardware/pcb_testing.png Graphic file (type png)
 
-[9 <./hardware/pic_boards.jpg>] [10 <./hardware/circuitDiagram.png>] [11 <./har
-dware/OpenPodcar_Components_Circuit_Diagram_colored.pdf>] [12 <./hardware/drill
-ing.png>] [13 <./hardware/pcb_version_1_5_pic1.png>] [14 <./hardware/pcb_podcar
-.jpg>] [15 <./hardware/potential_divider.png>]
-<hardware/pic_relay.jpg, id=396, 5331.92pt x 2999.205pt>
+<use hardware/pcb_testing.png>
+Package pdftex.def Info: hardware/pcb_testing.png used on input line 345.
+(pdftex.def)             Requested size: 116.4367pt x 87.34468pt.
+
+<hardware/pic_relay.jpg, id=321, 5331.92pt x 2999.205pt>
 File: hardware/pic_relay.jpg Graphic file (type jpg)
 
 <use hardware/pic_relay.jpg>
-Package pdftex.def Info: hardware/pic_relay.jpg used on input line 375.
-(pdftex.def)             Requested size: 345.0pt x 194.03989pt.
- [16 <./software/rosnodes.png> <./hardware/pic_relay.jpg>] <software/podcar_phy
-s_sim.png, id=402, 1274.7625pt x 1234.6125pt>
+Package pdftex.def Info: hardware/pic_relay.jpg used on input line 352.
+(pdftex.def)             Requested size: 139.7231pt x 78.577pt.
+
+<software/podcar_phys_sim.png, id=322, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
-Package pdftex.def Info: software/podcar_phys_sim.png used on input line 456.
-(pdftex.def)             Requested size: 345.0pt x 334.12222pt.
+Package pdftex.def Info: software/podcar_phys_sim.png used on input line 386.
+(pdftex.def)             Requested size: 116.4367pt x 112.76813pt.
 
-<software/podcar_mesh.png, id=403, 865.2325pt x 1072.005pt>
-File: software/podcar_mesh.png Graphic file (type png)
+<software/podcar_sim.png, id=323, 822.07124pt x 829.0975pt>
+File: software/podcar_sim.png Graphic file (type png)
 
-<use software/podcar_mesh.png>
-Package pdftex.def Info: software/podcar_mesh.png used on input line 462.
-(pdftex.def)             Requested size: 345.0pt x 427.4531pt.
- [17] [18 <./software/podcar_phys_sim.png>]
-[19 <./software/podcar_mesh.png>] [20]
-<figs_sim/sim_nodes.png, id=428, 1445.4pt x 414.54875pt>
+<use software/podcar_sim.png>
+Package pdftex.def Info: software/podcar_sim.png used on input line 393.
+(pdftex.def)             Requested size: 116.4367pt x 117.42651pt.
+ [12 <./hardware/pcb_testing.png> <./hardware/pic_relay.jpg>] [13 <./software/p
+odcar_phys_sim.png> <./software/podcar_sim.png>]
+<figs_sim/sim_nodes.png, id=340, 1445.4pt x 414.54875pt>
 File: figs_sim/sim_nodes.png Graphic file (type png)
 
 <use figs_sim/sim_nodes.png>
-Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 494.
+Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 426.
 (pdftex.def)             Requested size: 345.0pt x 98.9434pt.
 
-<figs_sim/podcar_loaded_gazebo.png, id=429, 792.9625pt x 654.445pt>
+<figs_sim/podcar_loaded_gazebo.png, id=341, 792.9625pt x 654.445pt>
 File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
 
 <use figs_sim/podcar_loaded_gazebo.png>
-Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 5
-00.
-(pdftex.def)             Requested size: 345.0pt x 284.7412pt.
+Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 4
+32.
+(pdftex.def)             Requested size: 172.5pt x 142.36061pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs_sim/INBLincoln_2.png, id=430, 1927.2pt x 1084.05pt>
+<figs_sim/INBLincoln_2.png, id=342, 1927.2pt x 1084.05pt>
 File: figs_sim/INBLincoln_2.png Graphic file (type png)
 
 <use figs_sim/INBLincoln_2.png>
-Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 510.
-(pdftex.def)             Requested size: 345.0pt x 194.06194pt.
+Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 444.
+(pdftex.def)             Requested size: 155.24895pt x 87.32126pt.
 
+<figs_sim/woodhouseLeeds_5.png, id=343, 1861.95625pt x 1059.96pt>
+File: figs_sim/woodhouseLeeds_5.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs_sim/podcar_INB_teb.png, id=431, 1751.54375pt x 992.70876pt>
-File: figs_sim/podcar_INB_teb.png Graphic file (type png)
-
-<use figs_sim/podcar_INB_teb.png>
-Package pdftex.def Info: figs_sim/podcar_INB_teb.png used on input line 517.
-(pdftex.def)             Requested size: 345.0pt x 195.52388pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[21 <./figs_sim/sim_nodes.png (PNG copy)>] [22 <./figs_sim/podcar_loaded_gazebo
-.png (PNG copy)>] <hardware/ackermann1.png, id=449, 341.275pt x 463.7325pt>
+<use figs_sim/woodhouseLeeds_5.png>
+Package pdftex.def Info: figs_sim/woodhouseLeeds_5.png used on input line 451.
+(pdftex.def)             Requested size: 155.24895pt x 88.37291pt.
+ [14 <./figs_sim/sim_nodes.png (PNG copy)> <./figs_sim/podcar_loaded_gazebo.png
+ (PNG copy)>]
+<hardware/ackermann1.png, id=354, 341.275pt x 463.7325pt>
 File: hardware/ackermann1.png Graphic file (type png)
 
 <use hardware/ackermann1.png>
-Package pdftex.def Info: hardware/ackermann1.png used on input line 533.
-(pdftex.def)             Requested size: 345.0pt x 468.82605pt.
+Package pdftex.def Info: hardware/ackermann1.png used on input line 475.
+(pdftex.def)             Requested size: 62.09862pt x 84.38104pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<hardware/ackermann2.png, id=450, 441.65pt x 309.155pt>
+<hardware/ackermann2.png, id=355, 441.65pt x 309.155pt>
 File: hardware/ackermann2.png Graphic file (type png)
 
 <use hardware/ackermann2.png>
-Package pdftex.def Info: hardware/ackermann2.png used on input line 539.
-(pdftex.def)             Requested size: 345.0pt x 241.51259pt.
+Package pdftex.def Info: hardware/ackermann2.png used on input line 482.
+(pdftex.def)             Requested size: 116.4367pt x 81.50111pt.
+ [15 <./figs_sim/INBLincoln_2.png> <./figs_sim/woodhouseLeeds_5.png>] [16 <./ha
+rdware/ackermann1.png> <./hardware/ackermann2.png>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 564.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs_sim/sim_movebase_nodes.png, id=453, 2412.76407pt x 767.86874pt>
-File: figs_sim/sim_movebase_nodes.png Graphic file (type png)
-
-<use figs_sim/sim_movebase_nodes.png>
-Package pdftex.def Info: figs_sim/sim_movebase_nodes.png used on input line 567
-.
-(pdftex.def)             Requested size: 345.0pt x 109.79736pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23 <./figs_sim/INBLincoln_2.png>] [24 <./figs_sim/podcar_INB_teb.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 628.
-
-
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 628.
- [25] (./podcar.bbl [26] [27])
-[28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 714.
- [29 <./hardware/ackermann1.png>] [30 <./hardware/ackermann2.png> <./figs_sim/s
-im_movebase_nodes.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 714.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 564.
+ [17] [18] (./podcar.bbl [19])
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 651.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 651.
  (./podcar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 714.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 714.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 651.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 651.
 Package rerunfilecheck Info: File `podcar.out' has not changed.
-(rerunfilecheck)             Checksum: 013EA6B6AF99309FA1334A06C97F30E2;8872.
+(rerunfilecheck)             Checksum: 4B65CDB41A47382894B5FA3565FF74B2;6735.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 714.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 651.
  ) 
 Here is how much of TeX's memory you used:
- 20801 strings out of 493029
- 364951 string characters out of 6136234
- 407652 words of memory out of 5000000
- 23793 multiletter control sequences out of 15000+600000
+ 21892 strings out of 493029
+ 384955 string characters out of 6136234
+ 428011 words of memory out of 5000000
+ 24902 multiletter control sequences out of 15000+600000
  88704 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,76p,1585b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,92p,1780b,710s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1372,10 +1331,10 @@ re/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm
 nts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy10.pfb>
-Output written on podcar.pdf (30 pages, 19796908 bytes).
+Output written on podcar.pdf (20 pages, 27050825 bytes).
 PDF statistics:
- 598 PDF objects out of 1000 (max. 8388607)
- 517 compressed objects within 6 object streams
- 148 named destinations out of 1000 (max. 500000)
- 547 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 493 PDF objects out of 1000 (max. 8388607)
+ 424 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 
