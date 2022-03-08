@@ -1,8 +1,6 @@
 # OpenPodcar
 
-(Work in progress not ready for public use)
-
-Open source hardware design and software for Lincoln Podcar.
+Open source hardware design and software for OpenPodcar.
 
 Including:
 
@@ -12,6 +10,9 @@ Including:
 - ROS drivers for whole vehicle steering and speed
 - Gazebo simulation
 - move_base and gmapping integration
+
+To build OpenPodcar, first obtain the components from the Bill of Materials, which are available from many commercial suppliers.  Then follow the steps of the build process below.
+
 
 ## Bill of Materials (BOM)
 
