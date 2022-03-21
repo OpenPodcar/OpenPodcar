@@ -3,48 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: podcar.aux
 The style file: plain.bst
 Database file #1: podcar.bib
+Warning--to sort, need author or key in f1tenth
+Warning--to sort, need author or key in mit
+Warning--can't use both author and editor fields in camara2020continuous
+Warning--empty chapter and pages in camara2020continuous
 Warning--can't use both volume and number fields in quigley2009ros
-Warning--empty institution in shopriderflagship
-Warning--empty year in shopriderflagship
-You've used 21 entries,
+You've used 48 entries,
             2118 wiz_defined-function locations,
-            622 strings with 8321 characters,
-and the built_in function-call counts, 8169 in all, are:
-= -- 787
-> -- 469
-< -- 8
-+ -- 185
-- -- 164
-* -- 594
-:= -- 1356
-add.period$ -- 68
-call.type$ -- 21
-change.case$ -- 144
+            750 strings with 14039 characters,
+and the built_in function-call counts, 17223 in all, are:
+= -- 1599
+> -- 1061
+< -- 13
++ -- 423
+- -- 374
+* -- 1187
+:= -- 2885
+add.period$ -- 154
+call.type$ -- 48
+change.case$ -- 324
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 294
-empty$ -- 584
-format.name$ -- 164
-if$ -- 1702
+cite$ -- 53
+duplicate$ -- 592
+empty$ -- 1244
+format.name$ -- 374
+if$ -- 3580
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 20
-newline$ -- 107
-num.names$ -- 42
-pop$ -- 163
+int.to.str$ -- 48
+missing$ -- 37
+newline$ -- 246
+num.names$ -- 92
+pop$ -- 407
 preamble$ -- 1
-purify$ -- 123
+purify$ -- 280
 quote$ -- 0
-skip$ -- 208
+skip$ -- 460
 stack$ -- 0
-substring$ -- 423
-swap$ -- 79
-text.length$ -- 8
+substring$ -- 698
+swap$ -- 149
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
-warning$ -- 3
-while$ -- 71
-width$ -- 23
-write$ -- 231
-(There were 3 warnings)
+type$ -- 186
+warning$ -- 5
+while$ -- 129
+width$ -- 50
+write$ -- 511
+(There were 5 warnings)
