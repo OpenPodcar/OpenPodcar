@@ -4,12 +4,19 @@ Open source hardware design and software for OpenPodcar.
 
 ## Table of Contents
 I. [General Info](#general-info)
+
 II. [Bill of Materials (BOM)](#bill-of-materials-(bom))
+
 III. [Hardware Setup](#hardware-setup)
+
 IV. [Software Setup](#software-setup)
+
 V. [User Guide](#user-guide)
+
 VI. [General Testing](#general-testing)
+
 VII. [Simulation](#simulation)
+
 VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
 ## I. General Info
