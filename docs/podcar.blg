@@ -7,37 +7,38 @@ Warning--to sort, need author or key in f1tenth
 Warning--to sort, need author or key in mit
 Warning--can't use both author and editor fields in camara2020continuous
 Warning--empty chapter and pages in camara2020continuous
+Warning--empty year in camaraextending
 Warning--can't use both volume and number fields in quigley2009ros
 You've used 48 entries,
             2118 wiz_defined-function locations,
-            750 strings with 14039 characters,
-and the built_in function-call counts, 17223 in all, are:
-= -- 1599
+            749 strings with 13970 characters,
+and the built_in function-call counts, 17224 in all, are:
+= -- 1598
 > -- 1061
 < -- 13
 + -- 423
 - -- 374
-* -- 1187
-:= -- 2885
+* -- 1189
+:= -- 2884
 add.period$ -- 154
 call.type$ -- 48
 change.case$ -- 324
 chr.to.int$ -- 0
-cite$ -- 53
+cite$ -- 54
 duplicate$ -- 592
 empty$ -- 1244
 format.name$ -- 374
-if$ -- 3580
+if$ -- 3579
 int.to.chr$ -- 0
 int.to.str$ -- 48
 missing$ -- 37
 newline$ -- 246
 num.names$ -- 92
-pop$ -- 407
+pop$ -- 409
 preamble$ -- 1
 purify$ -- 280
 quote$ -- 0
-skip$ -- 460
+skip$ -- 459
 stack$ -- 0
 substring$ -- 698
 swap$ -- 149
@@ -45,8 +46,8 @@ text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 186
-warning$ -- 5
+warning$ -- 6
 while$ -- 129
 width$ -- 50
-write$ -- 511
-(There were 5 warnings)
+write$ -- 510
+(There were 6 warnings)

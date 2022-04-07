@@ -61,18 +61,17 @@ Fanta Camara, Patrick Dickinson, Natasha Merat, and Charles~W. Fox.
 \newblock In {\em IEEE/RSJ International Conference on Intelligent Robots and
   Systems Workshops}, 2019.
 
+\bibitem{camaraextending}
+Fanta Camara and Charles Fox.
+\newblock Extending quantitative proxemics and trust to {HRI}.
+\newblock {\em (under review)}.
+
 \bibitem{camara2020space}
 Fanta Camara and Charles Fox.
 \newblock Space invaders: Pedestrian proxemic utility functions and trust zones
   for autonomous vehicle interactions.
-\newblock {\em Int J of Soc Robotics}, 2020.
-\newblock https://doi.org/10.1007/s12369-020-00717-x.
-
-\bibitem{camara2022extending}
-Fanta Camara and Charles Fox.
-\newblock Extending quantitative proxemics and trust to hri.
-\newblock {\em 31st IEEE International Conference on Robot \& Human Interactive
-  Communication (RO-MAN) (under review)}, 2022.
+\newblock {\em International Journal of Social Robotics}, 2020.
+\newblock \url{https://doi.org/10.1007/s12369-020-00717-x}.
 
 \bibitem{camara2018empirical}
 Fanta Camara, Richard Romano, Gustav Markkula, Ruth Madigan, Natasha Merat, and

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  21 MAR 2022 13:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.7.22)  31 MAR 2022 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1111,198 +1111,191 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<hardware/onAxles.jpg, id=233, 424.58624pt x 417.56pt>
+<hardware/onAxles.jpg, id=227, 424.58624pt x 417.56pt>
 File: hardware/onAxles.jpg Graphic file (type jpg)
 
 <use hardware/onAxles.jpg>
-Package pdftex.def Info: hardware/onAxles.jpg used on input line 130.
+Package pdftex.def Info: hardware/onAxles.jpg used on input line 126.
 (pdftex.def)             Requested size: 123.12685pt x 121.0893pt.
 
-<hardware/steeringActuatorMounted.jpg, id=234, 653.44125pt x 476.78125pt>
+<hardware/steeringActuatorMounted.jpg, id=228, 653.44125pt x 476.78125pt>
 File: hardware/steeringActuatorMounted.jpg Graphic file (type jpg)
 
 <use hardware/steeringActuatorMounted.jpg>
 Package pdftex.def Info: hardware/steeringActuatorMounted.jpg used on input lin
-e 137.
+e 133.
 (pdftex.def)             Requested size: 150.28831pt x 109.65738pt.
 
-Underfull \hbox (badness 1616) in paragraph at lines 138--138
+Underfull \hbox (badness 1616) in paragraph at lines 134--134
 []\T1/lmr/m/n/9 (b) |Un-der-side with lin-ear ac-tu-a-tor
  []
 
-<hardware/steering1.png, id=235, 799.98875pt x 298.11375pt>
+<hardware/steering1.png, id=229, 799.98875pt x 298.11375pt>
 File: hardware/steering1.png Graphic file (type png)
 
 <use hardware/steering1.png>
-Package pdftex.def Info: hardware/steering1.png used on input line 146.
+Package pdftex.def Info: hardware/steering1.png used on input line 142.
 (pdftex.def)             Requested size: 345.0pt x 128.56396pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<hardware/circuitDiagram.png, id=236, 1518.67375pt x 789.95125pt>
+<hardware/circuitDiagram.png, id=230, 1518.67375pt x 789.95125pt>
 File: hardware/circuitDiagram.png Graphic file (type png)
 
 <use hardware/circuitDiagram.png>
-Package pdftex.def Info: hardware/circuitDiagram.png used on input line 155.
+Package pdftex.def Info: hardware/circuitDiagram.png used on input line 151.
 (pdftex.def)             Requested size: 345.0pt x 179.45503pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Reference `fig:' on page 4 undefined on input line 163.
-
 [4 <./hardware/onAxles.jpg> <./hardware/steeringActuatorMounted.jpg>]
-<hardware/pcb_version_1_5_pic1.png, id=250, 1625.07124pt x 808.01875pt>
+<hardware/pcb_version_1_5_pic1.png, id=244, 1625.07124pt x 808.01875pt>
 File: hardware/pcb_version_1_5_pic1.png Graphic file (type png)
 
 <use hardware/pcb_version_1_5_pic1.png>
 Package pdftex.def Info: hardware/pcb_version_1_5_pic1.png used on input line 1
-69.
+65.
 (pdftex.def)             Requested size: 155.24895pt x 77.18178pt.
 
-<hardware/pcb_podcar.jpg, id=251, 3131.7pt x 4175.6pt>
+<hardware/pcb_podcar.jpg, id=245, 3131.7pt x 4175.6pt>
 File: hardware/pcb_podcar.jpg Graphic file (type jpg)
 
 <use hardware/pcb_podcar.jpg>
-Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 176.
+Package pdftex.def Info: hardware/pcb_podcar.jpg used on input line 172.
 (pdftex.def)             Requested size: 77.62447pt x 103.47224pt.
  [5 <./hardware/steering1.png (PNG copy)> <./hardware/circuitDiagram.png>] [6 <
 ./hardware/pcb_version_1_5_pic1.png> <./hardware/pcb_podcar.jpg>]
-<hardware/potential_divider.png, id=278, 407.5225pt x 411.5375pt>
+<hardware/potential_divider.png, id=272, 407.5225pt x 411.5375pt>
 File: hardware/potential_divider.png Graphic file (type png)
 
 <use hardware/potential_divider.png>
-Package pdftex.def Info: hardware/potential_divider.png used on input line 248.
+Package pdftex.def Info: hardware/potential_divider.png used on input line 245.
 
 (pdftex.def)             Requested size: 172.5pt x 174.20096pt.
  [7 <./hardware/potential_divider.png>]
-[8] <software/podcar_phys_sim.png, id=301, 1274.7625pt x 1234.6125pt>
+[8] <software/podcar_phys_sim.png, id=295, 1274.7625pt x 1234.6125pt>
 File: software/podcar_phys_sim.png Graphic file (type png)
 
 <use software/podcar_phys_sim.png>
-Package pdftex.def Info: software/podcar_phys_sim.png used on input line 285.
+Package pdftex.def Info: software/podcar_phys_sim.png used on input line 282.
 (pdftex.def)             Requested size: 116.4367pt x 112.76813pt.
 
-<software/podcar_sim.png, id=302, 822.07124pt x 829.0975pt>
-File: software/podcar_sim.png Graphic file (type png)
-
-<use software/podcar_sim.png>
-Package pdftex.def Info: software/podcar_sim.png used on input line 292.
-(pdftex.def)             Requested size: 116.4367pt x 117.42651pt.
-
-<figs_sim/podcar_loaded_gazebo.png, id=303, 792.9625pt x 654.445pt>
+<figs_sim/podcar_loaded_gazebo.png, id=296, 792.9625pt x 654.445pt>
 File: figs_sim/podcar_loaded_gazebo.png Graphic file (type png)
 
 <use figs_sim/podcar_loaded_gazebo.png>
-Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 3
-02.
-(pdftex.def)             Requested size: 172.5pt x 142.36061pt.
+Package pdftex.def Info: figs_sim/podcar_loaded_gazebo.png used on input line 2
+89.
+(pdftex.def)             Requested size: 139.7231pt x 115.30849pt.
 
-<figs_sim/INBLincoln_2.png, id=304, 1927.2pt x 1084.05pt>
+<figs_sim/INBLincoln_2.png, id=297, 1927.2pt x 1084.05pt>
 File: figs_sim/INBLincoln_2.png Graphic file (type png)
 
 <use figs_sim/INBLincoln_2.png>
-Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 311.
+Package pdftex.def Info: figs_sim/INBLincoln_2.png used on input line 300.
 (pdftex.def)             Requested size: 155.24895pt x 87.32126pt.
 
-<figs_sim/woodhouseLeeds_5.png, id=305, 1861.95625pt x 1059.96pt>
+<figs_sim/woodhouseLeeds_5.png, id=298, 1861.95625pt x 1059.96pt>
 File: figs_sim/woodhouseLeeds_5.png Graphic file (type png)
 
 <use figs_sim/woodhouseLeeds_5.png>
-Package pdftex.def Info: figs_sim/woodhouseLeeds_5.png used on input line 318.
+Package pdftex.def Info: figs_sim/woodhouseLeeds_5.png used on input line 307.
 (pdftex.def)             Requested size: 155.24895pt x 88.37291pt.
- [9 <./software/podcar_phys_sim.png> <./software/podcar_sim.png>] [10 <./figs_s
-im/podcar_loaded_gazebo.png (PNG copy)> <./figs_sim/INBLincoln_2.png> <./figs_s
-im/woodhouseLeeds_5.png>]
-<hardware/pic_relay.jpg, id=329, 5331.92pt x 2999.205pt>
+ [9 <./software/podcar_phys_sim.png> <./figs_sim/podcar_loaded_gazebo.png (PNG 
+copy)>]
+<figs_sim/sim_nodes.png, id=314, 1445.4pt x 414.54875pt>
+File: figs_sim/sim_nodes.png Graphic file (type png)
+
+<use figs_sim/sim_nodes.png>
+Package pdftex.def Info: figs_sim/sim_nodes.png used on input line 320.
+(pdftex.def)             Requested size: 345.0pt x 98.9434pt.
+ [10 <./figs_sim/INBLincoln_2.png> <./figs_sim/woodhouseLeeds_5.png> <./figs_si
+m/sim_nodes.png (PNG copy)>]
+<hardware/pic_relay.jpg, id=325, 5331.92pt x 2999.205pt>
 File: hardware/pic_relay.jpg Graphic file (type jpg)
 
 <use hardware/pic_relay.jpg>
-Package pdftex.def Info: hardware/pic_relay.jpg used on input line 344.
+Package pdftex.def Info: hardware/pic_relay.jpg used on input line 337.
 (pdftex.def)             Requested size: 172.5pt x 97.01994pt.
- [11] [12 <./hardware/pic_relay.jpg>]
-<software/move_base_collision_avoidance.png, id=345, 1857.94125pt x 631.35875pt
+ [11 <./hardware/pic_relay.jpg>] [12]
+<software/move_base_collision_avoidance.png, id=340, 1857.94125pt x 631.35875pt
 >
 File: software/move_base_collision_avoidance.png Graphic file (type png)
  <use software/move_base_collision_avoidance.png>
 Package pdftex.def Info: software/move_base_collision_avoidance.png used on inp
-ut line 391.
+ut line 384.
 (pdftex.def)             Requested size: 345.0pt x 117.23305pt.
- [13]
-<software/tracker.png, id=353, 1748.5325pt x 734.745pt>
+
+<software/tracker.png, id=343, 1748.5325pt x 734.745pt>
 File: software/tracker.png Graphic file (type png)
 
 <use software/tracker.png>
-Package pdftex.def Info: software/tracker.png used on input line 402.
-(pdftex.def)             Requested size: 310.4979pt x 130.46579pt.
- [14 <./software/move_base_collision_avoidance.png> <./software/tracker.png>]
-<hardware/testDrive.png, id=371, 734.745pt x 646.415pt>
+Package pdftex.def Info: software/tracker.png used on input line 395.
+(pdftex.def)             Requested size: 241.49895pt x 101.47339pt.
+ [13 <./software/move_base_collision_avoidance.png>]
+<hardware/testDrive.png, id=361, 734.745pt x 646.415pt>
 File: hardware/testDrive.png Graphic file (type png)
 
 <use hardware/testDrive.png>
-Package pdftex.def Info: hardware/testDrive.png used on input line 416.
+Package pdftex.def Info: hardware/testDrive.png used on input line 409.
 (pdftex.def)             Requested size: 172.5pt x 151.75958pt.
- [15 <./hardware/testDrive.png>] [16] [17]
-(./podcar.bbl [18]
+ [14 <./software/tracker.png>] [15 <./hardware/testDrive.png>] [16] [17] (./pod
+car.bbl
 Underfull \hbox (badness 1577) in paragraph at lines 23--28
 []\T1/lmr/m/n/10 Fanta Ca-mara, Nicola Bel-lotto, Ser-han Cosar, Dim-itris Nath
 anael,
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
 []\T1/lmr/m/n/10 Marcin Jakubowski.  Open Source Ecol-ogy.  []$https : / / www 
 .
  []
 
-[20]
-Underfull \hbox (badness 1205) in paragraph at lines 221--227
+
+Underfull \hbox (badness 1205) in paragraph at lines 220--226
 []\T1/lmr/m/n/10 Scott Pendle-ton, Tawit Uthaicharoen-pong, Zhuang Jie Chong, G
 uo
  []
 
-[21]
-Underfull \hbox (badness 1231) in paragraph at lines 281--286
+[20]
+Underfull \hbox (badness 1231) in paragraph at lines 280--285
 []\T1/lmr/m/n/10 Bastien Vincke, Ser-gio Ro-driguez Flo-rez, and Pas-cal Aubert
 .  An
  []
 
-)
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 539.
+[21])
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 534.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 539.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 534.
  [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 543.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 543.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 538.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 538.
  (./podcar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 543.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 543.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 538.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 538.
 Package rerunfilecheck Info: File `podcar.out' has not changed.
-(rerunfilecheck)             Checksum: 3CA7199AAF66C490EEA3C34015C79120;5872.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 543.
+(rerunfilecheck)             Checksum: 8319622C36A6B038D91BB38549FBA77D;5588.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 538.
  ) 
 Here is how much of TeX's memory you used:
- 21817 strings out of 493029
- 383298 string characters out of 6136234
- 426407 words of memory out of 5000000
- 24818 multiletter control sequences out of 15000+600000
+ 21814 strings out of 493029
+ 383259 string characters out of 6136234
+ 428374 words of memory out of 5000000
+ 24815 multiletter control sequences out of 15000+600000
  85712 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,92p,1607b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,92p,1713b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx
 9.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
@@ -1313,10 +1306,10 @@ re/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm
 nts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmsy10.pfb>
-Output written on podcar.pdf (22 pages, 17589965 bytes).
+Output written on podcar.pdf (22 pages, 17489320 bytes).
 PDF statistics:
- 540 PDF objects out of 1000 (max. 8388607)
- 476 compressed objects within 5 object streams
+ 537 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
  136 named destinations out of 1000 (max. 500000)
- 373 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 357 words of extra memory for PDF output out of 10000 (max. 10000000)
 
