@@ -19,7 +19,9 @@ VII. [Simulation](#simulation)
 
 VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
-## I. General Info
+IX. [How to Contribute?](#how-to-contribute?)
+
+## I. #<a name="general-info"></a> General Info
 
 The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as for human-robot interaction (HRI) studies and practical transportation of people and goods.
 
