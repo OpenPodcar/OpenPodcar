@@ -84,7 +84,7 @@ Obtain the following components, which are available from many commercial suppli
 
 ## III. Hardware Setup
 
-### Linear Actuator
+### 1. Linear Actuator
 
 Before mounting the linear actuator under the vehicle, first test it with the Pololu to check that it is functional.
 
@@ -137,7 +137,7 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 - a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
 - a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
 		
-### Fusing and ON/OFF Switch
+### 2. Fusing and ON/OFF Switch
 
 - Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
@@ -149,7 +149,7 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 - Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
 
 
-### 3D Lidar
+### 3. 3D Lidar
 
 - The lidar screws onto the tripod. The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in Fig. TODO.   But it needs to be set up so we can talk to the Velodyne over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
 
@@ -163,16 +163,16 @@ rosrun rviz rviz -f velodyne
 - In the "Topic" field of the new "Point Cloud2" tab, enter "/velodyne_points".
 
 
-### Printed Circuit Board (PCB)
+### 4. Printed Circuit Board (PCB)
 
 Manufacture the PCB board: this can be done by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you. At this stage there are no components on it, you will solder them on later in these instructions.
 	
-#### 1. Initial Testing
+#### A. Initial Testing
 
 - Material: the manufactured PCB board, a multimeter
 - Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**
 
-#### 2. Buck Converter Settings
+#### B. Buck Converter Settings
 
 Here the buck converters voltage and current are set to the desired values and then tested.
 
@@ -219,7 +219,7 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
 		- If not, then repeat steps 9 to 11
 			
-#### 3. Pololu JRK 21v3 Configuration
+#### C. Pololu JRK 21v3 Configuration
 
 - Download Pololu's Windows Configuration Tool by following these steps: (https://www.pololu.com/docs/0J38/3.a)
 - To configure the Pololu, please follow the instructions here: (https://www.pololu.com/docs/0J38/5)
@@ -259,7 +259,7 @@ Here the buck converters voltage and current are set to the desired values and t
 	- Click on "**Apply settings to**"
 			
 			
-#### 4. MCP4725 DAC
+#### D. MCP4725 DAC
 
 - Solder the male headers provided for the DAC pins.
 - **Testing**
@@ -275,21 +275,21 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
 		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
 			
-#### 5. 3D Printing
+#### E. 3D Printing
 - 3D print the LCD support
 
-#### 6. Assembly
+#### F. Assembly
 - Solder headers for Arduino
 - Solder resistors
 - Solder header for Pololu
 
 			
-#### 7. Final Testing
+#### G. Final Testing
 	The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 	- Material: power supply, some wires, a multimeter	
 	
 		
-### Vehicle Connections
+### D. Vehicle Connections
 
 #### Deadman handle (DMH) and Relay
 
@@ -320,13 +320,13 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 
 ## IV. Software Setup
 
-### Ubuntu 16.04 and ROS
+### 1. Ubuntu 16.04 and ROS
 
 The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and with ROS Kinetic and Gazebo 7 installed:
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
-### Arduino
+### 2. Arduino
 - Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
 - Arduino firmware source is supplied in the distribution ThrottleControlSerial.ino
 - Connect the Arduino USB to the laptop
@@ -343,12 +343,12 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- the serial monitor should display the command that was typed in and the corresponding DAC value
 	
 	
-### Velodyne 3D Lidar Configuration with ROS
+### 3. Velodyne 3D Lidar Configuration with ROS
 
 Please follow the instructions from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16)
 	
 	
-### Simlink USB COM Ports
+### 4. Simlink USB COM Ports
 
 Here, the goal is to create persistent USB serial device names (aka SIMLINK) for the Arduino and the Pololu.
 
@@ -370,7 +370,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 - Then type in the terminal `sudo reboot`
 - Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
 		
-### Object Detection and Tracking
+### 5. Object Detection and Tracking
 
 - Install the FLOBOT project: please follow the "Install & Build" guide here: (https://github.com/LCAS/FLOBOT)
 - BSON for Python is required, this can be installed via ``` pip install pymongo==3.5.1 ```
@@ -446,7 +446,7 @@ rosdep install --from-paths src --ignore-src -r -y
 roslaunch podcar podcarsim.launch
 ```
 
-The first run of Gazebo may take a while (e.g. [Link to product]5 minutes) to load because models used need to be automatically downloaded from the remote gazebo repositories.
+The first run of Gazebo may take a while (e.g. 5 minutes) to load because models used need to be automatically downloaded from the remote gazebo repositories.
 
 - Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
