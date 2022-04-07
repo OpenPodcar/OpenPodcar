@@ -163,7 +163,7 @@ Manufacture the PCB board: this can be done by sending the gerber files to an on
 #### Initial Testing
 
 - Material: the manufactured PCB board, a multimeter
-- Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **bip**
+- Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**
 
 #### Buck Converter Settings
 
@@ -474,7 +474,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 ## Troubleshooting Guide
 
 ### Vehicle
-- vehicle beeps continuous when press DMH and rear wheels do not move
+- Vehicle beeps continuous when press DMH and rear wheels do not move
 	- This is due to a safety mode preventing ignition.
 
 	- Check: is the manual-auto switch under the rear motor on auto?
@@ -519,5 +519,6 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
-# Licence [# check]
+# Licence 
+[# check]
 
