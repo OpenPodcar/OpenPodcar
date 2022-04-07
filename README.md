@@ -3,14 +3,14 @@
 Open source hardware design and software for OpenPodcar.
 
 ## Table of Contents
-1. (General Info)(#general-info)
-2. (Bill of Materials (BOM))(#bill-of-materials-(bom))
-3. (Hardware Setup)(#hardware-setup)
-4. (Software Setup)(#software-setup)
-6. (User Guide)(#user-guide)
-7. (General Testing)(#general-testing)
-8. (Simulation)(#simulation)
-9. (Troubleshooting Guide)(#troubleshooting-guide)
+1. [General Info](#general-info)
+2. [Bill of Materials (BOM)](#bill-of-materials-(bom))
+3. [Hardware Setup](#hardware-setup)
+4. [Software Setup](#software-setup)
+6. [User Guide](#user-guide)
+7. [General Testing](#general-testing)
+8. [Simulation](#simulation)
+9. [Troubleshooting Guide](#troubleshooting-guide)
 
 ## General Info
 
@@ -29,31 +29,31 @@ To build the physical OpenPodcar, first obtain the components detailed in #bill-
 ## Bill of Materials (BOM)
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
 
-### For the vehicle
+### 1. For the vehicle
 - 1 Shoprider mobility scooter
-- 1 3D Velodyne Lidar (VLP-16) with its controller box e.g. (https://velodynelidar.com/products/puck/)
-- 1 laptop under linux Ubuntu 16.04 e.g. (https://www.lenovo.com/gb/en/laptops/thinkpad/p-series/ThinkPad-P51/p/22TP2WPWP51)
+- 1 3D Velodyne Lidar (VLP-16) with its controller box e.g. [Link to product](https://velodynelidar.com/products/puck/)
+- 1 laptop under linux Ubuntu 16.04 e.g. [Link to product](https://www.lenovo.com/gb/en/laptops/thinkpad/p-series/ThinkPad-P51/p/22TP2WPWP51)
 - 1 laptop under Windows 7+
-- 1 Gimson Robotics GLA750-P 12V DC linear actuator with position feedback (250mm stroke) e.g. (https://gimsonrobotics.co.uk/categories/linear-actuators/products/gla750-p-12v-dc-linear-actuator-with-position-feedback)
-- 1 ON/OF Toggle/Flick switch button e.g. (https://www.ebay.co.uk/itm/12V-HEAVY-DUTY-25A-UNIVERSAL-METAL-SPRING-MOMENTARY-ON-OFF-TOGGLE-FLICK-SWITCH/231257116468?epid=1229817686&hash=item35d7ff8f34:g:f50AAOSwq5lTmZKx)
-- 1 USB hub (with at least 3 USB ports) e.g. Amazon Basics (https://www.amazon.co.uk/AmazonBasics-4-Port-Ultra-Mini-Bus-powered/dp/B003M0NURK/ref=sr_1_3?keywords=amazonbasics%2Busb%2Bhub&qid=1649172163&sr=8-3&th=1)
+- 1 Gimson Robotics GLA750-P 12V DC linear actuator with position feedback (250mm stroke) e.g. [Link to product](https://gimsonrobotics.co.uk/categories/linear-actuators/products/gla750-p-12v-dc-linear-actuator-with-position-feedback)
+- 1 ON/OF Toggle/Flick switch button e.g. [Link to product](https://www.ebay.co.uk/itm/12V-HEAVY-DUTY-25A-UNIVERSAL-METAL-SPRING-MOMENTARY-ON-OFF-TOGGLE-FLICK-SWITCH/231257116468?epid=1229817686&hash=item35d7ff8f34:g:f50AAOSwq5lTmZKx)
+- 1 USB hub (with at least 3 USB ports) e.g. [Link to product]Amazon Basics (https://www.amazon.co.uk/AmazonBasics-4-Port-Ultra-Mini-Bus-powered/dp/B003M0NURK/ref=sr_1_3?keywords=amazonbasics%2Busb%2Bhub&qid=1649172163&sr=8-3&th=1)
 - 1 USB A cable (Arduino <-> Laptop)
 - 1 USB mini B cable (Pololu <-> Laptop)
 - 1 Ethernet cable (Velodyne <-> Laptop) 
-- 1 deadman push button for the vehicle ignition system e.g. (https://www.ebay.co.uk/itm/Philmore-30-825-SPST-Hand-Held-Push-Button-Switch-N-O/253746249505?epid=17011384611&hash=item3b14747f21:g:GdEAAOSwdA5bRopR)
-- 1 Joystick with its USB cable e.g. (https://www.logitechg.com/en-gb/products/space/extreme-3d-pro-joystick.942-000031.html)
-- 1 Manfrotto Black Digi Table Tripod 709B e.g. (https://www.manfrotto.com/ie-en/black-digi-table-tripod-709b/)
-- 1 Inline car fuse e.g. (https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
+- 1 deadman push button for the vehicle ignition system e.g. [Link to product](https://www.ebay.co.uk/itm/Philmore-30-825-SPST-Hand-Held-Push-Button-Switch-N-O/253746249505?epid=17011384611&hash=item3b14747f21:g:GdEAAOSwdA5bRopR)
+- 1 Joystick with its USB cable e.g. [Link to product](https://www.logitechg.com/en-gb/products/space/extreme-3d-pro-joystick.942-000031.html)
+- 1 Manfrotto Black Digi Table Tripod 709B e.g. [Link to product](https://www.manfrotto.com/ie-en/black-digi-table-tripod-709b/)
+- 1 Inline car fuse e.g. [Link to product](https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
 - 1 fuse 7.5Amp
-- 1 Relay e.g. (https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
+- 1 Relay e.g. [Link to product](https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
 - A dozen of bolts, nuts, washers and cap nuts
 
-### For the PCB
-- 2 XL4016 Step-Down Buck converters DC-DC e.g. (https://www.amazon.co.uk/dp/B086W6B9H1/ref=pe_27063361_485629781_TE_item?th=1)
-- 1 Arduino Uno Rev3 e.g. (http://store.arduino.cc/products/arduino-uno-rev3)
-- 1 Pololu JRK 21v3 Motor Controller with Feedback e.g. (https://coolcomponents.co.uk/products/jrk-21v3-usb-motor-controller-with-feedback-fully-assembled?variant=45223123918&gclid=CjwKCAjwo_HdBRBjEiwAiPPXpNz4xgpL7U6n4qPT4Y1LRuD8ukLQVzoA5_KsBCFyvRQVbbDKt1zKYRoCGTQQAvD_BwE)
-- 1 MCP4725 DAC e.g. (https://protosupplies.com/product/mcp4725-12-bit-dac-module/)
-- 1 7-segment LCD with 3 digits e.g. (https://www.alibaba.com/product-detail/Taidacent-Red-0-200V-Measurement-Range_60679181399.html?spm=a2700.details.0.0.1f1212advD463M)
+### 2. For the PCB
+- 2 XL4016 Step-Down Buck converters DC-DC e.g. [Link to product](https://www.amazon.co.uk/dp/B086W6B9H1/ref=pe_27063361_485629781_TE_item?th=1)
+- 1 Arduino Uno Rev3 e.g. [Link to product](http://store.arduino.cc/products/arduino-uno-rev3)
+- 1 Pololu JRK 21v3 Motor Controller with Feedback e.g. [Link to product](https://coolcomponents.co.uk/products/jrk-21v3-usb-motor-controller-with-feedback-fully-assembled?variant=45223123918&gclid=CjwKCAjwo_HdBRBjEiwAiPPXpNz4xgpL7U6n4qPT4Y1LRuD8ukLQVzoA5_KsBCFyvRQVbbDKt1zKYRoCGTQQAvD_BwE)
+- 1 MCP4725 DAC e.g. [Link to product](https://protosupplies.com/product/mcp4725-12-bit-dac-module/)
+- 1 7-segment LCD with 3 digits e.g. [Link to product](https://www.alibaba.com/product-detail/Taidacent-Red-0-200V-Measurement-Range_60679181399.html?spm=a2700.details.0.0.1f1212advD463M)
 - 1 Velodyne controller box (comes with the Velodyne lidar)
 - 1 10K Resistor
 - 1 100K Resistor
@@ -62,18 +62,18 @@ Obtain the following components, which are available from many commercial suppli
 - A dozen of M1.5, M2.5 and M3 bolts 
 - A dozen of M1.5, M2.5 and M3 nuts 
 
-### Other Useful Tools
+### 3. Other Useful Tools
 - Soldering iron
 - Solder
 - Gauge Wires 
-- Female and Male insulated electric connector crimp bullet terminal e.g. (https://www.aliexpress.com/item/32874324815.html)
-- Female and Male insulated crimp bullet terminal e.g. [here] (https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
-- Power supply 24V or more e.g. (https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
-- breadboard e.g. (https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
-- multimeter e.g. (https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
-- clamp meter e.g. (https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
+- Female and Male insulated electric connector crimp bullet terminal e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
+- Female and Male insulated crimp bullet terminal e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
+- Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
+- breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
+- multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
+- clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
 - Screwdrivers, pliers, automatic wire stripper etc.
-- Spare fuses e.g. (https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
+- Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
 ## Hardware Setup
 
@@ -138,7 +138,7 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
 - Fix back the nut that was removed from the battery **+** pole
 - Connect the switch **-** pin to the fuse **-** wire
-- Extend the fuse **+** wire by 30cm e.g. solder another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
+- Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
 - Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
 
 
@@ -148,9 +148,9 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 
 - RUNNING : must be on wired ethernet -- not wifi (can jump to wifi sometimes?)
 ```
-	roslaunch velodyne_pointcloud VLP16_points.launch
-	rostopic echo /velodyne_points
-	rosrun rviz rviz -f velodyne
+roslaunch velodyne_pointcloud VLP16_points.launch
+rostopic echo /velodyne_points
+rosrun rviz rviz -f velodyne
 ```
 - In Rviz "displays" panel, click "Add", then select "Point Cloud2", then press "OK".
 - In the "Topic" field of the new "Point Cloud2" tab, enter "/velodyne_points".
@@ -160,12 +160,12 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 
 Manufacture the PCB board: this can be done by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you. At this stage there are no components on it, you will solder them on later in these instructions.
 	
-#### Initial Testing
+#### 1. Initial Testing
 
 - Material: the manufactured PCB board, a multimeter
 - Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**
 
-#### Buck Converter Settings
+#### 2. Buck Converter Settings
 
 Here the buck converters voltage and current are set to the desired values and then tested.
 
@@ -212,7 +212,7 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
 		- If not, then repeat steps 9 to 11
 			
-#### Pololu JRK 21v3 Configuration
+#### 3. Pololu JRK 21v3 Configuration
 
 - Download Pololu's Windows Configuration Tool by following these steps: (https://www.pololu.com/docs/0J38/3.a)
 - To configure the Pololu, please follow the instructions here: (https://www.pololu.com/docs/0J38/5)
@@ -252,7 +252,7 @@ Here the buck converters voltage and current are set to the desired values and t
 	- Click on "**Apply settings to**"
 			
 			
-#### MCP4725 DAC
+#### 4. MCP4725 DAC
 
 - Solder the male headers provided for the DAC pins.
 - **Testing**
@@ -268,16 +268,16 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
 		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
 			
-#### 3D Printing
+#### 5. 3D Printing
 - 3D print the LCD support
 
-#### Assembly
+#### 6. Assembly
 - Solder headers for Arduino
 - Solder resistors
 - Solder header for Pololu
 
 			
-#### Final Testing
+#### 7. Final Testing
 	The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 	- Material: power supply, some wires, a multimeter	
 	
@@ -439,7 +439,7 @@ rosdep install --from-paths src --ignore-src -r -y
 roslaunch podcar podcarsim.launch
 ```
 
-The first run of Gazebo may take a while (e.g. 5 minutes) to load because models used need to be automatically downloaded from the remote gazebo repositories.
+The first run of Gazebo may take a while (e.g. [Link to product]5 minutes) to load because models used need to be automatically downloaded from the remote gazebo repositories.
 
 - Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
