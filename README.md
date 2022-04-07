@@ -3,16 +3,16 @@
 Open source hardware design and software for OpenPodcar.
 
 ## Table of Contents
-1. [General Info](#general-info)
-2. [Bill of Materials (BOM)](#bill-of-materials-(bom))
-3. [Hardware Setup](#hardware-setup)
-4. [Software Setup](#software-setup)
-6. [User Guide](#user-guide)
-7. [General Testing](#general-testing)
-8. [Simulation](#simulation)
-9. [Troubleshooting Guide](#troubleshooting-guide)
+I. [General Info](#general-info)
+II. [Bill of Materials (BOM)](#bill-of-materials-(bom))
+III. [Hardware Setup](#hardware-setup)
+IV. [Software Setup](#software-setup)
+V. [User Guide](#user-guide)
+VI. [General Testing](#general-testing)
+VII. [Simulation](#simulation)
+VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
-## General Info
+## I. General Info
 
 The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as human-robot interaction (HRI) studies and practical transportation of people and goods.
 
@@ -26,7 +26,7 @@ The project includes:
 
 To build the physical OpenPodcar, first obtain the components detailed in #bill-of-materials-(bom), then follow the steps of the build process detailed in (#hardware-setup), (#software-setup) and (#user-guide). The simulation can be directly installed in (#simulation).
 
-## Bill of Materials (BOM)
+## II. Bill of Materials (BOM)
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
 
 ### 1. For the vehicle
@@ -75,7 +75,7 @@ Obtain the following components, which are available from many commercial suppli
 - Screwdrivers, pliers, automatic wire stripper etc.
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
-## Hardware Setup
+## III. Hardware Setup
 
 ### Linear Actuator
 
@@ -311,7 +311,7 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
 
 
-## Software Setup
+## IV. Software Setup
 
 ### Ubuntu 16.04 and ROS
 
@@ -370,7 +370,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 - Open flobot_tracker.launch and change frame names and paths to the ones your system uses
 	
 
-## User Guide 
+## V. User Guide 
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
@@ -397,7 +397,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 - For automation, the steps should be exactly the same as above but with the automation launch file.
 
 
-## General Testing
+## VI. General Testing
 
 ### Speed control dead zone
 	%move to git:
@@ -416,7 +416,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 
 
 
-## Simulation Installation
+## VII. Simulation Installation
 
 - Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
 
@@ -471,7 +471,7 @@ roslaunch podcar podcarsim_moveBase.launch
 
 This will present a standard movebase GUI interface in rviz, enabling you to click desired destinations to command the vehicle to drive to.
 
-## Troubleshooting Guide
+## VIII. Troubleshooting Guide
 
 ### Vehicle
 - Vehicle beeps continuous when press DMH and rear wheels do not move
