@@ -64,8 +64,8 @@ Obtain the following components, which are available from many commercial suppli
 - 1 Velodyne controller box (comes with the Velodyne lidar)
 - 1 10K Resistor
 - 1 100K Resistor
-- 3 Screw Terminal Block connectors (https://www.amazon.co.uk/Universal-Connector-Calculators-Electronic-Equipments/dp/B0922KLC4K/ref=sr_1_5?dchild=1&keywords=2+Pin+pinch+PCB+mount+screw+2.54&qid=1635870919&sr=8-5)
-- Male and female headers for Arduino and Pololu JRK 21v3 (https://www.amazon.co.uk/dp/B07CWSXY7P/ref=pe_27063361_485629781_TE_item)
+- 3 Screw Terminal Block connectors e.g. [Link to product](https://www.amazon.co.uk/Universal-Connector-Calculators-Electronic-Equipments/dp/B0922KLC4K/ref=sr_1_5?dchild=1&keywords=2+Pin+pinch+PCB+mount+screw+2.54&qid=1635870919&sr=8-5)
+- Male and female headers for Arduino and Pololu JRK 21v3 e.g. [Link to product](https://www.amazon.co.uk/dp/B07CWSXY7P/ref=pe_27063361_485629781_TE_item)
 - A dozen of M1.5, M2.5 and M3 bolts 
 - A dozen of M1.5, M2.5 and M3 nuts 
 
