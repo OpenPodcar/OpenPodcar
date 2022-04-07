@@ -21,7 +21,7 @@ VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
 ## I. General Info
 
-The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as human-robot interaction (HRI) studies and practical transportation of people and goods.
+The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as for human-robot interaction (HRI) studies and practical transportation of people and goods.
 
 The project includes:
 - Hardware design and instruction to build and wire the physical car
@@ -43,7 +43,7 @@ Obtain the following components, which are available from many commercial suppli
 - 1 laptop under Windows 7+
 - 1 Gimson Robotics GLA750-P 12V DC linear actuator with position feedback (250mm stroke) e.g. [Link to product](https://gimsonrobotics.co.uk/categories/linear-actuators/products/gla750-p-12v-dc-linear-actuator-with-position-feedback)
 - 1 ON/OF Toggle/Flick switch button e.g. [Link to product](https://www.ebay.co.uk/itm/12V-HEAVY-DUTY-25A-UNIVERSAL-METAL-SPRING-MOMENTARY-ON-OFF-TOGGLE-FLICK-SWITCH/231257116468?epid=1229817686&hash=item35d7ff8f34:g:f50AAOSwq5lTmZKx)
-- 1 USB hub (with at least 3 USB ports) e.g. [Link to product]Amazon Basics (https://www.amazon.co.uk/AmazonBasics-4-Port-Ultra-Mini-Bus-powered/dp/B003M0NURK/ref=sr_1_3?keywords=amazonbasics%2Busb%2Bhub&qid=1649172163&sr=8-3&th=1)
+- 1 USB hub (with at least 3 USB ports) e.g. [Link to product] (https://www.amazon.co.uk/AmazonBasics-4-Port-Ultra-Mini-Bus-powered/dp/B003M0NURK/ref=sr_1_3?keywords=amazonbasics%2Busb%2Bhub&qid=1649172163&sr=8-3&th=1)
 - 1 USB A cable (Arduino <-> Laptop)
 - 1 USB mini B cable (Pololu <-> Laptop)
 - 1 Ethernet cable (Velodyne <-> Laptop) 
