@@ -356,16 +356,16 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 - In terminal: `sudo nano /etc/udev/rules.d/99-tty.rules`
 - Connect the Arduino and the pololu via USB to your laptop, then type in the terminal:
 ```
-	sudo lsusb -v | grep 'idVendor\|idProduct\|iSerial'
+sudo lsusb -v | grep 'idVendor\|idProduct\|iSerial'
 ```
 - The above command displays the idVendor and idProduct for all the serial devices connected to your laptop and needs to be reported in the Simlink. 
 - For example, for the OpenPodcar we copy the following lines in "99-tty.rules":
 ```
-	#Arduino com-port rules
-	SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
-	#Pololu com-port rules -- NB the pololu has two virtual serial ports on a single USB interface.
-	SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
-	SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
+#Arduino com-port rules
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
+#Pololu com-port rules -- NB the pololu has two virtual serial ports on a single USB interface.
+SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
+SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
 ```
 - Save and close "99-tty.rules" file
 - Then type in the terminal `sudo reboot`
