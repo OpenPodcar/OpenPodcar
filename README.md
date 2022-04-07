@@ -221,8 +221,8 @@ Here the buck converters voltage and current are set to the desired values and t
 			
 #### C. Pololu JRK 21v3 Configuration
 
-- Download Pololu's Windows Configuration Tool by following these steps: (https://www.pololu.com/docs/0J38/3.a)
-- To configure the Pololu, please follow the instructions here: (https://www.pololu.com/docs/0J38/5)
+- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a)
+- To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5)
 - For OpenPodCar, we followed the steps below:
 	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
 	- Go to "**Error**" tab:
@@ -285,8 +285,9 @@ Here the buck converters voltage and current are set to the desired values and t
 
 			
 #### G. Final Testing
-	The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
-	- Material: power supply, some wires, a multimeter	
+
+The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
+- Material: power supply, some wires, a multimeter	
 	
 		
 ### D. Vehicle Connections
