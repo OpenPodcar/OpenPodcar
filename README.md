@@ -581,6 +581,7 @@ or
 @Article{camara2022openpodcar,
   Title                    = {OpenPodcar: an Open Source Vehicle for Self-Driving Car Research},
   Author                   = {Fanta Camara and Chris Waltham and David Churchill and Charles Fox},
+  Year                     = {2022},
   Journal                  = {Journal of Open Hardware (under review)},
 ```
 
