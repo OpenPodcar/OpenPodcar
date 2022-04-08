@@ -237,7 +237,7 @@ To access the underside of the vehicle, this requires the help of at least three
  
 #### 3. Mounting
 
-<span style="color:red"> 
+<span style="color:red;font-weight:700;font-size:20px"> 
 MOUNTING THE LINEAR REQUIRES DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 </span>
 
