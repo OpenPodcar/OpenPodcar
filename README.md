@@ -37,7 +37,7 @@ The project includes:
 - Gazebo simulation
 - move_base and gmapping integration
 
-To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The simulation can be directly installed in [Simulation](#simulation).
+To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The 3D simulation can be directly installed in [3D Gazebo Simulation](#simulation).
 
 ## II. <a name="bom"></a> Bill of Materials
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
@@ -92,7 +92,7 @@ Obtain the following components, which are available from many commercial suppli
 
 ### 1. Doors and Seat Removal
 
-- Remove the doors [# check]
+- Remove the screws from the hinges in order to remove the doors
 - Remove the seat by following the instructions given in the vehicle manual
 
 ### 2. Linear Actuator
@@ -107,12 +107,12 @@ This section shows how to test the linear actuactor before mounting it.
 - Start testing the linear actuator as follows:
 - Wire the power supply **-** to Pololu's **GND**
 - Wire the power supply **+**  to Pololu's **VIN** 
-- Wire the linear actuator's **black wire** to Pololu's *A*
-- Wire the linear actuator's **red wire** to Pololu's *B*
+- Wire the linear actuator's **black wire** to Pololu's **A**
+- Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's *FB* 
-	- Wire the linear actuator's **yellow wire** to Pololu's *+5V* below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
+	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
+	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** below **FB**  [# Check]
+	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
 	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
 	- Connect the Pololu USB to a computer with the "Pololu JRK 21v3 Configuration" Tool
 - Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
@@ -120,14 +120,14 @@ This section shows how to test the linear actuactor before mounting it.
 	- Go to **Input** tab and use the cursor to send commands to the linear actuator e.g.
 	- "2500" : the linear actuator should extend its length to a maximum
 	- "1500" : the linear actuor should reduce its length
-	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should be when mounting it underneath the vehicle
+	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
 		
 #### Mounting
 
 - Material: Gimson linear actuator, a drill capable of drilling steel, some washers
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture below.
+	- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
@@ -270,7 +270,7 @@ The PCB board was heavily tested before and after assembling its components to e
 		
 ### 6. Vehicle Connections
 
-#### Deadman handle (DMH) and Relay
+#### DeadMan Handle (DMH) and Relay
 
 The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
 A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
@@ -289,11 +289,11 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 
 
 #### Connect the linear actuactor to the Pololu JRK 21v3
-- Wire the linear actuator's **black wire** to Pololu's *A*
-- Wire the linear actuator's **red wire** to Pololu's *B*
+- Wire the linear actuator's **black wire** to Pololu's **A**
+- Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's *FB* 
-	- Wire the linear actuator's **yellow wire** to Pololu's *+5V* below **FB**  [# Check]
+	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
+	- Wire the linear actuator's **yellow wire** to Pololu's **++5V** below **FB**  [# Check]
 	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
 
 
@@ -392,7 +392,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 		
 ### 6. Object Detection and Tracking
 
-- Install the FLOBOT project: please follow the "Install & Build" guide here: (https://github.com/LCAS/FLOBOT)
+- Install the FLOBOT project: please follow the "Install & Build" guide [here](https://github.com/LCAS/FLOBOT).
 - BSON for Python is required, this can be installed via ``` pip install pymongo==3.5.1 ```
 - Open flobot_tracker.launch and change frame names and paths to the ones your system uses
 	
@@ -487,6 +487,7 @@ The figure below shows the complete ROS node configuration used during simulatio
 	<img src="./docs/figs_sim/sim_nodes.png" alt="ROS nodes used in simulation under manual joystick control"/>
 	</p>
 
+
 ### Move_base control
 
 Open a new terminal and run,
@@ -500,7 +501,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 ## VIII. <a name="troubleshooting-guide"></a> Troubleshooting Guide
 
-### Vehicle
+### 1. Vehicle
 - Vehicle beeps continuous when press DMH and rear wheels do not move
 	- This is due to a safety mode preventing ignition.
 
@@ -527,7 +528,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
 	- The idVendor and idProduct can also be displayed in the commandline for each connected USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
 
-### Lidar
+### 2. Lidar
 - No velodyne_points message published
 	- Check: laptop must be on wired network, not wifi.
 
@@ -536,7 +537,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Check connections to Velodyne box including power and ethernet.
    
 
-### Simulation
+### 3. Simulation
 - AF\_NET error
 	- If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
 	
