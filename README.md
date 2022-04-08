@@ -442,7 +442,7 @@ Implementing and testing this safety system should be undertaken with the drive 
 
 ### Installation
 
-- Assuming: ros kinetic and gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
+- Assuming: ROS Kinetic and Gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
 
 - Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found [here](http://wiki.ros.org/rosdep).
 
@@ -520,7 +520,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	
 - Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
-	- The idVendor and idProduct can also be displayed for each USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
+	- The idVendor and idProduct can also be displayed in the commandline for each connected USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
 
 ### Lidar
 - No velodyne_points message published
