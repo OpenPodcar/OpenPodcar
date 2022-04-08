@@ -133,7 +133,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- The final mounting is shown in this picture 
 	
 	<p align="center">
-	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" width="250"/>
+	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" width="350"/>
 	</p>
 
 	
