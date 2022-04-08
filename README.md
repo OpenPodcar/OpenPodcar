@@ -132,7 +132,11 @@ This section shows how to test the linear actuactor before mounting it.
 	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
 	- The final mounting is shown in this picture 
 	
-	<img align="center" src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" width="250"/>
+	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" width="250"/>
+	<p align="center">
+  <img width="300" height="150" src="./docs/hardware/steeringActuatorMounted.jpg">
+</p>
+
 	
 	Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
 
