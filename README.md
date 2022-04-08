@@ -570,7 +570,9 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
+
 Please cite the following paper when you use the OpenPodcar.
+
 Plain:
 ```
 Fanta Camara, Chris Waltham, David Churchill, Charles Fox. 
