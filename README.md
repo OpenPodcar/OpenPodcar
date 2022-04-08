@@ -252,7 +252,7 @@ To access the underside of the vehicle, this requires the help of at least three
 - Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people). 
 - Remove the axle stands and jacks before making the integration test of the linear actuactor.
 
-#### 3. Integration Test
+#### 4. Integration Test
 
 This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected
 
