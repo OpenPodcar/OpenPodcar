@@ -7,9 +7,9 @@ I. [General Info](#general-info)
 
 II. [Bill of Materials](#bom)
 
-III. [Hardware Setup](#hardware-setup)
+III. [Software Setup](#software-setup)
 
-IV. [Software Setup](#software-setup)
+IV. [Hardware Setup](#hardware-setup)
 
 V. [User Guide](#user-guide)
 
@@ -37,7 +37,7 @@ The project includes:
 - Gazebo simulation
 - move_base and gmapping integration
 
-To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The 3D simulation can be directly installed in [3D Gazebo Simulation](#simulation).
+To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Software Setup](#software-setup), [Hardware Setup](#hardware-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The 3D simulation can be directly installed in [3D Gazebo Simulation](#simulation).
 
 ## II. <a name="bom"></a> Bill of Materials
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
@@ -88,216 +88,7 @@ Obtain the following components, which are available from many commercial suppli
 - Flathead and Phillips screwdrivers, pliers, automatic wire stripper [TODO etc -- what??]
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
-## III. <a name="hardware-setup"></a> Hardware Setup
-
-### 1. Doors and Seat Removal
-
-- Remove the screws from the hinges in order to remove the doors
-- Remove the seat by following the instructions given in the vehicle manual
-
-### 2. Linear Actuator
-
-Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
-
-#### Acceptance Testing
-
-This section shows how to test the linear actuactor before mounting it.
-
-- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration, external power capable of supplying 12V, a breadboard, some wires, a multimeter
-- Start testing the linear actuator as follows:
-- Wire the power supply **-** to Pololu's **GND**
-- Wire the power supply **+**  to Pololu's **VIN** 
-- Wire the linear actuator's **black wire** to Pololu's **A**
-- Wire the linear actuator's **red wire** to Pololu's **B**
-- Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
-	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
-	- Connect the Pololu USB to a computer with the "Pololu JRK 21v3 Configuration" Tool
-- Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
-	- If there are errors, click on "**Reset**" and "**Clear**" until the Poolu's LED start blinking green
-	- Go to **Input** tab and use the cursor to send commands to the linear actuator e.g.
-	- "2500" : the linear actuator should extend its length to a maximum
-	- "1500" : the linear actuor should reduce its length
-	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
-		
-#### Mounting
-
-- Material: Gimson linear actuator, a drill capable of drilling steel, some washers
-- To access the underside of the vehicle, this requires the help of at least three people:
-	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
-	
-	<p align="center">
-	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
-	</p>
-	
-	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
-	- One person should stand next to each axle stand
-	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
-	- The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
-	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
-- To mount the linear actuactor:
-	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
-	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
-	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.  THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
-	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
-	- The final mounting is shown in the photo below. [TODO add green and red circles].
-	
-	<p align="center">
-	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
-	</p>
-
-Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people).  Remove the axle stands and jacks before making the integration test of the linear actuactor:
-
-#### Integration Test
-
-Repeat the **Initial Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can be pass through an empty area between the plastic bumper and the vehicle left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
-- a "2500" command should steer the front wheel to the far right, i.e about -45 deg
-- a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
-- a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
-		
-### 3. ON/OFF Switch and Fusing
-
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
-- Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
-- Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
-- Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
-- Fix back the nut that was removed from the battery **+** pole
-- Connect the fuse **-** wire to the switch **-** pin
-- Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
-- Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
-
-
-### 4. 3D Lidar
-
-Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?].   Use a marker to mark the positions of its three feet.
-
-Remove the tripod from the roof.  Drill two holes on either side of each marked position.
-
-Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
-
-Place the tripod back on the roof.  Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof.
-
-### 5. Printed Circuit Board (PCB)
-
-Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions.  NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
-	
-#### A. Acceptance Testing
-
-- Material: the manufactured PCB board, a multimeter
-- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 2 minutes in total). If any connection is not good then the manufactured PCB is faulty and should not be used.
-
-#### B. Buck Converter Settings
-
-Here, the buck converters voltage and current will be set to the desired values and then tested.
-
-- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
-
-1. XL4016 Buck converter 1
-	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
-	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
-	5. Set the power supply to 24V and turn it on
-	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
-	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
-	8. **Voltage Testing:** 
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 16V
-		- If not, then repeat steps 5 to 8
-	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
-	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
-	11. **Current Testing**
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
-		- If not, then repeat steps 9 to 11
-		
-2. XL4016 Buck converter 2
-	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
-	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
-	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
-	5. Set the power supply to 24V and turn it on
-	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
-	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
-	8. **Voltage Testing** 
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 12V
-		- If not, then repeat steps 5 to 8
-	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
-	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter and set the desired output current of 3A is reached (or the maximum current required for the linear actuator and 3D Lidar)
-	11. **Current Testing**
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
-		- If not, then repeat steps 9 to 11			
-			
-#### D. MCP4725 DAC
-
-- Solder the male headers provided for the DAC pins.
-- **Testing**
-	- Material: MCP4725 DAC, Arduino, some wires, multimeter
-	- Use a breadboard to make the following connections:
-		- Wire both DAC **GND** to both Arduino **GND**, using two female to male wires
-		- Wire the DAC **VCC** to Arduino **5V**, using a female to female wire
-		- Wire the DAC **SDA** to Arduino **SDA**, using a female to male wire
-		- Wire the DAC **SCL** to Arduino **SCL**, using a female to male wire
-		- Wire the DAC **OUT** to an isolated point on the breadboard, using a female to female wire
-	- Turn on the Arduino by connecting it via USB to a computer 
-	- Take the multimeter to measure the voltage received on the DAC:
-		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
-		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
-			
-#### E. 3D Printing
-- 3D print the LCD part
-
-#### F. Assembly
-- Solder headers for Arduino
-- Solder resistors
-- Solder header for Pololu
-
-			
-#### G. Final Testing
-
-The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
-- Material: power supply, some wires, a multimeter	
-	
-		
-### 6. Vehicle Connections
-
-#### DeadMan Handle (DMH) and Relay
-
-The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
-A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
-
-A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
-
-A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
-	
-
-#### Connect the PCB components to DMH and Relay
-
-
-#### Connect the 3D lidar to the PCB 
-- Insert 
-- Insert 
-
-
-#### Connect the linear actuactor to the Pololu JRK 21v3
-- Wire the linear actuator's **black wire** to Pololu's **A**
-- Wire the linear actuator's **red wire** to Pololu's **B**
-- Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **++5V** below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
-
-
-## IV. <a name="software-setup"></a> Software Setup
+## III. <a name="software-setup"></a> Software Setup
 
 ### 1. Ubuntu 16.04 and ROS
 
@@ -305,7 +96,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
-NB: Pololu JRK 21v3 Configuration Tool which requires the installation of a Windows app
+NB: Pololu JRK 21v3 Configuration which requires the installation of a Windows app
 
 ### 2. Arduino
 - Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
@@ -389,13 +180,218 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 - Save and close "99-tty.rules" file
 - Then type in the terminal `sudo reboot`
 - Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
-		
-### 6. Object Detection and Tracking
 
-- Install the FLOBOT project: please follow the "Install & Build" guide [here](https://github.com/LCAS/FLOBOT).
-- BSON for Python is required, this can be installed via ``` pip install pymongo==3.5.1 ```
-- Open flobot_tracker.launch and change frame names and paths to the ones your system uses
+
+
+## IV. <a name="hardware-setup"></a> Hardware Setup
+
+### 1. Doors and Seat Removal
+
+- Remove the screws from the hinges in order to remove the doors
+- Remove the seat by following the instructions given in the vehicle manual
+
+### 2. Linear Actuator
+
+Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
+
+#### A. Acceptance Testing
+
+This section shows how to test the linear actuactor before mounting it.
+
+- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration Tool, external power capable of supplying 12V, a breadboard, some wires, a multimeter
+- Start testing the linear actuator as follows:
+- Wire the power supply **-** to Pololu's **GND**
+- Wire the power supply **+**  to Pololu's **VIN** 
+- Wire the linear actuator's **black wire** to Pololu's **A**
+- Wire the linear actuator's **red wire** to Pololu's **B**
+- Use a breadboard to make the following connections:
+	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
+	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** below **FB**  [# Check]
+	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
+	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
+	- Connect the Pololu USB to a computer with the "Pololu JRK 21v3 Configuration" Tool
+- Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
+	- If there are errors, click on "**Reset**" and "**Clear**" until the Poolu's LED start blinking green
+	- Go to **Input** tab and use the cursor to send commands to the linear actuator e.g.
+	- "2500" : the linear actuator should extend its length to a maximum
+	- "1500" : the linear actuor should reduce its length
+	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
+		
+#### B. Mounting
+
+- Material: Gimson linear actuator, a drill capable of drilling steel, some washers
+- To access the underside of the vehicle, this requires the help of at least three people:
+	- Bring in two axle stands as high as 75cm each
+	- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
 	
+	<p align="center">
+	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
+	</p>
+	
+	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
+	- One person should stand next to each axle stand
+	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
+	- The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
+	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
+- To mount the linear actuactor:
+	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
+	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
+	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.  THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
+	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
+	- The final mounting is shown in the photo below. [TODO add green and red circles].
+	
+	<p align="center">
+	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
+	</p>
+
+Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people).  Remove the axle stands and jacks before making the integration test of the linear actuactor:
+
+#### C. Integration Test
+
+Repeat the **Initial Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can be pass through an empty area between the plastic bumper and the vehicle left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
+- a "2500" command should steer the front wheel to the far right, i.e about -45 deg
+- a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
+- a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
+		
+### 3. ON/OFF Switch and Fusing
+
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
+- Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
+- Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
+- Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
+- Fix back the nut that was removed from the battery **+** pole
+- Connect the fuse **-** wire to the switch **-** pin
+- Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
+- Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
+
+
+### 4. 3D Lidar
+
+Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?].   Use a marker to mark the positions of its three feet.
+
+Remove the tripod from the roof.  Drill two holes on either side of each marked position.
+
+Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
+
+Place the tripod back on the roof.  Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof.
+
+### 5. Buck Converter Settings
+
+Here, the buck converters voltage and current will be set to the desired values and then tested.
+
+- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
+
+#### A. XL4016 Buck converter 1
+	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
+	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
+	5. Set the power supply to 24V and turn it on
+	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
+	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
+	8. **Voltage Testing:** 
+		- Turn off the power supply and stop using th screw driver
+		- Turn on the power supply back to 24V
+		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 16V
+		- If not, then repeat steps 5 to 8
+	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
+	11. **Current Testing**
+		- Turn off the power supply and stop using th screw driver
+		- Turn on the power supply back to 24V
+		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
+		- If not, then repeat steps 9 to 11
+		
+#### B. XL4016 Buck converter 2
+	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
+	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
+	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
+	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
+	5. Set the power supply to 24V and turn it on
+	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
+	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
+	8. **Voltage Testing** 
+		- Turn off the power supply and stop using th screw driver
+		- Turn on the power supply back to 24V
+		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 12V
+		- If not, then repeat steps 5 to 8
+	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter and set the desired output current of 3A is reached (or the maximum current required for the linear actuator and 3D Lidar)
+	11. **Current Testing**
+		- Turn off the power supply and stop using th screw driver
+		- Turn on the power supply back to 24V
+		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
+		- If not, then repeat steps 9 to 11			
+			
+### 6. MCP4725 DAC
+
+- Solder the male headers provided for the DAC pins.
+- **Acceptance Testing**
+	- Material: MCP4725 DAC, Arduino, some wires, multimeter
+	- Use a breadboard to make the following connections:
+		- Wire both DAC **GND** to both Arduino **GND**, using two female to male wires
+		- Wire the DAC **VCC** to Arduino **5V**, using a female to female wire
+		- Wire the DAC **SDA** to Arduino **SDA**, using a female to male wire
+		- Wire the DAC **SCL** to Arduino **SCL**, using a female to male wire
+		- Wire the DAC **OUT** to an isolated point on the breadboard, using a female to female wire
+	- Turn on the Arduino by connecting it via USB to a computer 
+	- Take the multimeter to measure the voltage received on the DAC:
+		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
+		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
+			
+### 7. 3D Printing
+- 3D print the LCD part
+
+### 8. Printed Circuit Board (PCB)
+
+Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions.  NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
+	
+#### A. Acceptance Testing
+
+- Material: the manufactured PCB board, a multimeter
+- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 2 minutes in total). If any connection is not good then the manufactured PCB is faulty and should not be used.
+
+#### B. Assembly
+- Solder headers for Arduino
+- Solder resistors
+- Solder header for Pololu
+
+			
+#### C. Final Testing
+
+The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
+- Material: power supply, some wires, a multimeter	
+	
+		
+### 6. Vehicle Connections
+
+#### A. DeadMan Handle (DMH) and Relay
+
+The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
+A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
+
+A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
+
+A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
+	
+
+#### B. Connect the PCB components to DMH and Relay
+
+
+#### C. Connect the 3D lidar to the PCB 
+- Insert 
+- Insert 
+
+
+#### D. Connect the linear actuactor to the Pololu JRK 21v3
+- Wire the linear actuator's **black wire** to Pololu's **A**
+- Wire the linear actuator's **red wire** to Pololu's **B**
+- Use a breadboard to make the following connections:
+	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
+	- Wire the linear actuator's **yellow wire** to Pololu's **++5V** below **FB**  [# Check]
+	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
+		
+
 
 ## V. <a name="user-guide"></a> User Guide 
 
@@ -426,26 +422,30 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 ## VI. <a name="general-testing"></a> General Testing
 
-### Speed control
+### 1. Speed control
 
 Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
 
 
-### Steering Control
+### 2. Steering Control
  
  
-### GMapping
+### 3. GMapping
  
- 
- 
-### Move_base and TEB planner
+  
+### 4. Move_base and TEB planner
+
+
+
+### 5. Object Detection and Tracking
+
 
 
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
 
-### Installation
+### 1. Installation
 
 - Assuming: ROS Kinetic and Gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
 
@@ -473,7 +473,7 @@ The first run of Gazebo may take a while (e.g. 5 minutes) to load because models
 - Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
 
-### Joystick control
+### 2. Joystick control
 
 If you have a USB joystick connected, open a new terminal and run,
 
@@ -488,7 +488,7 @@ The figure below shows the complete ROS node configuration used during simulatio
 	</p>
 
 
-### Move_base control
+### 3. Move_base control
 
 Open a new terminal and run,
 
