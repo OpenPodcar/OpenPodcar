@@ -97,9 +97,9 @@ Obtain the following components, which are available from many commercial suppli
 
 ### 2. Linear Actuator
 
-Before mounting the linear actuator under the vehicle, first test it with the Pololu to check that it is functional.
+Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
 
-#### Initial Testing
+#### Acceptance Testing
 
 This section shows how to test the linear actuactor before mounting it.
 
@@ -124,7 +124,7 @@ This section shows how to test the linear actuactor before mounting it.
 		
 #### Mounting
 
-- Material: Gimson linear actuator, a drill, some bearings
+- Material: Gimson linear actuator, a drill capable of drilling steel, some washers
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
 	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture below.
@@ -140,17 +140,18 @@ This section shows how to test the linear actuactor before mounting it.
 	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
 - To mount the linear actuactor:
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
-	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
-	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture below.
+	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
+	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.  THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
+	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
+	- The final mounting is shown in the photo below. [TODO add green and red circles].
 	
 	<p align="center">
 	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
-Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
+Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people).  Remove the axle stands and jacks before making the integration test of the linear actuactor:
 
-#### Final Testing
+#### Integration Test
 
 Repeat the **Initial Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can be pass through an empty area between the plastic bumper and the vehicle left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
