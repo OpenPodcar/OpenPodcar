@@ -120,7 +120,7 @@ This section shows how to test the linear actuactor before mounting it.
 - Material: Gimson linear actuator, a drill, some bearings
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture !(Vehicle tilted using on axles)(/docs/hardware/onAxles.jpg)
+	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture ![Vehicle tilted using on axles](./docs/hardware/onAxles.jpg)
 	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
 	- One person should stand next to each axle stand
 	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
@@ -130,7 +130,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
 	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
 	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture !(Vehicle tilted using on axles)(/docs/hardware/steeringActuatorMounted.jpg)
+	- The final mounting is shown in this picture ![Vehicle tilted using on axles](./docs/hardware/steeringActuatorMounted.jpg)
 			
 	Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
 
@@ -236,7 +236,7 @@ Here the buck converters voltage and current are set to the desired values and t
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
 		- keep all other parameters to default values
-		- Final settings should like here: !(Pololu Input tab)(/docs/software/pololu_input.png)
+		- Final settings should like here: ![Pololu Input tab](./docs/software/pololu_input.png)
 
 	- Go to "**Feedback**" tab:
 		- set "**Feedback mode**" to "**Analog voltage**"
@@ -247,18 +247,18 @@ Here the buck converters voltage and current are set to the desired values and t
 			- set "**Minimum**" to "**1000**"
 			- set "**Absolute Min**" to "**1000**"
 			- keep all other paramters to default values
-		- Final settings should like here: !(Pololu Feedback tab)(/docs/software/pololu_feedback.png)
+		- Final settings should like here: ![Pololu Feedback tab](./docs/software/pololu_feedback.png)
 
 	- Go to "**PID**" tab:
 		- set "**Proportional Coefficient**" to "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
 		- keep all other parameters to default values 
-		- Final settings should like here: !(Pololu PID tab)(/docs/software/pololu_pid.png)
+		- Final settings should like here: ![Pololu PID tab](./docs/software/pololu_pid.png)
 
 	- Go to "**Motor**" tab:
 		- check "**Invert motor direct**"
 		- in the "**Forward column**", set "**Max. current (A)**" to "**0**"
 		- keep all other parameters to default values
-		- Final settings should like here: !(Pololu Motor tab)(/docs/software/pololu_motor.png)
+		- Final settings should like here: ![Pololu Motor tab](./docs/software/pololu_motor.png)
 
 	- Click on "**Apply settings to**"
 			
