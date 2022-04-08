@@ -475,12 +475,11 @@ source <install location>/catkin_ws/devel/setup.bash
 roslaunch podcar joystick.launch
 ```
 
-%Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control.
-%\begin{figure}(h)
-%	\includegraphics(width=\columnwidth){figs_sim/sim_nodes.png}
-%	\caption{ROS nodes used in simulation under manual joystick control.}
-%	\label{fig:sim_nodes}
-%\end{figure}
+The figure below shows the complete ROS node configuration used during simulation, under manual joystick control.
+
+	<p align="center">
+	<img src="./docs/figs_sim/sim_nodes.png" alt="ROS nodes used in simulation under manual joystick control" width="300"/>
+	</p>
 
 ### Move_base control
 
