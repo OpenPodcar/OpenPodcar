@@ -370,11 +370,9 @@ Manufacture the PCB board by sending the gerber files to an online PCB manufactu
 The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. 
 - Material: external power supply, multimeter
 - Material: power supply, multimeter, some wires
-
 	<p align="center">
-	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration tesing" "width=0.001"/>
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=0.001"/>
 	</p>
-
 - Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 	
 		
