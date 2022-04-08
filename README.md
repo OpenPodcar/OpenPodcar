@@ -217,22 +217,27 @@ This section shows how to test the linear actuactor before mounting it.
 	- "1500" : the linear actuor should reduce its length
 	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
 		
-#### 2. Mounting
+#### 2. Access the underside of the vehicle
 
-- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
-- To access the underside of the vehicle, this requires the help of at least three people:
-	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
+To access the underside of the vehicle, this requires the help of at least three people.
+
+- Material: 2 axle stands, 2 jacks
+- Bring in two axle stands as high as 75cm each
+- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
 	</p>
 	
-	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
-	- One person should stand next to each axle stand
-	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
-	- The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
-	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
+- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
+- One person should stand next to each axle stand
+- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
+- The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
+- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
+ 
+#### 3. Mounting
+
+- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
 - To mount the linear actuactor:
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
 	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
