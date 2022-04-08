@@ -385,7 +385,7 @@ The PCB board was heavily tested before and after assembling its components to e
 		
 ### I. Vehicle Connections
 
-#### 1. DeadMan Handle (DMH) and Relay
+#### A. DeadMan Handle (DMH) and Relay
 
 The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
 A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
@@ -395,15 +395,15 @@ A relay is used which interrupts the mobility scooter’s key ignition circuit. 
 A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
 	
 
-#### 2. Connect the PCB components to DMH and Relay
+#### B. Connect the PCB components to DMH and Relay
 
 
-#### 3. Connect the 3D lidar to the PCB 
+#### C. Connect the 3D lidar to the PCB 
 - Insert 
 - Insert 
 
 
-#### 4. Connect the linear actuactor to the Pololu JRK 21v3
+#### D. Connect the linear actuactor to the Pololu JRK 21v3
 - Wire the linear actuator's **black wire** to Pololu's **A**
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
@@ -442,30 +442,30 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 
 ## VI. <a name="general-testing"></a> General Testing
 
-### 1. Speed control
+### A. Speed control
 
 Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
 
 
-### 2. Steering Control
+### B. Steering Control
  
  
-### 3. GMapping
+### C. GMapping
  
   
-### 4. Move_base and TEB planner
+### D. Move_base and TEB planner
 
 
 
-### 5. Object Detection and Tracking
+### E. Object Detection and Tracking
 
 
 
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
 
-### 1. Installation
+### A. Installation
 
 - Assuming: ROS Kinetic and Gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
 
@@ -493,7 +493,7 @@ The first run of Gazebo may take a while (e.g. 5 minutes) to load because models
 - Once the simulation is running, you can then launch one of two different systems to control the robot: manual joystick control or movebase control.
 
 
-### 2. Joystick control
+### B. Joystick control
 
 If you have a USB joystick connected, open a new terminal and run,
 
@@ -508,7 +508,7 @@ The figure below shows the complete ROS node configuration used during simulatio
 	</p>
 
 
-### 3. Move_base control
+### C. Move_base control
 
 Open a new terminal and run,
 
@@ -521,7 +521,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 ## VIII. <a name="troubleshooting-guide"></a> Troubleshooting Guide
 
-### 1. Vehicle
+### A. Vehicle
 - Vehicle beeps continuous when press DMH and rear wheels do not move
 	- This is due to a safety mode preventing ignition.
 
@@ -548,7 +548,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
 	- The idVendor and idProduct can also be displayed in the commandline for each connected USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
 
-### 2. Lidar
+### B. Lidar
 - No velodyne_points message published
 	- Check: laptop must be on wired network, not wifi.
 
@@ -557,7 +557,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Check connections to Velodyne box including power and ethernet.
    
 
-### 3. Simulation
+### C. Simulation
 - AF\_NET error
 	- If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
 	
