@@ -21,7 +21,9 @@ VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
 IX. [How to Contribute?](#how-to-contribute)
 
-X. [Licence](#licence)
+X. [Cite OpenPodcar](#cite-openpodcar)
+
+XI. [Licence](#licence)
 
 ## I. <a name="general-info"></a> General Info
 
@@ -88,7 +90,12 @@ Obtain the following components, which are available from many commercial suppli
 
 ## III. <a name="hardware-setup"></a> Hardware Setup
 
-### 1. Linear Actuator
+### 1. Doors and Seat Removal
+
+- Remove the doors [# check]
+- Remove the seat by following the instructions given in the vehicle manual
+
+### 2. Linear Actuator
 
 Before mounting the linear actuator under the vehicle, first test it with the Pololu to check that it is functional.
 
@@ -120,7 +127,7 @@ This section shows how to test the linear actuactor before mounting it.
 - Material: Gimson linear actuator, a drill, some bearings
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture
+	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
@@ -135,14 +142,13 @@ This section shows how to test the linear actuactor before mounting it.
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
 	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
 	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture 
+	- The final mounting is shown in this picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
-	
-	Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
+Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
 
 #### Final Testing
 
@@ -151,33 +157,25 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 - a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
 - a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
 		
-### 2. Fusing and ON/OFF Switch
+### 3. ON/OFF Switch and Fusing
 
 - Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
 - Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
 - Fix back the nut that was removed from the battery **+** pole
-- Connect the switch **-** pin to the fuse **-** wire
+- Connect the fuse **-** wire to the switch **-** pin
 - Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
 - Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
 
 
-### 3. 3D Lidar
+### 4. 3D Lidar
 
-- The lidar screws onto the tripod. The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in Fig. TODO.   But it needs to be set up so we can talk to the Velodyne over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
+The lidar is screwed onto a tripod on top of the vehicle.
 
-- RUNNING : must be on wired ethernet -- not wifi (can jump to wifi sometimes?)
-```
-roslaunch velodyne_pointcloud VLP16_points.launch
-rostopic echo /velodyne_points
-rosrun rviz rviz -f velodyne
-```
-- In Rviz "displays" panel, click "Add", then select "Point Cloud2", then press "OK".
-- In the "Topic" field of the new "Point Cloud2" tab, enter "/velodyne_points".
+The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in Fig. [# check]
 
-
-### 4. Printed Circuit Board (PCB)
+### 5. Printed Circuit Board (PCB)
 
 Manufacture the PCB board: this can be done by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you. At this stage there are no components on it, you will solder them on later in these instructions.
 	
@@ -191,7 +189,8 @@ Manufacture the PCB board: this can be done by sending the gerber files to an on
 Here the buck converters voltage and current are set to the desired values and then tested.
 
 - Material: buck converters, power supply, multimeter, clamp meter and some wires
-- **XL4016 Buck converter 1**
+
+1. XL4016 Buck converter 1
 	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
 	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
 	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
@@ -212,7 +211,7 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
 		- If not, then repeat steps 9 to 11
 		
-- **XL4016 Buck converter 2**
+2. XL4016 Buck converter 2
 	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
 	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
 	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
@@ -231,47 +230,7 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Turn off the power supply and stop using th screw driver
 		- Turn on the power supply back to 24V
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
-		- If not, then repeat steps 9 to 11
-			
-#### C. Pololu JRK 21v3 Configuration
-
-- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a)
-- To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5)
-- For OpenPodCar, we followed the steps below:
-	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
-	- Go to "**Error**" tab:
-		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
-		- click on "**Apply settings to**"
-
-	- Go to "**Input**" tab: 
-		- set "**Input mode**" to "**serial**"
-		- keep all other parameters to default values
-		- Final settings should like here: ![Pololu Input tab](./docs/software/pololu_input.png)
-
-	- Go to "**Feedback**" tab:
-		- set "**Feedback mode**" to "**Analog voltage**"
-		- check "**Invert feedback direction**"
-		- Calibration:
-			- set "**Absolute Max**" to "**2600**"
-			- set "**Maximum**" to "**2600**"
-			- set "**Minimum**" to "**1000**"
-			- set "**Absolute Min**" to "**1000**"
-			- keep all other paramters to default values
-		- Final settings should like here: ![Pololu Feedback tab](./docs/software/pololu_feedback.png)
-
-	- Go to "**PID**" tab:
-		- set "**Proportional Coefficient**" to "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
-		- keep all other parameters to default values 
-		- Final settings should like here: ![Pololu PID tab](./docs/software/pololu_pid.png)
-
-	- Go to "**Motor**" tab:
-		- check "**Invert motor direct**"
-		- in the "**Forward column**", set "**Max. current (A)**" to "**0**"
-		- keep all other parameters to default values
-		- Final settings should like here: ![Pololu Motor tab](./docs/software/pololu_motor.png)
-
-	- Click on "**Apply settings to**"
-			
+		- If not, then repeat steps 9 to 11			
 			
 #### D. MCP4725 DAC
 
@@ -290,7 +249,7 @@ Here the buck converters voltage and current are set to the desired values and t
 		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
 			
 #### E. 3D Printing
-- 3D print the LCD support
+- 3D print the LCD part
 
 #### F. Assembly
 - Solder headers for Arduino
@@ -304,7 +263,7 @@ The PCB board was heavily tested before and after assembling its components to e
 - Material: power supply, some wires, a multimeter	
 	
 		
-### D. Vehicle Connections
+### 6. Vehicle Connections
 
 #### Deadman handle (DMH) and Relay
 
@@ -357,13 +316,52 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 		- "FA:120" for reverse speed
 	- the serial monitor should display the command that was typed in and the corresponding DAC value
 	
-	
-### 3. Velodyne 3D Lidar Configuration with ROS
+### 3. Pololu JRK 21v3 Configuration
 
+- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a)
+- To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5)
+- For OpenPodCar, we followed the steps below:
+	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
+	- Go to "**Error**" tab:
+		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
+		- click on "**Apply settings to**"
+
+	- Go to "**Input**" tab: 
+		- set "**Input mode**" to "**serial**"
+		- keep all other parameters to default values
+		- Final settings should like here: ![Pololu Input tab](./docs/software/pololu_input.png)
+
+	- Go to "**Feedback**" tab:
+		- set "**Feedback mode**" to "**Analog voltage**"
+		- check "**Invert feedback direction**"
+		- Calibration:
+			- set "**Absolute Max**" to "**2600**"
+			- set "**Maximum**" to "**2600**"
+			- set "**Minimum**" to "**1000**"
+			- set "**Absolute Min**" to "**1000**"
+			- keep all other paramters to default values
+		- Final settings should like here: ![Pololu Feedback tab](./docs/software/pololu_feedback.png)
+
+	- Go to "**PID**" tab:
+		- set "**Proportional Coefficient**" to "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
+		- keep all other parameters to default values 
+		- Final settings should like here: ![Pololu PID tab](./docs/software/pololu_pid.png)
+
+	- Go to "**Motor**" tab:
+		- check "**Invert motor direct**"
+		- in the "**Forward column**", set "**Max. current (A)**" to "**0**"
+		- keep all other parameters to default values
+		- Final settings should like here: ![Pololu Motor tab](./docs/software/pololu_motor.png)
+
+	- Click on "**Apply settings to**"
+	
+	
+### 4. Velodyne 3D Lidar Configuration with ROS
+
+The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
 Please follow the instructions from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16)
 	
-	
-### 4. Simlink USB COM Ports
+### 5. Simlink for USB COM Ports
 
 Here, the goal is to create persistent USB serial device names (aka SIMLINK) for the Arduino and the Pololu.
 
@@ -385,7 +383,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 - Then type in the terminal `sudo reboot`
 - Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
 		
-### 5. Object Detection and Tracking
+### 6. Object Detection and Tracking
 
 - Install the FLOBOT project: please follow the "Install & Build" guide here: (https://github.com/LCAS/FLOBOT)
 - BSON for Python is required, this can be installed via ``` pip install pymongo==3.5.1 ```
@@ -505,7 +503,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 	- Check: is the control voltage is the dead zone ? It should be.
 
-- Rear wheels do not move, control voltages are correct}
+- Rear wheels do not move, control voltages are correct
 	- Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 1.8 for forward and backwards.
 
 	- Check: main vehicle battery level, by connecting the vehicle charger and inspecting the battery charge level. Problem occurs if the battery is nearly flat.
@@ -540,9 +538,16 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 ## IX. <a name="how-to-contribute"></a> How to Contribute? 
 
 
-## X. <a name="licence"></a> Licence 
+## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
+
+
+
+## XI. <a name="licence"></a> Licence 
 [# check]
-Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
+This work is under CERN-OSH-W licence. 
+
+Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk. The design is not a legal product and carries no safety certification.
+
 
 
 
