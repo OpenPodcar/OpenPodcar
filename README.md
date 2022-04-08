@@ -60,6 +60,7 @@ Obtain the following components, which are available from many commercial suppli
 - 1 fuse 7.5Amp
 - 1 Relay e.g. [Link to product](https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
 - A few metric bolts, nuts, washers and cap nuts
+- A few cables ties
 
 ### 2. For the PCB
 - 2 XL4016 Step-Down Buck converters DC-DC e.g. [Link to product](https://www.amazon.co.uk/dp/B086W6B9H1/ref=pe_27063361_485629781_TE_item?th=1)
@@ -79,8 +80,8 @@ Obtain the following components, which are available from many commercial suppli
 - Soldering iron
 - Solder
 - Gauge Wires 
-- Female and Male insulated electric connector crimp bullet terminal e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
-- Female and Male insulated crimp bullet terminal e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
+- Female and Male insulated electric connector crimp bullet terminals e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
+- Female and Male insulated crimp bullet terminals e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
 - Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
@@ -96,7 +97,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
-NB: Pololu JRK 21v3 Configuration which requires the installation of a Windows app
+**NB:** Pololu JRK 21v3 Configuration requires the installation of a Windows app, which does not work on linux.
 
 ### 2. Arduino
 - Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
@@ -187,8 +188,8 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 ### 1. Doors and Seat Removal
 
-- Remove the screws from the hinges in order to remove the doors
-- Remove the seat by following the instructions given in the vehicle manual
+- Remove the screws from the hinges in order to remove the doors.
+- Remove the seat by following the instructions given in the vehicle service manual.
 
 ### 2. Linear Actuator
 
@@ -219,7 +220,7 @@ This section shows how to test the linear actuactor before mounting it.
 		
 #### B. Mounting
 
-- Material: Gimson linear actuator, a drill capable of drilling steel, some washers
+- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
 	- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
@@ -236,7 +237,7 @@ This section shows how to test the linear actuactor before mounting it.
 - To mount the linear actuactor:
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
 	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
-	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.  THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
+	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below. THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
 	- The final mounting is shown in the photo below. [TODO add green and red circles].
 	
@@ -244,11 +245,12 @@ This section shows how to test the linear actuactor before mounting it.
 	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
-Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people).  Remove the axle stands and jacks before making the integration test of the linear actuactor:
+- Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people). 
+- Remove the axle stands and jacks before making the integration test of the linear actuactor.
 
 #### C. Integration Test
 
-Repeat the **Initial Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can be pass through an empty area between the plastic bumper and the vehicle left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
+Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected using the following commands:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
 - a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
 - a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
@@ -267,15 +269,15 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 
 ### 4. 3D Lidar
 
-Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?].   Use a marker to mark the positions of its three feet.
+- Material: 3D lidar, tripod, a drill, 3 cable ties 
+- Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?] and use a marker to mark the positions of its three feet.
+- Remove the tripod from the roof.
+- Drill two holes on either side of each marked position as shown in the photo below.
+- Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
+- Place the tripod back on the roof.
+- Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof. (may require the intervention of two people)
 
-Remove the tripod from the roof.  Drill two holes on either side of each marked position.
-
-Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
-
-Place the tripod back on the roof.  Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof.
-
-### 5. Buck Converter Settings
+### 5. Buck Converters
 
 Here, the buck converters voltage and current will be set to the desired values and then tested.
 
@@ -284,8 +286,8 @@ Here, the buck converters voltage and current will be set to the desired values 
 #### A. XL4016 Buck converter 1
 	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
 	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
+	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
+	4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
 	5. Set the power supply to 24V and turn it on
 	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
 	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
@@ -303,10 +305,10 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- If not, then repeat steps 9 to 11
 		
 #### B. XL4016 Buck converter 2
-	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
-	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
-	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
+	1. Wire the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+	2. Wire the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+	3. Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
+	4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
 	5. Set the power supply to 24V and turn it on
 	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
 	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
