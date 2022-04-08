@@ -35,9 +35,9 @@ The project includes:
 - Gazebo simulation
 - move_base and gmapping integration
 
-To build the physical OpenPodcar, first obtain the components detailed in #bill-of-materials-(bom), then follow the steps of the build process detailed in (#hardware-setup), (#software-setup) and (#user-guide). The simulation can be directly installed in (#simulation).
+To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup) and [User Guide](#user-guide). The simulation can be directly installed in [Simulation](#simulation).
 
-## II. <a name="bom"></a> Bill of Materials (BOM)
+## II. <a name="bom"></a> Bill of Materials
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
 
 ### 1. For the vehicle
@@ -120,7 +120,7 @@ This section shows how to test the linear actuactor before mounting it.
 - Material: Gimson linear actuator, a drill, some bearings
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture !(Vehicle tilted using on axles)(docs/hardware/onAxles.jpg)
+	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture !(Vehicle tilted using on axles)(/docs/hardware/onAxles.jpg)
 	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
 	- One person should stand next to each axle stand
 	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
@@ -130,7 +130,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
 	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
 	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture !(Vehicle tilted using on axles)(docs/hardware/steeringActuatorMounted.jpg)
+	- The final mounting is shown in this picture !(Vehicle tilted using on axles)(/docs/hardware/steeringActuatorMounted.jpg)
 			
 	Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
 
