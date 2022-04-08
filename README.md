@@ -440,9 +440,9 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 ### Installation
 
-- Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
+- Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation).
 
-- Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found here: http://wiki.ros.org/rosdep
+- Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found [here](http://wiki.ros.org/rosdep).
 
 - To install the ros package and gazebo sim locally, clone the repository and run the follow commands (directories indicated by <> need to be replaced by their actual locations):
 
@@ -516,7 +516,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 - Speed
 	- It receives commands of the form “FA:210” as speed commands. The test scripts /tools/zeroSpeed.py and /tools/testSpeed.py can be used to send example commands for debugging.
 	
-- SIMLINK
+- Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
 	- The idVendor and idProduct can also be displayed for each USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
 
