@@ -35,7 +35,7 @@ The project includes:
 - Gazebo simulation
 - move_base and gmapping integration
 
-To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup) and [User Guide](#user-guide). The simulation can be directly installed in [Simulation](#simulation).
+To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Hardware Setup](#hardware-setup), [Software Setup](#software-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The simulation can be directly installed in [Simulation](#simulation).
 
 ## II. <a name="bom"></a> Bill of Materials
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
