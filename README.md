@@ -103,11 +103,10 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
 - Arduino firmware source is supplied in the distribution ThrottleControlSerial.ino
 - Connect the Arduino USB to the laptop
-- Open Arduino IDE and ThrottleControlSerial.ino
-- Upload this code
+- Open Arduino IDE and the ThrottleControlSerial.ino file
+- Click on **Upload**
 - **Testing**
-	- Material: Arduino
-	- Open Arduino serial monitor 
+	- open Arduino serial monitor 
 	- set baudrate to 115000
 	- type in some commands such as:
 		- "FA:170" for zeroing
@@ -288,46 +287,48 @@ Here, the buck converters voltage and current will be set to the desired values 
 - Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
 
 #### 1. XL4016 Buck converter 1
-	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
-	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
-	5. Set the power supply to 24V and turn it on
-	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
-	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
-	8. **Voltage Testing:** 
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 16V
-		- If not, then repeat steps 5 to 8
-	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
-	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
-	11. **Current Testing**
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
-		- If not, then repeat steps 9 to 11
+
+1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
+4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
+5. Set the power supply to 24V and turn it on
+6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
+7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
+8. **Voltage Testing:** 
+	- Turn off the power supply and stop using th screw driver
+	- Turn on the power supply back to 24V
+	- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 16V
+	- If not, then repeat steps 5 to 8
+9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
+11. **Current Testing**
+	- Turn off the power supply and stop using th screw driver
+	- Turn on the power supply back to 24V
+	- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
+	- If not, then repeat steps 9 to 11
 		
 #### 2. XL4016 Buck converter 2
-	1. Wire the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
-	2. Wire the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-	3. Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
-	4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
-	5. Set the power supply to 24V and turn it on
-	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
-	7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
-	8. **Voltage Testing** 
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 12V
-		- If not, then repeat steps 5 to 8
-	9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
-	10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter and set the desired output current of 3A is reached (or the maximum current required for the linear actuator and 3D Lidar)
-	11. **Current Testing**
-		- Turn off the power supply and stop using th screw driver
-		- Turn on the power supply back to 24V
-		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
-		- If not, then repeat steps 9 to 11			
+
+1. Wire the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+2. Wire the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+3. Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
+4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
+5. Set the power supply to 24V and turn it on
+6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
+7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
+8. **Voltage Testing** 
+	- Turn off the power supply and stop using th screw driver
+	- Turn on the power supply back to 24V
+	- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 12V
+	- If not, then repeat steps 5 to 8
+9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter and set the desired output current of 3A is reached (or the maximum current required for the linear actuator and 3D Lidar)
+11. **Current Testing**
+	- Turn off the power supply and stop using th screw driver
+	- Turn on the power supply back to 24V
+	- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
+	- If not, then repeat steps 9 to 11
 			
 ### F. MCP4725 DAC
 
