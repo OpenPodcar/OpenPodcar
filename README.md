@@ -5,7 +5,7 @@ Open source hardware design and software for OpenPodcar.
 ## Table of Contents
 I. [General Info](#general-info)
 
-II. [Bill of Materials (BOM)](#bom)
+II. [Bill of Materials](#bom)
 
 III. [Hardware Setup](#hardware-setup)
 
