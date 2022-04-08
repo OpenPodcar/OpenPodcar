@@ -27,7 +27,7 @@ XI. [Licence](#licence)
 
 ## I. <a name="general-info"></a> General Info
 
-The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as for human-robot interaction (HRI) studies and practical transportation of people and goods.
+The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as for human-robot interaction (HRI) studies and practical automated transportation of people and goods.
 
 The project includes:
 - Hardware design and instruction to build and wire the physical car
@@ -539,12 +539,16 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
-
-
+Please cite the following paper when you use the OpenPodcar:
+```
+Fanta Camara, Chris Waltham, David Churchill, Charles Fox. 
+OpenPodcar: an Open Source Vehicle for Self-Driving Car Research. 
+Journal of Open Hardware (under review).
+```
 
 ## XI. <a name="licence"></a> Licence 
 [# check]
-This work is under CERN-OSH-W licence. 
+This work is provided under CERN-OSH-W licence. 
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk. The design is not a legal product and carries no safety certification.
 
