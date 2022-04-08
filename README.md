@@ -372,7 +372,7 @@ The PCB board was heavily tested before and after assembling its components to e
 - Material: power supply, multimeter, some wires
 
 	<p align="center">
-	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration tesing" "width=0.5"/>
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration tesing" "scale=0.1"/>
 	</p>
 
 - Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
