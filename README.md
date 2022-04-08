@@ -300,6 +300,8 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
+NB: Pololu JRK 21v3 Configuration Tool which requires the installation of a Windows app
+
 ### 2. Arduino
 - Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
 - Arduino firmware source is supplied in the distribution ThrottleControlSerial.ino
