@@ -130,7 +130,11 @@ This section shows how to test the linear actuactor before mounting it.
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
 	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
 	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture ![Vehicle tilted using on axles](./docs/hardware/steeringActuatorMounted.jpg)
+	- The final mounting is shown in this picture 
+	
+	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" scale="0.5"/>
+	
+	![Vehicle tilted using on axles](./docs/hardware/steeringActuatorMounted.jpg)
 			
 	Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
 
