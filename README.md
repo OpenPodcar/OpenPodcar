@@ -222,7 +222,7 @@ This section shows how to test the linear actuactor before mounting it.
 To access the underside of the vehicle, this requires the help of at least three people.
 
 - Material: 2 axle stands, 2 jacks
-- Bring in two axle stands as high as 75cm each
+- Bring in two axle stands and set them as high as 75cm each
 - Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
 	
 	<p align="center">
@@ -376,10 +376,11 @@ Manufacture the PCB board by sending the gerber files to an online PCB manufactu
 The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. 
 - Material: external power supply, multimeter
 - Material: power supply, multimeter, some wires
-	<p align="center">
-	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=0.001"/>
-	</p>
 - Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
+
+	<p align="center">
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=0.00001"/>
+	</p>
 	
 		
 ### I. Vehicle Connections
