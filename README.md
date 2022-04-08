@@ -318,8 +318,8 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	
 ### 3. Pololu JRK 21v3 Configuration
 
-- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a)
-- To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5)
+- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
+- To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
 - For OpenPodCar, we followed the steps below:
 	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
 	- Go to "**Error**" tab:
@@ -356,10 +356,10 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- Click on "**Apply settings to**"
 	
 	
-### 4. Velodyne 3D Lidar Configuration with ROS
+### 4. Velodyne 3D Lidar Configuration for ROS
 
 The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
-Please follow the instructions from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16)
+Please follow the velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
 	
 ### 5. Simlink for USB COM Ports
 
