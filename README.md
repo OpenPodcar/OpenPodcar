@@ -59,7 +59,7 @@ Obtain the following components, which are available from many commercial suppli
 - 1 Inline car fuse e.g. [Link to product](https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
 - 1 fuse 7.5Amp
 - 1 Relay e.g. [Link to product](https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
-- A dozen of bolts, nuts, washers and cap nuts
+- A few metric bolts, nuts, washers and cap nuts
 
 ### 2. For the PCB
 - 2 XL4016 Step-Down Buck converters DC-DC e.g. [Link to product](https://www.amazon.co.uk/dp/B086W6B9H1/ref=pe_27063361_485629781_TE_item?th=1)
@@ -72,10 +72,10 @@ Obtain the following components, which are available from many commercial suppli
 - 1 100K Resistor
 - 3 Screw Terminal Block connectors e.g. [Link to product](https://www.amazon.co.uk/Universal-Connector-Calculators-Electronic-Equipments/dp/B0922KLC4K/ref=sr_1_5?dchild=1&keywords=2+Pin+pinch+PCB+mount+screw+2.54&qid=1635870919&sr=8-5)
 - Male and female headers for Arduino and Pololu JRK 21v3 e.g. [Link to product](https://www.amazon.co.uk/dp/B07CWSXY7P/ref=pe_27063361_485629781_TE_item)
-- A dozen of M1.5, M2.5 and M3 bolts 
-- A dozen of M1.5, M2.5 and M3 nuts 
+- A few M1.5, M2.5 and M3 bolts 
+- A few M1.5, M2.5 and M3 nuts 
 
-### 3. Other Useful Tools
+### 3. Tools
 - Soldering iron
 - Solder
 - Gauge Wires 
@@ -85,7 +85,7 @@ Obtain the following components, which are available from many commercial suppli
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
 - clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
-- Screwdrivers, pliers, automatic wire stripper etc.
+- Flathead and Phillips screwdrivers, pliers, automatic wire stripper [TODO etc -- what??]
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
 ## III. <a name="hardware-setup"></a> Hardware Setup
@@ -97,9 +97,9 @@ Obtain the following components, which are available from many commercial suppli
 
 ### 2. Linear Actuator
 
-Before mounting the linear actuator under the vehicle, first test it with the Pololu to check that it is functional.
+Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
 
-#### Initial Testing
+#### Acceptance Testing
 
 This section shows how to test the linear actuactor before mounting it.
 
@@ -124,7 +124,7 @@ This section shows how to test the linear actuactor before mounting it.
 		
 #### Mounting
 
-- Material: Gimson linear actuator, a drill, some bearings
+- Material: Gimson linear actuator, a drill capable of drilling steel, some washers
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
 	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture below.
@@ -140,17 +140,18 @@ This section shows how to test the linear actuactor before mounting it.
 	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
 - To mount the linear actuactor:
 	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
-	- There is an existing hole in the right front wheel axle where the front hole of the linear actuator is fixed with a bolt, a nut, several washers and a cap nut [# check]
-	- A hole was drilled to the left side of the front chassis to fix the back of the linear actuactor via bearings [# check]
-	- The final mounting is shown in this picture below.
+	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
+	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.  THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
+	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
+	- The final mounting is shown in the photo below. [TODO add green and red circles].
 	
 	<p align="center">
 	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
-Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people), remove the axle stands and jacks before making a final test with the linear actuactor.
+Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people).  Remove the axle stands and jacks before making the integration test of the linear actuactor:
 
-#### Final Testing
+#### Integration Test
 
 Repeat the **Initial Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can be pass through an empty area between the plastic bumper and the vehicle left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
@@ -159,7 +160,7 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 		
 ### 3. ON/OFF Switch and Fusing
 
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
 - Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
@@ -171,29 +172,33 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 
 ### 4. 3D Lidar
 
-The lidar is screwed onto a tripod on top of the vehicle.
+Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?].   Use a marker to mark the positions of its three feet.
 
-The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in Fig. [# check]
+Remove the tripod from the roof.  Drill two holes on either side of each marked position.
+
+Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
+
+Place the tripod back on the roof.  Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof.
 
 ### 5. Printed Circuit Board (PCB)
 
-Manufacture the PCB board: this can be done by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you. At this stage there are no components on it, you will solder them on later in these instructions.
+Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions.  NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
 	
-#### A. Initial Testing
+#### A. Acceptance Testing
 
 - Material: the manufactured PCB board, a multimeter
-- Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**
+- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 2 minutes in total). If any connection is not good then the manufactured PCB is faulty and should not be used.
 
 #### B. Buck Converter Settings
 
-Here the buck converters voltage and current are set to the desired values and then tested.
+Here, the buck converters voltage and current will be set to the desired values and then tested.
 
-- Material: buck converters, power supply, multimeter, clamp meter and some wires
+- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
 
 1. XL4016 Buck converter 1
-	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
-	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
-	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
+	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
 	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
 	5. Set the power supply to 24V and turn it on
 	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
