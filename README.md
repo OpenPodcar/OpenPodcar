@@ -120,7 +120,12 @@ This section shows how to test the linear actuactor before mounting it.
 - Material: Gimson linear actuator, a drill, some bearings
 - To access the underside of the vehicle, this requires the help of at least three people:
 	- Bring in two axle stands as high as 75cm each
-	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture ![Vehicle tilted using on axles](./docs/hardware/onAxles.jpg)
+	- Place the two axle stands about one meter away from the front and back wheels, both in the side of the vehicle, as shown in the picture
+	
+	<p align="center">
+	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
+	</p>
+	
 	- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
 	- One person should stand next to each axle stand
 	- Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
@@ -133,7 +138,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- The final mounting is shown in this picture 
 	
 	<p align="center">
-	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Vehicle tilted using on axles" width="350"/>
+	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
 	
