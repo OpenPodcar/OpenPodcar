@@ -478,7 +478,7 @@ roslaunch podcar joystick.launch
 The figure below shows the complete ROS node configuration used during simulation, under manual joystick control.
 
 	<p align="center">
-	<img src="./docs/figs_sim/sim_nodes.png" alt="ROS nodes used in simulation under manual joystick control" width="300"/>
+	<img src="./docs/figs_sim/sim_nodes.png" alt="ROS nodes used in simulation under manual joystick control"/>
 	</p>
 
 ### Move_base control
