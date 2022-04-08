@@ -576,6 +576,14 @@ Fanta Camara, Chris Waltham, David Churchill, Charles Fox.
 OpenPodcar: an Open Source Vehicle for Self-Driving Car Research. 
 Journal of Open Hardware (under review).
 ```
+or 
+```
+@Article{camara2022openpodcar,
+  Title                    = {OpenPodcar: an Open Source Vehicle for Self-Driving Car Research},
+  Author                   = {Fanta Camara and Chris Waltham and David Churchill and Charles Fox},
+  Journal                  = {Journal of Open Hardware (under review)},
+```
+
 
 ## XI. <a name="licence"></a> Licence 
 This work is provided under CERN-OSH-W licence. 
