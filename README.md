@@ -235,7 +235,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
 	- The vehicle should now be tilted on one side and its underside clearly visible in order to mount the linear actuactor
 - To mount the linear actuactor:
-	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the Pololu Configuratin steps detailed above. 
+	- The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
 	- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
 	- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below. THIS REQUIRED DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 	- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
