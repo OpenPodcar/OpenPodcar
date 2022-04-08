@@ -5,7 +5,7 @@ Open source hardware design and software for OpenPodcar.
 ## Table of Contents
 I. [General Info](#general-info)
 
-II. [Bill of Materials (BOM)](#bill-of-materials-(bom))
+II. [Bill of Materials (BOM)](#bom)
 
 III. [Hardware Setup](#hardware-setup)
 
@@ -19,9 +19,9 @@ VII. [Simulation](#simulation)
 
 VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
-IX. [How to Contribute?](#how-to-contribute?)
+IX. [How to Contribute?](#how-to-contribute)
 
-## I. #<a name="general-info"></a> General Info
+## I. <a name="general-info"></a> General Info
 
 The OpenPodcar is an affordable and open source hardware and software platform for self-driving car research. It can be used for general autonomous vehicle research as well as for human-robot interaction (HRI) studies and practical transportation of people and goods.
 
@@ -35,7 +35,7 @@ The project includes:
 
 To build the physical OpenPodcar, first obtain the components detailed in #bill-of-materials-(bom), then follow the steps of the build process detailed in (#hardware-setup), (#software-setup) and (#user-guide). The simulation can be directly installed in (#simulation).
 
-## II. Bill of Materials (BOM)
+## II. <a name="bom"></a> Bill of Materials (BOM)
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
 
 ### 1. For the vehicle
@@ -84,7 +84,7 @@ Obtain the following components, which are available from many commercial suppli
 - Screwdrivers, pliers, automatic wire stripper etc.
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
-## III. Hardware Setup
+## III. <a name="hardware-setup"></a> Hardware Setup
 
 ### 1. Linear Actuator
 
@@ -321,7 +321,7 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
 
 
-## IV. Software Setup
+## IV. <a name="software-setup"></a> Software Setup
 
 ### 1. Ubuntu 16.04 and ROS
 
@@ -380,7 +380,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 - Open flobot_tracker.launch and change frame names and paths to the ones your system uses
 	
 
-## V. User Guide 
+## V. <a name="user-guide"></a> User Guide 
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
@@ -407,7 +407,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 - For automation, the steps should be exactly the same as above but with the automation launch file.
 
 
-## VI. General Testing
+## VI. <a name="general-testing"></a> General Testing
 
 ### Speed control dead zone
 	%move to git:
@@ -426,7 +426,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 
 
-## VII. Simulation Installation
+## VII. <a name="simulation_installation"></a> Simulation Installation
 
 - Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
 
@@ -481,7 +481,7 @@ roslaunch podcar podcarsim_moveBase.launch
 
 This will present a standard movebase GUI interface in rviz, enabling you to click desired destinations to command the vehicle to drive to.
 
-## VIII. Troubleshooting Guide
+## VIII. <a name="troubleshooting-guide"></a> Troubleshooting Guide
 
 ### Vehicle
 - Vehicle beeps continuous when press DMH and rear wheels do not move
@@ -525,10 +525,12 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	
 - Cannot locate node i.e. you should make your Python scripts as executables in order to launch them
 
+## IX. <a name="how-to-contribute"></a> How to Contribute? 
 
 
+## X. <a name="licence"></a> Licence 
+[# check]
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk.  The design is not a legal product and carries no safety certification.
 
-# Licence 
-[# check]
+
 
