@@ -15,7 +15,7 @@ V. [User Guide](#user-guide)
 
 VI. [General Testing](#general-testing)
 
-VII. [Simulation](#simulation)
+VII. [3D Gazebo Simulation](#gazebo-simulation)
 
 VIII. [Troubleshooting Guide](#troubleshooting-guide)
 
@@ -436,7 +436,9 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 
 
-## VII. <a name="simulation_installation"></a> Simulation Installation
+## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
+
+### Installation
 
 - Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found here: http://wiki.ros.org/kinetic/Installation)
 
