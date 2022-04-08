@@ -160,7 +160,7 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 		
 ### 3. ON/OFF Switch and Fusing
 
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
 - Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
@@ -172,9 +172,13 @@ Repeat the **Initial Testing** protocol presented above, but this time with the 
 
 ### 4. 3D Lidar
 
-The lidar is screwed onto a tripod on top of the vehicle.
+Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?].   Use a marker to mark the positions of its three feet.
 
-The tripod is cabled-tied to the vehicle roof via  drilled holes at locations in Fig. [# check]
+Remove the tripod from the roof.  Drill two holes on either side of each marked position.
+
+Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
+
+Place the tripod back on the roof.  Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof.
 
 ### 5. Printed Circuit Board (PCB)
 
