@@ -85,7 +85,7 @@ Obtain the following components, which are available from many commercial suppli
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
 - clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
-- Screwdrivers, pliers, automatic wire stripper etc.
+- Flathead and Phillips screwdrivers, pliers, automatic wire stripper [TODO etc -- what??]
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
 ## III. <a name="hardware-setup"></a> Hardware Setup
@@ -182,23 +182,23 @@ Place the tripod back on the roof.  Use three cable ties, each passed through on
 
 ### 5. Printed Circuit Board (PCB)
 
-Manufacture the PCB board: this can be done by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you. At this stage there are no components on it, you will solder them on later in these instructions.
+Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions.  NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
 	
-#### A. Initial Testing
+#### A. Acceptance Testing
 
 - Material: the manufactured PCB board, a multimeter
-- Simply use the multimeter in continuity mode (diode symbol) to check whether any of the PCB connections is broken. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**
+- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 2 minutes in total). If any connection is not good then the manufactured PCB is faulty and should not be used.
 
 #### B. Buck Converter Settings
 
-Here the buck converters voltage and current are set to the desired values and then tested.
+Here, the buck converters voltage and current will be set to the desired values and then tested.
 
-- Material: buck converters, power supply, multimeter, clamp meter and some wires
+- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
 
 1. XL4016 Buck converter 1
-	1. Wire the power supply **+** to the buck converter's **IN+** using a tick wire
-	2. Wire the power supply **-** to the buck converter's **IN-** using a tick wire
-	3. Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
+	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
+	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
+	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** and keep the other side of the wire safely aside
 	4. Insert a (tick) wire into the buck converter's **OUT-** and keep the other side of the wire safely aside
 	5. Set the power supply to 24V and turn it on
 	6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
