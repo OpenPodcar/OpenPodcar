@@ -154,12 +154,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- Click on "**Apply settings to**"
 	
 	
-### 4. Velodyne 3D Lidar Configuration for ROS
-
-The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
-Please follow the velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
-	
-### 5. Simlink for USB COM Ports
+### 4. Simlink for USB COM Ports
 
 Here, the goal is to create persistent USB serial device names (aka SIMLINK) for the Arduino and the Pololu.
 
@@ -181,6 +176,11 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 - Then type in the terminal `sudo reboot`
 - Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
 
+	
+### 5. Velodyne 3D Lidar Configuration for ROS
+
+The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
+Please follow the velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
 
 
 ## IV. <a name="hardware-setup"></a> Hardware Setup
