@@ -186,16 +186,16 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 ## IV. <a name="hardware-setup"></a> Hardware Setup
 
-### 1. Doors and Seat Removal
+### A. Doors and Seat Removal
 
 - Remove the screws from the hinges in order to remove the doors.
 - Remove the seat by following the instructions given in the vehicle service manual.
 
-### 2. Linear Actuator
+### B. Linear Actuator
 
 Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
 
-#### A. Acceptance Testing
+#### 1. Acceptance Testing
 
 This section shows how to test the linear actuactor before mounting it.
 
@@ -218,7 +218,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- "1500" : the linear actuor should reduce its length
 	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
 		
-#### B. Mounting
+#### 2. Mounting
 
 - Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
 - To access the underside of the vehicle, this requires the help of at least three people:
@@ -248,26 +248,30 @@ This section shows how to test the linear actuactor before mounting it.
 - Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people). 
 - Remove the axle stands and jacks before making the integration test of the linear actuactor.
 
-#### C. Integration Test
+#### 3. Integration Test
 
-Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery. This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected using the following commands:
+This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected
+
+- Place two jacks on each side under the vehicle
+- Lift the vehicle up so that the wheels stop touching the ground
+- Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery, and send some commands such as:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
-- a "1900" command should keep the front wheels forward facing, i.e. about 0 deg
+- a "1900" command should keep the front wheels facing forward, i.e. about 0 deg
 - a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
 		
-### 3. ON/OFF Switch and Fusing
+### C. ON/OFF Switch and Fusing
 
 - Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
-- Get access to the right battery's **+** pole and use a plier to remove the nut [# check]
+- Get access to the right battery's **+** pole and use a plier to unscrew the nut [# check]
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
-- Fix back the nut that was removed from the battery **+** pole
+- Screw back the nut that was removed from the battery **+** pole
 - Connect the fuse **-** wire to the switch **-** pin
 - Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
 - Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
 
 
-### 4. 3D Lidar
+### D. 3D Lidar
 
 - Material: 3D lidar, tripod, a drill, 3 cable ties 
 - Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?] and use a marker to mark the positions of its three feet.
@@ -277,13 +281,13 @@ Repeat the **Acceptance Testing** protocol presented above, but this time with t
 - Place the tripod back on the roof.
 - Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof. (may require the intervention of two people)
 
-### 5. Buck Converters
+### E. Buck Converters
 
 Here, the buck converters voltage and current will be set to the desired values and then tested.
 
 - Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
 
-#### A. XL4016 Buck converter 1
+#### 1. XL4016 Buck converter 1
 	1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
 	2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
 	3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
@@ -304,7 +308,7 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
 		- If not, then repeat steps 9 to 11
 		
-#### B. XL4016 Buck converter 2
+#### 2. XL4016 Buck converter 2
 	1. Wire the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
 	2. Wire the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
 	3. Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
@@ -325,7 +329,7 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
 		- If not, then repeat steps 9 to 11			
 			
-### 6. MCP4725 DAC
+### F. MCP4725 DAC
 
 - Solder the male headers provided for the DAC pins.
 - **Acceptance Testing**
@@ -341,33 +345,42 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
 		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
 			
-### 7. 3D Printing
+### G. 3D Printing
 - 3D print the LCD part
 
-### 8. Printed Circuit Board (PCB)
+### H. Printed Circuit Board (PCB)
 
-Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions.  NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
+Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions. NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
 	
-#### A. Acceptance Testing
+#### 1. Acceptance Testing
 
-- Material: the manufactured PCB board, a multimeter
-- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 2 minutes in total). If any connection is not good then the manufactured PCB is faulty and should not be used.
+- Material: PCB board, multimeter
+- Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 5 minutes in total). If any connection is not good then the manufactured PCB board is faulty and should not be used.
 
-#### B. Assembly
+#### 2. Assembly
+
+- Material:
 - Solder headers for Arduino
 - Solder resistors
 - Solder header for Pololu
 
 			
-#### C. Final Testing
+#### 3. Integration Testing
 
-The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. For instance, in Fig. \ref{fig:pcb_testing}, we used an external power supply and a multi-meter to measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
-- Material: power supply, some wires, a multimeter	
+The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. 
+- Material: external power supply, multimeter
+- Material: power supply, multimeter, some wires
+
+	<p align="center">
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration tesing"/>
+	</p>
+
+- Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 	
 		
-### 6. Vehicle Connections
+### I. Vehicle Connections
 
-#### A. DeadMan Handle (DMH) and Relay
+#### 1. DeadMan Handle (DMH) and Relay
 
 The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
 A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
@@ -377,15 +390,15 @@ A relay is used which interrupts the mobility scooter’s key ignition circuit. 
 A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
 	
 
-#### B. Connect the PCB components to DMH and Relay
+#### 2. Connect the PCB components to DMH and Relay
 
 
-#### C. Connect the 3D lidar to the PCB 
+#### 3. Connect the 3D lidar to the PCB 
 - Insert 
 - Insert 
 
 
-#### D. Connect the linear actuactor to the Pololu JRK 21v3
+#### 4. Connect the linear actuactor to the Pololu JRK 21v3
 - Wire the linear actuator's **black wire** to Pololu's **A**
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
