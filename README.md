@@ -442,7 +442,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 ### Installation
 
-- Assuming: ros kinetic and gazebo 7 already installed. (Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation).
+- Assuming: ros kinetic and gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
 
 - Rosdep is also required, but is standalone since ROS Fuerte. Install instructions can be found [here](http://wiki.ros.org/rosdep).
 
