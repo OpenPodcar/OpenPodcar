@@ -224,13 +224,13 @@ To access the underside of the vehicle, this requires the help of at least three
 
 - Material: 2 axle stands, 2 jacks
 - Bring in two axle stands and set them as high as 75cm each
-- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
+- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in red in the picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/onAxles_colored.jpg" alt="Vehicle tilted using on axles and jacks" width="350"/>
 	</p>
 	
-- Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
+- Place two jacks right next to the front and back wheels, on the same side as the axle stands as shown in green in the above picture
 - One person should stand next to each axle stand
 - Another person should stand on the other side of the vehicle and push the vehicle from the top towards the people next to the axle stands
 - The persons next to the axle stands should adjust the positions of the stands in order to get the vehicle nicely tilted without any instability
