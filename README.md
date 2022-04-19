@@ -164,7 +164,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 sudo lsusb -v | grep 'idVendor\|idProduct\|iSerial'
 ```
 - The above command displays the idVendor and idProduct for all the serial devices connected to your laptop and needs to be reported in the Simlink. 
-- For example, for the OpenPodcar we copy the following lines in "99-tty.rules":
+- For example, for the OpenPodcar copy the following lines in "99-tty.rules":
 ```
 #Arduino com-port rules
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
@@ -180,6 +180,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 ### 5. Velodyne 3D Lidar Configuration for ROS
 
 The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
+
 Please follow the velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
 
 
