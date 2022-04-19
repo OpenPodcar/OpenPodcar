@@ -1,0 +1,23 @@
+<!-- -*- mode: XML -*- -->
+<!-- run velodyne_laserscan/LaserScanNodelet in a nodelet manager -->
+
+<launch>
+  <arg name="manager" default="velodyne_nodelet_manager" />
+  <arg name="ring" default="-1" />
+  <arg name="resolution" default="0.007" />
+  <arg name="output_frame_id" default="velodyne" />
+  <arg name="range_min" default="0.4"/>
+  <arg name="range_max" default="100"/>
+  <arg name="use_inf" default="false"/>
+
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)_laserscan"
+        args="load velodyne_laserscan/LaserScanNodelet $(arg manager)">
+    <param name="ring" value="$(arg ring)"/>
+    <param name="resolution" value="$(arg resolution)"/>
+    <param name="output_frame_id" value="$(arg output_frame_id)" /> 
+    <param name="range_min" value="$(arg range_min)"/>
+    <param name="range_max" value="$(arg range_max)"/>
+    <param name="use_inf" value="$(arg use_inf)"/>
+    <remap from="scan" to="sensor_msgs/LaserScan" /> 
+  </node>
+</launch>

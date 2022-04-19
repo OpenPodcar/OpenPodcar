@@ -373,7 +373,7 @@ Manufacture the PCB board by sending the gerber files to an online PCB manufactu
 
 #### 2. Assembly
 
-- Material:
+- Material: soldering iron, headers, Arduino, Pololu, resistors
 - Solder headers for Arduino
 - Solder resistors
 - Solder headers for Pololu
