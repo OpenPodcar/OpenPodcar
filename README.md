@@ -413,8 +413,8 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	<img src="./docs/hardware/ignition_key_wires" alt="Vehicle ignition key wires" "width=240" "height=190"/>
 	</p>	
 	
-	- Connect a wire between the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column
-	- Connect a wire between the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column
+	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
+	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
 - DMH: A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
 	- Connect a 3-meter wire to the deadman push button
