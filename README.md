@@ -227,7 +227,7 @@ To access the underside of the vehicle, this requires the help of at least three
 - Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in the picture below.
 	
 	<p align="center">
-	<img src="./docs/hardware/onAxles.jpg" alt="Vehicle tilted using on axles" width="350"/>
+	<img src="./docs/hardware/onAxles_colored.jpg" alt="Vehicle tilted using on axles and jacks" width="350"/>
 	</p>
 	
 - Place two jacks right next to the front and back wheels, on the same side as the axle stands cf. the previous picture
