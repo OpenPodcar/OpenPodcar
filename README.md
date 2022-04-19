@@ -454,11 +454,11 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 
 ### A. Speed control
 
+Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
+
 - Material: jacks
 - Place the jacks on both of the vehicle to raise it off from the ground
 - 
-
-Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
 
 
