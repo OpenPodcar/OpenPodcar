@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <name>flobot_tracker_bringup</name>
+  <version>0.0.0</version>
+  <description>FLOBOT human detection and tracking system.</description>
+  <maintainer email="zyan@lincoln.ac.uk">Zhi Yan</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+  </export>
+</package>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>detector_msg_to_pose_array</name>
+  <version>1.5.0</version>
+  <description>The detector_msg_to_pose_array package</description>
+
+  <maintainer email="cdondrup@lincoln.ac.uk">Christian Dondrup</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/strands-project/strands_perception_people</url> 
+
+  <author email="cdondrup@lincoln.ac.uk">Christian Dondrup</author> 
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>genpy</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>rostopic</build_depend>
+  <run_depend>genpy</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>roslib</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>rostopic</run_depend>
+
+  <export/>
+</package>

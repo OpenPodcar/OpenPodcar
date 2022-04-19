@@ -461,7 +461,6 @@ Implementing and testing this safety system should be undertaken with the drive 
 - 
 
 
-
 ### B. Steering Control
  
  
@@ -473,7 +472,6 @@ Implementing and testing this safety system should be undertaken with the drive 
 
 
 ### E. Object Detection and Tracking
-
 
 
 

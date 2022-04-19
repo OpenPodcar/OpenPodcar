@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>pose_grid_map</name>
+  <version>0.0.0</version>
+  <description>A ROS package represents object presence by occupancy grid map.</description>
+  <maintainer email="zyan@lincoln.ac.uk">Zhi Yan</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>roscpp</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  
+  <run_depend>roscpp</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+</package>

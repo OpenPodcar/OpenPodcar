@@ -1,0 +1,49 @@
+<launch>
+
+	<!-- rosbag play -->
+  <arg name="bag" default="/home/fanta/phd_work/Podcar_github/podcar/catkin_ws/2022-02-01-17-38-54.bag"/>
+  <param name="use_sim_time" value="true"/>
+  <node pkg="rosbag" type="play" name="rosbag_play" args="--clock $(arg bag)" required="true"/>
+  
+  <!-- FLOBOT 3D Object Detector -->
+  <node pkg="object3d_detector" type="object3d_detector" name="object3d_detector" output="screen" respawn="false">
+   <!--  <remap from="velodyne_points" to="velodyne_points"/> -->
+    <param name="model_file_name" type="string" value="$(find object3d_detector)/libsvm/pedestrian.model"/>
+    <param name="range_file_name" type="string" value="$(find object3d_detector)/libsvm/pedestrian.range"/>
+  </node>
+  
+  <!-- STRANDS Ground Plane Estimation -->
+  <include file="$(find ground_plane_estimation)/launch/ground_plane_estimated.launch">
+    <arg name="camera_namespace" value="/camera_2"/>
+    <arg name="depth_image" default="/depth/image"/>
+  </include>
+
+  <!-- STRANDS Upper Body Detector -->
+  <include file="$(find upper_body_detector)/launch/upper_body_detector.launch">
+    <arg name="camera_namespace" value="/camera_2"/>
+    <arg name="depth_image" default="/depth/image"/>
+    <arg name="rgb_image" default="/rgb/image_rect_color"/>
+  </include>
+  
+  <!-- ROS leg detector -->
+  <include file="$(find detector_msg_to_pose_array)/launch/to_pose_array.launch"/>
+  <node pkg="leg_detector" type="leg_detector" name="leg_detector" args="scan:=scan $(find leg_detector)/config/trained_leg_detector.yaml" output="screen">
+    <param name="fixed_frame" type="string" value="odom"/>
+    <param name="publish_leg_markers" type="bool" value="false"/>
+    <param name="publish_people_markers" type="bool" value="true"/>
+  </node>
+  
+  <!-- FLOBOT RGB-D Leg Detector -->
+  <node pkg="rgbd_leg_detector" type="rgbd_leg_detector" name="rgbd_leg_detector" output="screen" respawn="true"/>
+  
+  
+  <!-- NBellotto's Bayes People Tracker -->
+  <rosparam command="load" file="$(find flobot_tracker_bringup)/config/detectors.yaml"/>
+  <node pkg="bayes_people_tracker" type="bayes_people_tracker" name="bayes_people_tracker" output="screen" respawn="true">
+    <param name="base_link" type="string" value="base_link"/>
+    <param name="target_frame" type="string" value="map"/>
+  </node>
+  
+  <!-- Rviz for UOL's platform -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find flobot_tracker_bringup)/launch/flobot_tracker.rviz"/>
+</launch>
