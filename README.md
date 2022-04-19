@@ -395,25 +395,46 @@ The PCB board was heavily tested before and after assembling its components to e
 
 #### A. DeadMan Handle (DMH) and Relay
 
+This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
+
+- Material: 1 deadman push button, 1 relay, wires, female and Male insulated electric connector crimp bullet terminals, a plier
+- A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
+	- Connect a 2-meter wire to the relay's **IN** pin and leave the other side of the wire aside
+	- Connect a 2-meter wire to the relay's both pins **GND** and **VCC** and leave the other side of the wire aside
+	- The relay wires should be as shown in the photo below [# check]
+
+		<p align="center">
+		<img src="./docs/hardware/relay_connections" alt="Relay's connections" "width=240" "height=190"/>
+		</p>
 	
+	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key, as shown in the photo below [# check]
 
-The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
-A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
+	<p align="center">
+	<img src="./docs/hardware/ignition_key_wires" alt="Vehicle ignition key wires" "width=240" "height=190"/>
+	</p>	
+	
+	- Connect a wire between the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column
+	- Connect a wire between the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column
 
-A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
+- DMH: A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
+	- Connect a 3-meter wire to the deadman push button
+	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire
 
-A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
 	
 
 #### B. Connect the PCB components to DMH and Relay
 
 
-#### C. Connect the 3D lidar to the PCB 
+#### C. Speed Potentiometer 
+
+
+
+#### D. Connect the 3D lidar to the PCB 
 - Insert 
 - Insert 
 
 
-#### D. Connect the linear actuactor to the Pololu JRK 21v3
+#### E. Connect the linear actuactor to the Pololu JRK 21v3
 - Wire the linear actuator's **black wire** to Pololu's **A**
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
