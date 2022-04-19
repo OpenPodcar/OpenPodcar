@@ -387,7 +387,7 @@ The PCB board was heavily tested before and after assembling its components to e
 - Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 
 	<p align="center">
-	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=240" "height=190"/>
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=20" "height=12"/>
 	</p>
 	
 		
