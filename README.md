@@ -1,6 +1,6 @@
 # OpenPodcar
 
-Open source hardware design and software for OpenPodcar.
+Open Source Hardware Design and Software for OpenPodcar.
 
 ## Table of Contents
 I. [General Info](#general-info)
@@ -243,13 +243,13 @@ MOUNTING THE LINEAR REQUIRES DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DR
 
 - Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
 - The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
-- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. [TODO]. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
+- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
 - Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.
 - Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
-- The final mounting is shown in the photo below. [TODO add green and red circles].
+- The final mounting is shown in the photo below.
 	
 	<p align="center">
-	<img src="./docs/hardware/steeringActuatorMounted.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
+	<img src="./docs/hardware/steeringActuatorMounted_colored.jpg" alt="Linear actuator mounted underneath the vehicle" width="350"/>
 	</p>
 
 - Once the mounting is finished, bring the podcar back to its normal position (requires again at least 3 people). 
@@ -287,6 +287,10 @@ This final test will helps to verify that the linear actuactor is well mounted a
 - Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
 - Place the tripod back on the roof.
 - Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof. (may require the intervention of two people)
+
+	<p align="center">
+	<img src="./docs/hardware/lidar_tripod_mounting.jpg" alt="Lidar mounted o tripod" "width=240" "height=190"/>
+	</p>
 
 ### E. Buck Converters
 
@@ -352,7 +356,7 @@ Here, the buck converters voltage and current will be set to the desired values 
 	- Turn on the Arduino by connecting it via USB to a computer 
 	- Take the multimeter to measure the voltage received on the DAC:
 		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
-		- Voltage between the DAC **GND** and **OUT** should give a value between **2.1V** and **2.4V**
+		- Voltage between the DAC **GND** and **OUT** should give a value between **1.9V** and **2.4V**
 			
 ### G. 3D Printing
 - 3D print the LCD part
@@ -371,7 +375,7 @@ Manufacture the PCB board by sending the gerber files to an online PCB manufactu
 - Material:
 - Solder headers for Arduino
 - Solder resistors
-- Solder header for Pololu
+- Solder headers for Pololu
 
 			
 #### 3. Integration Testing
@@ -382,13 +386,15 @@ The PCB board was heavily tested before and after assembling its components to e
 - Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
 
 	<p align="center">
-	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=0.00001"/>
+	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=240" "height=190"/>
 	</p>
 	
 		
 ### I. Vehicle Connections
 
 #### A. DeadMan Handle (DMH) and Relay
+
+	
 
 The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development.
 A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
@@ -446,6 +452,10 @@ A sturdy push button is used which also interrupts the vehicle's key ignition ci
 ## VI. <a name="general-testing"></a> General Testing
 
 ### A. Speed control
+
+- Material: jacks
+- Place the jacks on both of the vehicle to raise it off from the ground
+- 
 
 Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
