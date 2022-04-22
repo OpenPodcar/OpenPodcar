@@ -356,7 +356,7 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- Wire the DAC **SCL** to Arduino **SCL**, using a female to male wire
 		- Wire the DAC **OUT** to an isolated point on the breadboard, using a female to female wire
 	- Turn on the Arduino by connecting it via USB to a computer 
-	- Take the multimeter to measure the voltage received on the DAC:
+	- Use the multimeter to measure the voltage received on the DAC:
 		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
 		- Voltage between the DAC **GND** and **OUT** should give a value between **1.9V** and **2.4V**
 			
