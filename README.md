@@ -445,7 +445,7 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 - Use a breadboard to make the following connections:
 	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
 	- Wire the linear actuator's **yellow wire** to Pololu's **++5V** below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's *GND* below **+5V**  [# Check]
+	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
 		
 
 
@@ -483,15 +483,16 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
 - Material: jacks
-- Place the jacks on both of the vehicle to raise it off from the ground
-- 
+- Place the jacks on both of the vehicle to raise its wheels off of the ground
 
 
 ### B. Steering Control
  
  
+ 
 ### C. GMapping
  
+  
   
 ### D. Move_base and TEB planner
 
