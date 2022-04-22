@@ -262,7 +262,6 @@ To access the underside of the vehicle, this requires the help of at least three
 This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected
 
 - Place two jacks on each side under the vehicle
-- Lift the vehicle up so that the wheels stop touching the ground
 - Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery, and send some commands such as:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
 - a "1900" command should keep the front wheels facing forward, i.e. about 0 deg
@@ -502,9 +501,10 @@ source devel/setup.bash
 roslaunch podcar podcarsim2real.launch
 ```
 
-If the USB ports are well set up, the vehicle can then be controlled with the joystick as follows:
+If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
 - Y-axis for speed control
 - X-axis for steering control
+ 
  
 ### D. GMapping
  
