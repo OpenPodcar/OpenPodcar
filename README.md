@@ -100,7 +100,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 **NB:** Pololu JRK 21v3 Configuration requires the installation of a Windows app, which does not work on linux.
 
 ### 2. Arduino
-- Download the MCP4725 library file and place it into Arduino's **LIBRARIES** folder
+- Download the MCP4725 library file and place it into Arduino's **"LIBRARIES"** folder
 - Arduino firmware source is supplied in the distribution ThrottleControlSerial.ino
 - Connect the Arduino USB to the laptop
 - Open Arduino IDE and the ThrottleControlSerial.ino file
@@ -109,9 +109,9 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- open Arduino serial monitor 
 	- set baudrate to 115000
 	- type in some commands such as:
-		- "FA:170" for zeroing
-		- "FA:210" for forward speed
-		- "FA:120" for reverse speed
+		- **"FA:170"** for zeroing
+		- **"FA:210"** for forward speed
+		- **"FA:120"** for reverse speed
 	- the serial monitor should display the command that was typed in and the corresponding DAC value
 	
 ### 3. Pololu JRK 21v3 Configuration
@@ -239,7 +239,7 @@ To access the underside of the vehicle, this requires the help of at least three
 #### 3. Mounting
 
 ```diff
-MOUNTING THE LINEAR REQUIRES DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
+-! MOUNTING THE LINEAR REQUIRES DRILLING THROUGH STEEL USING A SUITABLE POWERFUL DRILL AND QUALIFIED OPERATOR.  THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 ```
 
 - Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
