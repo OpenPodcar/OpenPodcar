@@ -497,9 +497,9 @@ Implementing and testing this safety system should be undertaken with the drive 
 Once the speed and steering control are tested and work well, the vehicle can be remotely-controlled using a joystick:
 - Open a terminal and type:
 ```
-cd catkin_ws/**Your project directory** e.g. cd catkin_ws/OpenPodcar
+cd catkin_ws/OpenPodcar
 source devel/setup.bash
-roslaun podcar podcarsim2real.launch
+roslaunch podcar podcarsim2real.launch
 ```
 
 If the USB ports are well set up, the vehicle can then be controlled with the joystick as follows:
