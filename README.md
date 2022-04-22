@@ -400,8 +400,8 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 - Material: 1 deadman push button, 1 relay, wires, female and Male insulated electric connector crimp bullet terminals, a plier
 - A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
-	- Connect a 2-meter wire to the relay's **IN** pin and solder the other side of the wire to the LCD **GND** pin on the PCB board [# check]
-	- Connect a 2-meter wire to the relay's both pins **GND** and **VCC** and leave the other side of the wire to the LCD **VIN** pin on the PCB board [# check]
+	- Connect a 2-meter wire to the relay's **IN** pin 
+	- Connect a 2-meter wire to the relay's both pins **GND** and **VCC** [# check]
 	- The relay wires should be as shown in the photo below [# check]
 
 		<p align="center">
@@ -424,17 +424,19 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 #### B. Speed Potentiometer 
 
-- Material: wires, soldering iron, 1 plastic terminal block 2x2
-- De-solder the middle pin of the vehicle potentiometer (white wire)
+- Material: wires, soldering iron, 1 plastic screw terminal block 2x2
+- De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into a terminal block pin [# check]
+- Solder a 1.5 meter long wire next to the potentiometer pin on the left with a yellow wire and connect it to a 2-meter long wire inserted into a terminal block pin [# check] 
 
-<span style="color:green;font-weight:700;font-size:20px">
-	Solder a 1.5 meter long wire next to the potentiometer pin on the left (yellow wire)
-</span>
+#### C. PCB connections
 
-
-#### C. Connect the 3D lidar to the PCB 
-- Insert 
-- Insert 
+- Solder the other side of the relay's **IN** pin wire to the LCD **GND** pin on the PCB board [# check]
+- Solder the other side of the realy's **GND** to the LCD **VIN** pin on the PCB board         [# check]
+- Insert the lidar controller box **+** wire to the PCB terminal block **+** pin (NB: another option would be to solder instead of inserting) 
+- Insert the lidar controller box **-** wire to the PCB terminal block **-** pin (NB: another option would be to solder instead of inserting) 
+- Connect the DAC **VOUT** to the terminal block **+** pin linked to the vehicle speed potentiometer [# check]
+- Connect the DAC **GND** to the terminal block **-** pin linked to the vehicle speed potentiometer [# check]
+- Connect the LCD **SIG** wire to the DAC **+** pin [# check]
 
 
 #### D. Connect the linear actuactor to the Pololu JRK 21v3
