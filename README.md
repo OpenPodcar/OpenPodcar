@@ -437,6 +437,8 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 - Connect the DAC **VOUT** to the terminal block **+** pin linked to the vehicle speed potentiometer [# check]
 - Connect the DAC **GND** to the terminal block **-** pin linked to the vehicle speed potentiometer [# check]
 - Connect the LCD **SIG** wire to the DAC **+** pin [# check]
+- Connect the fuse **+** wire to buck converter 1's **IN+** pin
+- Connect the fuse **-** wire to buck converter 1's **IN-** pin
 
 
 #### D. Connect the linear actuactor to the Pololu JRK 21v3
