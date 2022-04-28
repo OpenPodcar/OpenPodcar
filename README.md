@@ -436,7 +436,7 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- The relay wires should be as shown in the photo below [# check]
 
 		<p align="center">
-		<img src="./docs/hardware/relay_connections.png" alt="Relay's connections" "width=240" "height=190"/>
+		<img src="./docs/hardware/relay_connections.png" alt="Relay's connections" "width=240" "height=100"/>
 		</p>
 		
 	- Use electrical insulating tape to wrap the relay with as shown below.
