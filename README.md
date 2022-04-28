@@ -203,7 +203,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 
 The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
 
-Please follow the velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
+Please follow the Velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
 
 
 ## IV. <a name="hardware-setup"></a> Hardware Setup
@@ -232,7 +232,7 @@ This section shows how to test the linear actuactor before mounting it.
 	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** below **FB**  [# Check]
 	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
 	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
-	- Connect the Pololu USB to a computer with the "Pololu JRK 21v3 Configuration" Tool
+	- Connect the Pololu USB to a computer with the "**Pololu Jrk Configuration Utility**" Tool
 - Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
 	- If there are errors, click on "**Reset**" and "**Clear**" until the Poolu's LED start blinking green
 	- Go to **Input** tab and use the cursor to send commands to the linear actuator e.g.
@@ -304,15 +304,25 @@ This final test will helps to verify that the linear actuactor is well mounted a
 ### D. 3D Lidar
 
 - Material: 3D lidar, tripod, a drill, 3 cable ties 
-- Place the tripod on the vehicle's roof [TODO where? meansure this and show a diagram?] and use a marker to mark the positions of its three feet.
-- Remove the tripod from the roof.
-- Drill two holes on either side of each marked position as shown in the photo below.
-- Screw the lidar onto the tripod.  (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
-- Place the tripod back on the roof.
-- Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof. (may require the intervention of two people)
+- Place the tripod on the vehicle's roof as shown in the photo below and use a marker to mark the positions of its three feet.	
 
 	<p align="center">
-	<img src="./docs/hardware/lidar_tripod_mounting.jpg" alt="Lidar mounted o tripod" "width=240" "height=190"/>
+	<img src="./docs/hardware/lidar_tripod_positioning.png" alt="Lidar tripod positioning" "width=240" "height=190"/>
+	</p>
+
+- Remove the tripod from the roof.
+- Drill two holes, 0.6mm diameter each and their centers separated by about 1cm, on either side of each marked position as shown in the photo below.
+
+	<p align="center">
+	<img src="./docs/hardware/tripod_holes_positions.png" alt="Tripod holes positions" "width=240" "height=190"/>
+	</p>
+
+- Screw the lidar onto the tripod. (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
+- Place the tripod back on the roof.
+- Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof as shown in the photo below. (may require the intervention of two people)
+
+	<p align="center">
+	<img src="./docs/hardware/lidar_tripod_attachment.jpg" alt="Tripod attachment to the vehicle" "width=240" "height=190"/>
 	</p>
 
 ### E. Buck Converters
