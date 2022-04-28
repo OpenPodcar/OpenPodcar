@@ -127,7 +127,11 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
 		- keep all other parameters to default values
-		- Final settings should like here: ![Pololu Input tab](./docs/software/pololu_input.png)
+		- Final settings should like here:
+		
+	<p align="center">
+	<img src="./docs/software/pololu_input.png" alt="Pololu Input tab" width="350"/>
+	</p>
 
 	- Go to "**Feedback**" tab:
 		- set "**Feedback mode**" to "**Analog voltage**"
@@ -138,18 +142,30 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 			- set "**Minimum**" to "**1000**"
 			- set "**Absolute Min**" to "**1000**"
 			- keep all other paramters to default values
-		- Final settings should like here: ![Pololu Feedback tab](./docs/software/pololu_feedback.png)
+		- Final settings should like here:
+	
+	<p align="center">
+	<img src="./docs/software/pololu_feedback.png" alt="Pololu Feedback tab" width="350"/>
+	</p>
 
 	- Go to "**PID**" tab:
 		- set "**Proportional Coefficient**" to "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
 		- keep all other parameters to default values 
-		- Final settings should like here: ![Pololu PID tab](./docs/software/pololu_pid.png)
+		- Final settings should like here:
+
+	<p align="center">
+	<img src="./docs/software/pololu_pid.png" alt="Pololu PID tab" width="350"/>
+	</p>
 
 	- Go to "**Motor**" tab:
 		- check "**Invert motor direct**"
 		- in the "**Forward column**", set "**Max. current (A)**" to "**0**"
 		- keep all other parameters to default values
-		- Final settings should like here: ![Pololu Motor tab](./docs/software/pololu_motor.png)
+		- Final settings should like here:
+		
+	<p align="center">
+	<img src="./docs/software/pololu_motor.png" alt="Pololu Motor tab" width="350"/>
+	</p>
 
 	- Click on "**Apply settings to**"
 	
@@ -620,6 +636,30 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 ## IX. <a name="how-to-contribute"></a> How to Contribute? 
 
+Contributions to and forks of OpenPodcar are strongly encouraged and welcomed.
+
+Useful contributions to improve the current design could include:
+
+- Replace the donor vehicle’s propriatory motor driver with the OSMC open source hardware motor driver
+
+- Port the ROS code to ROS2
+
+- Update ROS code to enable swarms of multiple podcars operating together
+
+- Add a 3d stereo camera to the hardware and software
+
+- Replace the body and wheels of the donor vehicle with an OSH alternative, keeping the sensors, mechatronics, and software the same.
+
+- Interface the system into Autoware
+
+Possible forks could include:
+
+- Port the mechatronics and software to run on other closed source mobility scooters
+
+- Port the mechatronics and software to run on other classes of vehicles
+
+We would be very interested to hear about and discuss your plans so please get in touch if interested to contribute or fork at ***openpodcar@gmail.com***
+
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
 
@@ -642,6 +682,7 @@ Bibtex:
 
 
 ## XI. <a name="licence"></a> Licence 
+
 This work is provided under CERN-OSH-W licence. 
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk. The design is not a legal product and carries no safety certification.
