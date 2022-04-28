@@ -431,18 +431,24 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 - Material: 1 deadman push button, 1 relay, wires, female and Male insulated electric connector crimp bullet terminals, a plier
 - A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
-	- Connect a 2-meter wire to the relay's **IN** pin 
-	- Connect a 2-meter wire to the relay's both pins **GND** and **VCC** [# check]
+	- Connect a 2-meter wire to the relay's **-** pin 
+	- Connect a 2-meter wire to  both the relay pins **S** and **+**
 	- The relay wires should be as shown in the photo below [# check]
 
 		<p align="center">
-		<img src="./docs/hardware/relay_connections" alt="Relay's connections" "width=240" "height=190"/>
+		<img src="./docs/hardware/relay_connections.jpg" alt="Relay's connections" "width=240" "height=190"/>
+		</p>
+		
+	- Use electrical insulating tape to wrap the relay with as shown below.
+	
+		<p align="center">
+		<img src="./docs/hardware/relay_tape.jpg" alt="Relay wrapped with electrical insulating tape" "width=240" "height=190"/>
 		</p>
 	
 	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key, as shown in the photo below [# check]
 
 	<p align="center">
-	<img src="./docs/hardware/ignition_key_wires" alt="Vehicle ignition key wires" "width=240" "height=190"/>
+	<img src="./docs/hardware/ignition_key_wires.png" alt="Vehicle ignition key wires" "width=240" "height=190"/>
 	</p>	
 	
 	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
