@@ -307,14 +307,14 @@ This final test will helps to verify that the linear actuactor is well mounted a
 - Place the tripod on the vehicle's roof as shown in the photo below and use a marker to mark the positions of its three feet.	
 
 	<p align="center">
-	<img src="./docs/hardware/lidar_tripod_positioning.png" alt="Lidar tripod positioning" "width=240" "height=190"/>
+	<img src="./docs/hardware/lidar_tripod_positioning.png" alt="Lidar tripod positioning" "width=240" "height=150"/>
 	</p>
 
 - Remove the tripod from the roof.
 - Drill two holes, 0.6mm diameter each and their centers separated by about 1cm, on either side of each marked position as shown in the photo below.
 
 	<p align="center">
-	<img src="./docs/hardware/tripod_holes_positions.png" alt="Tripod holes positions" "width=240" "height=190"/>
+	<img src="./docs/hardware/tripod_holes_positions.png" alt="Tripod holes positions" "width=240" "height=150"/>
 	</p>
 
 - Screw the lidar onto the tripod. (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
