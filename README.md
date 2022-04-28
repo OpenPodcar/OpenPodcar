@@ -120,9 +120,6 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
 - For OpenPodCar, we followed the steps below:
 	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
-	- Go to "**Error**" tab:
-		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
-		- click on "**Apply settings to**"
 
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
@@ -166,6 +163,16 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	<p align="center">
 	<img src="./docs/software/pololu_motor.png" alt="Pololu Motor tab" width="350"/>
 	</p>
+
+	- Go to "**Error**" tab:
+		- you should see a window similar to this with some red flags on:
+		
+	<p align="center">
+	<img src="./docs/software/pololu_error.png" alt="Pololu Error tab" width="350"/>
+	</p>
+	
+		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
+		- click on "**Clear**" and "**Reset**"
 
 	- Click on "**Apply settings to**"
 	
