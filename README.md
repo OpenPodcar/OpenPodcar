@@ -436,13 +436,13 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- The relay wires should be as shown in the photo below [# check]
 
 		<p align="center">
-		<img src="./docs/hardware/relay_connections.jpg" alt="Relay's connections" "width=240" "height=190"/>
+		<img src="./docs/hardware/relay_connections.png" alt="Relay's connections" "width=240" "height=190"/>
 		</p>
 		
 	- Use electrical insulating tape to wrap the relay with as shown below.
 	
 		<p align="center">
-		<img src="./docs/hardware/relay_tape.jpg" alt="Relay wrapped with electrical insulating tape" "width=240" "height=190"/>
+		<img src="./docs/hardware/relay_tape.png" alt="Relay wrapped with electrical insulating tape" "width=240" "height=190"/>
 		</p>
 	
 	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key, as shown in the photo below [# check]
