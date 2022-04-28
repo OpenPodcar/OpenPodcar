@@ -165,14 +165,13 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	</p>
 
 	- Go to "**Error**" tab:
-		- you should see a window similar to this with some red flags on:
+		- you should see a window (cf. photo below) similar to this with some red flags on	
+		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
+		- click on "**Clear**" and "**Reset**"
 		
 	<p align="center">
 	<img src="./docs/software/pololu_error.png" alt="Pololu Error tab" width="350"/>
 	</p>
-	
-		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
-		- click on "**Clear**" and "**Reset**"
 
 	- Click on "**Apply settings to**"
 	
