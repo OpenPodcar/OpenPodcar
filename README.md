@@ -322,7 +322,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 - Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof as shown in the photo below. (may require the intervention of two people)
 
 	<p align="center">
-	<img src="./docs/hardware/lidar_tripod_attachment.jpg" alt="Tripod attachment to the vehicle" "width=240" "height=190"/>
+	<img src="./docs/hardware/lidar_tripod_attachement.jpg" alt="Tripod attachment to the vehicle" "width=240" "height=190"/>
 	</p>
 
 ### E. Buck Converters
