@@ -692,7 +692,7 @@ Possible forks could include:
 
 We would be very interested to hear about and discuss your plans so please get in touch if interested to contribute or fork. 
 
-**Email: openpodcar@gmail.com***
+**Email: openpodcar@gmail.com**
 
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
