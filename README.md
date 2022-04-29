@@ -302,7 +302,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
 - Screw back the bolt and flat washer that were removed from the battery **+** pole
-- Connect the fuse **-** wire to the switch **-** pin
+- Connect the fuse **+** wire to the switch **+** pin
 
 	<p align="center">
 	<img src="./docs/hardware/switch_button_fuse.png" alt="Switch button and fuse connections" "width=240" "height=150"/>
