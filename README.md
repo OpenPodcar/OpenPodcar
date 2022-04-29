@@ -59,7 +59,7 @@ Obtain the following components, which are available from many commercial suppli
 - 1 Inline car fuse e.g. [Link to product](https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
 - 1 fuse 7.5Amp
 - 1 Relay e.g. [Link to product](https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
-- A few metric bolts, nuts, washers and cap nuts
+- A few metric HEX bolts, nuts, flat washers and cap nuts
 - A few cables ties
 
 ### 2. For the PCB
@@ -230,8 +230,8 @@ This section shows how to test the linear actuactor before mounting it.
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
 	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
+	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
+	- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
 	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
 	- Connect the Pololu USB to a computer with the "**Pololu Jrk Configuration Utility**" Tool
 - Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
@@ -266,11 +266,11 @@ To access the underside of the vehicle, this requires the help of at least three
 - THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 ```
 
-- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] bolts, 2 nuts, 2 cap nuts and a few washers
+- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] HEX head bolts, 2 HEX nuts, 2 cap hex nuts and a few flat washers with 8mm diameter
 - The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
-- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M5 bolt, nut, several washers and a cap nut [# check]
+- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M5 [# check] bolt, nut, several washers and a cap nut
 - Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.
-- Fix the back of the linear actuactor to the newly drilled hole using an M5 bolt, via washers [# check]
+- Fix the back of the linear actuactor to the newly drilled hole using an M5 [# check] bolt, via washers
 - The final mounting is shown in the photo below.
 	
 	<p align="center">
@@ -293,13 +293,27 @@ This final test will helps to verify that the linear actuactor is well mounted a
 ### C. ON/OFF Switch and Fusing
 
 - Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
-- Fix a tick wire using a crimp bullet terminal onto each pin of the switch [# check]
-- Get access to the right battery's **+** pole and use a plier to unscrew the nut [# check]
+- Fix a tick wire using a crimp bullet terminal onto each pin of the switch
+- Get access to the right battery's **+** pole and use a plier to unscrew the bolt and flat washer.
+
+	<p align="center">
+	<img src="./docs/hardware/battery_bolt.png" alt="Battery bolt and washer already screwed" "width=240" "height=150"/>
+	</p>
+
 - Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
-- Screw back the nut that was removed from the battery **+** pole
+- Screw back the bolt and flat washer that were removed from the battery **+** pole
 - Connect the fuse **-** wire to the switch **-** pin
+
+	<p align="center">
+	<img src="./docs/hardware/switch_button_fuse.png" alt="Switch button and fuse connections" "width=240" "height=150"/>
+	</p>
+
 - Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
-- Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board
+- Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board as shown below.
+
+	<p align="center">
+	<img src="./docs/hardware/battery_switch_pcb.png" alt="Battery, switch and PCB connections" "width=240" "height=150"/>
+	</p>
 
 
 ### D. 3D Lidar
@@ -485,8 +499,8 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
 	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (below **FB**)
-	- Wire the linear actuator's **white wire** to Pololu's **GND** (below **+5V**)
+	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
+	- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
 		
 
 ## V. <a name="user-guide"></a> User Guide 
