@@ -449,12 +449,6 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key	
 	- Attach a female insulated electric connector crimp bullet terminal to the **blue** wire directly connected to the ignition key
 	- Attach a female insulated electric connector crimp bullet terminal to the **brown** wire directly connected to the ignition key
-	- The result should look like in the photo below:
-
-	<p align="center">
-	<img src="./docs/hardware/ignition_key_wires.png" alt="Vehicle ignition key wires" "width=240" "height=190"/>
-	</p>
-
 	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
