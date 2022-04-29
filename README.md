@@ -96,6 +96,7 @@ Obtain the following components, which are available from many commercial suppli
 The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and with ROS Kinetic and Gazebo 7 installed:
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+- Clone this project repository somewhere on your laptop
 
 **NB:** Pololu JRK 21v3 Configuration requires the installation of a Windows app, which does not work on linux.
 
@@ -119,7 +120,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
 - To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
 - For OpenPodCar, we followed the steps below:
-	- Connect the USB to Pololu and open "Pololu Jrk COnfiguration Utility" tool
+	- Connect the USB to Pololu and open "Pololu Jrk Configuration Utility" tool
 
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
@@ -215,7 +216,7 @@ Please follow the Velodyne installation instructions for ROS from [here](http://
 
 ### B. Linear Actuator
 
-Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional:
+Before mounting the linear actuator under the vehicle, first acceptance test it with the Pololu to check that it is functional.
 
 #### 1. Acceptance Testing
 
@@ -433,7 +434,7 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 - A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
 	- Connect a 2-meter wire to the relay's **-** pin 
 	- Connect a 2-meter wire to  both the relay pins **S** and **+**
-	- The relay wires should be as shown in the photo below [# check]
+	- The relay wires should be as shown in the photo below
 
 		<p align="center">
 		<img src="./docs/hardware/relay_connections.png" alt="Relay's connections" "width=240" "height=100"/>
@@ -445,35 +446,42 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 		<img src="./docs/hardware/relay_tape.png" alt="Relay wrapped with electrical insulating tape" "width=240" "height=190"/>
 		</p>
 	
-	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key, as shown in the photo below [# check]
+	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key	
+	- Attach a female insulated electric connector crimp bullet terminal to the **blue** wire directly connected to the ignition key
+	- Attach a female insulated electric connector crimp bullet terminal to the **brown** wire directly connected to the ignition key
+	- The result should look like in the photo below:
 
 	<p align="center">
 	<img src="./docs/hardware/ignition_key_wires.png" alt="Vehicle ignition key wires" "width=240" "height=190"/>
-	</p>	
-	
+	</p>
+
 	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
 - DMH: A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
 	- Connect a 3-meter wire to the deadman push button
-	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire
+	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire as shown below:
+	
+	<p align="center">
+	<img src="./docs/hardware/ignition_wires_dmh.png" alt="Vehicle ignition wires connected to DMH " "width=240" "height=190"/>
+	</p>	
 
 
 #### B. Speed Potentiometer 
 
 - Material: wires, soldering iron, 1 plastic screw terminal block 2x2
-- De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into a terminal block pin [# check]
-- Solder a 1.5 meter long wire next to the potentiometer pin on the left with a yellow wire and connect it to a 2-meter long wire inserted into a terminal block pin [# check] 
+- De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into the terminal block **+** pin
+- Solder a 2-meter long wire next to the potentiometer pin on the left with a yellow wire and insert in its other length into the terminal block **-** pin
 
 #### C. PCB connections
 
-- Solder the other side of the relay's **IN** pin wire to the LCD **GND** pin on the PCB board [# check]
-- Solder the other side of the realy's **GND** to the LCD **VIN** pin on the PCB board         [# check]
+- Solder the other side of the relay's **+** and **S** pins wire to the LCD **VIN** pin on the PCB board
+- Solder the other side of the realy's **GND** to the LCD **GND** pin on the PCB board
 - Insert the lidar controller box **+** wire to the PCB terminal block **+** pin (NB: another option would be to solder instead of inserting) 
 - Insert the lidar controller box **-** wire to the PCB terminal block **-** pin (NB: another option would be to solder instead of inserting) 
-- Connect the DAC **VOUT** to the terminal block **+** pin linked to the vehicle speed potentiometer [# check]
-- Connect the DAC **GND** to the terminal block **-** pin linked to the vehicle speed potentiometer [# check]
-- Connect the LCD **SIG** wire to the DAC **+** pin [# check]
+- Connect the DAC **VOUT** to the terminal block **+** pin linked to the vehicle speed potentiometer 
+- Connect the DAC **GND** to the terminal block **-** pin linked to the vehicle speed potentiometer
+- Connect the LCD **SIG** wire to the terminal block **+** pin linked to the vehicle speed potentiometer 
 - Connect the fuse **+** wire to buck converter 1's **IN+** pin
 - Connect the fuse **-** wire to buck converter 1's **IN-** pin
 
@@ -483,10 +491,9 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 - Wire the linear actuator's **red wire** to Pololu's **B**
 - Use a breadboard to make the following connections:
 	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **++5V** below **FB**  [# Check]
-	- Wire the linear actuator's **white wire** to Pololu's **GND** below **+5V**  [# Check]
+	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (below **FB**)
+	- Wire the linear actuator's **white wire** to Pololu's **GND** (below **+5V**)
 		
-
 
 ## V. <a name="user-guide"></a> User Guide 
 
@@ -680,7 +687,9 @@ Possible forks could include:
 
 - Port the mechatronics and software to run on other classes of vehicles
 
-We would be very interested to hear about and discuss your plans so please get in touch if interested to contribute or fork at ***openpodcar@gmail.com***
+We would be very interested to hear about and discuss your plans so please get in touch if interested to contribute or fork. 
+
+**Email: openpodcar@gmail.com***
 
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
