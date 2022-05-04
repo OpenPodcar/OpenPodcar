@@ -594,7 +594,7 @@ At this stage, two options are available to send goal commands to the vehicle:
 	source devel/setup.bash
 	rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "frame_id: 'map' pose: position: x: 2.0 y: 0.0 z: 0.0 orientation: x: 0.0 y: 0.0 z: 0.0 w: 1.0"
 	```
-	The example above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
+	The example command above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 
 Note:
 - the orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
