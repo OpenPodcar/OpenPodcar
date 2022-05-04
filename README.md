@@ -533,20 +533,31 @@ Implementing and testing this safety system should be undertaken with the drive 
 
 - Material: jacks
 - Place the jacks on both of the vehicle to raise its wheels off of the ground
+- open a terminal and `cd catkin_ws/src/podcar/tools`
+- while pressing on the DMH:
+	- type `python zeroSpeed.py` to zero the speed
+	- type `python fastSpeed.py` to move the vehicle forward (speed commands can be modified)
+	- type `python slowSpeed.py` to move the vehicle backward (speed commands can be modified)
 
 
 ### B. Steering Control
 
-
+The steering can be tested with Linux command. 
+- Connect the Pololu USB to the laptop 
+- Open a terminal and make sure "**catkin_ws/src/podcar/tools/JrkCmd**" is allowed as an executable
+- type `./OpenPodcar/catkin_ws/src/podcar/tools/JrkCmd Val` where "Val" is the desired command e.g. 1900 (straight), 2100 (turning slightly on the right), 1700 (turning slightly on the left) etc. 
+"Val" should be a value between 1500 (fully turned left) and 2500 (fully turned right).
 
 ### C. Remote Control
  
 Once the speed and steering control are tested and work well, the vehicle can be remotely-controlled using a joystick:
+- Check that the lidar Ethernet, Joystcik USB, Pololu USB and Arduino USb cables are all connected to the laptop
+- Change the path of Velodyne point_cloud in *velodyne.launch** to the path corresponding to that of your laptop
 - Open a terminal and type:
 ```
-cd catkin_ws/OpenPodcar
+cd OpenPodcar/catkin_ws/src/podcar
 source devel/setup.bash
-roslaunch podcar podcarsim2real.launch
+roslaunch podcar podcar.launch
 ```
 
 If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
@@ -554,17 +565,53 @@ If the USB ports are well set up, the vehicle can then be simply controlled with
 - X-axis for steering control
  
  
-### D. GMapping
- 
-  
-  
-### E. Move_base and TEB planner
+### D. GMapping, Move_base and TEB planner
 
+This section explains how to drive the OpenPodcar autonomous mode.
+- Check that the lidar Ethernet, Pololu USB and Arduino USb cables are all connected to the laptop
+- Change the path of Velodyne point_cloud in *velodyne.launch** to the path corresponding to that of your laptop
+- open a first terminal and type:
+```
+cd OpenPodcar/catkin_ws/src/podcar
+source devel/setup.bash
+roslaunch podcar podcarsim2real_laser_scan_matcher.launch
+```
+- open a second terminal and type:
+```
+cd OpenPodcar/catkin_ws/src/podcar
+source devel/setup.bash
+roslaunch podcar podcarsim_moveBase_sim2real.launch
+```
 
+Option 1: RViz GUI
+- Use RViz graphical user interface to set a goal command for the vehicle using the green arrow
 
-### F. Object Detection and Tracking
+Option 2: Terminal 
+- open a third terminal and type:
+```
+cd OpenPodcar/catkin_ws/src/podcar
+source devel/setup.bash
+rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "frame_id: 'map' pose: position: x: 2.0 y: 0.0 z: 0.0 orientation: x: 0.0 y: 0.0 z: 0.0 w: 1.0"
+```
+The example above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 
+Note:
+- the orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
+- Recommended to open terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
+	- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
+	- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
 
+### E. Object Detection and Tracking
+
+To run the object detector and tracker:
+- record a ROS bag file with some pedestrians in it
+- change the path of the bag file in **flobot_tracker.launch** to that of your bcd ag file
+- open a terminal and type:
+```
+cd OpenPodcar/catkin_ws/src/FLOBOT
+source devel/setup.bash
+roslaunch flobot_tracker_bringup flobot_tracker.launch
+```
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
 
@@ -714,12 +761,8 @@ Bibtex:
   Journal                  = {Journal of Open Hardware (under review)},
 ```
 
-
 ## XI. <a name="licence"></a> Licence 
 
 This work is provided under CERN-OSH-W licence. 
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk. The design is not a legal product and carries no safety certification.
-
-[# check]
-
