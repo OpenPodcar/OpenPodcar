@@ -749,7 +749,7 @@ Please cite the following paper when you use the OpenPodcar.
 
 Plain:
 ```
-Fanta Camara, Chris Waltham, David Churchill, Charles Fox. 
+Fanta Camara, Chris Waltham, Grey Churchill, Charles Fox. 
 OpenPodcar: an Open Source Vehicle for Self-Driving Car Research. 
 Journal of Open Hardware (under review).
 ```
@@ -757,7 +757,7 @@ Bibtex:
 ```
 @Article{camara2022openpodcar,
   Title                    = {OpenPodcar: an Open Source Vehicle for Self-Driving Car Research},
-  Author                   = {Fanta Camara and Chris Waltham and David Churchill and Charles Fox},
+  Author                   = {Fanta Camara and Chris Waltham and Grey Churchill and Charles Fox},
   Year                     = {2022},
   Journal                  = {Journal of Open Hardware (under review)},
 ```
