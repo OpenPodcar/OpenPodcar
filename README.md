@@ -84,12 +84,13 @@ Obtain the following components, which are available from many commercial suppli
 ### 3. Tools
 - Soldering iron
 - Solder
-- Gauge wires
 - Female and Male insulated electric connector crimp bullet terminals e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
 - Female and Male insulated crimp bullet terminals e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
 - Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
+- Different gauge wirese e.g. ~0.8mm, ~2mm and ~4mm
+- ELEGOO 120pcs Multicolored Dupont Wires 40pin Male to Female, 40pin Male to Male, 40pin Female to Female Breadboard Jumper Wires Ribbon Cables Kit Compatible with Arduino Projects [Link to product](https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3?keywords=arduino+wire+female+to+female&qid=1651878643&sr=8-3)
 - clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
 - Flathead and Phillips screwdrivers, pliers, automatic wire stripper
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
@@ -228,7 +229,7 @@ Before mounting the linear actuator under the vehicle, first acceptance test it 
 
 This section shows how to test the linear actuactor before mounting it.
 
-- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration Tool, external power capable of supplying 12V, a breadboard, some wires, a multimeter
+- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration Tool, external power capable of supplying 12V, a breadboard, some wires (~0.8mm diameter), a multimeter
 - Start testing the linear actuator as follows:
 - Wire the power supply **-** to Pololu's **GND**
 - Wire the power supply **+**  to Pololu's **VIN** 
@@ -298,7 +299,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 		
 ### C. ON/OFF Switch and Fusing
 
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires (4mm diameter for fuse, switch and batteries, 2mm diameter for the buck converters)
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires (~4mm diameter for fuse, switch and batteries, ~2mm diameter for the buck converters)
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch
 - Get access to the right battery's **+** pole and use a plier to unscrew the bolt and flat washer.
 
@@ -345,7 +346,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 
 Here, the buck converters voltage and current will be set to the desired values and then tested.
 
-- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires (2mm diameter)
+- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires (~2mm diameter)
 
 #### 1. XL4016 Buck converter 1
 
@@ -395,7 +396,7 @@ Here, the buck converters voltage and current will be set to the desired values 
 
 - Solder the male headers provided for the DAC pins.
 - **Acceptance Testing**
-	- Material: MCP4725 DAC, Arduino, some wires, multimeter
+	- Material: MCP4725 DAC, Arduino, some wires (~0.8mm diameter), multimeter
 	- Use a breadboard to make the following connections:
 		- Wire both DAC **GND** to both Arduino **GND**, using two female to male wires
 		- Wire the DAC **VCC** to Arduino **5V**, using a female to female wire
@@ -423,7 +424,7 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 
 #### 2. Assembly
 
-- Material: soldering iron, headers, Arduino, Pololu, resistors
+- Material: manufactured PCB board, soldering iron, headers, Arduino, Pololu, resistors (100K and 10K), 3D printed parts for LCD display and lidar, bolts and nuts
 - Solder headers for Arduino
 - Solder a 10K resistor on R2 location
 - Solder a 100K resistor on R1 location
@@ -437,10 +438,9 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 
 #### 3. Integration Testing
 
-The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. 
-- Material: external power supply, multimeter
-- Material: power supply, multimeter, some wires
-- Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected.
+- Material: power supply, multimeter, some wires (~2mm diameter)
+- Connect wires between the power supply and buck converter 1's **IN+** and **IN-**
+- Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected, as shown in the figure below.
 
 	<p align="center">
 	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=20" "height=12"/>
@@ -453,7 +453,7 @@ The PCB board was heavily tested before and after assembling its components to e
 
 This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
 
-- Material: 1 deadman push button, 1 relay, wires (2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
+- Material: 1 deadman push button, 1 relay, some wires (2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
 - For the relay: 
 	- Connect a 2-meter wire to the relay's **-** pin 
 	- Connect a 2-meter wire to  both the relay pins **S** and **+**
@@ -490,12 +490,13 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 #### B. Speed Potentiometer 
 
-- Material: wires, soldering iron, 1 plastic screw terminal block 2x2
+- Material: some wires (~2mm diameter), soldering iron, 1 plastic screw terminal block 2x2
 - De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into the terminal block **+** pin
 - Solder a 2-meter long wire next to the potentiometer pin on the left with a yellow wire and insert in its other length into the terminal block **-** pin
 
 #### C. PCB connections
 
+- Material: soldering iron, flathead screwdriver
 - Solder the other side of the relay's **+** and **S** pins wire to the LCD **VIN** pin on the PCB board
 - Solder the other side of the realy's **GND** to the LCD **GND** pin on the PCB board
 - Insert the lidar controller box **+** wire to the PCB terminal block **+** pin (NB: another option would be to solder instead of inserting) 
@@ -508,12 +509,13 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 
 #### D. Connect the linear actuactor to the Pololu JRK 21v3
+
+- Material: flathead screwdriver, Pololu, linear actuactor
 - Wire the linear actuator's **black wire** to Pololu's **A**
 - Wire the linear actuator's **red wire** to Pololu's **B**
-- Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
-	- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
+- Wire the linear actuator's **blue wire** to Pololu's **FB** 
+- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
+- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
 		
 
 ## V. <a name="general-testing"></a> General Testing
