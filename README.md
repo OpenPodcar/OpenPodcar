@@ -776,6 +776,6 @@ Bibtex:
 
 ## XI. <a name="licence"></a> Licence 
 
-This work is provided under CERN-OSH-W licence. 
+This work is provided under CERN-OHL-W licence. 
 
 Disclaimer: Neither the authors nor the University of Lincoln are repsonsible for accidents, injuries or damage caused by this vehicle design, and by downloading, building or operating the design you agree to do so entirely at your own risk. The design is not a legal product and carries no safety certification.
