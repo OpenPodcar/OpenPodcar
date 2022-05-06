@@ -271,11 +271,11 @@ To access the underside of the vehicle, this requires the help of at least three
 - THERE IS POTENTIAL FOR INJURY TO UNQUALIFIED OPERATORS. THIS IS THE ONLY BUILD STEP WHICH REQUIRES A QUALIFIED OPERATOR.
 ```
 
-- Material: Gimson linear actuator, a drill capable of drilling steel, 2 [M5?] HEX head bolts, 2 HEX nuts, 2 cap hex nuts and a few flat washers with 8mm diameter
+- Material: Gimson linear actuator, a drill capable of drilling steel, 2 M6 HEX head bolts, 2 HEX nuts, 2 cap hex nuts and a few flat washers with 8mm diameter
 - The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
-- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M5 [# check] bolt, nut, several washers and a cap nut
-- Drill a new M5 [# check] hole on the left side of the front chassis at the location shown by the red circle in the photo below.
-- Fix the back of the linear actuactor to the newly drilled hole using an M5 [# check] bolt, via washers
+- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M6 bolt, nut, several washers and a cap nut
+- Drill a new M6 hole on the left side of the front chassis at the location shown by the red circle in the photo below.
+- Fix the back of the linear actuactor to the newly drilled hole using an M6 bolt, via washers
 - The final mounting is shown in the photo below.
 	
 	<p align="center">
@@ -297,7 +297,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 		
 ### C. ON/OFF Switch and Fusing
 
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires [TODO what thickness?]
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires (4mm diameter for fuse, switch and batteries, 2mm diameter for the buck converters)
 - Fix a tick wire using a crimp bullet terminal onto each pin of the switch
 - Get access to the right battery's **+** pole and use a plier to unscrew the bolt and flat washer.
 
@@ -344,13 +344,13 @@ This final test will helps to verify that the linear actuactor is well mounted a
 
 Here, the buck converters voltage and current will be set to the desired values and then tested.
 
-- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires [TODO what thickness?]
+- Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires (2mm diameter)
 
 #### 1. XL4016 Buck converter 1
 
 1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
 2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-3. [TODO update] Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
+3. Insert a wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
 4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
 5. Set the power supply to 24V and turn it on
 6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
