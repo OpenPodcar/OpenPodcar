@@ -89,7 +89,7 @@ Obtain the following components, which are available from many commercial suppli
 - Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
-- Different gauge wirese e.g. ~0.8mm, ~2mm and ~4mm
+- Different gauge wirese e.g. ~0.8mm, ~2mm and ~4mm diameter
 - ELEGOO 120pcs Multicolored Dupont Wires 40pin Male to Female, 40pin Male to Male, 40pin Female to Female Breadboard Jumper Wires Ribbon Cables Kit Compatible with Arduino Projects [Link to product](https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3?keywords=arduino+wire+female+to+female&qid=1651878643&sr=8-3)
 - clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
 - Flathead and Phillips screwdrivers, pliers, automatic wire stripper
@@ -108,10 +108,10 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 
 ### 2. Arduino
 - Install Arduino IDE on the Ubuntu laptop, instructions can be found [here](https://ubuntu.com/tutorials/install-the-arduino-ide#1-overview)
-- Download the MCP4725 library file and place it into Arduino's **"LIBRARIES"** folder
+- Download the MCP4725 library file and place it into Arduino's `LIBRARIES` folder
 - Arduino firmware source is supplied in the distribution `physicalVehicleNonRos/Arduino/ThrottleControlSerial.ino`
 - Connect the Arduino USB to the laptop
-- Open Arduino IDE and the ThrottleControlSerial.ino file
+- Open Arduino IDE and the `ThrottleControlSerial.ino` file
 - Click on **Upload**
 - **Testing**
 	- click on **Tools**, then **Serial Monitor** 
@@ -127,7 +127,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 - Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
 - To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
 - For OpenPodCar, the steps below are followed:
-	- Connect the USB to Pololu and open "Pololu Jrk Configuration Utility" tool
+	- Connect the USB to Pololu and open `Pololu Jrk Configuration Utility` tool
 
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
@@ -194,7 +194,7 @@ Here, the goal is to create persistent USB serial device names (aka SIMLINK) for
 sudo lsusb -v | grep 'idVendor\|idProduct\|iSerial'
 ```
 - The above command displays the idVendor and idProduct for all the serial devices connected to your laptop and needs to be reported in the Simlink. 
-- For example, for the OpenPodcar copy the following lines in "99-tty.rules":
+- For example, for the OpenPodcar copy the following lines in `99-tty.rules` file:
 ```
 #Arduino com-port rules
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
@@ -202,7 +202,7 @@ SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="t
 SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="00"  SYMLINK+="ttyPololuCOM"
 SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYMLINK+="ttyPololuTTL"
 ```
-- Save and close "99-tty.rules" file
+- Save and close `99-tty.rules` file
 - Then type in the terminal `sudo reboot`
 - Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
 
@@ -410,8 +410,8 @@ Here, the buck converters voltage and current will be set to the desired values 
 			
 ### G. 3D Printing
 The following items need to be 3D printed, the files are located under `physicalVehicleNonRos/3D_parts`:
-- LCD display support part **LCD_support.stl**
-- Velodyne Lidar support part **VLP16_support.stl** 
+- LCD display support part `LCD_support.stl`
+- Velodyne Lidar support part `VLP16_support.stl` 
 
 ### H. Printed Circuit Board (PCB)
 
@@ -453,7 +453,7 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 
 This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
 
-- Material: 1 deadman push button, 1 relay, some wires (2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
+- Material: 1 deadman push button, 1 relay, some wires (~2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
 - For the relay: 
 	- Connect a 2-meter wire to the relay's **-** pin 
 	- Connect a 2-meter wire to  both the relay pins **S** and **+**
@@ -546,7 +546,7 @@ The steering can be tested with Linux command.
 
 To run the object detector and tracker:
 - record a ROS bag file with some pedestrians in it
-- change the path of the bag file in **flobot_tracker.launch** to that of your bcd ag file
+- change the path of the bag file in `flobot_tracker.launch` to that of your bcd ag file
 - open a terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/FLOBOT
@@ -572,9 +572,9 @@ roslaunch flobot_tracker_bringup flobot_tracker.launch
 
 ### A. Remote Control
  
-Once the speed and steering control are tested and work well, the vehicle can be remotely-controlled using a joystick:
-- Check that the lidar Ethernet, Joystcik USB, Pololu USB and Arduino USb cables are all connected to the laptop
-- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` to the path of Velodyne point_cloud in `/launch/podcar.launch` to the path corresponding to that of your laptop
+The vehicle can be remotely-controlled using a joystick as follows:
+- Check that the lidar Ethernet, Joystcik USB, Pololu USB and Arduino USB cables are all connected to the laptop
+- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` from `launch/podcar.launch` to the global path of Velodyne point_cloud launch file corresponding to that of your laptop
 - Open a terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/podcar
@@ -591,7 +591,7 @@ If the USB ports are well set up, the vehicle can then be simply controlled with
 
 This section explains how to drive the OpenPodcar in autonomous control mode using GMapping, move_base and the TEB planner.
 - Check that the lidar Ethernet, Pololu USB and Arduino USb cables are all connected to the laptop
-- Change the path of Velodyne point_cloud in *velodyne.launch** to the path corresponding to that of your laptop
+- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` from `launch/podcarsim2real_laser_scan_matcher.launch` to the global path of Velodyne point_cloud launch file corresponding to that of your laptop
 - open a first terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/podcar
