@@ -1,9 +1,0 @@
-digraph G {
-"map" -> "odom"[label="Broadcaster: /gmapping\nAverage rate: 20.952 Hz\nMost recent transform: 1642527157.891 ( 0.080 sec old)\nBuffer length: 1.050 sec\n"];
-"odom" -> "base_link"[label="Broadcaster: /odometry_publisher\nAverage rate: 6.250 Hz\nMost recent transform: 1642527157.737 ( 0.235 sec old)\nBuffer length: 0.800 sec\n"];
-"base_link" -> "velodyne"[label="Broadcaster: /podcar_tf_broadcaster\nAverage rate: 6.251 Hz\nMost recent transform: 1642527157.738 ( 0.234 sec old)\nBuffer length: 0.800 sec\n"];
-edge [style=invis];
- subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1642527157.971"[ shape=plaintext ] ;
- }->"map";
-}

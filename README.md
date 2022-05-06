@@ -561,14 +561,7 @@ roslaunch flobot_tracker_bringup flobot_tracker.launch
 
 - Power on the laptop using the slider switch on its front right.
 
-- Login as user podcar, password TODO.
-
 - Type:  roscd podcar
-
-
-- Use the joystick to control steering and speed for manual drive.
-
-- For automation, the steps should be exactly the same as above but with the automation launch file.
 
 
 ### A. Remote Control
