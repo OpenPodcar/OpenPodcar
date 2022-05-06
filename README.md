@@ -582,9 +582,6 @@ roslaunch podcar podcar.launch
 If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
 - Y-axis for speed control
 - X-axis for steering control
-
-
-[![OpenPodcar Remote Control](https://img.youtube.com/vi/BkFPPu0EdiM&list=PLjrJD5nSYNjpbveXYNO8JOb7u0i1LKBe0/0.jpg)](https://www.youtube.com/watch?v=BkFPPu0EdiM&list=PLjrJD5nSYNjpbveXYNO8JOb7u0i1LKBe0)
  
  
 ### B. Move_base Control
