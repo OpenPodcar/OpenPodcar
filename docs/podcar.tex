@@ -35,7 +35,7 @@
 \usepackage{authblk} 
 \author[1,2]{Fanta Camara}
 \author[2]{Chris Waltham}
-\author[2]{\\David Churchill}
+\author[2]{\\Grey Churchill} %David has recently changed name (and gender, to they/them)
 \author[1,2]{Charles Fox} 
 \affil[1]{Institute for Transport Studies, University of Leeds, UK} 
 \affil[2]{School of Computer Science, University of Lincoln, UK}
@@ -102,7 +102,7 @@
 	
 	SMART \cite{pendleton2015autonomous} is a design to modify an existing donor golf cart vehicle for automation research, this is of a similar size and power to OpenPodcar. Similarly, iCab (Intelligent Campus Automobile) \cite{gomez2016ros} is research golf car with a ROS (Robot Operating System)-based architecture and that has been tested with Timed-Elastic Band planner \cite{marin-plaza2018global}. However, both SMART and iCab platform designs are not open source. Complete and built mechanical OSH designs for on-road, person-carrying, cars exist, including PixBot \cite{pixmovingpixbot} and Tabby EVO \cite{openmotorstabby}. Building these OSH vehicles is a large task for experts and may require dangerous processes such as welding, purchase of expensive components, and considerable storage space. OpenPodcar is based on a proprietary but commodity mobility scooter which is cheaper and easier to convert than performing these builds. 
 	
-	Several OSH RC-scale cars have been completed and built such as F1Tenth \cite{f1tenth}, AutoRally \cite{goldfain2019autorally}, BARC \cite{gonzales2018planning}, MIT Racecar \cite{mit}, \cite{nakamoto2019development}, and \cite{vincke2021open}. These platforms are not large enough to drive on public roads or to transport people or goods like OpenPodcar. Open Source Ecology (OSE) \cite{jakubowski2003open} is an ambitious project which ultimately aims to develop fully OSH vehicles including a car and tractor. OSE is optimised for reliability and for users in developing countries so it uses hydraulic power rather than electric as used in OpenPodcar. But its vehicle designs are not yet complete.
+	Several OSH RC-scale cars have been completed and built such as F1Tenth \cite{f1tenth}, AutoRally \cite{goldfain2019autorally}, BARC \cite{gonzales2018planning}, MIT Racecar \cite{mit}, MuSHR \cite{mushr},  \cite{nakamoto2019development}, and \cite{vincke2021open}. These platforms are not large enough to drive on public roads or to transport people or goods like OpenPodcar. Open Source Ecology (OSE) \cite{jakubowski2003open} is an ambitious project which ultimately aims to develop fully OSH vehicles including a car and tractor. OSE is optimised for reliability and for users in developing countries so it uses hydraulic power rather than electric as used in OpenPodcar. But its vehicle designs are not yet complete.
 	
 	Autoware \cite{kato2018autoware} is a heavyweight open source software project to construct a full ROS-based automation stack for on-road cars. Apollo \cite{apolloautoapollo} is an open source self-driving software stack and an open hardware interface which may be implemented on vehicles, as done in \cite{kessler2019bridging}. These systems could be software interfaced to run with OpenPodcar. 
 	
@@ -156,7 +156,14 @@
 	
 	The new vehicle electronics, which require different voltage power supplies (cf. Fig. \ref{fig:circuitDiagram}), are presented on a PCB (Printed Circuit Board), as shown in Figs.~\ref{fig:pcb_design} and \ref{fig:pcb_assembled}. This is convenient as it reduces the number of small wires between the components by having them directly drawn on the board, and packages them together.
 	
-	As an OSH design, the PCB hosts several daughter boards, mounted using headers. The physical structure of the large PCB comprised of these smaller components reflects the OSH design itself. There are two DC-DC Buck converters with an XL4016 regulator, an Arduino Uno, an MCP4725 DAC (Digital-Analog Converter), a Pololu Jrk 21v3 motor controller with position feedback for the linear actuator, 2 resistors (10k$\Omega$ and 100k$\Omega$) for the potential divider and 2 terminal blocks. 3D printed parts support the mounting of the LCD and the 3D lidar to the board. A 3D printed enclosure protects the PCB board.
+	As an OSH design, the PCB hosts several daughter boards, mounted using headers. The physical structure of the large PCB comprised of these smaller components reflects the OSH design itself. There are two DC-DC Buck converters with an XL4016 regulator, an Arduino Uno, an MCP4725 DAC (Digital-Analog Converter), a Pololu Jrk 21v3 motor controller with position feedback for the linear actuator, 2 resistors (10k$\Omega$ and 100k$\Omega$) for the potential divider and 2 terminal blocks. 3D printed parts support the mounting of the LCD and the 3D lidar to the board. A 3D printed enclosure protects the PCB board, as shown in Fig.~\ref{fig:pcb_enclosure}.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.6\linewidth]{hardware/pcb_enclosure.jpg}
+		\caption{PCB enclosure mounted on the vehicle (top left, white box).}
+		\label{fig:pcb_enclisure}
+	\end{figure}
 	
 	\begin{figure}
 		\centering
@@ -214,7 +221,7 @@
 	
 	An Arduino UNO \cite{oxer2011practical} is used to send electric signals to the vehicle's motor controller in place of the donor vehicle’s paddle controller’s potentiometer. An Adafruit MCP4725 DAC is connected to the Arduino as in Fig. \ref{fig:circuitDiagram}, and is used to send clean analog speed command voltages to the donor vehicle’s internal controller.
 	
-	Arduino firmware source is supplied in the distribution. When uploaded to the Arduino (using the standard Arduino IDE running on the laptop), the firmware provides a simple serial port API running at 112000baud. It receives commands of the form ``FA:210'' as speed commands. Table \ref{tab:speed_commands} summarises the range of speed commands and their corresponding output voltages. 
+	Arduino firmware source is supplied in the distribution. When uploaded to the Arduino (using the standard Arduino IDE running on the laptop), the firmware provides a simple serial port API running at 112,000 baud. It receives commands of the form ``FA:210'' as speed commands. Table \ref{tab:speed_commands} summarises the range of speed commands and their corresponding output voltages. 
 	
 	\begin{table}
 		\begin{center}
@@ -223,14 +230,14 @@
 			\begin{tabular}{ l c c }
 				\hline
 				Command   &    Voltage            &  Effect \\
-				FA:0      &    0                  & stupid fast reverse  \\
-				FA:80     &    $\sim 0.9$         & v fast reverse (ros limit) \\
+				FA:0      &    0                  & very fast reverse  \\
+				FA:80     &    $\sim 0.9$         & fast reverse (ROS limit) \\
 				FA:132    &   $\sim 1.5$          & slowest reverse motion  \\
 				&                       & dead zone - allows ignition \\
 				FA:170    &    1.9                & stop - zero/home position \\
 				FA:201    &    $\sim 2.3$         & slowest forward motion \\
-				FA:240    &    $\sim 2.7$         & v fast forward (ros limit) \\
-				FA:255    &    $\sim 3.0$         & stupid fast forward \\
+				FA:240    &    $\sim 2.7$         & fast forward (ROS limit) \\
+				FA:255    &    $\sim 3.0$         & very fast forward \\
 				\hline\\
 			\end{tabular}
 		\end{center}    
@@ -344,11 +351,9 @@
 	\paragraph{Steering Control System Limiter} Limitations are placed on the steering controller for the linear actuator commands, to only allow the vehicle to accept and execute input values within the range that will keep the mechanical mounting safe.
 	
 	
-	\subsection{General Testing}\label{h.wbekh9ay82yu}
+	\subsection{ General Testing}\label{h.wbekh9ay82yu}
 	
 	%In this section, details can be provided on the testing of hardware functionalities, that are not directly essential for precision operation of the hardware in the given context (which are in turn, where applicable, handled under Calibration), such as automated movements to position the hardware, repeatability of tool exchanges, recyclability, water-tightness, weight or other possibly relevant characteristics. We encourage the authors to characterise all appropriate functionalities of the hardware, if not already described elsewhere (add reference instead). The testing should define the safe/reliable limits in which the components can be operated (e.g. step size and repeatability of linear motion, force ranges, ratio of devices with leaks when built in a workshop, etc).This will enhance the usability of the hardware or method in other contexts. Again: Detailed instructions belong in documentation; here, provide a summary ~instead.
-	
-	
 	
 	%TODO Do we have any unit tests or physical/mech test protocols included as part of the build instructions? Say so?  
 	
@@ -357,20 +362,22 @@
 	%removed the below. this section isn't about how great is our design. Rather it is about what tests should be performed by the NEW BUILDER and showing that they are documented in the build instructions.
 	%TODO say how many kilometers have been driven in manual and autonomous modes to date, over how many months, and how many electrical failures occured.
 	
-	The OpenPodcar platform was developed and our own build was heavily tested between March 2018 and March 2022. With its first automated test drives taking place since summer 2018 and an estimated 100km or more driven to date, the vehicle design has thus proven robust enough for autonomous vehicle research. 
 	
-	For new builds, a series of sub-components (e.g. Pololu, DAC), components (e.g. PCB, lidar), and system integration tests are defined and included in the build instructions. Components and sub-components are tested individually and then after their integration to the vehicle. Below is a summary of these tests.
+	For new builds, a series of sub-component (e.g. Pololu, DAC) acceptance tests, component (e.g. PCB, lidar) hardware unit tests, and system integration tests are defined and included as formal, non-optional steps in the build instructions.  The structure of the tests is designed to enable build problems to be immediately localised, so that passing one test means that a failure of the next one must be due to build steps that have occurred between them. Below is a summary of these tests.
 	
-	At the component level, an external power supply, a multi-meter, a clamp meter and a breadboard with some wires are frequently used to recreate smaller electronic circuits in order to check the voltages, currents and the good functioning of each component during the build. For instance, a circuit with an external power supplying 5V to the Arduino connected to the DAC is used to test the Arduino code and its communication with the DAC whose output voltage should be set by default within the desired range of 1.9V--2.1V. Similarly, another circuit can be created with an external power supplying 12V to the Pololu connected to the linear actuator to send direct commands via the Windows app that is used to fix the PID parameters. These simple tests are essential to the success of components' integration to the vehicle and make things easier later. 
+	At component level, an external power supply, a multi-meter, a clamp meter and a breadboard with some wires are frequently used to recreate smaller electronic circuits in order to check the voltages, currents and the correct functioning of each component during the build. For instance, a circuit with an external power supplying 5V to the Arduino connected to the DAC is temporally created to test the Arduino code and its communication with the DAC.  Similarly, another test circuit is created with an external power supplying 12V to the Pololu connected to the linear actuator to send direct commands via the Windows program used to fix the PID parameters. These hardware unit tests are essential to the success of components' integration to the vehicle and make things easier later. 
 	
-	At the system integration level, udev rules are used to facilitate testing with the creation of simlinks, i.e. dynamic assignments for the laptop USB ports connected to the Arduino and the Pololu, using their respective product and vendor IDs. This helps in being able to physically interchange the USB ports without having any impact at the software level. For the speed control, the vehicle wheels are lifted from the ground using jacks to stop them from driving off. This technique helps to test and fix the Arduino and ROS speed control code whilst staying in the same place. The vehicle steering is first tested using the Windows app that allows direct commands to be directly sent to the linear actuator. This helps verify and fix the linear actuator mounting as desired. Similarly, using Pololu's C++ API, direct commands are sent from a terminal to the linear actuator, but this time for testing at the software level. 
+	%[TODO refer to the step numbers in the build when showing off these tests?]
+	
+	At system integration level, udev rules are used to facilitate testing with the creation of simlinks, i.e. dynamic assignments for the laptop USB ports connected to the Arduino and the Pololu, using their respective product and vendor IDs. This helps in being able to physically interchange the USB ports without having any impact at the software level. For the speed control, the vehicle wheels are lifted from the ground using jacks to stop them from driving off. This technique helps to test and fix the Arduino and ROS speed control code whilst staying in the same place. Vehicle steering is first tested using the Windows app that allows direct commands to be directly sent to the linear actuator. This helps verify and fix the linear actuator mounting as desired. Similarly, using Pololu's C++ API, direct commands are sent from a terminal to the linear actuator, but this time for testing at the software level. 
 	
 	Driving tests are initially performed in the manual joystick control mode in order to ensure that both hardware and software stack work well together. In particular, the LCD on the PCB board helps with checking in real-time the voltage received for each speed command and the LEDs colors displayed on the Pololu also give useful indications about the steering control. 
 	
-	The autonomous driving tests with move\_move and TEB are performed with the vehicle speed controls dial know set to ``5'', corresponding to about $0.2$m/s. This relatively low speed is chosen because these tests may be performed in a shared and cluttered research lab around people. Also, a large inflation distance is set in the planner to prevent the vehicle from close contacts with both static and dynamic obstacles. At first, simple and short goals are sent to move\_base such as ``drive one meter forward and keep your current orientation'' or ``drive three meters forward and keep your current orientation''. Once the vehicle is able to execute and reach these simple goals, more complex goal commands are sent. Once a goal is reached, it is possible to resend immediately another goal without having to turn off the system, which is very convenient for example when one wants to ask the vehicle to return to its starting position or go somewhere else. 
+	The autonomous driving tests with move\_base and TEB are performed with the vehicle speed controls dial know set to `5', corresponding to about $0.2$m/s. This relatively low speed is chosen because these tests may be performed in a shared and cluttered research lab around people. Also, a large inflation distance is set in the planner to prevent the vehicle from close contacts with both static and dynamic obstacles. At first, simple and short goals are sent to move\_base such as ``drive one meter forward and keep your current orientation'' or ``drive three meters forward and keep your current orientation''. Once the vehicle is able to execute and reach these simple goals, more complex goal commands are sent. Once a goal is reached, it is possible to resend immediately another goal without having to turn off the system, which is very convenient for example when one wants to ask the vehicle to return to its starting position or go somewhere else. 
 	
-	Setting a very high accuracy for goals such as $0.01$cm and $0.01$rad is achievable on the vehicle and is tested for short drives in the lab. However, in these cases, the short drives may end up taking a lot of time, for example it can take up to three minutes to simply reach a one meter forward goal. This is due to the planner's oscillating behaviour around the goal. To fix this, more tolerance should be given for the goal accuracy, for example, 15cm and 0.15rad give an acceptable vehicle behaviour. During these driving tests, ROS topics and RViz (ROS visualization tool) are particularly monitored to get informed about the vehicle behaviour in real-time. 
+	Setting a very high accuracy for goals such as $1$mm and $0.01$rad is achievable on the vehicle and is tested for short drives in the lab. However, in these cases, the short drives may end up taking a lot of time, for example it can take up to three minutes to simply reach a one meter forward goal. This is due to the planner's oscillating behaviour around the goal. To fix this, more tolerance should be given for the goal accuracy, for example, 150mm and 0.15rad give an acceptable vehicle behaviour. During these driving tests, ROS topics and RViz (ROS visualization tool) are particularly monitored to get informed about the vehicle behaviour in real-time. 
 	
+	OpenPodcar was developed, and our own build was heavily tested, between March 2018 and March 2022. With its first automated test drives taking place since summer 2018 and an estimated 100km or more driven to date, the vehicle design has thus proven robust enough for autonomous vehicle research. 
 	
 	
 	\section{(4) Application}\label{h.f78bi3oom0mu}
@@ -388,7 +395,7 @@
 	
 	Many AV researchers cannot currently afford the acquisition of a self-driving hardware platform for their work. The OpenPodcar is primarily designed for this purpose, as a low-cost and an all-in-one, software and hardware platform for researchers and hobbyists. Thus, giving them not only the opportunity to reproduce, develop and test algorithms on a physical hardware platform but also to extend its capabilities with new features. 
 	
-	The ``\nameref{related_systems}'' section showed that there are many open source software stacks without related open hardware platform, the OpenPodcar thus fills this gap and offers the opportunity not only to deploy Autoware or other types of AV software but also to extend the hardware capabilities to the point where OpenPodcar could become a standard test bed for the AV research community. For example, this platform could be useful to test different SLAM and planning algorithms, parallel and valet parking methods. The objective being that both hardware and software can be tested regularly in real-world conditions and contribute towards the deployment of AVs. The OpenPodcar can avoid both static and dynamic obstacle using the integrated feature in move\_base and TEB planner. Fig. \ref{fig:testDrive_gmapping} shows the OpenPodcar test drive with GMapping, move\_base and TEB planner in action when it encounters an obstacle on its path.     
+	The \nameref{related_systems} section found that there are many open source software stacks without related open hardware platforms.  OpenPodcar thus fills this gap, offering the opportunity not only to deploy Autoware or other types of AV software but also to extend the hardware capabilities to the point where OpenPodcar could become a standard test bed for the AV research community. For example, this platform could be useful to test different SLAM and planning algorithms, parallel and valet parking methods. The objective being that both hardware and software can be tested regularly in real-world conditions and contribute towards the deployment of AVs. The OpenPodcar can avoid both static and dynamic obstacle using the integrated feature in move\_base and TEB planner. Fig. \ref{fig:testDrive_gmapping} shows the OpenPodcar test drive with GMapping, move\_base and TEB planner in action when it encounters an obstacle on its path.     
 	
 	\begin{figure}
 		\centering
@@ -461,7 +468,8 @@
 	
 	%\textbf{Persistent identifier:} e.g. DOI, etc.
 	
-	\textbf{Project repository:} \url{https://github.com/OpenPodcar}
+	\textbf{Project repository:} \url{https://github.com/fantastic-robot/podcar}
+	%\url{https://github.com/OpenPodcar} %TODO get this online
 	
 	\textbf{Licence:} CERN-OHL-W 
 	
@@ -478,7 +486,7 @@
 	
 	%Conclusions, learned lessons from design iterations, learned lessons from use cases, summary of results.
 	
-	The OpenPodcar is a multi-purpose hardware and software platform for autonomous vehicle research. It provides the required hardware and software tools to carry out research in this field. The platform has a lower-level stack, a higher-level stack and a simulator for initial testing. It has several safety features to prevent hazards. The general testing carried on the vehicle shows a robust and safe design. Several use cases have been identified and successfully tested. The OpenPodcar is open source to allow further improvements and extensions of its capabilities from the community. The replication of this work on a 2nd vehicle will help identify issues and improve the documentation.
+	OpenPodcar is a multi-purpose hardware and software platform for autonomous vehicle research. It provides the required hardware and software tools to carry out research in this field. The platform has a lower-level stack, a higher-level stack and a simulator for initial testing. It has several safety features to prevent hazards. The general testing carried on the vehicle shows a robust and safe design. Several use cases have been identified and successfully tested. OpenPodcar is open source to allow further improvements and extensions of its capabilities from the community. The replication of this work on a 2nd vehicle will help identify issues and improve the documentation.
 	
 	\subsection{Future Work}\label{h.neocsr410zj}
 	
@@ -500,7 +508,7 @@
 	
 	\section*{Paper author contributions}\label{h.fy8hbipy6kwe}
 	
-	Fanta Camara performed the physical podcar automation work including the mechanical design, printed circuit board (PCB), ROS localisation and mapping, path planning, people detector and tracker integration, Gazebo 3D simulation worlds of Lincoln and Leeds university campuses, driving tests, wrote the documentation for the physical podcar and the manuscript. Chris Waltham designed the initial electronics circuit and safety systems, wrote the Arduino code for the speed control and participated to the initial remotely-controlled driving test. David Churchill developed the podcar simulator with path planning within ROS/Gazebo and wrote the documentation for the simulator. Charles Fox supervised the work, wrote the manuscript, and wrote some ROS code. The manuscript was improved by comments from all the co-authors.
+	Fanta Camara performed the physical podcar automation work including the mechanical design, printed circuit board (PCB), ROS localisation and mapping, path planning, people detector and tracker integration, Gazebo 3D simulation worlds of Lincoln and Leeds university campuses, testing, wrote the documentation for the physical podcar and the manuscript. Chris Waltham designed the initial electronics circuit and safety systems, wrote the Arduino code for the speed control and participated to the initial remotely-controlled driving test. Grey Churchill developed the podcar simulator with path planning within ROS/Gazebo and wrote the documentation for the simulator. Charles Fox supervised the work, wrote the manuscript, and wrote some ROS code. The manuscript was improved by comments from all the co-authors.
 	
 	
 	\section*{Acknowledgements}\label{h.gu3yyarx72d6}

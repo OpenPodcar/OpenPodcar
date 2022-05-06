@@ -27,13 +27,4 @@ catkin_ws/src/podcar/models/plugins/libpodcarGazeboROSPlugin.so
 catkin_ws/src/marvelmind_nav/
 catkin_ws/src/podcar/params/local_costmap_params_marvelmind.yaml
 catkin_ws/src/podcar/params/global_costmap_params_marvelmind.yaml
-docs/NOTES
-docs/podcar.aux
-docs/podcar.bbl
-docs/podcar.blg
-docs/podcar.log
-docs/podcar.out
-docs/podcar.synctex.gz
-docs/pos.txt
-docs/speed.txt
 
