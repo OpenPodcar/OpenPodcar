@@ -295,7 +295,7 @@ This final test will helps to verify that the linear actuactor is well mounted a
 - Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery, and send some commands such as:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
 - a "1900" command should keep the front wheels facing forward, i.e. about 0 deg
-- a "1500" command should steer the front wheels to the far left, i.e. about +45 deg
+- a "1000" command should steer the front wheels to the far left, i.e. about +45 deg
 		
 ### C. ON/OFF Switch and Fusing
 
