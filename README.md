@@ -125,7 +125,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 
 - Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
 - To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
-- For OpenPodCar, we followed the steps below:
+- For OpenPodCar, the steps below are followed:
 	- Connect the USB to Pololu and open "Pololu Jrk Configuration Utility" tool
 
 	- Go to "**Input**" tab: 
