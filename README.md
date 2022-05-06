@@ -3,7 +3,9 @@
 Open Source Hardware Design and Software for OpenPodcar.
 
 
-Video demo:  https://www.youtube.com/watch?v=ds1t9YaNA98
+Video demo:
+
+<video src='https://www.youtube.com/watch?v=ds1t9YaNA98' width=180/>
 
 ## Table of Contents
 I. [General Info](#general-info)
