@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/fanta/Kicad/Podcar_PCB/Podcar_PCB.sch</source>
+    <date>Wed 20 Oct 2021 11:41:40 BST</date>
+    <tool>Eeschema 5.0.2-bee76a0~70~ubuntu16.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Podcar_PCB.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="R1">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60F4AC2A</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>10K</value>
+      <footprint>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60F4ACA8</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>pololu_jrk_v3</value>
+      <footprint>adafruit-mcp4725-1.snapshot:pololu_jrk21v3</footprint>
+      <libsource lib="pololu_jrk_v3" part="pololu_jrk_v3" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614D4638</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>DAC_MCP4725</value>
+      <footprint>adafruit-mcp4725-1.snapshot:adafruit_mcp4725-fp</footprint>
+      <libsource lib="dac_mcp4725" part="DAC_MCP4725" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615125F6</tstamp>
+    </comp>
+    <comp ref="XA1">
+      <value>Arduino_Uno_Shield</value>
+      <footprint>Arduino:Arduino_Uno_Shield</footprint>
+      <libsource lib="arduino" part="Arduino_Uno_Shield" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60F49512</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Screw_Terminal_01x02</value>
+      <footprint>TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615FF63F</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Screw_Terminal_01x02</value>
+      <footprint>TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615FF6DF</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>vlp-16</value>
+      <footprint>adafruit-mcp4725-1.snapshot:VLP16</footprint>
+      <libsource lib="vlp-16_control_unit" part="vlp-16" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6162226B</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>LCD_Display</value>
+      <footprint>adafruit-mcp4725-1.snapshot:LCD_Display</footprint>
+      <libsource lib="lcd_display" part="LCD_Display" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61623775</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>PSU_12</value>
+      <footprint>adafruit-mcp4725-1.snapshot:dc_buck_converter-fp</footprint>
+      <libsource lib="Podcar_PCB-rescue" part="PSU_12-psu_12" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615EFBCA</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>PSU_16</value>
+      <footprint>adafruit-mcp4725-1.snapshot:dc_buck_converter-fp</footprint>
+      <libsource lib="Podcar_PCB-rescue" part="PSU_16-psu_16" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615F433E</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Screw_Terminal_01x02">
+      <description>Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Podcar_PCB-rescue" part="PSU_12-psu_12">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PSU_12-psu_12</field>
+      </fields>
+      <pins>
+        <pin num="IN+" name="IN+" type="output"/>
+        <pin num="IN-" name="IN-" type="output"/>
+        <pin num="OUT+" name="OUT+" type="power_out"/>
+        <pin num="OUT-" name="OUT-" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Podcar_PCB-rescue" part="PSU_16-psu_16">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PSU_16-psu_16</field>
+      </fields>
+      <pins>
+        <pin num="IN+" name="IN+" type="power_in"/>
+        <pin num="IN-" name="IN-" type="power_in"/>
+        <pin num="OUT+" name="OUT+" type="power_out"/>
+        <pin num="OUT-" name="OUT-" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="arduino" part="Arduino_Uno_Shield">
+      <footprints>
+        <fp>Arduino_Uno_Shield</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">XA</field>
+        <field name="Value">Arduino_Uno_Shield</field>
+      </fields>
+      <pins>
+        <pin num="3V3" name="3V3" type="power_in"/>
+        <pin num="5V1" name="5V1" type="power_in"/>
+        <pin num="5V2" name="5V2" type="BiDi"/>
+        <pin num="A0" name="A0" type="BiDi"/>
+        <pin num="A1" name="A1" type="BiDi"/>
+        <pin num="A2" name="A2" type="BiDi"/>
+        <pin num="A3" name="A3" type="BiDi"/>
+        <pin num="A4" name="A4" type="BiDi"/>
+        <pin num="A5" name="A5" type="BiDi"/>
+        <pin num="AREF" name="AREF" type="power_in"/>
+        <pin num="D0" name="D0" type="BiDi"/>
+        <pin num="D1" name="D1" type="BiDi"/>
+        <pin num="D2" name="D2" type="BiDi"/>
+        <pin num="D3" name="D3" type="BiDi"/>
+        <pin num="D4" name="D4" type="BiDi"/>
+        <pin num="D5" name="D5" type="BiDi"/>
+        <pin num="D6" name="D6" type="BiDi"/>
+        <pin num="D7" name="D7" type="BiDi"/>
+        <pin num="D8" name="D8" type="BiDi"/>
+        <pin num="D9" name="D9" type="BiDi"/>
+        <pin num="D10" name="D10" type="BiDi"/>
+        <pin num="D11" name="D11" type="BiDi"/>
+        <pin num="D12" name="D12" type="BiDi"/>
+        <pin num="D13" name="D13" type="BiDi"/>
+        <pin num="GND1" name="GND1" type="openCol"/>
+        <pin num="GND2" name="GND2" type="power_in"/>
+        <pin num="GND3" name="GND3" type="power_in"/>
+        <pin num="GND4" name="GND4" type="BiDi"/>
+        <pin num="IOREF" name="IOREF" type="openCol"/>
+        <pin num="MISO" name="MISO" type="BiDi"/>
+        <pin num="MOSI" name="MOSI" type="BiDi"/>
+        <pin num="RESET" name="RESET" type="power_in"/>
+        <pin num="RST2" name="RST2" type="BiDi"/>
+        <pin num="SCK" name="SCK" type="BiDi"/>
+        <pin num="SCL" name="SCL" type="BiDi"/>
+        <pin num="SDA" name="SDA" type="BiDi"/>
+        <pin num="VIN" name="VIN" type="power_in"/>
+        <pin num="~" name="~" type="unspc"/>
+      </pins>
+    </libpart>
+    <libpart lib="dac_mcp4725" part="DAC_MCP4725">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">DAC_MCP4725</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VOUT" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="SCL" type="input"/>
+        <pin num="4" name="SDA" type="input"/>
+        <pin num="5" name="VCC" type="power_out"/>
+        <pin num="6" name="GND" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="lcd_display" part="LCD_Display">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LCD_Display</field>
+      </fields>
+      <pins>
+        <pin num="GND" name="GND" type="input"/>
+        <pin num="SIG" name="SIG" type="input"/>
+        <pin num="VIN" name="VIN" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="pololu_jrk_v3" part="pololu_jrk_v3">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">pololu_jrk_v3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="A" type="power_out"/>
+        <pin num="4" name="B" type="power_out"/>
+        <pin num="5" name="FB" type="input"/>
+        <pin num="6" name="AUX" type="input"/>
+        <pin num="7" name="+5V1" type="input"/>
+        <pin num="8" name="+5V2" type="input"/>
+        <pin num="9" name="GND1" type="input"/>
+        <pin num="10" name="GND2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="vlp-16_control_unit" part="vlp-16">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">vlp-16</field>
+      </fields>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="Podcar_PCB-rescue">
+      <uri>/home/fanta/Kicad/Podcar_PCB/Podcar_PCB-rescue.lib</uri>
+    </library>
+    <library logical="arduino">
+      <uri>/home/fanta/Kicad/Components/arduino.lib</uri>
+    </library>
+    <library logical="dac_mcp4725">
+      <uri>/home/fanta/Kicad/Components/dac_mcp4725.lib</uri>
+    </library>
+    <library logical="lcd_display">
+      <uri>/home/fanta/Kicad/Components/lcd_display.lib</uri>
+    </library>
+    <library logical="pololu_jrk_v3">
+      <uri>/home/fanta/Kicad/Components/pololu_jrk_v3.lib</uri>
+    </library>
+    <library logical="vlp-16_control_unit">
+      <uri>/home/fanta/Kicad/Components/vlp-16_control_unit.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(U6-PadOUT-)">
+      <node ref="U6" pin="OUT-"/>
+    </net>
+    <net code="2" name="Net-(XA1-PadD9)">
+      <node ref="XA1" pin="D9"/>
+    </net>
+    <net code="3" name="Net-(XA1-PadD10)">
+      <node ref="XA1" pin="D10"/>
+    </net>
+    <net code="4" name="Net-(XA1-PadD11)">
+      <node ref="XA1" pin="D11"/>
+    </net>
+    <net code="5" name="Net-(XA1-PadD12)">
+      <node ref="XA1" pin="D12"/>
+    </net>
+    <net code="6" name="Net-(XA1-PadD13)">
+      <node ref="XA1" pin="D13"/>
+    </net>
+    <net code="7" name="Net-(XA1-PadGND1)">
+      <node ref="XA1" pin="GND1"/>
+    </net>
+    <net code="8" name="Net-(XA1-PadAREF)">
+      <node ref="XA1" pin="AREF"/>
+    </net>
+    <net code="9" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+      <node ref="XA1" pin="5V1"/>
+    </net>
+    <net code="10" name="Net-(XA1-PadD8)">
+      <node ref="XA1" pin="D8"/>
+    </net>
+    <net code="11" name="Net-(U6-PadOUT+)">
+      <node ref="U6" pin="OUT+"/>
+    </net>
+    <net code="12" name="Net-(XA1-PadVIN)">
+      <node ref="XA1" pin="VIN"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+      <node ref="U4" pin="GND"/>
+      <node ref="XA1" pin="GND2"/>
+    </net>
+    <net code="14" name="Net-(XA1-PadGND3)">
+      <node ref="XA1" pin="GND3"/>
+    </net>
+    <net code="15" name="Net-(XA1-PadGND4)">
+      <node ref="XA1" pin="GND4"/>
+    </net>
+    <net code="16" name="Net-(XA1-PadIOREF)">
+      <node ref="XA1" pin="IOREF"/>
+    </net>
+    <net code="17" name="Net-(XA1-PadMISO)">
+      <node ref="XA1" pin="MISO"/>
+    </net>
+    <net code="18" name="Net-(XA1-PadMOSI)">
+      <node ref="XA1" pin="MOSI"/>
+    </net>
+    <net code="19" name="Net-(XA1-PadRESET)">
+      <node ref="XA1" pin="RESET"/>
+    </net>
+    <net code="20" name="Net-(XA1-PadRST2)">
+      <node ref="XA1" pin="RST2"/>
+    </net>
+    <net code="21" name="Net-(XA1-PadSCK)">
+      <node ref="XA1" pin="SCK"/>
+    </net>
+    <net code="22" name="Net-(U1-Pad4)">
+      <node ref="XA1" pin="SDA"/>
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="23" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1"/>
+      <node ref="U6" pin="IN-"/>
+      <node ref="U5" pin="IN-"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="24" name="Net-(XA1-Pad~)">
+      <node ref="XA1" pin="~"/>
+    </net>
+    <net code="25" name="Net-(XA1-Pad3V3)">
+      <node ref="XA1" pin="3V3"/>
+    </net>
+    <net code="26" name="Net-(XA1-PadD0)">
+      <node ref="XA1" pin="D0"/>
+    </net>
+    <net code="27" name="Net-(XA1-PadD1)">
+      <node ref="XA1" pin="D1"/>
+    </net>
+    <net code="28" name="Net-(XA1-PadD2)">
+      <node ref="XA1" pin="D2"/>
+    </net>
+    <net code="29" name="Net-(XA1-PadD3)">
+      <node ref="XA1" pin="D3"/>
+    </net>
+    <net code="30" name="Net-(XA1-PadD4)">
+      <node ref="XA1" pin="D4"/>
+    </net>
+    <net code="31" name="Net-(XA1-PadD5)">
+      <node ref="XA1" pin="D5"/>
+    </net>
+    <net code="32" name="Net-(XA1-PadD6)">
+      <node ref="XA1" pin="D6"/>
+    </net>
+    <net code="33" name="Net-(XA1-PadD7)">
+      <node ref="XA1" pin="D7"/>
+    </net>
+    <net code="34" name="Net-(U4-PadVIN)">
+      <node ref="XA1" pin="5V2"/>
+      <node ref="U4" pin="VIN"/>
+    </net>
+    <net code="35" name="Net-(U4-PadSIG)">
+      <node ref="U4" pin="SIG"/>
+    </net>
+    <net code="36" name="Net-(J1-Pad2)">
+      <node ref="U2" pin="1"/>
+      <node ref="J1" pin="2"/>
+      <node ref="U5" pin="OUT+"/>
+    </net>
+    <net code="37" name="Net-(J1-Pad1)">
+      <node ref="U2" pin="2"/>
+      <node ref="U5" pin="OUT-"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="38" name="Net-(U2-Pad7)">
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="39" name="Net-(U2-Pad10)">
+      <node ref="U2" pin="10"/>
+    </net>
+    <net code="40" name="Net-(U2-Pad3)">
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="41" name="Net-(U2-Pad4)">
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="42" name="Net-(U2-Pad5)">
+      <node ref="U2" pin="5"/>
+    </net>
+    <net code="43" name="Net-(U2-Pad6)">
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="44" name="Net-(U2-Pad8)">
+      <node ref="U2" pin="8"/>
+    </net>
+    <net code="45" name="Net-(U2-Pad9)">
+      <node ref="U2" pin="9"/>
+    </net>
+    <net code="46" name="Net-(U1-Pad1)">
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="47" name="Net-(U1-Pad2)">
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="48" name="Net-(U1-Pad3)">
+      <node ref="XA1" pin="SCL"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="49" name="Net-(XA1-PadA5)">
+      <node ref="XA1" pin="A5"/>
+    </net>
+    <net code="50" name="Net-(J2-Pad2)">
+      <node ref="J2" pin="2"/>
+      <node ref="U6" pin="IN+"/>
+      <node ref="U5" pin="IN+"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="51" name="Net-(R1-Pad2)">
+      <node ref="XA1" pin="A0"/>
+      <node ref="R1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="52" name="Net-(XA1-PadA4)">
+      <node ref="XA1" pin="A4"/>
+    </net>
+    <net code="53" name="Net-(XA1-PadA3)">
+      <node ref="XA1" pin="A3"/>
+    </net>
+    <net code="54" name="Net-(XA1-PadA2)">
+      <node ref="XA1" pin="A2"/>
+    </net>
+    <net code="55" name="Net-(XA1-PadA1)">
+      <node ref="XA1" pin="A1"/>
+    </net>
+  </nets>
+</export>

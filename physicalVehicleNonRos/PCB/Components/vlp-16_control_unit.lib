@@ -1,0 +1,39 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# vlp-16
+#
+DEF vlp-16 U 0 40 Y Y 1 F N
+F0 "U" 170 180 60 H I C CNN
+F1 "vlp-16" 430 190 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+C 1180 0 41 0 0 0 N
+C -200 -810 41 1 0 0 N
+T 0 515 -965 59 0 0 0 "Velodyne VLP-16 Control Unit" Normal 0 C C
+S -155 120 1140 -900 0 1 0 N
+S 1145 -840 1220 -700 0 1 0 N
+ENDDRAW
+ENDDEF
+#
+# vlp-16_control_unit
+#
+DEF vlp-16_control_unit U 0 40 Y Y 1 F N
+F0 "U" -200 -360 60 H I C CNN
+F1 "vlp-16_control_unit" 20 -355 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+C -170 -195 10 0 1 0 N
+C 160 -35 11 0 1 0 N
+T 0 -5 -105 12 0 0 0 "Velodyne VLP-16 Control Unit" Normal 0 C C
+S -155 0 145 -230 0 1 0 N
+S 145 -210 170 -150 0 1 0 N
+X vlp_cable ~ -170 -195 0 R 50 0 1 1 I
+X vlp_ethernet ~ 155 -180 0 R 50 0 1 1 I
+X vlp_power ~ 160 -35 0 R 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

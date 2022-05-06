@@ -1,0 +1,17 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# battery
+#
+DEF battery U 0 40 Y Y 1 F N
+F0 "U" -210 -405 60 H I C CNN
+F1 "battery" -10 -405 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+S -285 0 300 -320 0 1 0 N
+X ~ ~ 185 15 0 R 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

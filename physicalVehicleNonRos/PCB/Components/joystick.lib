@@ -1,0 +1,20 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# joystick
+#
+DEF joystick U 0 40 Y Y 1 F N
+F0 "U" 0 0 60 H V C CNN
+F1 "joystick" 0 0 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+S -125 -195 125 -270 0 1 0 N
+S -35 -190 40 -165 0 1 0 N
+P 2 0 1 0  25 -160  -40 -40 N
+P 3 0 1 0  -40 -40  -65 -65  -5 -160 N
+X ~ ~ 0 -270 0 R 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

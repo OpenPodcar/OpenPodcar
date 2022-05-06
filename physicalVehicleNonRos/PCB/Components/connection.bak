@@ -1,0 +1,25 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# junction
+#
+DEF junction U 0 40 Y Y 1 F N
+F0 "U" -210 -265 60 V I C CNN
+F1 "junction" 10 -260 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+C -35 -175 25 0 0 0 N
+C -35 -115 25 0 0 0 N
+C -5 -145 10 0 0 0 N
+C 30 -175 25 0 0 0 N
+C 30 -115 25 0 0 0 N
+S -70 -80 65 -210 0 0 0 N
+X ~ ~ -35 -175 0 D 50 0 1 1 I N
+X ~ ~ -35 -115 0 D 50 0 1 1 I N
+X ~ ~ 30 -175 0 D 50 0 1 1 I N
+X ~ ~ 30 -115 0 D 50 0 1 1 I N
+ENDDRAW
+ENDDEF
+#
+#End Library

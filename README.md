@@ -2,6 +2,9 @@
 
 Open Source Hardware Design and Software for OpenPodcar.
 
+
+Video demo:  https://www.youtube.com/watch?v=ds1t9YaNA98
+
 ## Table of Contents
 I. [General Info](#general-info)
 
@@ -402,11 +405,13 @@ Here, the buck converters voltage and current will be set to the desired values 
 		- Voltage between the DAC **GND** and **OUT** should give a value between **1.9V** and **2.4V**
 			
 ### G. 3D Printing
-- 3D print the LCD part
+The following items need to be 3D printed, the files are located under `physicalVehicleNonRos/3D_parts`:
+- LCD display support part **LCD_support.stl**
+- Velodyne Lidar support part **VLP16_support.stl** 
 
 ### H. Printed Circuit Board (PCB)
 
-Manufacture the PCB board by sending the gerber files to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions. NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
+Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos/PCB/gerber.zip` to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions. NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
 	
 #### 1. Acceptance Testing
 
@@ -417,10 +422,15 @@ Manufacture the PCB board by sending the gerber files to an online PCB manufactu
 
 - Material: soldering iron, headers, Arduino, Pololu, resistors
 - Solder headers for Arduino
-- Solder resistors
-- Solder headers for Pololu
+- Solder a 10K resistor on R2 location
+- Solder a 100K resistor on R1 location
+- Solder female headers for the Pololu
+- Solder the buck converter wires to the respective pins on the board
+- Use M3 bolts and nuts to fix the buck converters, Arduino, LCD display, lidar support onto the board
+- USe M1.5 bolts and nuts to fix the DAC onto the board
+- Use M2 bolts and nuts to fix the Pololu onto the board
 
-			
+
 #### 3. Integration Testing
 
 The PCB board was heavily tested before and after assembling its components to ensure that once it is integrated into the vehicle, there would not be any big issue. 
@@ -440,7 +450,7 @@ The PCB board was heavily tested before and after assembling its components to e
 This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
 
 - Material: 1 deadman push button, 1 relay, wires, female and Male insulated electric connector crimp bullet terminals, a plier
-- A relay is used which interrupts the mobility scooter’s key ignition circuit. If the relay is not energised by the presence of a 5V supply to the Arduino, the vehicle’s movement is disabled. This effectively ensures that if the Arduino is non-functional, for example its power supply has failed or it has been unplugged from the USB port of the control PC and there is a danger that the DAC is not producing the control systems required voltage, the scooter is automatically disabled by effectively switching it off.
+- For the relay: 
 	- Connect a 2-meter wire to the relay's **-** pin 
 	- Connect a 2-meter wire to  both the relay pins **S** and **+**
 	- The relay wires should be as shown in the photo below
@@ -461,14 +471,18 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
-- DMH: A sturdy push button is used which also interrupts the vehicle's key ignition circuit. If the Podcar operator detects any abnormality in operation during operation, he/she simply releases pressure from the DMH switch and the vehicle’s movement is disabled. The DMH switch is wired in series with the relay in the key ignition circuit ensuring that if both the relay contacts and the DMH switch are closed, this is the only condition where the Podcar movement is active.
+- For the DMH: 
 	- Connect a 3-meter wire to the deadman push button
-	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire as shown below:
+	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire as shown in the photo and the circuit diagram below:
 	
 	<p align="center">
-	<img src="./docs/hardware/ignition_wires_dmh.png" alt="Vehicle ignition wires connected to DMH " "width=240" "height=190"/>
+	<img src="./docs/hardware/ignition_wires_dmh.png" alt="Vehicle ignition wires connected to DMH and relay" "width=240" "height=190"/>
 	</p>	
 
+
+	<p align="center">
+	<img src="./docs/hardware/circuitDiagram.png" alt="Vehicle circuit diagram" "width=240" "height=190"/>
+	</p>	
 
 #### B. Speed Potentiometer 
 
@@ -498,7 +512,44 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
 		
 
-## V. <a name="user-guide"></a> User Guide 
+## V. <a name="general-testing"></a> General Testing
+
+### A. Speed control
+
+Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
+
+- Material: jacks
+- Place the jacks on both of the vehicle to raise its wheels off of the ground
+- open a terminal and `cd physicalVehicleNonRos/testingTools/`
+- while pressing on the DMH:
+	- type `python zeroSpeed.py` to zero the speed
+	- type `python fastSpeed.py` to move the vehicle forward (speed commands can be modified)
+	- type `python slowSpeed.py` to move the vehicle backward (speed commands can be modified)
+
+
+### B. Steering Control
+
+The steering can be tested with Linux command. 
+- Connect the Pololu USB to the laptop 
+- Open a terminal and make sure "**physicalVehicleNonRos/testingTools/JrkCmd**" is allowed as an executable
+- type `./OpenPodcar/podcar/physicalVehicleNonRos/testingTools/JrkCmd Val` where "Val" is the desired command e.g. 1900 (straight), 2100 (turning slightly on the right), 1700 (turning slightly on the left) etc. 
+"Val" should be a value between 1000 (fully turned left) and 2500 (fully turned right).
+
+
+### C. Object Detection and Tracking
+
+To run the object detector and tracker:
+- record a ROS bag file with some pedestrians in it
+- change the path of the bag file in **flobot_tracker.launch** to that of your bcd ag file
+- open a terminal and type:
+```
+cd OpenPodcar/catkin_ws/src/FLOBOT
+source devel/setup.bash
+roslaunch flobot_tracker_bringup flobot_tracker.launch
+```
+
+
+## VI. <a name="user-guide"></a> User Guide 
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
@@ -514,45 +565,17 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 - Type:  roscd podcar
 
-- Unplug the laptop’s USB connection and plug it in again.  (HACK) (not really needed ?!)
-
-- Run the test script podcar/tools/pololuCSerialTest/a.out  (HACK) (not really needed ?!)
-
-- Type: roslaunch podcar podcar.launch
 
 - Use the joystick to control steering and speed for manual drive.
 
 - For automation, the steps should be exactly the same as above but with the automation launch file.
 
 
-## VI. <a name="general-testing"></a> General Testing
-
-### A. Speed control
-
-Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
-
-- Material: jacks
-- Place the jacks on both of the vehicle to raise its wheels off of the ground
-- open a terminal and `cd catkin_ws/src/podcar/tools`
-- while pressing on the DMH:
-	- type `python zeroSpeed.py` to zero the speed
-	- type `python fastSpeed.py` to move the vehicle forward (speed commands can be modified)
-	- type `python slowSpeed.py` to move the vehicle backward (speed commands can be modified)
-
-
-### B. Steering Control
-
-The steering can be tested with Linux command. 
-- Connect the Pololu USB to the laptop 
-- Open a terminal and make sure "**catkin_ws/src/podcar/tools/JrkCmd**" is allowed as an executable
-- type `./OpenPodcar/catkin_ws/src/podcar/tools/JrkCmd Val` where "Val" is the desired command e.g. 1900 (straight), 2100 (turning slightly on the right), 1700 (turning slightly on the left) etc. 
-"Val" should be a value between 1500 (fully turned left) and 2500 (fully turned right).
-
-### C. Remote Control
+### A. Remote Control
  
 Once the speed and steering control are tested and work well, the vehicle can be remotely-controlled using a joystick:
 - Check that the lidar Ethernet, Joystcik USB, Pololu USB and Arduino USb cables are all connected to the laptop
-- Change the path of Velodyne point_cloud in *velodyne.launch** to the path corresponding to that of your laptop
+- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` to the path of Velodyne point_cloud in `/launch/podcar.launch` to the path corresponding to that of your laptop
 - Open a terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/podcar
@@ -565,9 +588,9 @@ If the USB ports are well set up, the vehicle can then be simply controlled with
 - X-axis for steering control
  
  
-### D. GMapping, Move_base and TEB planner
+### B. Move_base Control
 
-This section explains how to drive the OpenPodcar autonomous mode.
+This section explains how to drive the OpenPodcar in autonomous control mode using GMapping, move_base and the TEB planner.
 - Check that the lidar Ethernet, Pololu USB and Arduino USb cables are all connected to the laptop
 - Change the path of Velodyne point_cloud in *velodyne.launch** to the path corresponding to that of your laptop
 - open a first terminal and type:
@@ -596,23 +619,19 @@ At this stage, two options are available to send goal commands to the vehicle:
 	```
 	The example command above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 
+The figure below shows the complete ROS node configuration used during this autonomous driving mode.
+	<p align="center">
+	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
+	</p>
+
 Note:
-- the orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
+- the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
 - Recommended to open terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
 	- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
 	- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
+- Other useful commands include for example: `rosrun rqt_graph rqt_graph`, `rosrun tf tf_monitor`, `rosrun tf view_frames`. 
 
-### E. Object Detection and Tracking
 
-To run the object detector and tracker:
-- record a ROS bag file with some pedestrians in it
-- change the path of the bag file in **flobot_tracker.launch** to that of your bcd ag file
-- open a terminal and type:
-```
-cd OpenPodcar/catkin_ws/src/FLOBOT
-source devel/setup.bash
-roslaunch flobot_tracker_bringup flobot_tracker.launch
-```
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
 
@@ -690,10 +709,10 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Check: charger must be disconnected for rear wheels to move (safety feature).
 	
 - Linear Actuator
-	- Diagnostic test commands can be passed to the Polulo using the commands provided in /tools/cmdSteer.   {\em Do not give commands outside the range 1000-2500 as they have mechanically destroyed the the vehicle.} A non-ROS test of the C API for the Pololu is provided in /tools/pololuTestCSerial.
+	- Diagnostic test commands can be passed to the Polulo using the commands provided in /testingTools/cmdSteer.   {\em Do not give commands outside the range 1000-2500 as they have mechanically destroyed the the vehicle.} A non-ROS test of the C API for the Pololu is provided in /testingTools/pololuTestCSerial.
 	
 - Speed
-	- It receives commands of the form “FA:210” as speed commands. The test scripts /tools/zeroSpeed.py and /tools/testSpeed.py can be used to send example commands for debugging.
+	- It receives commands of the form “FA:210” as speed commands. The test scripts /testingTools/zeroSpeed.py and /testingTools/testSpeed.py can be used to send example commands for debugging.
 	
 - Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
@@ -738,9 +757,9 @@ Possible forks could include:
 
 - Port the mechatronics and software to run on other classes of vehicles
 
-We would be very interested to hear about and discuss your plans so please get in touch if interested to contribute or fork. 
+We would be very interested to hear about and discuss your plans, so please get in touch if interested to contribute or fork. 
 
-**Email: openpodcar@gmail.com**
+Email contacts: Fanta Camara (tsfc@leeds.ac.uk / fcamara@lincoln.ac.uk) and/or Charles Fox (chfox@lincoln.ac.uk)
 
 
 ## X. <a name="cite-openpodcar"></a> Cite OpenPodcar
@@ -749,7 +768,7 @@ Please cite the following paper when you use the OpenPodcar.
 
 Plain:
 ```
-Fanta Camara, Chris Waltham, David Churchill, Charles Fox. 
+Fanta Camara, Chris Waltham, Grey Churchill, Charles Fox. 
 OpenPodcar: an Open Source Vehicle for Self-Driving Car Research. 
 Journal of Open Hardware (under review).
 ```
@@ -757,7 +776,7 @@ Bibtex:
 ```
 @Article{camara2022openpodcar,
   Title                    = {OpenPodcar: an Open Source Vehicle for Self-Driving Car Research},
-  Author                   = {Fanta Camara and Chris Waltham and David Churchill and Charles Fox},
+  Author                   = {Fanta Camara and Chris Waltham and Grey Churchill and Charles Fox},
   Year                     = {2022},
   Journal                  = {Journal of Open Hardware (under review)},
 ```

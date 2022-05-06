@@ -1,0 +1,22 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# vlp-16
+#
+DEF vlp-16 U 0 40 Y Y 1 F N
+F0 "U" -215 115 60 H I C CNN
+F1 "vlp-16" 0 115 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+T 0 0 -70 10 0 0 0 Velodyne~LiDAR  Normal 0 C C
+S -60 0 60 -90 0 0 0 N
+P 2 0 0 0  -55 -50  60 -50 N
+P 2 0 0 0  0 -90  -50 -170 N
+P 2 0 0 0  0 -90  50 -170 N
+P 3 0 0 0  -55 -20  55 -20  60 -20 N
+X vlp2unit ~ 35 -100 0 R 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

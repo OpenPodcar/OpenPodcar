@@ -1,0 +1,18 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# deadman_handle
+#
+DEF deadman_handle U 0 40 Y Y 1 F N
+F0 "U" -440 680 60 H I C CNN
+F1 "deadman_handle" -10 680 60 H V C CNN
+F2 "" -10 680 60 H V C CNN
+F3 "" -10 680 60 H V C CNN
+DRAW
+A 10 10 41 -1660 -140 0 1 0 N -30 0 50 0
+S 50 0 -30 130 0 1 0 N
+X wire ~ 10 180 50 D 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

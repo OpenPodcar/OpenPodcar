@@ -1,0 +1,33 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# podcar_steering_control
+#
+DEF podcar_steering_control U 0 40 Y Y 1 F N
+F0 "U" -640 590 60 H I C CNN
+F1 "podcar_steering_control" -40 590 60 H V C CNN
+F2 "" -40 590 60 H V C CNN
+F3 "" -40 590 60 H V C CNN
+DRAW
+C 0 100 94 0 0 0 N
+T 0 110 430 6 0 0 0 key_switch  Normal 0 C C
+T 0 0 110 10 0 0 0 potentiometer  Normal 0 C C
+T 0 -50 430 8 0 0 0 speed_control  Normal 0 C C
+C 110 420 28 0 1 0 N
+S -100 450 0 400 0 1 0 N
+P 2 0 1 0  -150 450  -650 0 N
+P 2 0 1 0  -150 450  150 450 N
+P 2 0 1 0  150 450  700 0 N
+P 3 0 1 0  680 0  -650 0  -640 0 N
+X beige ~ -90 360 50 U 50 0 1 1 I
+X blue ~ 130 370 50 U 50 0 1 1 I
+X brown ~ 100 370 50 U 50 0 1 1 I
+X GND ~ -20 -20 50 U 50 0 1 1 I
+X vout ~ 40 -20 50 U 50 0 1 1 I
+X white ~ -10 360 50 U 50 0 1 1 I
+X yellow ~ -50 360 50 U 50 0 1 1 I
+X ~ ~ 10 -20 50 U 50 0 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library
