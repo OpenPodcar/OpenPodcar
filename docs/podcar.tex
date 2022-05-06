@@ -47,7 +47,7 @@
 	
 	% Include your abstract here MAX 250 words
 	\begin{abstract}
-		OpenPodcar is a low-cost, open source hardware and software, autonomous vehicle research platform based on an off-the-shelf, hard-canopy, mobility scooter donor vehicle. Hardware and software designs are provided to convert the donor vehicle into a low-cost and fully autonomous platform. The open source platform consists of (a) hardware components: CAD designs, bill of materials, and build instructions; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS implementations of standard robot control, including the move\_base interface with Timed-Elastic-Band planner which enacts command to get the vehicle move from one pose to another. The platform is large enough to transport one person at speeds up to 15km/h, for example for use as a last-mile autonomous taxi service or to transport delivery containers similarly around a city center. It is small and safe enough to be parked in a standard research lab and be used for realistic human-vehicle interaction studies. System build cost from new components is around USD7,000 in total in 2022. OpenPodcar platform thus provides a good balance between real world utility, safety, cost and research convenience.
+		OpenPodcar is a low-cost, open source hardware and software, autonomous vehicle research platform based on an off-the-shelf, hard-canopy, mobility scooter donor vehicle. Hardware and software build instructions are provided to convert the donor vehicle into a low-cost and fully autonomous platform. The open platform consists of (a) hardware components: CAD designs, bill of materials, and build instructions; (b) Arduino, ROS and Gazebo control and simulation software files which provide standard ROS interfaces and simulation of the vehicle; and (c) higher-level ROS software implementations and configurations of standard robot autonomous planning and control, including the move\_base interface with Timed-Elastic-Band planner which enacts commands to drive the vehicle from a current to a desired pose around obstacles; (d) software simulation of the vehicle and test environments. The vehicle is large enough to transport a human passenger or similar load at speeds up to 15km/h, for example for use as a last-mile autonomous taxi service or to transport delivery containers similarly around a city center. It is small and safe enough to be parked in a standard research lab and be used for realistic human-vehicle interaction studies. System build cost from new components is around USD7,000 in total in 2022. OpenPodcar thus provides a good balance between real world utility, safety, cost and research convenience.
 	\end{abstract}
 	
 	\begin{longtable}[]{@{}l@{}}
@@ -91,7 +91,7 @@
 	%	\label{fig:teaser}
 	%\end{figure}
 	
-	Autonomous Vehicles (AVs, also known as `self-driving cars'), is a fast-moving research field in both academia and the industry. Open source software (OSS) for localisation, mapping and control is available \cite{kato2018autoware} but hardware vehicle platforms remain expensive and protected, making it difficult for researchers with low resources to develop algorithms or reproduce complete research systems. There is thus a need for a standard, low-cost, reproducible hardware platform, compatible with the standard open source software stack.
+	Autonomous Vehicles (AVs, also known as `self-driving cars'), is a fast-moving research field in both academia and the industry. Open source software (OSS) for localisation, mapping and control of AVs is available \cite{kato2018autoware} but hardware vehicle platforms remain expensive and protected, making it difficult for researchers with low resources to develop algorithms or reproduce complete research systems. There is thus a need for a standard, low-cost, reproducible hardware platform, compatible with the standard open source software stack.
 	
 	Open source hardware (OSH) allows for more effective and accessible sharing and collaboration among researchers \cite{fisher2012open}. By combining OSH and OSS, a standard platform can be produced for use by all members of a research community, who may then reproduce each others work in full, and contribute their new research as functional system components rather than only as reports. Such platforms may evolve from research into development and real-world applications.
 	
@@ -100,9 +100,11 @@
 	\subsection{Related Systems}
 	\label{related_systems}
 	
-	SMART \cite{pendleton2015autonomous} is a design to modify an existing donor golf cart vehicle for automation research, this is of a similar size and power to OpenPodcar. Similarly, iCab (Intelligent Campus Automobile) \cite{gomez2016ros} is research golf car with a ROS (Robot Operating System)-based architecture and that has been tested with Timed-Elastic Band planner \cite{marin-plaza2018global}. However, both SMART and iCab platform designs are not open source. Complete and built mechanical OSH designs for on-road, person-carrying, cars exist, including PixBot \cite{pixmovingpixbot} and Tabby EVO \cite{openmotorstabby}. Building these OSH vehicles is a large task for experts and may require dangerous processes such as welding, purchase of expensive components, and considerable storage space. OpenPodcar is based on a proprietary but commodity mobility scooter which is cheaper and easier to convert than performing these builds. 
+	SMART \cite{pendleton2015autonomous} is a design to modify an existing donor golf cart vehicle for automation research, this is of a similar size and power to OpenPodcar. Similarly, iCab (Intelligent Campus Automobile) \cite{gomez2016ros} is research golf car with a ROS (Robot Operating System)-based architecture and that has been tested with Timed-Elastic Band planner \cite{marin-plaza2018global}. However, these vehicle designs are not open source hardware.
 	
-	Several OSH RC-scale cars have been completed and built such as F1Tenth \cite{f1tenth}, AutoRally \cite{goldfain2019autorally}, BARC \cite{gonzales2018planning}, MIT Racecar \cite{mit}, MuSHR \cite{mushr},  \cite{nakamoto2019development}, and \cite{vincke2021open}. These platforms are not large enough to drive on public roads or to transport people or goods like OpenPodcar. Open Source Ecology (OSE) \cite{jakubowski2003open} is an ambitious project which ultimately aims to develop fully OSH vehicles including a car and tractor. OSE is optimised for reliability and for users in developing countries so it uses hydraulic power rather than electric as used in OpenPodcar. But its vehicle designs are not yet complete.
+	Complete and built mechanical OSH designs for on-road, person-carrying cars exist, including PixBot \cite{pixmovingpixbot} and Tabby EVO \cite{openmotorstabby}. Building these full size cars is a large task for experts and may require dangerous processes such as welding, purchase of expensive components, and considerable storage space. OpenPodcar is based on a proprietary but commodity mobility scooter which is cheaper and easier to convert than performing these builds. 
+	
+	Several OSH RC-scale cars have been completed and built such as F1Tenth \cite{f1tenth}, AutoRally \cite{goldfain2019autorally}, BARC \cite{gonzales2018planning}, MIT Racecar \cite{mit}, MuSHR \cite{mushr},  \cite{nakamoto2019development}, and \cite{vincke2021open}. These platforms are not large enough to drive on public roads or to transport people or goods like OpenPodcar. Open Source Ecology (OSE) \cite{jakubowski2003open} is an ambitious programme of projects which ultimately aims to develop fully OSH vehicles including a car and tractor. OSE is optimised for reliability and for users in developing countries so it uses hydraulic power rather than electric as used in OpenPodcar. But its vehicle designs are not yet complete.
 	
 	Autoware \cite{kato2018autoware} is a heavyweight open source software project to construct a full ROS-based automation stack for on-road cars. Apollo \cite{apolloautoapollo} is an open source self-driving software stack and an open hardware interface which may be implemented on vehicles, as done in \cite{kessler2019bridging}. These systems could be software interfaced to run with OpenPodcar. 
 	
@@ -112,11 +114,11 @@
 	
 	\subsection{Donor vehicle}
 	
-	A Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as Shoprider Traverso, \cite{shoprider2016shoprider}) is used as a donor vehicle. It is an Ackermann-steered \cite{milliken1995race}, hard-canopy, electric mobility scooter. It is powered by two 12V batteries connected in series to provide 24V operating voltage and containing 75Ah. In its standard configuration, its steering is controlled by a human operated loop handle bar. The speed and braking systems are both powered by an electric motor and an electric brake via the trans-axle assembly, controlled by an AC2 digital controller receiving different voltage signals to drive forward or brake. The manual speeding and braking systems are controlled by three buttons connected in series on the handle bar. A toggle switch in parallel with a resistor (10k$\Omega$) to choose speed mode high or low; A speed dial knob via a variable resistor (20k$\Omega$) to choose a maximum speed value; A throttle lever connected with a potentiometer (5k$\Omega$), 2.5k$\Omega$ to 2.6k$\Omega$ for each side to speed or brake. 
+	A Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as Shoprider Traverso, \cite{shoprider2016shoprider}) is used as a donor vehicle. It is an Ackermann-steered \cite{milliken1995race}, hard-canopy, electric mobility scooter. It is powered by two 12V batteries connected in series to provide 24V operating voltage and containing 75Ah. In its standard configuration, its steering is controlled by a human-operated loop handle bar. The speed and braking systems are both powered by an electric motor and an electric brake via the trans-axle assembly, controlled by an AC2 digital controller receiving different voltage signals to drive forward or brake. The manual speeding and braking systems are controlled by three buttons connected in series on the handle bar. A toggle switch in parallel with a resistor (10k$\Omega$) to choose speed mode high or low; A speed dial knob via a variable resistor (20k$\Omega$) to choose a maximum speed value; A throttle lever connected with a potentiometer (5k$\Omega$), 2.5k$\Omega$ to 2.6k$\Omega$ for each side to speed or brake. 
 	
 	\subsection{Mechanical Modification for Steering}
 	
-	To automate steering, a Gimson GLA750-P 12V DC linear actuator with position feedback is mounted between an anchor on the underside of the chassis and the car's front axle via bearings.  This actuator has a 8mm/s full load (750N) speed and 250mm stroke length (installation length is 390mm). To access the underside of the vehicle, two axle stands are used as shown in Fig. \ref{fig:axelStands}. There is an existing hole in the right front wheel axle. The linear actuator was mounted via a rear hole to the left side of the front chassis and connected through the front hole of the actuator with the hole in the car's right front wheel axle via bearings as shown in Figs. \ref{fig:actuatorMounted} and \ref{fig:steering}.
+	To automate steering, a Gimson GLA750-P 12V DC linear actuator with position feedback is mounted between an anchor on the underside of the chassis and the car's front axle via bearings.  This actuator has a 8mm/s full load (750N) speed and 250mm stroke length (installation length is 390mm). To access the underside of the vehicle, two axle stands are used as shown in Fig. \ref{fig:axelStands}. There is an existing hole in the right front wheel axle. The linear actuator is mounted via a rear hole to the left side of the front chassis and connected through the front hole of the actuator with the hole in the car's right front wheel axle via bearings as shown in Figs. \ref{fig:actuatorMounted} and \ref{fig:steering}.
 	
 	
 	\begin{figure}
@@ -140,7 +142,7 @@
 	
 	\begin{figure}[h]
 		\includegraphics[width=\columnwidth]{hardware/steering1.png}
-		\caption{The bottom view of front wheels steering relationship including geometric coefficients}
+		\caption{Underside view of front wheels' steering relationship including geometric coefficients}
 		\label{fig:steering}
 	\end{figure}
 	
@@ -154,15 +156,15 @@
 	\end{figure*}
 	
 	
-	The new vehicle electronics, which require different voltage power supplies (cf. Fig. \ref{fig:circuitDiagram}), are presented on a PCB (Printed Circuit Board), as shown in Figs.~\ref{fig:pcb_design} and \ref{fig:pcb_assembled}. This is convenient as it reduces the number of small wires between the components by having them directly drawn on the board, and packages them together.
+	The new vehicle electronics, which various different voltage power supplies (cf. Fig. \ref{fig:circuitDiagram}), are packaged on a single new PCB (Printed Circuit Board), as shown in Figs.~\ref{fig:pcb_design} and \ref{fig:pcb_assembled}. This is convenient as it reduces the number of small wires between the components by having them directly drawn on the board, and packages them together.
 	
-	As an OSH design, the PCB hosts several daughter boards, mounted using headers. The physical structure of the large PCB comprised of these smaller components reflects the OSH design itself. There are two DC-DC Buck converters with an XL4016 regulator, an Arduino Uno, an MCP4725 DAC (Digital-Analog Converter), a Pololu Jrk 21v3 motor controller with position feedback for the linear actuator, 2 resistors (10k$\Omega$ and 100k$\Omega$) for the potential divider and 2 terminal blocks. 3D printed parts support the mounting of the LCD and the 3D lidar to the board. A 3D printed enclosure protects the PCB board, as shown in Fig.~\ref{fig:pcb_enclosure}.
+	As an OSH design, the PCB hosts several daughter PCBs, mounted using headers. The physical structure of the large PCB comprised of these smaller PCBs reflects the OSH design itself. There are two DC-DC Buck converters with an XL4016 regulator, an Arduino Uno, an MCP4725 DAC (Digital-Analog Converter), a Pololu Jrk 21v3 motor controller with position feedback for the linear actuator, two resistors (10k$\Omega$ and 100k$\Omega$) for the potential divider and two terminal blocks. 3D-printed parts support the mounting of the LCD and the 3D lidar to the board. A 3D printed enclosure mounts and protects the PCB board, as shown in Fig.~\ref{fig:pcb_enclosure}.
 	
 	\begin{figure}
 		\centering
 		\includegraphics[width=0.6\linewidth]{hardware/pcb_enclosure.jpg}
 		\caption{PCB enclosure mounted on the vehicle (top left, white box).}
-		\label{fig:pcb_enclisure}
+		\label{fig:pcb_enclosure}
 	\end{figure}
 	
 	\begin{figure}
@@ -186,9 +188,9 @@
 	
 	\subsection{Steering Automation System}
 	
-	The front wheels are steered by a Pololu Jrk 21v3 PID controller, and it takes serial port desired positions as input. It also takes feedback position information as an analog voltage from the linear actuator as an input. It outputs analog high-power voltages to the linear actuator. A freely available Windows program from Pololu is required (once, at build time) to set the PID parameters for the linear actuator, the detail of this process is explained in the documentation. 
+	The front wheels are steered by a Pololu Jrk 21v3 PID controller-driver, which takes serial port desired positions as input. It also takes feedback position information as an analog voltage from the linear actuator as an input. It outputs analog high-power voltages to the linear actuator. A gratis, closed-source, Windows program from Pololu is required once, at build time, to set the PID parameters for the linear actuator. 
 	
-	The relationship between the required central turning angle $\theta$ of the pair of front wheels and extending length $l$ of linear actuator is,    
+	The relationship between the required central turning angle $\theta$ of the pair of front wheels and extending length $l$ of linear actuator as in Fig. \ref{fig:steering} is given by,    
 	\begin{gather}
 	\theta = \alpha - \arctan(\frac{W}{2H}) \\
 	% update W and H in figure. W is the width between two front wheels and H is the distance between front wheel and rear wheel.
@@ -197,7 +199,7 @@
 	y = r_1 \sin(\beta) \\
 	l = \sqrt{(x_0-x)^2 + (y_0-y)^2} - L + l_0    
 	\end{gather}    
-	Where $r_1$, $x_0$, $y_0$, $W$, $H$ and $L$ are the geometric coefficients shown in Fig.1. Among them, the value of $y_0$ is negative. $l_0$ is the initial value of the linear actuator position feedback. Table \ref{tab:linear_actuator} shows the acceptable commands for the linear actuator, giving commands outside this range may mechanically destroy the system.  
+	where $r_1$, $x_0$, $y_0$, $W$, $H$ and $L$ are the geometric coefficients shown in Fig.1. Among them, the value of $y_0$ is negative. $l_0$ is the initial value of the linear actuator position feedback. Table \ref{tab:linear_actuator} specifies the acceptable serial port commands for the linear actuator. Sending commands outside this range may mechanically destroy the system.  
 	\begin{table}
 		\begin{center}
 			\caption{Linear actuator acceptable command ranges.}
@@ -205,9 +207,10 @@
 			\begin{tabular}{ c c }
 				\hline
 				FA:cmd     &  Effect \\
-				2500    &    max right i.e $\sim$ -45 deg \\
-				1900    &    center i.e $\sim$ 0 deg \\ 
-				1000    &    max left i.e $\sim$ +45 deg \\
+				\hline
+				2500    &    turn max right i.e $\sim$ -45 deg \\
+				1900    &    center wheels i.e $\sim$ 0 deg \\ 
+				1000    &    turn max left i.e $\sim$ +45 deg \\
 				\hline\\
 			\end{tabular}
 		\end{center}   
@@ -221,7 +224,7 @@
 	
 	An Arduino UNO \cite{oxer2011practical} is used to send electric signals to the vehicle's motor controller in place of the donor vehicle’s paddle controller’s potentiometer. An Adafruit MCP4725 DAC is connected to the Arduino as in Fig. \ref{fig:circuitDiagram}, and is used to send clean analog speed command voltages to the donor vehicle’s internal controller.
 	
-	Arduino firmware source is supplied in the distribution. When uploaded to the Arduino (using the standard Arduino IDE running on the laptop), the firmware provides a simple serial port API running at 112,000 baud. It receives commands of the form ``FA:210'' as speed commands. Table \ref{tab:speed_commands} summarises the range of speed commands and their corresponding output voltages. 
+	Arduino firmware source is supplied in the distribution. When uploaded to the Arduino (using the standard Arduino IDE running on the laptop), the firmware provides a simple serial port API running at 112,000 baud. It receives commands of the form `FA:210' as speed commands. Table \ref{tab:speed_commands} summarises the range of speed commands and their corresponding output voltages. 
 	
 	\begin{table}
 		\begin{center}
@@ -230,6 +233,7 @@
 			\begin{tabular}{ l c c }
 				\hline
 				Command   &    Voltage            &  Effect \\
+				\hline
 				FA:0      &    0                  & very fast reverse  \\
 				FA:80     &    $\sim 0.9$         & fast reverse (ROS limit) \\
 				FA:132    &   $\sim 1.5$          & slowest reverse motion  \\
@@ -243,9 +247,11 @@
 		\end{center}    
 	\end{table}
 	
-	To start the ignition, the car safety system requires the control voltage to be in the dead range. A problem is that this doesn’t correspond precisely to any fixed speed bytes, due to the USB power issues.  But if we pick a number solidly in the center of the dead zone, such as 164, this will work for most USB supplies. (i.e. when the vehicle’s battery is flatter, the voltages provided to USB power by it are lower. For example, we might send 164 and get 1.9V instead of the usual 2.26V.) This may result in the vehicle not starting -- maybe by design or accident -- this produces a beep as is outside the start zone. 
+	To start the ignition, the car safety system requires the control voltage to be in the dead range. A problem is that this doesn’t correspond precisely to any fixed speed bytes, due to floating USB power level issues.  But if we pick a number solidly in the center of the dead zone, such as 164, this will work for most USB supplies. (i.e. when the vehicle’s battery is flatter, the voltages provided to USB power by it are lower. For example, we might send 164 and get 1.9V instead of the usual 2.26V.) This may result in the vehicle not starting and producing an audible warning beep instead.
 	
-	The Arduino gets lower power e.g. max 4.9V instead of 5V, which gets divided by the DAC value. To deal with these instabilities, we added a potential divider at the battery to check the voltage and control the podcar accordingly, as in Fig. \ref{fig:potential_divider}. We provide a ``BV'' command in the Arduino serial protocol which allows callers to request the current battery voltage. This can then be used by the higher-level (Python) systems to decide what speed bytes to sent, including compensating for the floating dead zone.
+	Also due to floating voltages from the battery, the Arduino typically receives a lower power e.g. 4.9V instead of its ideal 5V, which gets divided by the DAC value in some calculations. 
+	
+	To deal with these instabilities, a potential divider is added to the battery to monitor its  voltage and compensate the podcar control accordingly, as in Fig. \ref{fig:potential_divider}. A ``BV'' command is provided in the Arduino serial protocol which allows callers to request this current battery voltage. This can then be used by higher-level (Python) systems to decide what speed bytes to sent, including compensating for the floating dead zone.
 	
 	\begin{figure}
 		\centering
@@ -261,23 +267,23 @@
 	The system expects to hear two incoming ROS control messages: /speedcmd\_meterssec and /wheelAngleCmd, which contain single floats representing the desired speed in meters per second, and the desired front wheel orientation in radians respectively. These two messages are received by ROS nodes speedm2arduino and wheelAngle2Pololu, which are ROS drivers for the Arduino speed controller and the Polulo steering controller respectively. Converters from a standard ROS USB joystick driver node to the speed and angle command interface messages are provided, by joystick2speedms and joystick2wheelAngle. These use the $y$ axis of a joystick for speed and $x$ for steering.
 	
 	\subsection{3D Lidar Sensor}
-	A Velodyne VLP-16 lidar sensor is mounted on the vehicle roof using a Manfrotto Black Digi Table Tripod 709B. It is mounted at a 10 degree tilt downwards (to allow pedestrians to be most clearly seen in the 16 scan lines). The lidar has a ROS driver whose installation is detailed in the documentation. 
+	A Velodyne VLP-16 lidar sensor is mounted on the vehicle roof using a Manfrotto Black Digi Table Tripod 709B. It is mounted at a 10 degree tilt downwards (to allow pedestrians to be most clearly seen in the 16 scan lines). The lidar has a ROS driver. 
 	
 	\subsection{High-Level Automation Software}
 	
 	
 	\subsubsection{Localisation and Mapping System}
 	
-	Simultaneous Localisation and Mapping (SLAM) \cite{thrun2002probabilistic} is the robotic task of inferring the robot’s location at the same time as building a map of its environment, which is a classic `chicken and egg’ problem as the two subtasks depend on one another. Solving SLAM is an NP-hard problem but many standard approximations exist. GMapping \cite{yuen2017improved} is a ROS implementation of a Rao-Blackwellized Particle Filter (RBPF) in which ``each particle carries an individual map of the environment''. The information carried by each particle overlaps, and an estimation of a map can be built based on these relationships. As the robot moves around the environment, these estimations are stored, and when a ‘feedback loop’ is closed, the estimations cascade into a portion of the completed map. These maps take the form of 2D occupancy grids, and can be used later by the navigation stack to plan paths around the environment. GMapping was tested on OpenPodcar both online in 2D SLAM mode and offline for mapping purposes only with very accurate localisation and map results. To provide reliable odometry data for GMapping, ROS laser\_scan\_matcher package was used to serve as a stand-alone odometry estimator that matches consecutive laserscans.
+	Simultaneous Localisation and Mapping (SLAM) \cite{thrun2002probabilistic} is the robotic task of inferring the robot’s location at the same time as building a map of its environment, which is a classic `chicken and egg’ problem as the two subtasks depend on one another. Solving SLAM is an NP-hard problem but many standard approximations exist. GMapping \cite{yuen2017improved} is a ROS implementation of a Rao-Blackwellized Particle Filter (RBPF) in which ``each particle carries an individual map of the environment''. The information carried by each particle overlaps, and an estimation of a map can be built based on these relationships. As the robot moves around the environment, these estimations are stored, and when a ‘feedback loop’ is closed, the estimations cascade into a portion of the completed map. These maps take the form of 2D occupancy grids, and can be used later by the navigation stack to plan paths around the environment.  To provide reliable odometry data for GMapping, ROS laser\_scan\_matcher package is used  as a stand-alone odometry estimator that matches consecutive laserscans.
 	
 	
 	\subsubsection{Path Planning and Control}
 	
-	Path planning is the autonomous selection of an entire desired trajectory for a robot to get from a current pose to a desired pose. Path control (or path following) is then the real-time process of executing a path plan by interactively monitoring the robot’s state and sending commands to motors, to make the actualized path close to the desired path. The OpenPodcar software includes path planning and control with the standard ROS tool move\_base and Timed Elastic Band (TEB) \cite{rosmann2013efficient} plugin. These tools implement the requirement geometry of Dubins paths \cite{dubins1957curves} and Ackermann steering. The values for parameters such as minimum turning radius were calculated from the technical specifications of the base vehicle \cite{shoprider2016shoprider}.
+	Path planning is the autonomous selection of an entire desired trajectory for a robot to get from a current pose to a desired pose. Path control (or path following) is then the real-time process of executing a path plan by interactively monitoring the robot’s state and sending commands to motors, to make the actualized path close to the desired path. The OpenPodcar software includes path planning and control with the standard ROS tool move\_base and Timed Elastic Band (TEB) \cite{rosmann2013efficient} plugin. These tools implement the requirement geometry of Dubins paths \cite{dubins1957curves} and Ackermann steering. The values for parameters such as minimum turning radius have been calculated from the technical specifications of the base vehicle \cite{shoprider2016shoprider}.
 	
 	\subsubsection{Pedestrian Detection and Tracking}
 	
-	A pedestrian detector and tracker ROS package are included in the system.  The lidar-based detections are classified by a SVM (Support Vector Machine) classifier, then a Bayesian multi-target tracker is used to track pedestrians over time. These modules re-use OSS from the EU FLOBOT project \cite{yan2020robot}. The package is integrated into OpenPodcar and is now part of the repository.
+	A pedestrian detector and tracker ROS package are included in the system.  The lidar-based detections are classified by a SVM (Support Vector Machine) classifier, then a Bayesian multi-target tracker is used to track pedestrians over time. These modules re-use OSS from the EU FLOBOT project \cite{yan2020robot}, merged into the repository.
 	
 	
 	\subsection{Simulation}
@@ -319,7 +325,7 @@
 		\label{fig:gazebo_new_worlds}
 	\end{figure}
 	
-	A robotics simulation of the vehicle is provided for use in Gazebo 7 \cite{koenig2004design} under ROS Kinetic and Ubuntu 16.04 (Xenial). The simulation implements the same ROS interface as the physical vehicle system to enable plug and play inter-operability between them. The physics model is based on a simplified vehicle geometry with two large cuboids containing the vehicles’ mass, as shown in Fig. \ref{fig:physSim}. Wheel geometry, friction, and motor driver parameters were measured from the physical vehicle. A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes. The main difference with the real vehicle is that the effects of the linear actuator are represented by a tracking rod, where is mounted the Kinect sensor used in place of the lidar, as found in Fig. \ref{fig:sim_world}.
+	A physical simulation of the vehicle is provided for use in Gazebo 7 \cite{koenig2004design} under ROS Kinetic and Ubuntu 16.04 (Xenial). The simulation implements the same ROS interface as the physical vehicle system to enable plug and play inter-operability between them. The physics model is based on a simplified vehicle geometry with two large cuboids containing the vehicles’ mass, as shown in Fig. \ref{fig:physSim}. Wheel geometry, friction, and motor driver parameters were measured from the physical vehicle. A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes. The main difference with the real vehicle is that the effects of the linear actuator are represented by a tracking rod, where is mounted the Kinect sensor used in place of the lidar, as found in Fig. \ref{fig:sim_world}.
 	
 	A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Fig. \ref{fig:sim_world}. Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control. Moreover, the open source Blender 3D add-on, called MapsModelsImporter \cite{michelmaps}, was used to create further 3D worlds representative of the University of Lincoln campus, the testing area for the OpenPodcar, and the University of Leeds campus.
 	
@@ -363,7 +369,7 @@
 	%TODO say how many kilometers have been driven in manual and autonomous modes to date, over how many months, and how many electrical failures occured.
 	
 	
-	For new builds, a series of sub-component (e.g. Pololu, DAC) acceptance tests, component (e.g. PCB, lidar) hardware unit tests, and system integration tests are defined and included as formal, non-optional steps in the build instructions.  The structure of the tests is designed to enable build problems to be immediately localised, so that passing one test means that a failure of the next one must be due to build steps that have occurred between them. Below is a summary of these tests.
+	A series of sub-component (e.g. Pololu, DAC) acceptance tests, component (e.g. PCB, lidar) hardware unit tests, and system integration tests are defined and included as formal, non-optional steps in the build instructions.  The structure of the tests is designed to enable build problems to be immediately localised, so that passing one test means that a failure of the next one must be due to build steps that have occurred between them. Below is a summary of these tests.
 	
 	At component level, an external power supply, a multi-meter, a clamp meter and a breadboard with some wires are frequently used to recreate smaller electronic circuits in order to check the voltages, currents and the correct functioning of each component during the build. For instance, a circuit with an external power supplying 5V to the Arduino connected to the DAC is temporally created to test the Arduino code and its communication with the DAC.  Similarly, another test circuit is created with an external power supplying 12V to the Pololu connected to the linear actuator to send direct commands via the Windows program used to fix the PID parameters. These hardware unit tests are essential to the success of components' integration to the vehicle and make things easier later. 
 	
@@ -444,7 +450,7 @@
 	
 	%The material used in this work is commercially 
 	
-	The design is made under CERN-OSH-W licence which allows for the use of commercially available proprietary components such as the off-the-shelf donor vehicle. However the design is intended to be easily modifiable for transfer to other base vehicles, including those which are OSH at lower levels. The PCB can be manufactured by many online PCB manufacturers. The additional mechanical and electronics used are common parts available from standard online vendors. 
+	The design is made under the CERN-OSH-W licence which allows for the use of commercially available proprietary components such as the off-the-shelf donor vehicle. However the design is intended to be easily modifiable for transfer to other base vehicles, including those which are OSH at lower levels. The PCB can be manufactured by many online PCB manufacturers. The additional mechanical and electronics used are common parts available from standard online vendors. 
 	
 	\subsection{Ease of Build}\label{h.wg823sgyb1e4}
 	
@@ -468,7 +474,7 @@
 	
 	%\textbf{Persistent identifier:} e.g. DOI, etc.
 	
-	\textbf{Project repository:} \url{https://github.com/fantastic-robot/podcar}
+	\textbf{Project repository:} \url{https://github.com/OpenPodcar}
 	%\url{https://github.com/OpenPodcar} %TODO get this online
 	
 	\textbf{Licence:} CERN-OHL-W 
@@ -486,7 +492,7 @@
 	
 	%Conclusions, learned lessons from design iterations, learned lessons from use cases, summary of results.
 	
-	OpenPodcar is a multi-purpose hardware and software platform for autonomous vehicle research. It provides the required hardware and software tools to carry out research in this field. The platform has a lower-level stack, a higher-level stack and a simulator for initial testing. It has several safety features to prevent hazards. The general testing carried on the vehicle shows a robust and safe design. Several use cases have been identified and successfully tested. OpenPodcar is open source to allow further improvements and extensions of its capabilities from the community. The replication of this work on a 2nd vehicle will help identify issues and improve the documentation.
+	OpenPodcar is a multi-purpose hardware and software platform for autonomous vehicle research. It provides the required hardware and software tools to carry out research in this field. The platform has a lower-level stack, a higher-level stack and a simulator for initial testing. It has several safety features to prevent hazards. The general testing carried on the vehicle shows a robust and safe design. Several use cases have been identified and successfully tested. OpenPodcar is open source to allow further improvements and extensions of its capabilities from the community. The replication of this work on a second and later vehicles will help identify build issues and continually improve the documentation.
 	
 	\subsection{Future Work}\label{h.neocsr410zj}
 	

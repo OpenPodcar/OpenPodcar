@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="INBLincoln_3DMap">
+   <static>true</static>
+    <link name="link">
+      <inertial>
+        <mass>100000.1</mass>
+        <inertia>
+          <ixx>2.2343</ixx>
+          <ixy>-0.023642</ixy>
+          <ixz>0.275174</ixz>
+          <iyy>3.42518</iyy>
+          <iyz>0.00239624</iyz>
+          <izz>2.1241</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+       <geometry>
+          <mesh>
+             <uri>model://INBLincoln_3DMap/Meshes/INBLincolnDAE_focus4/INBLincoln_focus4.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+      <pose>0 0 -25. 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://INBLincoln_3DMap/Meshes/INBLincolnDAE_focus4/INBLincoln_focus4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
