@@ -6,6 +6,9 @@ Open Source Hardware Design and Software for OpenPodcar.
 Video demo:  (https://www.youtube.com/watch?v=ds1t9YaNA98)
 
 
+[![OpenPodcar mapping, planning and obstacle avoidance](https://img.youtube.com/vi/ds1t9YaNA98/0.jpg)](https://www.youtube.com/watch?v=ds1t9YaNA98)
+
+
 ## Table of Contents
 I. [General Info](#general-info)
 
@@ -431,7 +434,7 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 - Solder the buck converter wires to the respective pins on the board
 - Use M3 bolts and nuts to fix the buck converters, Arduino, LCD display, lidar support onto the board
 - USe M1.5 bolts and nuts to fix the DAC onto the board
-- Use M2 bolts and nuts to fix the Pololu onto the board
+- Use M2.5 bolts and nuts to fix the Pololu onto the board
 
 
 #### 3. Integration Testing
