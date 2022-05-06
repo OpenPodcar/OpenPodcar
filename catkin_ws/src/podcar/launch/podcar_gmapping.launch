@@ -3,7 +3,7 @@
    <!-- <node name="map_server" pkg="map_server" type="map_server" args="$(find podcar)/scans/fab_lab.yaml"/>  -->
    <!-- <<node name="map_server" pkg="map_server" type="map_server"/> -->
 
- <!--
+
     <node pkg="gmapping" type="slam_gmapping" name="gmapping" output="screen" >
         <remap from="scan" to="sensor_msgs/LaserScan" />
         <param name="odom_frame" value="odom" />
@@ -44,7 +44,7 @@
 				<param name="lasamplestep" value="0.005"/>
     </node>  
  
- 
+ <!-- 
 
       
   <arg name="use_map_topic" default="true"/>
