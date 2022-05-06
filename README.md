@@ -89,7 +89,7 @@ Obtain the following components, which are available from many commercial suppli
 - breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
 - multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
 - clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
-- Flathead and Phillips screwdrivers, pliers, automatic wire stripper [TODO etc -- what??]
+- Flathead and Phillips screwdrivers, pliers, automatic wire stripper
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
 ## III. <a name="software-setup"></a> Software Setup
@@ -104,13 +104,14 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 **NB:** Pololu JRK 21v3 Configuration requires the installation of a Windows app, which does not work on linux.
 
 ### 2. Arduino
+- Install Arduino IDE on the Ubuntu laptop, instructions can be found [here](https://ubuntu.com/tutorials/install-the-arduino-ide#1-overview)
 - Download the MCP4725 library file and place it into Arduino's **"LIBRARIES"** folder
-- Arduino firmware source is supplied in the distribution ThrottleControlSerial.ino
+- Arduino firmware source is supplied in the distribution `physicalVehicleNonRos/Arduino/ThrottleControlSerial.ino`
 - Connect the Arduino USB to the laptop
 - Open Arduino IDE and the ThrottleControlSerial.ino file
 - Click on **Upload**
 - **Testing**
-	- open Arduino serial monitor 
+	- click on **Tools**, then **Serial Monitor** 
 	- set baudrate to 115000
 	- type in some commands such as:
 		- **"FA:170"** for zeroing
@@ -424,6 +425,7 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 - Solder headers for Arduino
 - Solder a 10K resistor on R2 location
 - Solder a 100K resistor on R1 location
+- Solder the two terminal blocks to their respective locations
 - Solder female headers for the Pololu
 - Solder the buck converter wires to the respective pins on the board
 - Use M3 bolts and nuts to fix the buck converters, Arduino, LCD display, lidar support onto the board
