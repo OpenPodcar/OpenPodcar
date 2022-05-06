@@ -3,7 +3,7 @@
 Open Source Hardware Design and Software for OpenPodcar.
 
 
-[![OpenPodcar mapping, planning and obstacle avoidance](https://img.youtube.com/vi/ds1t9YaNA98/0.jpg)](https://www.youtube.com/watch?v=ds1t9YaNA98)
+[![OpenPodcar mapping, planning and obstacle avoidance][width=350](https://img.youtube.com/vi/ds1t9YaNA98/0.jpg)](https://www.youtube.com/watch?v=ds1t9YaNA98)
 
 
 ## Table of Contents
@@ -58,6 +58,7 @@ Obtain the following components, which are available from many commercial suppli
 - 1 USB mini B cable (Pololu <-> Laptop)
 - 1 Ethernet cable (Velodyne <-> Laptop) 
 - 1 deadman push button for the vehicle ignition system e.g. [Link to product](https://www.ebay.co.uk/itm/Philmore-30-825-SPST-Hand-Held-Push-Button-Switch-N-O/253746249505?epid=17011384611&hash=item3b14747f21:g:GdEAAOSwdA5bRopR)
+- 3-meter rubber cable e.g. [Link to product](https://www.design-restoration-spares.com/product/real-rubber-cable-3-core-black/) 
 - 1 Joystick with its USB cable e.g. [Link to product](https://www.logitechg.com/en-gb/products/space/extreme-3d-pro-joystick.942-000031.html)
 - 1 Manfrotto Black Digi Table Tripod 709B e.g. [Link to product](https://www.manfrotto.com/ie-en/black-digi-table-tripod-709b/)
 - 1 Inline car fuse e.g. [Link to product](https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
@@ -83,7 +84,7 @@ Obtain the following components, which are available from many commercial suppli
 ### 3. Tools
 - Soldering iron
 - Solder
-- Gauge Wires 
+- Gauge wires
 - Female and Male insulated electric connector crimp bullet terminals e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
 - Female and Male insulated crimp bullet terminals e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
 - Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
@@ -452,7 +453,7 @@ The PCB board was heavily tested before and after assembling its components to e
 
 This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
 
-- Material: 1 deadman push button, 1 relay, wires, female and Male insulated electric connector crimp bullet terminals, a plier
+- Material: 1 deadman push button, 1 relay, wires (2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
 - For the relay: 
 	- Connect a 2-meter wire to the relay's **-** pin 
 	- Connect a 2-meter wire to  both the relay pins **S** and **+**
@@ -475,8 +476,8 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
 - For the DMH: 
-	- Connect a 3-meter wire to the deadman push button
-	- Connect the deadman wire to the wire linking the relay **NO** pin and the ignition **blue** wire as shown in the photo and the circuit diagram below:
+	- Connect the 3-meter rubber cable to the deadman push button
+	- Connect the deadman handle cable to the wire linking the relay **NO** pin and the ignition **blue** wire as shown in the photo and the circuit diagram below:
 	
 	<p align="center">
 	<img src="./docs/hardware/ignition_wires_dmh.png" alt="Vehicle ignition wires connected to DMH and relay" "width=240" "height=190"/>
@@ -698,7 +699,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Check: is the control voltage is the dead zone ? It should be.
 
 - Rear wheels do not move, control voltages are correct
-	- Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 1.8 for forward and backwards.
+	- Control voltages means the display on the voltmeter LED. Should be above 1.2 or below 2.2 for forward and backwards.
 
 	- Check: main vehicle battery level, by connecting the vehicle charger and inspecting the battery charge level. Problem occurs if the battery is nearly flat.
 
@@ -708,7 +709,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Diagnostic test commands can be passed to the Polulo using the commands provided in /testingTools/cmdSteer.   {\em Do not give commands outside the range 1000-2500 as they have mechanically destroyed the the vehicle.} A non-ROS test of the C API for the Pololu is provided in /testingTools/pololuTestCSerial.
 	
 - Speed
-	- It receives commands of the form “FA:210” as speed commands. The test scripts /testingTools/zeroSpeed.py and /testingTools/testSpeed.py can be used to send example commands for debugging.
+	- It receives commands of the form **“FA:210”** as speed commands. The test scripts /testingTools/zeroSpeed.py and /testingTools/testSpeed.py can be used to send example commands for debugging.
 	
 - Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
