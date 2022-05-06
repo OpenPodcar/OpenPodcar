@@ -3,9 +3,6 @@
 Open Source Hardware Design and Software for OpenPodcar.
 
 
-Video demo:  (https://www.youtube.com/watch?v=ds1t9YaNA98)
-
-
 [![OpenPodcar mapping, planning and obstacle avoidance](https://img.youtube.com/vi/ds1t9YaNA98/0.jpg)](https://www.youtube.com/watch?v=ds1t9YaNA98)
 
 
@@ -585,6 +582,9 @@ roslaunch podcar podcar.launch
 If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
 - Y-axis for speed control
 - X-axis for steering control
+
+
+[![OpenPodcar mapping, planning and obstacle avoidance](https://img.youtube.com/vi/BkFPPu0EdiM&list=PLjrJD5nSYNjpbveXYNO8JOb7u0i1LKBe0&index=6/0.jpg)](https://www.youtube.com/watch?v=BkFPPu0EdiM&list=PLjrJD5nSYNjpbveXYNO8JOb7u0i1LKBe0&index=6)
  
  
 ### B. Move_base Control
