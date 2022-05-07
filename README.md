@@ -2,8 +2,7 @@
 
 Open Source Hardware Design and Software for OpenPodcar.
 
-
-[![OpenPodcar mapping, planning and obstacle avoidance](https://img.youtube.com/vi/ds1t9YaNA98/0.jpg)](https://www.youtube.com/watch?v=ds1t9YaNA98)
+https://user-images.githubusercontent.com/34858915/167229564-66cfdd58-e557-440d-9592-22a94d02b60d.mp4
 
 
 ## Table of Contents
