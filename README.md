@@ -557,6 +557,9 @@ roslaunch flobot_tracker_bringup flobot_tracker.launch
 
 ## VI. <a name="user-guide"></a> User Guide 
 
+https://user-images.githubusercontent.com/34858915/167232380-c03a253a-c92c-4cf6-9b76-fccac6fb3c3a.mov
+
+
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
 - Power on the vehicle using the original on-off switch located under the seat on the left. It is marked ON-OFF.
