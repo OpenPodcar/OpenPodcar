@@ -563,7 +563,7 @@ An RViz windows should display the scene and shows bounding boxes of detected pe
 
  
 
-https://user-images.githubusercontent.com/34858915/167267287-185677df-550a-4b80-8e40-7558b00a451f.mp4
+https://user-images.githubusercontent.com/34858915/167267506-ec5d1657-a195-4d71-8bdb-d50582e23139.mov
 
 
 
