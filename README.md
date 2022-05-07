@@ -610,7 +610,10 @@ roslaunch podcar podcarsim_moveBase_sim2real.launch
 
 At this stage, two options are available to send goal commands to the vehicle:
 - Option 1: RViz GUI
-	- Use RViz graphical user interface to set a goal command for the vehicle using the green arrow
+	- Use RViz graphical user interface to set a **2D Nav goal** command for the vehicle using the green arrow, as shown in the following video
+
+https://user-images.githubusercontent.com/34858915/167232706-510a6dc0-5f58-47dc-bcd7-9da5902f4691.mov
+
 
 - Option 2: Terminal 
 	- open a third terminal and type:
@@ -619,6 +622,8 @@ At this stage, two options are available to send goal commands to the vehicle:
 	source devel/setup.bash
 	rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "frame_id: 'map' pose: position: x: 2.0 y: 0.0 z: 0.0 orientation: x: 0.0 y: 0.0 z: 0.0 w: 1.0"
 	```
+	Note: the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
+	
 	The example command above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 
 The figure below shows the complete ROS node configuration used during this autonomous driving mode.
@@ -627,8 +632,7 @@ The figure below shows the complete ROS node configuration used during this auto
 	</p>
 
 Note:
-- the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
-- Recommended to open terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
+- It is recommended to open terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
 	- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
 	- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
 - Other useful commands include for example: `rosrun rqt_graph rqt_graph`, `rosrun tf tf_monitor`, `rosrun tf view_frames`. 
