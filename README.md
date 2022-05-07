@@ -560,7 +560,7 @@ roslaunch flobot_tracker_bringup flobot_tracker.launch
 ```
 An RViz windows should display the scene and shows bounding boxes of detected people and their tracks, as shown below.
 
-https://user-images.githubusercontent.com/34858915/167267641-a07e7792-79e9-4941-8eaf-3f8934effa53.mov
+https://user-images.githubusercontent.com/34858915/167267751-be7dfb60-a4f6-42a7-a871-602998fbdb2b.mov
 
 
 
