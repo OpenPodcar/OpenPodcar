@@ -640,12 +640,6 @@ At this stage, two options are available to send goal commands to the vehicle:
 https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-8bf9-8230338dea82.mov
 
 
-The figure below shows the complete ROS node configuration used during the autonomous driving mode.
-	<p align="center">
-	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
-	</p>
-
-
 - Option 2: Terminal 
 
 	- open a third terminal and type:
@@ -658,13 +652,16 @@ The figure below shows the complete ROS node configuration used during the auton
 	This example command will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 		
 	Note: the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions, for example using this [visualisation tool](https://quaternions.online/)
+	
+An example of the terminal based goal command is shown in the video below.
 
-Note:
-- It is recommended to open additional terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
-	- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
-	- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
-- Other useful commands include for example: `rosrun rqt_graph rqt_graph`, `rosrun tf tf_monitor`, `rosrun tf view_frames`. 
+https://user-images.githubusercontent.com/34858915/167275374-61ef0f54-05c8-43fa-900b-55a7ed9f2642.mov
 
+
+The figure below shows the complete ROS node configuration used during the autonomous driving mode.
+	<p align="center">
+	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
+	</p>
 
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
@@ -762,6 +759,11 @@ https://user-images.githubusercontent.com/34858915/167275044-d2940f17-d5ab-4f16-
 - Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
 	- The idVendor and idProduct can also be displayed in the commandline for each connected USB device, such as `udevadm info -q all -a -n /dev/ACM0` for the device connected at COM Port ACM0
+- ROS Software:
+	- It is recommended to open additional terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
+		- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
+		- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
+	- Other useful commands include for example: `rosrun rqt_graph rqt_graph`, `rosrun tf tf_monitor`, `rosrun tf view_frames`. 
 
 ### B. Lidar
 - No velodyne_points message published
