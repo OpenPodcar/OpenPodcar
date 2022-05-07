@@ -355,11 +355,11 @@ Here, the buck converters' voltage and current will set to the desired values an
 4. Insert a wire into the buck converter's "**OUT-**" terminal block and keep the other side of the wire safely aside
 5. Set the power supply to 24V and turn it on
 6. Use the multimeter to measure the "**voltage**" between the buck converter's "**OUT+**" and "**OUT-**"
-7. Whilst reading the multimeter, use a screw driver to turn the "**potentiometer P1**" on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
+7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
 8. **Voltage Testing:** 
 	- Turn off the power supply and stop using th screw driver
 	- Turn on the power supply back to 24V
-	- Use the multimeter to check that the **voltage** between the buck converter's "**OUT+**" and **OUT-** is indeed 16V
+	- Use the multimeter to check that the **voltage** between the buck converter's "**OUT+**" and "**OUT-**" is indeed 16V
 	- If not, then repeat steps 5 to 8
 9. Use the multimeter to measure the **current** between the buck converter's "**OUT+**" and "**OUT-**"
 10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
