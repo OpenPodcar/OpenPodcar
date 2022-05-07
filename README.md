@@ -558,13 +558,12 @@ cd OpenPodcar/catkin_ws/src/FLOBOT
 source devel/setup.bash
 roslaunch flobot_tracker_bringup flobot_tracker.launch
 ```
-An RViz windows should display the scene and shows bounding boxes of detected people and their tracks, as shown below.
-
-https://user-images.githubusercontent.com/34858915/167267751-be7dfb60-a4f6-42a7-a871-602998fbdb2b.mov
-
-
 
 ## VI. <a name="user-guide"></a> User Guide 
+
+### A. General Verification 
+
+Perform the following actions and verifications before attempting to drive the vehicle:
 
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
@@ -574,16 +573,27 @@ https://user-images.githubusercontent.com/34858915/167267751-be7dfb60-a4f6-42a7-
 
 - Check that the batteries are charged (use a multimeter across one of the DCDC converters, need to see 24V or over. {\em Do not use the vehicle if it is undercharged, this is dangerous.}
 
-- Power on the laptop using the slider switch on its front right.
+- Power on the laptop
 
-- Type:  roscd podcar
+- Connect the lidar Ethernet cable to the laptop
+
+- Connect the Joystick, Pololu and Arduino USB cables to the USB hub
+
+- Connect the USB hub cable to the laptop USB port
+
+- Check that the Pololu LED flashes green
+
+- Check that the Arduino LED is green
+
+- Check that the LCD display shows a voltage between 1.9V and 2.1V
+
+- Press on the DMH push button and check that there is no beep
 
 
-### A. Remote Control
+### B. Remote Control
  
 The vehicle can be remotely-controlled using a joystick as follows:
-- Check that the lidar Ethernet, Joystcik USB, Pololu USB and Arduino USB cables are all connected to the laptop
-- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` from `launch/podcar.launch` to the global path of Velodyne point_cloud launch file corresponding to that of your laptop
+- Modify this line ` <include file="/YourPath/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` in `launch/podcar.launch` to correspond to the global path of Velodyne point_cloud launch file in the laptop
 - Open a terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/podcar
@@ -591,18 +601,19 @@ source devel/setup.bash
 roslaunch podcar podcar.launch
 ```
 
-If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
-- Y-axis for speed control
-- X-axis for steering control
+If there is no error, the vehicle can then be simply controlled with the joystick as follows:
+- move the Y-axis for speed control
+- move X-axis for steering control
+
+The video below shows a remote control drive of the OpenPodcar by a passenger.
 
 https://user-images.githubusercontent.com/34858915/167232380-c03a253a-c92c-4cf6-9b76-fccac6fb3c3a.mov
  
  
-### B. Move_base Control
+### C. Move_base Control
 
 This section explains how to drive the OpenPodcar in autonomous control mode using GMapping, move_base and the TEB planner.
-- Check that the lidar Ethernet, Pololu USB and Arduino USb cables are all connected to the laptop
-- Change this line ` <include file="/home/fanta/phd_work/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` from `launch/podcarsim2real_laser_scan_matcher.launch` to the global path of Velodyne point_cloud launch file corresponding to that of your laptop
+- Change this line ` <include file="/YourPath/OpenPodcar/podcar/catkin_ws/src/velodyne/velodyne_pointcloud/launch/VLP16_points.launch"/>` in `launch/podcarsim2real_laser_scan_matcher.launch`to correspond to the global path of Velodyne point_cloud launch file in the laptop
 - open a first terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/podcar
@@ -618,7 +629,9 @@ roslaunch podcar podcarsim_moveBase_sim2real.launch
 
 At this stage, two options are available to send goal commands to the vehicle:
 - Option 1: RViz GUI
-	- Use RViz graphical user interface to set a **2D Nav goal** command for the vehicle using the green arrow, as shown in the following video
+	- Use RViz graphical user interface to set **2D Nav goal** commands to the vehicle using the green arrow. 
+	
+	An example of such control is shown in the following video for the vehicle parallel parking demo.
 
 https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-8bf9-8230338dea82.mov
 
@@ -631,17 +644,20 @@ https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-
 	source devel/setup.bash
 	rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "frame_id: 'map' pose: position: x: 2.0 y: 0.0 z: 0.0 orientation: x: 0.0 y: 0.0 z: 0.0 w: 1.0"
 	```
-	Note: the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions using this [visualisation tool](https://quaternions.online/)
 	
-	The example command above will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
+	This example command will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
+		
+	Note: the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions, for example using this [visualisation tool](https://quaternions.online/)
 
-The figure below shows the complete ROS node configuration used during this autonomous driving mode.
+
+The figure below shows the complete ROS node configuration used during the autonomous driving mode.
 	<p align="center">
 	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
 	</p>
 
+
 Note:
-- It is recommended to open terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
+- It is recommended to open additional terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
 	- `rostopic echo /velodyne_points` displays the lidar data (a huge flow of numbers should appear in the terminal)
 	- `rostopic echo /odometry/groundTruth` displays the vehicle position and orientation
 - Other useful commands include for example: `rosrun rqt_graph rqt_graph`, `rosrun tf tf_monitor`, `rosrun tf view_frames`. 
@@ -730,7 +746,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- Diagnostic test commands can be passed to the Polulo using the commands provided in /testingTools/cmdSteer.   {\em Do not give commands outside the range 1000-2500 as they have mechanically destroyed the the vehicle.} A non-ROS test of the C API for the Pololu is provided in /testingTools/pololuTestCSerial.
 	
 - Speed
-	- It receives commands of the form **“FA:210”** as speed commands. The test scripts /testingTools/zeroSpeed.py and /testingTools/testSpeed.py can be used to send example commands for debugging.
+	- It receives commands of the form "**FA:210**" as speed commands. The test scripts /testingTools/zeroSpeed.py and /testingTools/testSpeed.py can be used to send example commands for debugging.
 	
 - Simlink
 	- If the Simlink does not work, display all the devices by typing in terminal `ls -l /dev` to see whether your device is connected well.
@@ -742,7 +758,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 	- Check: wired network must be configured correctly, see velodyne setup docs. Maybe be interfered if wifi has been used recently.
 	
-	- Check connections to Velodyne box including power and ethernet.
+	- Check connections to Velodyne box including power and Ethernet.
    
 
 ### C. Simulation
@@ -750,6 +766,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 	- If this is thrown by the Gazebo plugin -- it may be because Gazebo is being run standalone rather than launched as a ROS node as required.
 	
 - Cannot locate node i.e. you should make your Python scripts as executables in order to launch them
+
 
 ## IX. <a name="how-to-contribute"></a> How to Contribute? 
 
