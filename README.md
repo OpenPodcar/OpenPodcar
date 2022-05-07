@@ -537,7 +537,7 @@ Implementing and testing this safety system should be undertaken with the drive 
 
 The steering can be tested with Linux command. 
 - Connect the Pololu USB to the laptop 
-- Open a terminal and make sure "**physicalVehicleNonRos/testingTools/JrkCmd**" is allowed as an executable
+- Open a terminal and make sure `physicalVehicleNonRos/testingTools/JrkCmd` is allowed as an executable
 - type `./OpenPodcar/podcar/physicalVehicleNonRos/testingTools/JrkCmd Val` where "Val" is the desired command e.g. 1900 (straight), 2100 (turning slightly on the right), 1700 (turning slightly on the left) etc. 
 "Val" should be a value between 1000 (fully turned left) and 2500 (fully turned right).
 
