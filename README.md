@@ -701,9 +701,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
  3D models of the University of Lincoln and the University of Leeds campuses are available in `catckin_ws/src/podcar/models`, below is a video of the University of Lincoln campus simulation.
 
-
-https://user-images.githubusercontent.com/34858915/167253250-62d3dbea-49c0-41bc-8c06-b4ba4efc19c6.mp4
-
+https://user-images.githubusercontent.com/34858915/167254196-faf3a331-68c8-4114-bd60-0122643dd514.mov
 
 
 
