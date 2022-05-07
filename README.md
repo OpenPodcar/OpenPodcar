@@ -725,6 +725,14 @@ roslaunch podcar podcarsim_moveBase.launch
 
 This will present a standard movebase GUI interface in rviz, enabling you to click desired destinations to command the vehicle to drive to.
 
+### D. 3D Environment
+
+3D simulation environments of the University of Leeds and Lincoln campus were created in addition to the default Gazebo environment.
+
+The University of Lincoln campus simulation is shown in the video below.
+
+https://user-images.githubusercontent.com/34858915/167275044-d2940f17-d5ab-4f16-85e8-6e10bda04f92.mov
+
 
 ## VIII. <a name="troubleshooting-guide"></a> Troubleshooting Guide
 
