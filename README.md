@@ -557,9 +557,6 @@ roslaunch flobot_tracker_bringup flobot_tracker.launch
 
 ## VI. <a name="user-guide"></a> User Guide 
 
-https://user-images.githubusercontent.com/34858915/167232380-c03a253a-c92c-4cf6-9b76-fccac6fb3c3a.mov
-
-
 - Check that the vehicle’s original lever for auto-manual is set to auto (DOWN). It is on the main motor, under the vehicle at the rear left, colored red. Requires some force to move it.
 
 - Power on the vehicle using the original on-off switch located under the seat on the left. It is marked ON-OFF.
@@ -588,6 +585,8 @@ roslaunch podcar podcar.launch
 If the USB ports are well set up, the vehicle can then be simply controlled with the joystick as follows:
 - Y-axis for speed control
 - X-axis for steering control
+
+https://user-images.githubusercontent.com/34858915/167232380-c03a253a-c92c-4cf6-9b76-fccac6fb3c3a.mov
  
  
 ### B. Move_base Control
@@ -612,10 +611,11 @@ At this stage, two options are available to send goal commands to the vehicle:
 - Option 1: RViz GUI
 	- Use RViz graphical user interface to set a **2D Nav goal** command for the vehicle using the green arrow, as shown in the following video
 
-https://user-images.githubusercontent.com/34858915/167232706-510a6dc0-5f58-47dc-bcd7-9da5902f4691.mov
+https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-8bf9-8230338dea82.mov
 
 
 - Option 2: Terminal 
+
 	- open a third terminal and type:
 	```
 	cd OpenPodcar/catkin_ws/src/podcar
