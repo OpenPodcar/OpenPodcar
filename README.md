@@ -558,13 +558,9 @@ cd OpenPodcar/catkin_ws/src/FLOBOT
 source devel/setup.bash
 roslaunch flobot_tracker_bringup flobot_tracker.launch
 ```
-
 An RViz windows should display the scene and shows bounding boxes of detected people and their tracks, as shown below.
 
- 
-
-https://user-images.githubusercontent.com/34858915/167267506-ec5d1657-a195-4d71-8bdb-d50582e23139.mov
-
+https://user-images.githubusercontent.com/34858915/167267641-a07e7792-79e9-4941-8eaf-3f8934effa53.mov
 
 
 
