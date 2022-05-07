@@ -2,7 +2,8 @@
 
 Open Source Hardware Design and Software for OpenPodcar.
 
-https://user-images.githubusercontent.com/34858915/167230454-907da6d5-08d6-4ad8-84e0-d5fb4a7402c4.mov
+
+https://user-images.githubusercontent.com/34858915/167230498-64ceeedd-7fe7-4e6d-a8b0-ddad5ff45466.mov
 
 
 ## Table of Contents
