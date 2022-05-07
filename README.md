@@ -697,17 +697,6 @@ roslaunch podcar podcarsim_moveBase.launch
 
 This will present a standard movebase GUI interface in rviz, enabling you to click desired destinations to command the vehicle to drive to.
 
-### D. 3D environment
-
- 3D models of the University of Lincoln and the University of Leeds campuses are available in `catckin_ws/src/podcar/models`, below is a video of the University of Lincoln campus simulation.
-
-
-
-
-https://user-images.githubusercontent.com/34858915/167256252-c673ce00-1e57-4944-bdb4-57b7f2616fcb.mp4
-
-
-
 
 ## VIII. <a name="troubleshooting-guide"></a> Troubleshooting Guide
 
