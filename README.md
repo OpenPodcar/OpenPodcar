@@ -634,6 +634,8 @@ Note:
 
 ## VII. <a name="gazebo-simulation"></a> 3D Gazebo Simulation
 
+[![OpenPodcar 3D Simulation](https://img.youtube.com/vi/Gvhzq0draLM/0.jpg)](https://www.youtube.com/watch?v=Gvhzq0draLM)
+
 ### A. Installation
 
 - Assuming: ROS Kinetic and Gazebo 7 already installed. Install instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu).
