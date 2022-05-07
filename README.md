@@ -704,8 +704,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 
 
-
-https://user-images.githubusercontent.com/34858915/167255577-00e78feb-1402-481a-99be-99999ae2c566.mov
+https://user-images.githubusercontent.com/34858915/167256252-c673ce00-1e57-4944-bdb4-57b7f2616fcb.mp4
 
 
 
