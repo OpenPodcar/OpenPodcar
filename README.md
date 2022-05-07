@@ -37,11 +37,11 @@ The project includes:
 - Hardware design and instruction to build and wire the physical car
 - Arduino software for speed control
 - Pololu software for steering control
-- ROS drivers for whole vehicle steering and speed
-- Gazebo simulation
+- ROS drivers for the whole vehicle steering and speed
+- Gazebo 3D simulation
 - move_base and gmapping integration
 
-To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Software Setup](#software-setup), [Hardware Setup](#hardware-setup), [User Guide](#user-guide) and [General Testing](#general-testing). The 3D simulation can be directly installed in [3D Gazebo Simulation](#simulation).
+To build the physical OpenPodcar, first obtain the components detailed in [Bill of Materials](#bom), then follow the steps of the build process detailed in [Software Setup](#software-setup), [Hardware Setup](#hardware-setup),  [General Testing](#general-testing) and [User Guide](#user-guide). The 3D simulation can be directly installed in [3D Gazebo Simulation](#simulation).
 
 ## II. <a name="bom"></a> Bill of Materials
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
@@ -50,19 +50,19 @@ Obtain the following components, which are available from many commercial suppli
 - 1 Shoprider mobility scooter
 - 1 3D Velodyne Lidar (VLP-16) with its controller box e.g. [Link to product](https://velodynelidar.com/products/puck/)
 - 1 laptop under linux Ubuntu 16.04 e.g. [Link to product](https://www.lenovo.com/gb/en/laptops/thinkpad/p-series/ThinkPad-P51/p/22TP2WPWP51)
-- 1 laptop under Windows 7+
+- 1 Laptop or computer under Windows 7+
 - 1 Gimson Robotics GLA750-P 12V DC linear actuator with position feedback (250mm stroke) e.g. [Link to product](https://gimsonrobotics.co.uk/categories/linear-actuators/products/gla750-p-12v-dc-linear-actuator-with-position-feedback)
 - 1 ON/OF Toggle/Flick switch button e.g. [Link to product](https://www.ebay.co.uk/itm/12V-HEAVY-DUTY-25A-UNIVERSAL-METAL-SPRING-MOMENTARY-ON-OFF-TOGGLE-FLICK-SWITCH/231257116468?epid=1229817686&hash=item35d7ff8f34:g:f50AAOSwq5lTmZKx)
 - 1 USB hub (with at least 3 USB ports) e.g. [Link to product](https://www.amazon.co.uk/AmazonBasics-4-Port-Ultra-Mini-Bus-powered/dp/B003M0NURK/ref=sr_1_3?keywords=amazonbasics%2Busb%2Bhub&qid=1649172163&sr=8-3&th=1)
 - 1 USB A cable (Arduino <-> Laptop)
 - 1 USB mini B cable (Pololu <-> Laptop)
 - 1 Ethernet cable (Velodyne <-> Laptop) 
-- 1 deadman push button for the vehicle ignition system e.g. [Link to product](https://www.ebay.co.uk/itm/Philmore-30-825-SPST-Hand-Held-Push-Button-Switch-N-O/253746249505?epid=17011384611&hash=item3b14747f21:g:GdEAAOSwdA5bRopR)
-- 3-meter rubber cable e.g. [Link to product](https://www.design-restoration-spares.com/product/real-rubber-cable-3-core-black/) 
+- 1 Deadman push button for the vehicle ignition system e.g. [Link to product](https://www.ebay.co.uk/itm/Philmore-30-825-SPST-Hand-Held-Push-Button-Switch-N-O/253746249505?epid=17011384611&hash=item3b14747f21:g:GdEAAOSwdA5bRopR)
+- 1 3-meter rubber cable e.g. [Link to product](https://www.design-restoration-spares.com/product/real-rubber-cable-3-core-black/) 
 - 1 Joystick with its USB cable e.g. [Link to product](https://www.logitechg.com/en-gb/products/space/extreme-3d-pro-joystick.942-000031.html)
 - 1 Manfrotto Black Digi Table Tripod 709B e.g. [Link to product](https://www.manfrotto.com/ie-en/black-digi-table-tripod-709b/)
 - 1 Inline car fuse e.g. [Link to product](https://www.ebay.co.uk/itm/BRAND-NEW-STANDARD-INLINE-CAR-FUSE-BLADE-HOLDER-30AMP-12V-SPLASH-PROOF-K265/170976134151?epid=23017011962&hash=item27cef8c407:g:NvoAAOSwtGNZzh9k)
-- 1 fuse 7.5Amp
+- 1 Fuse 7.5Amp
 - 1 Relay e.g. [Link to product](https://www.ebay.co.uk/itm/164139969972?hash=item2637812db4:g:LqAAAOSwX9VefSO4)
 - A few metric HEX bolts, nuts, flat washers and cap nuts
 - A few cables ties
@@ -76,23 +76,21 @@ Obtain the following components, which are available from many commercial suppli
 - 1 Velodyne controller box (comes with the Velodyne lidar)
 - 1 10K Resistor
 - 1 100K Resistor
-- 3 Screw Terminal Block connectors e.g. [Link to product](https://www.amazon.co.uk/Universal-Connector-Calculators-Electronic-Equipments/dp/B0922KLC4K/ref=sr_1_5?dchild=1&keywords=2+Pin+pinch+PCB+mount+screw+2.54&qid=1635870919&sr=8-5)
+- 2 Screw Terminal Block connectors e.g. [Link to product](https://www.amazon.co.uk/Universal-Connector-Calculators-Electronic-Equipments/dp/B0922KLC4K/ref=sr_1_5?dchild=1&keywords=2+Pin+pinch+PCB+mount+screw+2.54&qid=1635870919&sr=8-5)
 - Male and female headers for Arduino and Pololu JRK 21v3 e.g. [Link to product](https://www.amazon.co.uk/dp/B07CWSXY7P/ref=pe_27063361_485629781_TE_item)
-- A few M1.5, M2.5 and M3 bolts 
-- A few M1.5, M2.5 and M3 nuts 
+- A few M1.5, M2.5 and M3 bolts and nuts 
 
 ### 3. Tools
-- Soldering iron
-- Solder
+- Soldering station with solder
 - Female and Male insulated electric connector crimp bullet terminals e.g. [Link to product](https://www.aliexpress.com/item/32874324815.html)
 - Female and Male insulated crimp bullet terminals e.g. [Link to product](https://www.ebay.co.uk/itm/333917138391?_trkparms=amclksrc%3DITM%26aid%3D1110006%26algo%3DHOMESPLICE.SIM%26ao%3D1%26asc%3D20200818143230%26meid%3Deba078cf394f4611b763dffe1c093587%26pid%3D101224%26rk%3D2%26rkt%3D5%26sd%3D264495178129%26itm%3D333917138391%26pmt%3D1%26noa%3D0%26pg%3D2047675%26algv%3DDefaultOrganicWeb%26brand%3DUnbranded&_trksid=p2047675.c101224.m-1&amdata=cksum%3A333917138391eba078cf394f4611b763dffe1c093587%7Cenc%3AAQAGAAAB8C%252Fyb1lwqzYRQPn6yDPD%252FrO6eM54Ozija9VIM4RJxPwnf1iY01i8i01AGZBZPkn9u2ICy0UZ8GznjGHI5H3qlDdJfGplg3%252FnVmb7jjFFUM4IVEm7R3DPDtNxLKKHo%252BEwplCvVFY6kBB7EzGGuHW3LSvzdrBOknWZFElCIFXC9wNLCvDkuoMgSJcUhIQeym%252BWUipLsT6%252FksKzu7uTbHIhtonSUjivOjZmnmISIZ7%252FiQuJR4%252BbEOz%252BftDUwR%252BY48cJQBva8gKVlgfC29kTN%252B3cdMZZEg3%252FH7hEKiajloCOYUJ5Vne%252FNz%252BxQOMHJxAbFdWkJlP4Ek1uctcOCFbrasOOehfastcE8yTbS8sqH%252BrGGdBZ2W1JAq2Gm7fTQQp%252FKFJwXtc13AYOV2A538ViL5eTdtrrWKw7qH03MghtN%252BDdRT1IGU26MRDd29X4oGcDbrxLcdSzbxwjw2nLfDhD2KaJUQO%252B%252FfjmEn9ItE6IdiS7v%252FNc%252Bsg%252BJy2sVHs8Bj7rosDy%252FU358Txs9Ynb8yOlXX70O%252B1WTb4eEuaaNbwHXY2VR065xgoEGG84ZXV8RU5RZ74kZURWNMb4zdAxab5OpJDJxF1lJ3XCa9J7JaQN%252BaLV2qnIdGfTAjQDfcrRl9%252Fu4jZg0BP7Wz66zqauiz9cxYBh1Wc%253D%7Campid%3APL_CLK%7Cclp%3A2047675)
 - Power supply 24V or more e.g. [Link to product](https://www.amazon.co.uk/Lavolta-Variable-Linear-Bench-Supply/dp/B019KL4G6I/ref=sr_1_8?dchild=1&keywords=bench+power+supply&qid=1629281239&sr=8-8)
-- breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
-- multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
-- Different gauge wirese e.g. ~0.8mm, ~2mm and ~4mm diameter
+- Breadboard e.g. [Link to product](https://www.amazon.co.uk/K-H-RH-32-Solderless-Breadboard/dp/B07DNB74FV/ref=sr_1_26?keywords=breadboard&qid=1649177149&sprefix=breadbo%2Caps%2C100&sr=8-26)
+- Multimeter e.g. [Link to product](https://www.machinemart.co.uk/p/clarke-cdm10c-digital-multimeter-5-function/)
+- Gauge wires e.g. ~0.8mm, ~2mm and ~4mm diameter
 - ELEGOO 120pcs Multicolored Dupont Wires 40pin Male to Female, 40pin Male to Male, 40pin Female to Female Breadboard Jumper Wires Ribbon Cables Kit Compatible with Arduino Projects [Link to product](https://www.amazon.com/Elegoo-EL-CP-004-Multicolored-Breadboard-arduino/dp/B01EV70C78/ref=sr_1_3?keywords=arduino+wire+female+to+female&qid=1651878643&sr=8-3)
-- clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
-- Flathead and Phillips screwdrivers, pliers, automatic wire stripper
+- Clamp meter e.g. [Link to product](https://www.tester.co.uk/uni-t-ut210b-clamp-meter)
+- Flathead and Phillips screwdrivers, pliers and automatic wire stripper
 - Spare fuses e.g. [Link to product](https://www.halfords.com/tools/fuses-electricals-and-fixings/fuses/)
 
 ## III. <a name="software-setup"></a> Software Setup
@@ -102,37 +100,38 @@ Obtain the following components, which are available from many commercial suppli
 The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and with ROS Kinetic and Gazebo 7 installed:
 - [Ubuntu 16.04 installation](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 - [ROS Kinetic + Gazebo 7 installtion](http://wiki.ros.org/kinetic/Installation/Ubuntu)
-- Clone this project repository somewhere on your laptop
+- Clone this project repository somewhere on the laptop
 
-**NB:** Pololu JRK 21v3 Configuration requires the installation of a Windows app, which does not work on linux.
+**NB:** `Pololu JRK Configuration Utility` tool is a Windows app, which does not work on linux.
+
 
 ### 2. Arduino
 - Install Arduino IDE on the Ubuntu laptop, instructions can be found [here](https://ubuntu.com/tutorials/install-the-arduino-ide#1-overview)
 - Download the MCP4725 library file and place it into Arduino's `LIBRARIES` folder
-- Arduino firmware source is supplied in the distribution `physicalVehicleNonRos/Arduino/ThrottleControlSerial.ino`
-- Connect the Arduino USB to the laptop
-- Open Arduino IDE and the `ThrottleControlSerial.ino` file
-- Click on **Upload**
-- **Testing**
-	- click on **Tools**, then **Serial Monitor** 
+- Arduino firmware source is supplied in `physicalVehicleNonRos/Arduino/ThrottleControlSerial.ino`
+- Connect the Arduino USB cable to the laptop
+- Open the `ThrottleControlSerial.ino` file in Arduino IDE
+- Click on "**Upload**"
+- **Acceptance Testing**
+	- click on "**Tools**", then "**Serial Monitor**" 
 	- set baudrate to 115000
 	- type in some commands such as:
-		- **"FA:170"** for zeroing
-		- **"FA:210"** for forward speed
-		- **"FA:120"** for reverse speed
+		- "**FA:170**" for zeroing
+		- "**FA:210**" for forward speed
+		- "**FA:120**" for reverse speed
 	- the serial monitor should display the command that was typed in and the corresponding DAC value
 	
 ### 3. Pololu JRK 21v3 Configuration
 
-- Download Pololu's Windows Configuration Tool by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
+- Download Pololu's Windows Configuration Tool `Pololu JRK Configuration Utility` on a Windows  computer by following these steps [here](https://www.pololu.com/docs/0J38/3.a).
 - To configure the Pololu, please follow the instructions [here](https://www.pololu.com/docs/0J38/5).
 - For OpenPodCar, the steps below are followed:
-	- Connect the USB to Pololu and open `Pololu Jrk Configuration Utility` tool
+	- Connect the Pololu USB cable to the Windows computer and open `Pololu Jrk Configuration Utility` tool
 
 	- Go to "**Input**" tab: 
 		- set "**Input mode**" to "**serial**"
 		- keep all other parameters to default values
-		- Final settings should like here:
+		- Final settings should like in the figure below:
 		
 	<p align="center">
 	<img src="./docs/software/pololu_input.png" alt="Pololu Input tab" width="350"/>
@@ -141,13 +140,13 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- Go to "**Feedback**" tab:
 		- set "**Feedback mode**" to "**Analog voltage**"
 		- check "**Invert feedback direction**"
-		- Calibration:
+		- Under "**Calibration**":
 			- set "**Absolute Max**" to "**2600**"
 			- set "**Maximum**" to "**2600**"
 			- set "**Minimum**" to "**1000**"
 			- set "**Absolute Min**" to "**1000**"
 			- keep all other paramters to default values
-		- Final settings should like here:
+		- Final settings should like in the figure below:
 	
 	<p align="center">
 	<img src="./docs/software/pololu_feedback.png" alt="Pololu Feedback tab" width="350"/>
@@ -156,7 +155,7 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	- Go to "**PID**" tab:
 		- set "**Proportional Coefficient**" to "**6**" at the top and "**1**" at the bottom, so that to get a final "**3**"
 		- keep all other parameters to default values 
-		- Final settings should like here:
+		- Final settings should like in the figure below:
 
 	<p align="center">
 	<img src="./docs/software/pololu_pid.png" alt="Pololu PID tab" width="350"/>
@@ -166,14 +165,14 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 		- check "**Invert motor direct**"
 		- in the "**Forward column**", set "**Max. current (A)**" to "**0**"
 		- keep all other parameters to default values
-		- Final settings should like here:
+		- Final settings should like in the figure below:
 		
 	<p align="center">
 	<img src="./docs/software/pololu_motor.png" alt="Pololu Motor tab" width="350"/>
 	</p>
 
 	- Go to "**Error**" tab:
-		- you should see a window (cf. photo below) similar to this with some red flags on	
+		- you should see a window similar to the figure below with some red flags on	
 		- set "**No power**", "**Motor driver error**", "**Feedback disconnected**" and "**Max. current exceeded**" to "**Enabled and latched**"
 		- click on "**Clear**" and "**Reset**"
 		
@@ -186,15 +185,15 @@ The OpenPodcar software stack requires a laptop working under Ubuntu 16.04 and w
 	
 ### 4. Simlink for USB COM Ports
 
-Here, the goal is to create persistent USB serial device names (aka SIMLINK) for the Arduino and the Pololu.
+Here, the goal is to create persistent USB serial device names (aka Simlink) for the Arduino and the Pololu.
 
-- In terminal: `sudo nano /etc/udev/rules.d/99-tty.rules`
-- Connect the Arduino and the pololu via USB to your laptop, then type in the terminal:
+- In a terminal, type: `sudo nano /etc/udev/rules.d/99-tty.rules`
+- Connect the Arduino and the pololu USB cables to the linux laptop using a USB hub, then type in the terminal:
 ```
 sudo lsusb -v | grep 'idVendor\|idProduct\|iSerial'
 ```
 - The above command displays the idVendor and idProduct for all the serial devices connected to your laptop and needs to be reported in the Simlink. 
-- For example, for the OpenPodcar copy the following lines in `99-tty.rules` file:
+- Copy the following lines in `99-tty.rules` file:
 ```
 #Arduino com-port rules
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ttyArduino", GROUP="dialout", MODE="0666"
@@ -204,14 +203,14 @@ SUBSYSTEM=="tty", ATTRS{idVendor} =="1ffb", ENV{ID_USB_INTERFACE_NUM}=="02"  SYM
 ```
 - Save and close `99-tty.rules` file
 - Then type in the terminal `sudo reboot`
-- Check the status of each SIMLINK by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
+- Check the status of each SimLink by typing in terminal for example: `ls -l /dev/ttyArduino` or `ls -l /dev/ttyPololuCOM`
 
 	
 ### 5. Velodyne 3D Lidar Configuration for ROS
 
-The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne. The default lidar IP is 192.168.1.201.
+The lidar needs to be set up over Ethernet. The laptop must be on a wired network, not wifi. The IPs must be configured as in the velodyne, the default lidar IP is 192.168.1.201.
 
-Please follow the Velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
+Follow the Velodyne installation instructions for ROS from [here](http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16).
 
 
 ## IV. <a name="hardware-setup"></a> Hardware Setup
@@ -229,32 +228,31 @@ Before mounting the linear actuator under the vehicle, first acceptance test it 
 
 This section shows how to test the linear actuactor before mounting it.
 
-- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration Tool, external power capable of supplying 12V, a breadboard, some wires (~0.8mm diameter), a multimeter
-- Start testing the linear actuator as follows:
-- Wire the power supply **-** to Pololu's **GND**
-- Wire the power supply **+**  to Pololu's **VIN** 
-- Wire the linear actuator's **black wire** to Pololu's **A**
-- Wire the linear actuator's **red wire** to Pololu's **B**
-- Use a breadboard to make the following connections:
-	- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-	- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
-	- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
+- Material: Gimson linear actuator, Pololu JRK 21v3 Configuration Tool, power supply, a breadboard, some wires (~0.8mm diameter) e.g. Dupont wires, a multimeter
+- Wire the power supply "**-**" to Pololu's "**GND**"
+- Wire the power supply "**+**"  to Pololu's "**VIN**" 
+- Wire the linear actuator's "**black wire**" to Pololu's "**A**"
+- Wire the linear actuator's "**red wire**" to Pololu's "**B**"
+- Use the breadboard to make the following connections:
+	- Wire the linear actuator's "**blue wire**" to Pololu's "**FB**" 
+	- Wire the linear actuator's "**yellow wire**" to Pololu's "**+5V**" (i.e. pin below "**FB**")
+	- Wire the linear actuator's "**white wire**" to Pololu's "**GND**" (i.e. pin below "**+5V**")
 	- Set the external power to supply 12V -> the Pololu LED should start blinking orange
 	- Connect the Pololu USB to a computer with the "**Pololu Jrk Configuration Utility**" Tool
-- Open the Configuration Tool Interface and go to the **Error** tab to check that no error is displayed other than the flag waiting for new commands. 
+- Open the Configuration Tool Interface and go to the "**Error**" tab to check that no error is displayed other than the flag "**Awaiting command**". 
 	- If there are errors, click on "**Reset**" and "**Clear**" until the Poolu's LED start blinking green
-	- Go to **Input** tab and use the cursor to send commands to the linear actuator e.g.
+	- Go to "**Input**" tab and use the cursor or type to send commands to the linear actuator, then click on "**Set Target**" e.g.
 	- "2500" : the linear actuator should extend its length to a maximum
 	- "1500" : the linear actuor should reduce its length
-	- "1900" : the linear actuator should have a medium length. NB: this is the position that the linear actuator should have when mounting it underneath the vehicle
+	- "1900" : the linear actuator should have a medium length. **Note**: this is the position that the linear actuator should have when mounting it underneath the vehicle.
 		
 #### 2. Access the underside of the vehicle
 
 To access the underside of the vehicle, this requires the help of at least three people.
 
 - Material: 2 axle stands, 2 jacks
-- Bring in two axle stands and set them as high as 75cm each
-- Place the two axle stands about one meter away from the front and back wheels, both in the same side of the vehicle, as shown in red in the picture below.
+- Bring in two axle stands and set them as high as about 75cm each
+- Place the two axle stands about one meter away from the front and back wheels, both on the same side of the vehicle, as shown in red in the picture below.
 	
 	<p align="center">
 	<img src="./docs/hardware/onAxles_colored.jpg" alt="Vehicle tilted using on axles and jacks" width="350"/>
@@ -275,9 +273,9 @@ To access the underside of the vehicle, this requires the help of at least three
 
 - Material: Gimson linear actuator, a drill capable of drilling steel, 2 M6 HEX head bolts, 2 HEX nuts, 2 cap hex nuts and a few flat washers with 8mm diameter
 - The linear actuator must have a medium length obtained via the Pololu command "1900", cf. the **Acceptance Testing** detailed above. 
-- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this use using an M6 bolt, nut, several washers and a cap nut
+- There is an existing hole in the triangular part of chassis next to the right front wheel axle, shown in the figure below in the green circle. Fix the front hole of the linear actuator to this  using an M6 bolt, nut, several washers and a cap nut
 - Drill a new M6 hole on the left side of the front chassis at the location shown by the red circle in the photo below.
-- Fix the back of the linear actuactor to the newly drilled hole using an M6 bolt, via washers
+- Fix the back of the linear actuactor to the newly drilled hole using an M6 bolt and nuts, via washers
 - The final mounting is shown in the photo below.
 	
 	<p align="center">
@@ -289,9 +287,8 @@ To access the underside of the vehicle, this requires the help of at least three
 
 #### 4. Integration Test
 
-This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected
+This final test will helps to verify that the linear actuactor is well mounted and can steer the wheels as expected:
 
-- Place two jacks on each side under the vehicle
 - Repeat the **Acceptance Testing** protocol presented above, but this time with the linear actuactor mounted under the vehicle, its wires can pass through an empty area between the vehicle plastic bumper and the left battery, and send some commands such as:
 - a "2500" command should steer the front wheel to the far right, i.e about -45 deg
 - a "1900" command should keep the front wheels facing forward, i.e. about 0 deg
@@ -299,19 +296,21 @@ This final test will helps to verify that the linear actuactor is well mounted a
 		
 ### C. ON/OFF Switch and Fusing
 
-- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones in the vehicle, under the seatback), some wires (~4mm diameter for fuse, switch and batteries, ~2mm diameter for the buck converters)
-- Fix a tick wire using a crimp bullet terminal onto each pin of the switch
-- Get access to the right battery's **+** pole and use a plier to unscrew the bolt and flat washer.
+- Material: inline car fuse, fuse 7.5Amp, ON/OFF switch, x2 12V batteries (the ones already part of the vehicle, under the seatback), some wires (use ~4mm diameter for fuse, switch and batteries, ~2mm diameter for the buck converters)
+- Switch off the vehicle batteries completely, switch is under the vehicle seatback
+- Fix a wire using a crimp bullet terminal onto each pin of the switch
+- Get access to the right battery's "**+**" pole and use a plier to unscrew the bolt and flat washer as shown below.
 
 	<p align="center">
 	<img src="./docs/hardware/battery_bolt.png" alt="Battery bolt and washer already screwed" "width=240" "height=150"/>
 	</p>
 
-- Strip the wire on the **+** pin of the switch by 3cm and connect it to the **+** of the right battery by tangling it around the battery **+** pole
-- Screw back the bolt and flat washer that were removed from the battery **+** pole
-- Connect the fuse **-** wire to the switch **-** pin
-- Extend the fuse **+** wire by 30cm such as soldering another tick wire to it, then keep it safely for later connection with the buck converter **+** on the PCB board
-- Get access to the left battery's **-** pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter **-** on the PCB board as shown below.
+- Strip the wire on the "**+**" pin of the switch by 3cm and connect it to the "**+**" of the right battery by tangling it around the battery "**+**" pole
+- Screw back the bolt and flat washer that were removed from the battery "**+**" pole
+- Insert the 7.5Amp fuse inside the inline car fuse
+- Connect the inline car fuse "**-**" wire to the switch "**-**" pin
+- Extend the inline fuse "**+**" wire by 30cm such as soldering another wire to it, then keep it safely for later connection with the buck converter "**+**" on the PCB board
+- Get access to the left battery's "**-**" pole's wire, strip a small area in the middle and plug a new and long wire (~50cm) there, then keep this new wire safely for later connection with the buck converter "**-**" on the PCB board as shown below.
 
 	<p align="center">
 	<img src="./docs/hardware/battery_switch_pcb.png" alt="Battery, switch and PCB connections" "width=240" "height=150"/>
@@ -327,16 +326,16 @@ This final test will helps to verify that the linear actuactor is well mounted a
 	<img src="./docs/hardware/lidar_tripod_positioning.png" alt="Lidar tripod positioning" "width=240" "height=150"/>
 	</p>
 
-- Remove the tripod from the roof.
-- Drill two holes, 0.6mm diameter each and their centers separated by about 1cm, on either side of each marked position as shown in the photo below.
+- Remove the tripod from the roof
+- Drill two holes, ~0.6mm diameter each and their centers separated by about 1cm, on either side of each marked position as shown in the photo below.
 
 	<p align="center">
 	<img src="./docs/hardware/tripod_holes_positions.png" alt="Tripod holes positions" "width=240" "height=150"/>
 	</p>
 
-- Screw the lidar onto the tripod. (Note that lidars are optical equipment which use Imperial rather than metric bolt threads, even in the EU.)
-- Place the tripod back on the roof.
-- Use three cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof as shown in the photo below. (may require the intervention of two people)
+- Screw the lidar onto the tripod
+- Place the tripod back on the roof
+- Use the cable ties, each passed through one pair of drilled holes and around a tripod foot, to secure the tripod to the roof as shown in the photo below. (may require the intervention of two people)
 
 	<p align="center">
 	<img src="./docs/hardware/lidar_tripod_attachement.jpg" alt="Tripod attachment to the vehicle" "width=240" "height=190"/>
@@ -344,94 +343,96 @@ This final test will helps to verify that the linear actuactor is well mounted a
 
 ### E. Buck Converters
 
-Here, the buck converters voltage and current will be set to the desired values and then tested.
+Here, the buck converters' voltage and current will set to the desired values and then tested.
 
 - Material: buck converters, power supply, multimeter, electronics flathead screwdriver, clamp meter and some wires (~2mm diameter)
 
 #### 1. XL4016 Buck converter 1
 
-1. Connect the wire from the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
-2. Connect the wire from the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-3. Insert a wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
-4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
+1. Wire the power supply "**+**" to the buck converter's "**IN+**" terminal block using a screwdriver
+2. Wire the power supply "**-**" to the buck converter's "**IN-**" terminal block using a screwdriver
+3. Insert a wire into the buck converter's "**OUT+**" terminal block and keep the other side of the wire safely aside
+4. Insert a wire into the buck converter's "**OUT-**" terminal block and keep the other side of the wire safely aside
 5. Set the power supply to 24V and turn it on
-6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
-7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
+6. Use the multimeter to measure the "**voltage**" between the buck converter's "**OUT+**" and "**OUT-**"
+7. Whilst reading the multimeter, use a screw driver to turn the "**potentiometer P1**" on the buck converter until the desired output voltage of 16V is reached (or the voltage required for the linux laptop)
 8. **Voltage Testing:** 
 	- Turn off the power supply and stop using th screw driver
 	- Turn on the power supply back to 24V
-	- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 16V
+	- Use the multimeter to check that the **voltage** between the buck converter's "**OUT+**" and **OUT-** is indeed 16V
 	- If not, then repeat steps 5 to 8
-9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+9. Use the multimeter to measure the **current** between the buck converter's "**OUT+**" and "**OUT-**"
 10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter until the desired output current of 3.75A is reached (or the maximum current required for the linux laptop)
 11. **Current Testing**
 	- Turn off the power supply and stop using th screw driver
 	- Turn on the power supply back to 24V
-	- Use the clamp meter to check that the **current** in the buck converter's **OUT+** wire is indeed 3.75A
+	- Use the clamp meter to check that the **current** going out of the buck converter's "**OUT+**" wire is indeed 3.75A
 	- If not, then repeat steps 9 to 11
 		
 #### 2. XL4016 Buck converter 2
 
-1. Wire the power supply **+** to the buck converter's **IN+** terminal block using a tick wire and screwdriver
-2. Wire the power supply **-** to the buck converter's **IN-** terminal block using a tick wire and screwdriver
-3. Insert a (tick) wire into the buck converter's **OUT+** terminal block and keep the other side of the wire safely aside
-4. Insert a (tick) wire into the buck converter's **OUT-** terminal block and keep the other side of the wire safely aside
+1. Wire the power supply "**+**" to the buck converter's "**IN+**" terminal block using a screwdriver
+2. Wire the power supply "**-**" to the buck converter's "**IN-**" terminal block using a screwdriver
+3. Insert a wire into the buck converter's "**OUT+**" terminal block and keep the other side of the wire safely aside
+4. Insert a wire into the buck converter's "**OUT-**" terminal block and keep the other side of the wire safely aside
 5. Set the power supply to 24V and turn it on
-6. Use the multimeter to measure the **voltage** between the buck converter's **OUT+** and **OUT-**
+6. Use the multimeter to measure the **voltage** between the buck converter's "**OUT+**" and "**OUT-**"
 7. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P1** on the buck converter until the desired output voltage of 12V is reached (or the voltage required for the Pololu and 3D Lidar)
 8. **Voltage Testing** 
 	- Turn off the power supply and stop using th screw driver
 	- Turn on the power supply back to 24V
-	- Use the multimeter to check that the **voltage** between the buck converter's **OUT+** and **OUT-** is indeed 12V
+	- Use the multimeter to check that the **voltage** between the buck converter's "**OUT+**" and "**OUT-**" is indeed 12V
 	- If not, then repeat steps 5 to 8
-9. Use the multimeter to measure the **current** between the buck converter's **OUT+** and **OUT-**
+9. Use the multimeter to measure the **current** between the buck converter's "**OUT+**" and "**OUT-**"
 10. Whilst reading the multimeter, use a screw driver to turn the **potentiometer P2** on the buck converter and set the desired output current of 3A is reached (or the maximum current required for the linear actuator and 3D Lidar)
 11. **Current Testing**
 	- Turn off the power supply and stop using th screw driver
 	- Turn on the power supply back to 24V
-	- Use the clamp meter to check that the **current** in the buck converter's **OUT+** is indeed 3A
+	- Use the clamp meter to check that the **current** going out of the buck converter's "**OUT+**" is indeed 3A
 	- If not, then repeat steps 9 to 11
 			
 ### F. MCP4725 DAC
 
-- Solder the male headers provided for the DAC pins.
+- Solder the male headers onto the DAC board pins.
 - **Acceptance Testing**
-	- Material: MCP4725 DAC, Arduino, some wires (~0.8mm diameter), multimeter
+	- Material: MCP4725 DAC, Arduino, some wires (~0.8mm diameter) e.g. female to male Dupont wires, a breadboard, a multimeter
 	- Use a breadboard to make the following connections:
-		- Wire both DAC **GND** to both Arduino **GND**, using two female to male wires
-		- Wire the DAC **VCC** to Arduino **5V**, using a female to female wire
-		- Wire the DAC **SDA** to Arduino **SDA**, using a female to male wire
-		- Wire the DAC **SCL** to Arduino **SCL**, using a female to male wire
-		- Wire the DAC **OUT** to an isolated point on the breadboard, using a female to female wire
-	- Turn on the Arduino by connecting it via USB to a computer 
+		- Wire both DAC "**GND**" to both Arduino "**GND**", using two female to male wires
+		- Wire the DAC "**VCC**" to Arduino "**5V**", using a female to female wire
+		- Wire the DAC "**SDA**" to Arduino "**SDA**", using a female to male wire
+		- Wire the DAC "**SCL**" to Arduino "**SCL**", using a female to male wire
+		- Wire the DAC "**OUT**" to an isolated point on the breadboard, using a female to female wire
+	- Connect the Arduino USB cable to a computer port
 	- Use the multimeter to measure the voltage received on the DAC:
-		- Voltage between the DAC **GND** and **VCC** should give a value between **4.7V** to **5V** i.e. equivalent to Arduino input voltage
-		- Voltage between the DAC **GND** and **OUT** should give a value between **1.9V** and **2.4V**
+		- Voltage between the DAC "**GND**" and "**VCC**" should give a value between "**4.7V**" to "**5V**" i.e. equivalent to Arduino input voltage
+		- Voltage between the DAC "**GND**" and "**OUT**" should give a value between **1.9V** and **2.4V**
 			
 ### G. 3D Printing
 The following items need to be 3D printed, the files are located under `physicalVehicleNonRos/3D_parts`:
-- LCD display support part `LCD_support.stl`
-- Velodyne Lidar support part `VLP16_support.stl` 
+- The LCD display support part is `LCD_support.stl`
+- The Velodyne Lidar support part is `VLP16_support.stl` 
 
 ### H. Printed Circuit Board (PCB)
 
-Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos/PCB/gerber.zip` to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions. NB: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
+Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos/PCB/gerber.zip` to an online PCB manufacturer such as (https://www.pcbway.com). They will then post the bare board to you, usually in a few days. At this stage there are no components on it, you will solder them on later in these instructions. **NB**: You may wish to order several copies of the PCB in case of manufacturing errors or if you break one or more of them.
 	
 #### 1. Acceptance Testing
 
-- Material: PCB board, multimeter
+- Material: manufactured PCB board, multimeter
 - Use the multimeter in continuity mode (diode symbol) to check each one of the PCB connections. If a connection on the board is continuous i.e. good, then the multimeter emits a continuous **beep**  (takes around 5 minutes in total). If any connection is not good then the manufactured PCB board is faulty and should not be used.
 
 #### 2. Assembly
 
-- Material: manufactured PCB board, soldering iron, headers, Arduino, Pololu, resistors (100K and 10K), 3D printed parts for LCD display and lidar, bolts and nuts
-- Solder headers for Arduino
+- Material: manufactured PCB board, soldering station with solder, headers, Arduino, Pololu, resistors (100K and 10K), 3D printed parts for LCD display and lidar, bolts and nuts
 - Solder a 10K resistor on R2 location
 - Solder a 100K resistor on R1 location
-- Solder the two terminal blocks to their respective locations
-- Solder female headers for the Pololu
-- Solder the buck converter wires to the respective pins on the board
-- Use M3 bolts and nuts to fix the buck converters, Arduino, LCD display, lidar support onto the board
+- Solder male headers on the Arduino location
+- Solder the two terminal blocks to their respective locations 
+- Solder female headers for the Pololu and the DAC
+- Solder the buck converter input and output wires to the respective pins on the board
+- Mount the Arduino, Pololu and DAC onto their headers on the PCB board
+- Use M3 bolts and nuts to fix the lidar controller box onto the lidar 3D printed support
+- Use M3 bolts and nuts to fix the buck converters, Arduino, LCD display and lidar support with controller box onto the PCB board
 - USe M1.5 bolts and nuts to fix the DAC onto the board
 - Use M2.5 bolts and nuts to fix the Pololu onto the board
 
@@ -439,8 +440,8 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 #### 3. Integration Testing
 
 - Material: power supply, multimeter, some wires (~2mm diameter)
-- Connect wires between the power supply and buck converter 1's **IN+** and **IN-**
-- Measure the voltage across the PCB components, check the safety of the board and ensure that the components work as expected, as shown in the figure below.
+- Connect wires between the power supply and buck converter 1's "**IN+**" and "**IN-**"
+- Measure the voltage across the PCB components, check the safety of the board and ensure that the components (especially Arduino, buck converters and DAC) work as expected, as shown in the figure below.
 
 	<p align="center">
 	<img src="./docs/hardware/pcb_testing.png" alt="PCB board integration testing" "width=20" "height=12"/>
@@ -453,10 +454,10 @@ Manufacture the PCB board by sending the gerber zip files `physicalVehicleNonRos
 
 This step explains how to integrate a DMH and a relay in order to control the vehicle ignition system. The addition of the Relay and the DMH Switch are essential for safe operation, especially where new unproven autonomous control systems are in development. A two stage approach is used to reduce this risk. Refer to the schematic diagram DMH section in conjunction with this description.
 
-- Material: 1 deadman push button, 1 relay, some wires (~2mm diameter), 3-meter rubber cable, female and Male insulated electric connector crimp bullet terminals, a plier
+- Material: 1 deadman push button, 1 relay, some wires (~2mm diameter), 3-meter rubber cable, female and male insulated electric connector crimp bullet terminals, plier, flathead screwdriver
 - For the relay: 
-	- Connect a 2-meter wire to the relay's **-** pin 
-	- Connect a 2-meter wire to  both the relay pins **S** and **+**
+	- Connect a 2-meter wire to the relay's "**-**" pin 
+	- Connect a 2-meter wire to  both the relay pins "**S**" and "**+**"
 	- The relay wires should be as shown in the photo below
 
 		<p align="center">
@@ -470,14 +471,14 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 		</p>
 	
 	- Use a plier to cut the two wires **brown** and **blue** connected to the vehicle ignition key	
-	- Attach a female insulated electric connector crimp bullet terminal to the **blue** wire directly connected to the ignition key
-	- Attach a female insulated electric connector crimp bullet terminal to the **brown** wire directly connected to the ignition key
-	- Connect the relay's **COM** pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
-	- Connect the relay's **NO** pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
+	- Attach a female insulated electric connector crimp bullet terminal to the **blue** wire directly connected to the ignition key for safety reasons
+	- Attach a female insulated electric connector crimp bullet terminal to the **brown** wire directly connected to the ignition key for safety reasons
+	- Connect the relay's "**COM**" pin to the ignition **brown** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
+	- Connect the relay's "**NO**" pin to the ignition **blue** wire coming from the vehicle steering column using a female insulated electric connector crimp bullet terminal
 
 - For the DMH: 
 	- Connect the 3-meter rubber cable to the deadman push button
-	- Connect the deadman handle cable to the wire linking the relay **NO** pin and the ignition **blue** wire as shown in the photo and the circuit diagram below:
+	- Connect the DMH cable to the wire linking the relay "**NO**" pin and the ignition **blue** wire as shown in the photo and the circuit diagram below:
 	
 	<p align="center">
 	<img src="./docs/hardware/ignition_wires_dmh.png" alt="Vehicle ignition wires connected to DMH and relay" "width=240" "height=190"/>
@@ -490,69 +491,77 @@ This step explains how to integrate a DMH and a relay in order to control the ve
 
 #### B. Speed Potentiometer 
 
-- Material: some wires (~2mm diameter), soldering iron, 1 plastic screw terminal block 2x2
-- De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into the terminal block **+** pin
-- Solder a 2-meter long wire next to the potentiometer pin on the left with a yellow wire and insert in its other length into the terminal block **-** pin
+- Material: some wires (~2mm diameter), soldering station with solder, 1 plastic screw terminal block 2x2
+- De-solder the middle pin of the vehicle potentiometer (white wire) and connect it to a 2-meter long wire inserted into the plastic terminal block "**+**" pin
+- Solder a 2-meter long wire next to the potentiometer pin on the left with a yellow wire and insert in its other length into the plastic terminal block "**-**" pin
 
 #### C. PCB connections
 
 - Material: soldering iron, flathead screwdriver
-- Solder the other side of the relay's **+** and **S** pins wire to the LCD **VIN** pin on the PCB board
-- Solder the other side of the realy's **GND** to the LCD **GND** pin on the PCB board
-- Insert the lidar controller box **+** wire to the PCB terminal block **+** pin (NB: another option would be to solder instead of inserting) 
-- Insert the lidar controller box **-** wire to the PCB terminal block **-** pin (NB: another option would be to solder instead of inserting) 
-- Connect the DAC **VOUT** to the terminal block **+** pin linked to the vehicle speed potentiometer 
-- Connect the DAC **GND** to the terminal block **-** pin linked to the vehicle speed potentiometer
-- Connect the LCD **SIG** wire to the terminal block **+** pin linked to the vehicle speed potentiometer 
-- Connect the fuse **+** wire to buck converter 1's **IN+** pin
-- Connect the fuse **-** wire to buck converter 1's **IN-** pin
+- Solder the other side of the relay's "**+**" and "**S**" pins wire to the LCD display "**VIN**" pin on the PCB board
+- Solder the other side of the relay's "**GND**" to the LCD display "**GND**" pin on the PCB board
+- Insert the lidar controller box "**+**" wire to the PCB terminal block "**+**" pin (NB: another option would be to solder the wire) 
+- Insert the lidar controller box "**-**" wire to the PCB terminal block "**-**" pin (NB: another option would be to solder the wire) 
+- Connect the DAC "**VOUT**" to the plastic terminal block "**+**" pin linked to the vehicle speed potentiometer 
+- Connect the DAC "**GND**" to the plastic terminal block "**-**" pin linked to the vehicle speed potentiometer
+- Connect the LCD display "**SIG**" wire to the plastic terminal block "**+**" pin linked to the vehicle speed potentiometer 
+- Connect the inline car fuse "**+**" wire (earlier set aside) to buck converter 1's "**IN+**" pin
+- Connect the inline car fuse "**-**" wire (earlier set aside) to buck converter 1's "**IN-**" pin
 
 
 #### D. Connect the linear actuactor to the Pololu JRK 21v3
 
-- Material: flathead screwdriver, Pololu, linear actuactor
-- Wire the linear actuator's **black wire** to Pololu's **A**
-- Wire the linear actuator's **red wire** to Pololu's **B**
-- Wire the linear actuator's **blue wire** to Pololu's **FB** 
-- Wire the linear actuator's **yellow wire** to Pololu's **+5V** (pin below **FB**)
-- Wire the linear actuator's **white wire** to Pololu's **GND** (pin below **+5V**)
+- Material: flathead screwdriver, Pololu, linear actuactor, some wires (~0.8mm)
+- Wire the linear actuator's **black wire** to Pololu's "**A**"
+- Wire the linear actuator's **red wire** to Pololu's "**B**"
+- Wire the linear actuator's **blue wire** to Pololu's "**FB**" 
+- Wire the linear actuator's **yellow wire** to Pololu's "**+5V**" (i.e. pin below "**FB**")
+- Wire the linear actuator's **white wire** to Pololu's "**GND**" (i.e. pin below "**+5V**")
 		
 
 ## V. <a name="general-testing"></a> General Testing
 
+This section generally explains some steps to test the general functioning of the vehicle speed, steering, detection and tracking systems.
+
 ### A. Speed control
 
-Implementing and testing this safety system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
+Implementing and testing this speed system should be undertaken with the drive wheels of the vehicle raised off of the ground, allowing for checks to be made of the DMH without the risk of the vehicle speeding off out of control.
 
 - Material: jacks
 - Place the jacks on both of the vehicle to raise its wheels off of the ground
-- open a terminal and `cd physicalVehicleNonRos/testingTools/`
+- open a terminal and type `cd physicalVehicleNonRos/testingTools/`
 - while pressing on the DMH:
 	- type `python zeroSpeed.py` to zero the speed
 	- type `python fastSpeed.py` to move the vehicle forward (speed commands can be modified)
 	- type `python slowSpeed.py` to move the vehicle backward (speed commands can be modified)
 
+The Arduino serial monitor could be used to send speed commands.
 
 ### B. Steering Control
 
-The steering can be tested with Linux command. 
-- Connect the Pololu USB to the laptop 
-- Open a terminal and make sure `physicalVehicleNonRos/testingTools/JrkCmd` is allowed as an executable
-- type `./OpenPodcar/podcar/physicalVehicleNonRos/testingTools/JrkCmd Val` where "Val" is the desired command e.g. 1900 (straight), 2100 (turning slightly on the right), 1700 (turning slightly on the left) etc. 
-"Val" should be a value between 1000 (fully turned left) and 2500 (fully turned right).
+The steering and Pololu can be tested with a C++ executable `JrkCmd`. 
+- Connect the Pololu USB to the vehicle laptop 
+- Open a terminal and make sure `physicalVehicleNonRos/testingTools/JrkCmd` has the permission to be an executable
+- type `./OpenPodcar/podcar/physicalVehicleNonRos/testingTools/JrkCmd Val` where "Val" is the desired command e.g. "1900" (straight), "2100" (turning slightly on the right), "1700" (turning slightly on the left) etc. 
+
+**NB**:"Val" should be a value between "1000" (fully turned left) and "2500" (fully turned right).
 
 
 ### C. Object Detection and Tracking
 
-To run the object detector and tracker:
-- record a ROS bag file with some pedestrians in it
-- change the path of the bag file in `flobot_tracker.launch` to that of your bcd ag file
+To test the object detector and tracker:
+- record a ROS bag file with some pedestrians appearing in it
+- change the path of the bag file in `flobot_tracker.launch` to that of the newly recorded bag file
 - open a terminal and type:
 ```
 cd OpenPodcar/catkin_ws/src/FLOBOT
 source devel/setup.bash
 roslaunch flobot_tracker_bringup flobot_tracker.launch
 ```
+
+An RViz windows should display the scene and shows bounding boxes of detected people and their tracks, as shown below.
+
+ 
 
 
 ## VI. <a name="user-guide"></a> User Guide 
