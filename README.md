@@ -558,6 +558,10 @@ cd OpenPodcar/catkin_ws/src/FLOBOT
 source devel/setup.bash
 roslaunch flobot_tracker_bringup flobot_tracker.launch
 ```
+An example video with detection and tracking results is shown below.
+
+https://user-images.githubusercontent.com/34858915/167274773-8bbdb3f9-5252-4947-8f6d-412974ba1c71.mov
+
 
 ## VI. <a name="user-guide"></a> User Guide 
 
