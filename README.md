@@ -636,6 +636,12 @@ At this stage, two options are available to send goal commands to the vehicle:
 https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-8bf9-8230338dea82.mov
 
 
+The figure below shows the complete ROS node configuration used during the autonomous driving mode.
+	<p align="center">
+	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
+	</p>
+
+
 - Option 2: Terminal 
 
 	- open a third terminal and type:
@@ -648,13 +654,6 @@ https://user-images.githubusercontent.com/34858915/167232813-bf33fbd5-f6af-4437-
 	This example command will move the vehicle 2m forward in **map** frame whilst keeping the same default orientation.
 		
 	Note: the vehicle orientation is formed by the quaternion: x, y, z and w. Euler angles can be converted to quaternions, for example using this [visualisation tool](https://quaternions.online/)
-
-
-The figure below shows the complete ROS node configuration used during the autonomous driving mode.
-	<p align="center">
-	<img src="./docs/software/rosnodes_autonomous.png" alt="ROS nodes used in the autonomous driving control mode with GMapping, Move_base and TEB planner."/>
-	</p>
-
 
 Note:
 - It is recommended to open additional terminal(s) to check topics values and data received within ros using `rostopic echo topicName`, for example:
