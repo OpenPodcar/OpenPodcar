@@ -47,7 +47,7 @@ To build the physical OpenPodcar, first obtain the components detailed in [Bill 
 Obtain the following components, which are available from many commercial suppliers and some weblinks are suggested.
 
 ### 1. For the vehicle
-- 1 Shoprider mobility scooter
+- 1 Pihsiang TE-889XLSN hard-canopy scooter (branded in UK as ShopriderTraverso) e.g. [Link to product](https://romamedical.co.uk/shoprider-traveso/)
 - 1 3D Velodyne Lidar (VLP-16) with its controller box e.g. [Link to product](https://velodynelidar.com/products/puck/)
 - 1 laptop under linux Ubuntu 16.04 e.g. [Link to product](https://www.lenovo.com/gb/en/laptops/thinkpad/p-series/ThinkPad-P51/p/22TP2WPWP51)
 - 1 Laptop or computer under Windows 7+
