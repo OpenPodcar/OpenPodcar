@@ -255,6 +255,12 @@
 	
 	\subsection{High-Level Automation Software}
 	
+	Fig. \ref{fig:rosnode_autonomous} shows an overview of the ROS components used in high level automation, including localisation and mapping, path planning and control, and pedestrian tracking as discussed in the following sections.
+	\begin{figure}[h]
+		\includegraphics[width=\columnwidth]{software/rosnodes_autonomous.png}
+		\caption{ROS nodes used in the autonomous driving mode.}
+		\label{fig:rosnode_autonomous}
+	\end{figure}
 	
 	\subsubsection{Localisation and Mapping System}
 	
@@ -283,7 +289,7 @@
 		\quad
 		\begin{subfigure}{0.45\textwidth}
 			\centering
-			\includegraphics[width=0.9\columnwidth]{figs_sim/podcar_loaded_gazebo.png}
+			\includegraphics[width=0.85\columnwidth]{figs_sim/podcar_loaded_gazebo.png}
 			\caption{Default Gazebo simulation world}
 			\label{fig:sim_world}
 		\end{subfigure}
@@ -309,13 +315,20 @@
 		\label{fig:gazebo_new_worlds}
 	\end{figure}
 	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\columnwidth]{figs_sim/podcar_INB_sim.png}
+		\caption{OpenPodcar in Lincoln world}
+		\label{fig:sim_INB_world}
+	\end{figure}
+	
 	A physical simulation of the vehicle is provided for use in Gazebo 7 \cite{koenig2004design} under ROS Kinetic and Ubuntu 16.04 (Xenial). The simulation implements the same ROS interface as the physical vehicle system to enable plug and play inter-operability between them. The physics model is based on a simplified vehicle geometry with two large cuboids containing the vehicles’ mass, as shown in Fig. \ref{fig:physSim}. Wheel geometry, friction, and motor driver parameters were measured from the physical vehicle. A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes. The main difference with the real vehicle is that the effects of the linear actuator are represented by a tracking rod, where is mounted the Kinect sensor used in place of the lidar, as found in Fig. \ref{fig:sim_world}.
 	
-	A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Fig. \ref{fig:sim_world}. Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control. Moreover, the open source Blender 3D add-on, called MapsModelsImporter \cite{michelmaps}, was used to create further 3D worlds representative of the University of Lincoln, the testing area for the OpenPodcar, and the University of Leeds campuses.
+	A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Fig. \ref{fig:sim_world}. Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control. Moreover, the open source Blender 3D add-on, called MapsModelsImporter \cite{michelmaps}, was used to create further 3D worlds representative of the University of Lincoln, the testing area for the OpenPodcar, and the University of Leeds campuses, shown in Fig.\ref{fig:gazebo_new_worlds}. Fig.~\ref{fig:sim_INB_world} shows the OpenPodcar in Lincoln campus environment.
 	
 	\begin{figure}[h]
 		\includegraphics[width=\columnwidth]{figs_sim/sim_nodes.png}
-		\caption{ROS nodes used in simulation under manual joystick control.}
+		\caption{ROS nodes used in simulated,  manual joystick control mode.}
 		\label{fig:sim_nodes}
 	\end{figure}
 	
@@ -431,11 +444,11 @@
 	
 	\textbf{Project repository:} \url{https://github.com/OpenPodcar/OpenPodcar}
 	
-	\textbf{Licence:} GPL for software and documentation and CERN-OHL-W for hardware
+	\textbf{Licence:} CERN-OHL-W for hardware design and build instructions; GPL for software source code.
 	
 	\textbf{Date published:} 09/05/2022
 	
-	The project is structured as two separate formal OSH designs, each licenced as CERN-OSH-W. The first covers all components which are easily transferable to other vehicles without modification. The second contains all components which are specific to the mobility scooter donor vehicle. This structure enables the first design to be used as sub-component of closed products while also preventing closed modifications of it.
+	The hardware is structured as two separate formal OSH designs, each licenced as CERN-OSH-W. The first covers all components which are easily transferable to other vehicles without modification. The second contains all components which are specific to the mobility scooter donor vehicle. This structure enables the first design to be used as sub-component of closed products while also preventing closed modifications of it.
 	
 	
 	\section{(6) Discussion}\label{h.90jl7wm65t65}
