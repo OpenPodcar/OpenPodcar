@@ -827,7 +827,8 @@ Bibtex:
   Title                    = {OpenPodcar: an Open Source Vehicle for Self-Driving Car Research},
   Author                   = {Fanta Camara and Chris Waltham and Grey Churchill and Charles Fox},
   Year                     = {2022},
-  Journal                  = {(under review}}
+  Journal                  = {(under review}
+  }
 ```
 
 ## XI. <a name="licence"></a> Licence 
