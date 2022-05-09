@@ -311,7 +311,7 @@
 	
 	A physical simulation of the vehicle is provided for use in Gazebo 7 \cite{koenig2004design} under ROS Kinetic and Ubuntu 16.04 (Xenial). The simulation implements the same ROS interface as the physical vehicle system to enable plug and play inter-operability between them. The physics model is based on a simplified vehicle geometry with two large cuboids containing the vehicles’ mass, as shown in Fig. \ref{fig:physSim}. Wheel geometry, friction, and motor driver parameters were measured from the physical vehicle. A detailed graphical mesh model of the vehicle is provided for display, rather than physical simulation, purposes. The main difference with the real vehicle is that the effects of the linear actuator are represented by a tracking rod, where is mounted the Kinect sensor used in place of the lidar, as found in Fig. \ref{fig:sim_world}.
 	
-	A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Fig. \ref{fig:sim_world}. Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control. Moreover, the open source Blender 3D add-on, called MapsModelsImporter \cite{michelmaps}, was used to create further 3D worlds representative of the University of Lincoln campus, the testing area for the OpenPodcar, and the University of Leeds campus.
+	A basic 3D world containing the podcar and various test objects from Gazebo libraries is provided by default as shown in Fig. \ref{fig:sim_world}. Fig. \ref{fig:sim_nodes} shows the complete ROS node configuration used during simulation, under manual joystick control. Moreover, the open source Blender 3D add-on, called MapsModelsImporter \cite{michelmaps}, was used to create further 3D worlds representative of the University of Lincoln, the testing area for the OpenPodcar, and the University of Leeds campuses.
 	
 	\begin{figure}[h]
 		\includegraphics[width=\columnwidth]{figs_sim/sim_nodes.png}
@@ -407,13 +407,6 @@
 	The OpenPodcar design is intended so that the mechanical, electronics and software components can be easily ported to other vehicles/platforms and only require small changes on the software side to adapt it and fix some parameters specific to the new vehicle requirements. This could include future deeper OSH vehicles as well as additional commercial donor vehicles. Cheaper sensors such as depth cameras or stereo cameras could be used instead of the 3D lidar. Such modifications would typically require an advanced rather than intermediate designer/builder.
 	
 	
-	%Please describe in as much detail as possible the ways in which the hardware could be reused by other researchers both within and outside of your field. This should include the use cases for the hardware, and also details of how the hardware might be modified or extended (including how contributors should contact you) if appropriate.Refer to section ``Ease of build'' where necessary.
-	
-	%Please provide your thoughts on the adaptability of the hardware design. What tools and procedures would it require for other users to modify your design without your help in order to adapt them for foreseeable or even unforeseeable use.
-	
-	%Also you must include details of what support mechanisms there are in place for this hardware and software (even if there is no support or support community).
-	
-	
 	\section{(5) Build Details}\label{h.l8i9vokvs0bj}
 	
 	\subsection{Availability of Materials and Methods}\label{h.60suejv0jlzi}
@@ -421,8 +414,6 @@
 	The design is made under the CERN-OSH-W licence which allows for the use of commercially available proprietary components such as the off-the-shelf donor vehicle. However the design is intended to be easily modifiable for transfer to other base vehicles, including those which are OSH at lower levels. The PCB can be manufactured by many online PCB manufacturers. The additional mechanical and electronics used are common parts available from standard online vendors. 
 	
 	\subsection{Ease of Build}\label{h.wg823sgyb1e4}
-	
-	%Have any measures been taken in the design to make the hardware easy to build for other users e.g. reduction of parts, features in the design to make the hardware assembly more reliable?
 	
 	The vehicle modification requires the use of common hand tools for assembly: spanners, screwdrivers, and pliers. Additionally, a 3D printer is needed to fabricate some components. Basic soldering skills are needed for assembling the PCB. 
 	
@@ -440,9 +431,9 @@
 	
 	\textbf{Project repository:} \url{https://github.com/OpenPodcar/OpenPodcar}
 	
-	\textbf{Licence:} CERN-OHL-W 
+	\textbf{Licence:} GPL for software and documentation and CERN-OHL-W for hardware
 	
-	\textbf{Date published:} dd/mm/2022
+	\textbf{Date published:} 09/05/2022
 	
 	The project is structured as two separate formal OSH designs, each licenced as CERN-OSH-W. The first covers all components which are easily transferable to other vehicles without modification. The second contains all components which are specific to the mobility scooter donor vehicle. This structure enables the first design to be used as sub-component of closed products while also preventing closed modifications of it.
 	
