@@ -411,6 +411,7 @@ Here, the buck converters' voltage and current will set to the desired values an
 The following items need to be 3D printed, the files are located under `physicalVehicleNonRos/3D_parts`:
 - The LCD display support part is `LCD_support.stl`
 - The Velodyne Lidar support part is `VLP16_support.stl` 
+- The PCB enclosure is divided into several stl files available in `PCB_enclosure/`
 
 ### H. Printed Circuit Board (PCB)
 
