@@ -725,7 +725,7 @@ This will present a standard movebase GUI interface in rviz, enabling you to cli
 
 ### D. 3D Environment
 
-3D simulation environments of the University of Leeds and Lincoln campus were created in addition to the default Gazebo environment.
+3D simulation environments of the University of Leeds and Lincoln campuses were created in addition to the default Gazebo environment.
 
 The University of Lincoln campus simulation is shown in the video below.
 
